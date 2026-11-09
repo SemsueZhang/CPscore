@@ -56,4 +56,4 @@ python3 -m cpscore novelty usage --events run/events.jsonl --ledger searches/cal
 - [CPRet官方项目](https://github.com/coldchair/CPRet)：相似题检索、公开演示与本地部署。
 - [arXiv检索接口说明](https://info.arxiv.org/help/api/user-manual.html)：字段查询与请求间隔。
 
-检索及证据工具从Auto-Insight的判题模块提取，常驻指令只保留新颖度部分。当前CPscore内验证范围见[迁移记录](novelty-migration.md)；工具和安装回归不等于A–E（含C+）准确率、全球原创性或模型费用收益的验证。
+本地回归覆盖检索记录、缓存、证据展开、用量汇总与安装入口，外部服务响应使用构造数据验证。联网检索、真实模型加载和评级质量需要独立核验，工具和安装回归不等于A–E（含C+）准确率、全球原创性或模型费用收益的验证。

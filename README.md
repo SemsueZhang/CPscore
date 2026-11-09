@@ -79,7 +79,7 @@ python3 -m cpscore novelty search arxiv --query-file paper-query.txt --output se
 python3 -m cpscore novelty inspect --record searches/cpret.json --ids <索引中的ID>
 ```
 
-安装后将`python3 -m cpscore`替换为该技能目录的`python3 <技能目录>/scripts/cpscore.py`。工具保存全量候选，先返回索引，再按需展开链接、摘要和正文片段，支持缓存与实际usage汇总；工具本身不调用模型或自动生成A–E（含C+）。详见[新颖度手册](docs/novelty.md)及[本次迁移验证](docs/novelty-migration.md)。
+安装后将`python3 -m cpscore`替换为该技能目录的`python3 <技能目录>/scripts/cpscore.py`。工具保存全量候选，先返回索引，再按需展开链接、摘要和正文片段，支持缓存与实际usage汇总；工具本身不调用模型或自动生成A–E（含C+）。详见[新颖度手册](docs/novelty.md)。
 
 ## 评分和报告
 
@@ -91,18 +91,16 @@ python3 -m cpscore novelty inspect --record searches/cpret.json --ids <索引中
 
 结构定义位于 `cpscore/schemas/`。工具可以验证字段、状态、版本与算分一致性，不能自动判定自然语言数学证明是否正确，也不能保证模型找全错误。完整规则见 [协议](docs/protocol.md)。
 
-可直接运行带证据的例子：
+例如，已完成三项审核，同一个已确认 Minor 同时影响题面和题解，程序没有确认缺陷，则报告分数如下。整体只扣该根因一次：
 
-```sh
-python3 -m cpscore score examples/cross-object-review.json
-python3 -m cpscore score examples/resolved-review.json
-```
-
-前者演示三个对象各 9 分、跨对象根因去重后整体 8 分，后者演示保留旧轮并以当前版本证据复审至 10 分。可对照 [首轮报告](examples/cross-object-report.md) 与 [修复复审报告](examples/resolved-report.md)，材料定位在 examples 中对应的版本文件。
+| 对象 | 分数 | 状态 |
+| --- | --- | --- |
+| 题面 | 9 | pass |
+| 程序 | 10 | pass |
+| 题解 | 9 | pass |
+| 整体 | 9 | pass |
 
 ## 验证与限制
-
-2026-11-09 的实际执行环境、通过与跳过项目、容器不可用结果及尚未验证的范围见 [本地验收记录](docs/acceptance.md)。
 
 ```sh
 python3 -m unittest discover -s tests -v
@@ -110,7 +108,7 @@ python3 -m unittest discover -s tests -v
 
 测试覆盖评分与协议、报告生成、技能安装检查卸载重装、移动项目后的独立入口、同名冲突、修改保护、符号链接与 manifest 路径逃逸，以及可选验证工具的边界。有限回归验证当前实现的这些行为，不能证明任意竞赛题的正确性，也不能替代真实 Harness 调用验证。
 
-已真实调用 Codex CLI，以 GPT-6.1 Sol xhigh 对一个人工题面完成 `cp-statement-review` 加载与工具烟测，生成有效报告并计算为 9 分/pass。原提示、材料、报告与脱敏事件见 [集成证据](tests/integration_evidence/codex-statement/README.md)。这只验证一次加载和工具接线，不是准确率实验，其余两技能、Claude Code 与 OpenCode + DeepSeek 未在该次调用中验证。
+Harness 目录和格式依据官方文档适配，具体环境中的模型加载与工具授权需另行验证。普通回归包含模拟外部工具响应的单元测试，不能替代真实 Harness、联网检索或容器集成。AI 审核准确率未建立。
 
 可选验证使用本地 Docker 或 Podman 隔离运行，先自行构建本地镜像：
 
@@ -126,3 +124,14 @@ python3 -m cpscore bench --candidate fixtures/validation/correct.cpp --input fix
 运行器在隔离容器内编译与执行 C++17 / Python，只读挂载源文件，禁网、非 root、限制时间、内存、进程数、CPU 和输出。镜像构建可能联网下载依赖，与禁网运行是不同阶段。未安装引擎、daemon 不可用、镜像缺失或隔离能力不足时明确返回 unavailable，不退回宿主直接执行。性能记录包含环境和计时范围，不能仅凭容器计时断言目标评测机超时。详细参数与验证边界见 [可选验证工具](docs/validation.md) 和 [验证夹具](fixtures/validation/README.md)。
 
 这些工具由用户选择触发，不是核心评分的强制依赖。没有运行的项目应保留原因，不会记为通过。模型与模型 API 也不是本地评分所必需。
+
+## 仓库结构
+
+- `cpscore/`：CLI、共享工具与 JSON Schema。
+- `skills/`：四个 Skill 的入口指令。
+- `scripts/`：安装后的共享工具薄入口。
+- `docs/`：审核协议、Harness 安装、验证及检索工具手册。
+- `tests/`、`fixtures/`：回归测试与隔离验证所需的最小人工输入和程序。
+- `.github/workflows/`、`Dockerfile.runner`：CI 与可选隔离运行环境。
+
+审核报告、检索结果、缓存和模型试跑记录保存在使用者自己的工作目录，不作为工具发行内容。

@@ -131,7 +131,7 @@ python3 -m cpscore bench \
 
 主要资源选项为 `--timeout`（默认 2 秒墙钟）、`--memory-mib`（默认 256）、`--cpus`（默认 1）、`--pids`（默认 64）、`--output-limit-kib`（默认 1024，stdout/stderr 合计）及 `--scratch-mib`（每个 tmpfs 默认 128）。也可用互斥的 `--output-limit-bytes` 精确设置输出限额。生成器、校验器、oracle 与候选程序使用相同运行限制。C++/Python 编译默认 30 秒，内存至少 1024 MiB，临时空间至少 256 MiB，产物最多 64 MiB，诊断与产物管道同样有界。可用 `--compile-timeout` 设置编译墙钟上限。
 
-## 测试与本次环境记录
+## 测试
 
 普通测试明确区分单元测试和真实隔离集成。
 
@@ -149,5 +149,3 @@ CPSCORE_RUN_SANDBOX_TESTS=1 \
 ```
 
 可用 `CPSCORE_SANDBOX_ENGINE=docker|podman` 与 `CPSCORE_SANDBOX_IMAGE=...` 选择引擎/镜像。显式启用后隔离不可用将测试失败，不会静默跳过。它实际检查 C++ 和 Python 正确/错误程序、合法与非法输入、固定种子生成、oracle 故障、编译失败、超时、输出上限、容器清理、manifest 重放及性能测量。
-
-2026-11-09 在本次 macOS 宿主上，Docker CLI 存在但 Docker daemon socket 不存在，Podman 未安装。真实 `check-candidate` 返回 `unavailable`、退出码 3，候选代码没有编译或运行。显式启用集成测试也在初始化阶段因该原因失败，真实集成尚未完成。普通测试中的模拟用例通过不能替代这项缺失的集成证据。

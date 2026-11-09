@@ -85,9 +85,3 @@ DeepSeek 官方说明，函数调用由外部客户端实际执行，模型本�
 3. `invocation`：check 始终为 not_verified。安装器不会花费模型额度或伪造真实 Harness 调用，另行烟测应记录宿主版本、实际调用、输出与限制。
 
 在没有 CLI 的环境中，只要文件验证通过，check 可返回成功，同时准确报告 CLI 缺失和真实调用未验证。CLI 存在却文件缺失时，check 仍失败。使用临时项目的入口烟测只能证明 Python 评分链路可运行，不能证明 Codex、Claude Code 或 DeepSeek 模型已实际加载并遵循技能。
-
-## 本次真实调用记录
-
-2026-11-09 已在临时项目真实调用 Codex CLI 0.167.0-alpha.3.2，使用 GPT-6.1 Sol、xhigh，完成 `cp-statement-review` 的一次加载与工具烟测。会话实际读取安装技能和共享协议，用安装入口生成并校验 review.json、生成 review.md，得到一项样例算术问题、9 分/pass，程序与题解保持 not_reviewed，未运行候选程序。归档包含原提示、人工题面、原报告、资源哈希与脱敏事件摘录，见 [Codex 集成证据](../tests/integration_evidence/codex-statement/README.md)。
-
-该次人工题面只说明一个技能的真实发现、加载和工具链连接成功，不衡量审核准确率，也未覆盖其余两技能的真实调用。Claude Code 与 OpenCode + DeepSeek 本次未真实调用。`check` 仍仅报告本地文件与命令路径，不会把历史烟测当作当前项目的真实调用验证。

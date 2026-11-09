@@ -8,3 +8,9 @@ __pycache__/
 /review.md
 /scored.json
 /.cpscore/
+/.cache/
+/searches/
+/sources/
+/run/
+/novelty.md
+.DS_Store
