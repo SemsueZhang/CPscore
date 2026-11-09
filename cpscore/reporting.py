@@ -35,31 +35,43 @@ def render_markdown(scored: dict[str, Any]) -> str:
         f"Review: {_text(review['review_id'])}  ",
         f"Snapshot: {_text(snapshot['id'])}, revision {_text(snapshot['revision'])}, supersedes {_text(snapshot['supersedes'] or 'none')}  ",
         f"Requested scope: {', '.join(review['scope'])}  ",
-        f"Completion: {overall['completion']}; overall status: **{overall['status']}**", "",
-        "| Object | Review status | Score | Decision |", "| --- | --- | ---: | --- |",
+        f"Completion: {overall['completion']}; qualification: **{overall['qualification']}**", "",
+        "| Object | Scope | Completion | Score | Qualification |", "| --- | --- | --- | ---: | --- |",
     ]
     for name in OBJECTS:
         assessment = scored["objects"][name]
         score = "—" if assessment["score"] is None else f"{assessment['score']}/10"
-        lines.append(f"| {name} | {review['objects'][name]['review_status']} | {score} | {assessment['status']} |")
+        scope = "in scope" if name in review["scope"] else "outside scope"
+        lines.append(f"| {name} | {scope} | {assessment['completion']} | {score} | {assessment['qualification']} |")
     score = "not available" if overall["score"] is None else f"{overall['score']}/10"
     lines += [
-        "", f"Overall score: **{score}**. The overall score deducts each explicit root cause once across reviewed objects; it is not an average.",
+        "", f"Overall score: **{score}**. The overall score deducts each explicit root cause once across in-scope objects; it is not an average. Each object deducts only its locally confirmed roots.",
         "Confirmed fatal: −10. Confirmed minor: −1. Scores start at 10 and stop at 0. Passing requires at least 6, completed scope, and no suspected fatal issue.",
-        "Suspected findings do not deduct points. Suspected fatal findings keep the decision pending. Resolved findings do not deduct points.", "",
+        "Suspected findings do not deduct points. Suspected fatal roots prevent passing. Confirmed deductions below 6 establish failure even when coverage is incomplete or another fatal issue is suspected. Resolved findings do not deduct points.", "",
         "## Independent root causes", "",
-        "| Root cause | Severity | Status | Affected objects | Points per affected object / overall | Findings |",
+        "| Root cause | Severity | Effective status | Local states and deductions | Overall points | Findings |",
         "| --- | --- | --- | --- | ---: | --- |",
     ]
     for root in scored["root_causes"]:
-        lines.append(f"| {_text(root['root_cause_id'])} | {root['severity']} | {root['status']} | {', '.join(root['affected_objects'])} | {root['points']} | {_text(', '.join(root['finding_ids']))} |")
+        local = "; ".join(f"{state['object']}: {state['status']}, −{state['points']}" for state in root["local_states"])
+        lines.append(f"| {_text(root['root_cause_id'])} | {root['severity']} | {root['status']} | {_text(local)} | {root['points']} | {_text(', '.join(root['finding_ids']))} |")
     if not scored["root_causes"]:
         lines.append("| — | — | — | — | 0 | No findings recorded |")
-    lines += ["", "## Deductions", ""]
+    lines += ["", "Effective root status uses confirmed > suspected > resolved across objects. Local states and evidence remain attached to each occurrence.", "", "## Coverage", ""]
+    for name in OBJECTS:
+        lines += [f"### {name}", ""]
+        for item, entry in review["objects"][name]["coverage"].items():
+            lines.append(f"- {item}: **{entry['status']}**.")
+            if entry["reason"] is not None:
+                lines.append(f"  Reason: {_text(entry['reason'])}.")
+            for index, evidence in enumerate(entry["evidence"]):
+                lines.append(f"  Evidence [{index}] at {_text(evidence['location'])}: {_text(evidence['observation'])} (snapshot {_text(evidence['snapshot_id'])}, artifact {_text(evidence['artifact_version'])}).")
+        lines.append("")
+    lines += ["## Deductions", ""]
     for name, assessment in [(name, scored["objects"][name]) for name in OBJECTS] + [("overall", overall)]:
         lines += [f"### {name}", ""]
         if assessment["score"] is None:
-            lines += ["Not reviewed. No numerical score is assigned.", ""]
+            lines += ["No completed coverage check or finding is recorded. No numerical score is assigned.", ""]
             continue
         lines += [f"max(0, 10 − {assessment['total_penalty']}) = {assessment['score']}", ""]
         for deduction in assessment["deductions"]:
@@ -75,9 +87,11 @@ def render_markdown(scored: dict[str, Any]) -> str:
         for finding in review["objects"][name]["findings"]:
             lines += [
                 f"### {_text(finding['id'])}: {_text(finding['title'])}", "",
-                f"Object: {name}; root cause: {_text(finding['root_cause_id'])}; severity: {finding['severity']}; status: {finding['status']}.", "",
+                f"Object: {name}; root cause: {_text(finding['root_cause_id'])}; rule: {finding['rule_id']}; severity: {finding['severity']}; status: {finding['status']}.", "",
                 _text(finding["description"]), "",
             ]
+            if finding.get("evidence_gap") is not None:
+                lines += [f"Evidence gap: {_text(finding['evidence_gap'])}", ""]
             for index, evidence in enumerate(finding["evidence"]):
                 lines.append(f"- Evidence [{index}] at {_text(evidence['location'])}: {_text(evidence['observation'])} (snapshot {_text(evidence['snapshot_id'])}, artifact {_text(evidence['artifact_version'])}).")
             lines += ["", "Reproduction:", ""]
@@ -104,5 +118,5 @@ def render_markdown(scored: dict[str, Any]) -> str:
         for index, evidence in enumerate(check["evidence"]):
             lines.append(f"- Evidence [{index}] at {_text(evidence['location'])}: {_text(evidence['observation'])} (snapshot {_text(evidence['snapshot_id'])}, artifact {_text(evidence['artifact_version'])}).")
         lines.append("")
-    lines += ["Finite tests and reported observations are evidence, not a general correctness proof. Unreviewed objects and unexecuted checks are explicit above.", ""]
+    lines += ["Finite tests and reported observations are evidence, not a general correctness proof. Incomplete coverage and unexecuted checks are explicit above.", ""]
     return "\n".join(lines)

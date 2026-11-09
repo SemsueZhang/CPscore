@@ -1,6 +1,6 @@
 """CPScore's shared, dependency-free review protocol and scoring engine."""
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 from .scoring import make_report, score_report
 from .schema import ReportValidationError, validate_report

@@ -15,7 +15,7 @@ def cli(*arguments, input=None):
 
 
 class CliTests(unittest.TestCase):
-    def test_init_validate_and_pending_score(self):
+    def test_init_validate_and_unreviewed_score(self):
         init = cli("init-report", "--scope", "solution")
         self.assertEqual(init.returncode, 0, init.stderr)
         report = json.loads(init.stdout)
@@ -24,7 +24,10 @@ class CliTests(unittest.TestCase):
         self.assertEqual(valid.returncode, 0, valid.stderr)
         scored = cli("score", "-", "--format", "json", input=init.stdout)
         self.assertEqual(scored.returncode, 0, scored.stderr)
-        self.assertEqual(json.loads(scored.stdout)["overall"]["status"], "pending")
+        assessment = json.loads(scored.stdout)["overall"]
+        self.assertEqual(assessment["qualification"], "undetermined")
+        self.assertEqual(assessment["completion"], "incomplete")
+        self.assertIsNone(assessment["score"])
 
     def test_json_markdown_and_file_output(self):
         report = reviewed(); report["objects"]["solution"]["findings"]=[finding()]
@@ -51,7 +54,7 @@ class CliTests(unittest.TestCase):
     def test_schema_and_core_commands_do_not_import_integrations(self):
         result=cli("schema")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(json.loads(result.stdout)["title"], "CPScore review input 1.0")
+        self.assertEqual(json.loads(result.stdout)["title"], "CPScore review input 2.0")
         script = "import sys; from cpscore.cli import main; main(['init-report']); assert 'cpscore.validation' not in sys.modules; assert 'cpscore.harness' not in sys.modules"
         result=subprocess.run([sys.executable,"-c",script],cwd=ROOT,capture_output=True,text=True,timeout=10)
         self.assertEqual(result.returncode,0,result.stderr)

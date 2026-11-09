@@ -45,6 +45,12 @@ def _validate(args: argparse.Namespace) -> int:
     return 2 if issues else 0
 
 
+def _migrate(args: argparse.Namespace) -> int:
+    from .migration import migrate_file
+    print(json.dumps(migrate_file(args.report, args.output), ensure_ascii=False, indent=2))
+    return 0
+
+
 def _schema(args: argparse.Namespace) -> int:
     _write(json.dumps(load_schema(args.kind), ensure_ascii=False, indent=2) + "\n", args.output)
     return 0
@@ -69,8 +75,12 @@ def build_parser(*, extensions: bool = True) -> argparse.ArgumentParser:
     validate.add_argument("report", help="input JSON; '-' means stdin")
     validate.add_argument("--scored", action="store_true", help="validate generated output and recompute its scores")
     validate.set_defaults(func=_validate)
+    migrate = commands.add_parser("migrate", help="archive a v1 report and create a v2 snapshot requiring reassessment")
+    migrate.add_argument("report")
+    migrate.add_argument("--output", "-o", required=True)
+    migrate.set_defaults(func=_migrate)
     schema = commands.add_parser("schema", help="print a bundled structural JSON Schema")
-    schema.add_argument("--kind", choices=("report", "scored-report"), default="report")
+    schema.add_argument("--kind", choices=("report", "scored-report", "legacy-report"), default="report")
     schema.add_argument("--output", "-o", default="-")
     schema.set_defaults(func=_schema)
     if extensions:
@@ -90,7 +100,7 @@ def build_parser(*, extensions: bool = True) -> argparse.ArgumentParser:
 def main(argv: Sequence[str] | None = None) -> int:
     # Import optional integrations only for their commands or complete help.
     arguments = list(sys.argv[1:] if argv is None else argv)
-    core_commands = {"init-report", "score", "validate", "schema"}
+    core_commands = {"init-report", "score", "validate", "schema", "migrate"}
     command = next((argument for argument in arguments if not argument.startswith("-")), None)
     parser = build_parser(extensions=command not in core_commands)
     args = parser.parse_args(arguments)

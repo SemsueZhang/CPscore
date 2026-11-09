@@ -2,7 +2,7 @@
   "type": "object",
   "properties": {
     "schema_version": {
-      "const": "1.0"
+      "const": "2.0"
     },
     "review": {
       "$ref": "report.schema.json"
@@ -11,508 +11,13 @@
       "type": "object",
       "properties": {
         "statement": {
-          "type": "object",
-          "properties": {
-            "status": {
-              "enum": [
-                "pass",
-                "fail",
-                "pending",
-                "not_reviewed"
-              ]
-            },
-            "score": {
-              "anyOf": [
-                {
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 10
-                },
-                {
-                  "type": "null"
-                }
-              ]
-            },
-            "qualified": {
-              "type": [
-                "boolean",
-                "null"
-              ]
-            },
-            "initial_score": {
-              "const": 10
-            },
-            "pass_threshold": {
-              "const": 6
-            },
-            "total_penalty": {
-              "type": "integer",
-              "minimum": 0
-            },
-            "deductions": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "root_cause_id": {
-                    "type": "string",
-                    "minLength": 1,
-                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                  },
-                  "severity": {
-                    "enum": [
-                      "fatal",
-                      "minor"
-                    ]
-                  },
-                  "points": {
-                    "enum": [
-                      1,
-                      10
-                    ]
-                  },
-                  "finding_ids": {
-                    "type": "array",
-                    "minItems": 1,
-                    "uniqueItems": true,
-                    "items": {
-                      "type": "string",
-                      "minLength": 1,
-                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                    }
-                  },
-                  "affected_objects": {
-                    "type": "array",
-                    "minItems": 1,
-                    "uniqueItems": true,
-                    "items": {
-                      "enum": [
-                        "statement",
-                        "solution",
-                        "editorial"
-                      ]
-                    }
-                  },
-                  "evidence_refs": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "object": {
-                          "enum": [
-                            "statement",
-                            "solution",
-                            "editorial"
-                          ]
-                        },
-                        "finding_id": {
-                          "type": "string",
-                          "minLength": 1,
-                          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                        },
-                        "evidence_index": {
-                          "type": "integer",
-                          "minimum": 0
-                        }
-                      },
-                      "required": [
-                        "object",
-                        "finding_id",
-                        "evidence_index"
-                      ],
-                      "additionalProperties": false
-                    }
-                  }
-                },
-                "required": [
-                  "root_cause_id",
-                  "severity",
-                  "points",
-                  "finding_ids",
-                  "affected_objects",
-                  "evidence_refs"
-                ],
-                "additionalProperties": false
-              }
-            },
-            "pending_finding_ids": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-              }
-            },
-            "suspected_finding_ids": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-              }
-            },
-            "resolved_finding_ids": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-              }
-            }
-          },
-          "required": [
-            "status",
-            "score",
-            "qualified",
-            "initial_score",
-            "pass_threshold",
-            "total_penalty",
-            "deductions",
-            "pending_finding_ids",
-            "suspected_finding_ids",
-            "resolved_finding_ids"
-          ],
-          "additionalProperties": false
+          "$ref": "#/$defs/assessment"
         },
         "solution": {
-          "type": "object",
-          "properties": {
-            "status": {
-              "enum": [
-                "pass",
-                "fail",
-                "pending",
-                "not_reviewed"
-              ]
-            },
-            "score": {
-              "anyOf": [
-                {
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 10
-                },
-                {
-                  "type": "null"
-                }
-              ]
-            },
-            "qualified": {
-              "type": [
-                "boolean",
-                "null"
-              ]
-            },
-            "initial_score": {
-              "const": 10
-            },
-            "pass_threshold": {
-              "const": 6
-            },
-            "total_penalty": {
-              "type": "integer",
-              "minimum": 0
-            },
-            "deductions": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "root_cause_id": {
-                    "type": "string",
-                    "minLength": 1,
-                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                  },
-                  "severity": {
-                    "enum": [
-                      "fatal",
-                      "minor"
-                    ]
-                  },
-                  "points": {
-                    "enum": [
-                      1,
-                      10
-                    ]
-                  },
-                  "finding_ids": {
-                    "type": "array",
-                    "minItems": 1,
-                    "uniqueItems": true,
-                    "items": {
-                      "type": "string",
-                      "minLength": 1,
-                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                    }
-                  },
-                  "affected_objects": {
-                    "type": "array",
-                    "minItems": 1,
-                    "uniqueItems": true,
-                    "items": {
-                      "enum": [
-                        "statement",
-                        "solution",
-                        "editorial"
-                      ]
-                    }
-                  },
-                  "evidence_refs": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "object": {
-                          "enum": [
-                            "statement",
-                            "solution",
-                            "editorial"
-                          ]
-                        },
-                        "finding_id": {
-                          "type": "string",
-                          "minLength": 1,
-                          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                        },
-                        "evidence_index": {
-                          "type": "integer",
-                          "minimum": 0
-                        }
-                      },
-                      "required": [
-                        "object",
-                        "finding_id",
-                        "evidence_index"
-                      ],
-                      "additionalProperties": false
-                    }
-                  }
-                },
-                "required": [
-                  "root_cause_id",
-                  "severity",
-                  "points",
-                  "finding_ids",
-                  "affected_objects",
-                  "evidence_refs"
-                ],
-                "additionalProperties": false
-              }
-            },
-            "pending_finding_ids": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-              }
-            },
-            "suspected_finding_ids": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-              }
-            },
-            "resolved_finding_ids": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-              }
-            }
-          },
-          "required": [
-            "status",
-            "score",
-            "qualified",
-            "initial_score",
-            "pass_threshold",
-            "total_penalty",
-            "deductions",
-            "pending_finding_ids",
-            "suspected_finding_ids",
-            "resolved_finding_ids"
-          ],
-          "additionalProperties": false
+          "$ref": "#/$defs/assessment"
         },
         "editorial": {
-          "type": "object",
-          "properties": {
-            "status": {
-              "enum": [
-                "pass",
-                "fail",
-                "pending",
-                "not_reviewed"
-              ]
-            },
-            "score": {
-              "anyOf": [
-                {
-                  "type": "integer",
-                  "minimum": 0,
-                  "maximum": 10
-                },
-                {
-                  "type": "null"
-                }
-              ]
-            },
-            "qualified": {
-              "type": [
-                "boolean",
-                "null"
-              ]
-            },
-            "initial_score": {
-              "const": 10
-            },
-            "pass_threshold": {
-              "const": 6
-            },
-            "total_penalty": {
-              "type": "integer",
-              "minimum": 0
-            },
-            "deductions": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "root_cause_id": {
-                    "type": "string",
-                    "minLength": 1,
-                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                  },
-                  "severity": {
-                    "enum": [
-                      "fatal",
-                      "minor"
-                    ]
-                  },
-                  "points": {
-                    "enum": [
-                      1,
-                      10
-                    ]
-                  },
-                  "finding_ids": {
-                    "type": "array",
-                    "minItems": 1,
-                    "uniqueItems": true,
-                    "items": {
-                      "type": "string",
-                      "minLength": 1,
-                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                    }
-                  },
-                  "affected_objects": {
-                    "type": "array",
-                    "minItems": 1,
-                    "uniqueItems": true,
-                    "items": {
-                      "enum": [
-                        "statement",
-                        "solution",
-                        "editorial"
-                      ]
-                    }
-                  },
-                  "evidence_refs": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "object": {
-                          "enum": [
-                            "statement",
-                            "solution",
-                            "editorial"
-                          ]
-                        },
-                        "finding_id": {
-                          "type": "string",
-                          "minLength": 1,
-                          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                        },
-                        "evidence_index": {
-                          "type": "integer",
-                          "minimum": 0
-                        }
-                      },
-                      "required": [
-                        "object",
-                        "finding_id",
-                        "evidence_index"
-                      ],
-                      "additionalProperties": false
-                    }
-                  }
-                },
-                "required": [
-                  "root_cause_id",
-                  "severity",
-                  "points",
-                  "finding_ids",
-                  "affected_objects",
-                  "evidence_refs"
-                ],
-                "additionalProperties": false
-              }
-            },
-            "pending_finding_ids": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-              }
-            },
-            "suspected_finding_ids": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-              }
-            },
-            "resolved_finding_ids": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-              }
-            }
-          },
-          "required": [
-            "status",
-            "score",
-            "qualified",
-            "initial_score",
-            "pass_threshold",
-            "total_penalty",
-            "deductions",
-            "pending_finding_ids",
-            "suspected_finding_ids",
-            "resolved_finding_ids"
-          ],
-          "additionalProperties": false
+          "$ref": "#/$defs/assessment"
         }
       },
       "required": [
@@ -523,14 +28,194 @@
       "additionalProperties": false
     },
     "overall": {
+      "$ref": "#/$defs/overall_assessment"
+    },
+    "root_causes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/root_cause"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "review",
+    "objects",
+    "overall",
+    "root_causes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpscore.local/schemas/v2/scored-report.schema.json",
+  "title": "CPScore generated score report 2.0",
+  "$comment": "validate_scored_report additionally validates the review semantics and recomputes every derived field, including qualification, coverage completion, local states, evidence references, and unique-root deductions.",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "evidence_ref": {
       "type": "object",
       "properties": {
+        "object": {
+          "enum": [
+            "statement",
+            "solution",
+            "editorial"
+          ]
+        },
+        "finding_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "evidence_index": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "object",
+        "finding_id",
+        "evidence_index"
+      ],
+      "additionalProperties": false
+    },
+    "local_state": {
+      "type": "object",
+      "properties": {
+        "object": {
+          "enum": [
+            "statement",
+            "solution",
+            "editorial"
+          ]
+        },
         "status": {
+          "enum": [
+            "confirmed",
+            "suspected",
+            "resolved"
+          ]
+        },
+        "points": {
+          "enum": [
+            0,
+            1,
+            10
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 1
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          }
+        }
+      },
+      "required": [
+        "object",
+        "status",
+        "points",
+        "finding_ids",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "root_cause": {
+      "type": "object",
+      "properties": {
+        "root_cause_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "severity": {
+          "enum": [
+            "fatal",
+            "minor"
+          ]
+        },
+        "status": {
+          "enum": [
+            "confirmed",
+            "suspected",
+            "resolved"
+          ]
+        },
+        "points": {
+          "enum": [
+            0,
+            1,
+            10
+          ]
+        },
+        "finding_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          },
+          "minItems": 1
+        },
+        "affected_objects": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "statement",
+              "solution",
+              "editorial"
+            ]
+          },
+          "minItems": 1
+        },
+        "local_states": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/local_state"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence_ref"
+          }
+        }
+      },
+      "required": [
+        "root_cause_id",
+        "severity",
+        "status",
+        "points",
+        "finding_ids",
+        "affected_objects",
+        "local_states",
+        "evidence_refs"
+      ],
+      "additionalProperties": false
+    },
+    "assessment": {
+      "type": "object",
+      "properties": {
+        "qualification": {
           "enum": [
             "pass",
             "fail",
-            "pending",
-            "not_reviewed"
+            "undetermined"
+          ]
+        },
+        "completion": {
+          "enum": [
+            "complete",
+            "incomplete"
           ]
         },
         "score": {
@@ -543,12 +228,6 @@
             {
               "type": "null"
             }
-          ]
-        },
-        "qualified": {
-          "type": [
-            "boolean",
-            "null"
           ]
         },
         "initial_score": {
@@ -564,165 +243,152 @@
         "deductions": {
           "type": "array",
           "items": {
-            "type": "object",
-            "properties": {
-              "root_cause_id": {
-                "type": "string",
-                "minLength": 1,
-                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-              },
-              "severity": {
-                "enum": [
-                  "fatal",
-                  "minor"
-                ]
-              },
-              "points": {
-                "enum": [
-                  1,
-                  10
-                ]
-              },
-              "finding_ids": {
-                "type": "array",
-                "minItems": 1,
-                "uniqueItems": true,
-                "items": {
-                  "type": "string",
-                  "minLength": 1,
-                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                }
-              },
-              "affected_objects": {
-                "type": "array",
-                "minItems": 1,
-                "uniqueItems": true,
-                "items": {
-                  "enum": [
-                    "statement",
-                    "solution",
-                    "editorial"
-                  ]
-                }
-              },
-              "evidence_refs": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "object": {
-                      "enum": [
-                        "statement",
-                        "solution",
-                        "editorial"
-                      ]
-                    },
-                    "finding_id": {
-                      "type": "string",
-                      "minLength": 1,
-                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                    },
-                    "evidence_index": {
-                      "type": "integer",
-                      "minimum": 0
-                    }
-                  },
-                  "required": [
-                    "object",
-                    "finding_id",
-                    "evidence_index"
-                  ],
-                  "additionalProperties": false
-                }
-              }
-            },
-            "required": [
-              "root_cause_id",
-              "severity",
-              "points",
-              "finding_ids",
-              "affected_objects",
-              "evidence_refs"
-            ],
-            "additionalProperties": false
+            "$ref": "#/$defs/root_cause"
           }
         },
         "pending_finding_ids": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "type": "string",
-            "minLength": 1,
-            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+            "$ref": "#/$defs/identifier"
           }
         },
         "suspected_finding_ids": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "type": "string",
-            "minLength": 1,
-            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+            "$ref": "#/$defs/identifier"
           }
         },
         "resolved_finding_ids": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "type": "string",
-            "minLength": 1,
-            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+            "$ref": "#/$defs/identifier"
           }
-        },
-        "scope": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {
-            "enum": [
-              "statement",
-              "solution",
-              "editorial"
-            ]
-          }
-        },
-        "reviewed_objects": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "enum": [
-              "statement",
-              "solution",
-              "editorial"
-            ]
-          }
-        },
-        "unreviewed_objects": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "enum": [
-              "statement",
-              "solution",
-              "editorial"
-            ]
-          }
+        }
+      },
+      "required": [
+        "qualification",
+        "completion",
+        "score",
+        "initial_score",
+        "pass_threshold",
+        "total_penalty",
+        "deductions",
+        "pending_finding_ids",
+        "suspected_finding_ids",
+        "resolved_finding_ids"
+      ],
+      "additionalProperties": false
+    },
+    "overall_assessment": {
+      "type": "object",
+      "properties": {
+        "qualification": {
+          "enum": [
+            "pass",
+            "fail",
+            "undetermined"
+          ]
         },
         "completion": {
           "enum": [
             "complete",
-            "pending"
+            "incomplete"
           ]
         },
+        "score": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "initial_score": {
+          "const": 10
+        },
+        "pass_threshold": {
+          "const": 6
+        },
+        "total_penalty": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deductions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/root_cause"
+          }
+        },
+        "pending_finding_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        },
+        "suspected_finding_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        },
+        "resolved_finding_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/identifier"
+          }
+        },
+        "scope": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "statement",
+              "solution",
+              "editorial"
+            ]
+          },
+          "minItems": 1
+        },
+        "completed_objects": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "statement",
+              "solution",
+              "editorial"
+            ]
+          }
+        },
+        "incomplete_objects": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "statement",
+              "solution",
+              "editorial"
+            ]
+          }
+        },
         "aggregation": {
-          "const": "unique_root_causes_across_reviewed_objects"
+          "const": "unique_root_causes_across_in_scope_objects"
         }
       },
       "required": [
-        "status",
+        "qualification",
+        "completion",
         "score",
-        "qualified",
         "initial_score",
         "pass_threshold",
         "total_penalty",
@@ -731,120 +397,11 @@
         "suspected_finding_ids",
         "resolved_finding_ids",
         "scope",
-        "reviewed_objects",
-        "unreviewed_objects",
-        "completion",
+        "completed_objects",
+        "incomplete_objects",
         "aggregation"
       ],
       "additionalProperties": false
-    },
-    "root_causes": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "root_cause_id": {
-            "type": "string",
-            "minLength": 1,
-            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-          },
-          "severity": {
-            "enum": [
-              "fatal",
-              "minor"
-            ]
-          },
-          "points": {
-            "enum": [
-              0,
-              1,
-              10
-            ]
-          },
-          "finding_ids": {
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "type": "string",
-              "minLength": 1,
-              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-            }
-          },
-          "affected_objects": {
-            "type": "array",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-              "enum": [
-                "statement",
-                "solution",
-                "editorial"
-              ]
-            }
-          },
-          "evidence_refs": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "type": "object",
-              "properties": {
-                "object": {
-                  "enum": [
-                    "statement",
-                    "solution",
-                    "editorial"
-                  ]
-                },
-                "finding_id": {
-                  "type": "string",
-                  "minLength": 1,
-                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
-                },
-                "evidence_index": {
-                  "type": "integer",
-                  "minimum": 0
-                }
-              },
-              "required": [
-                "object",
-                "finding_id",
-                "evidence_index"
-              ],
-              "additionalProperties": false
-            }
-          },
-          "status": {
-            "enum": [
-              "confirmed",
-              "suspected",
-              "resolved"
-            ]
-          }
-        },
-        "required": [
-          "root_cause_id",
-          "severity",
-          "points",
-          "finding_ids",
-          "affected_objects",
-          "evidence_refs",
-          "status"
-        ],
-        "additionalProperties": false
-      }
     }
-  },
-  "required": [
-    "schema_version",
-    "review",
-    "objects",
-    "overall",
-    "root_causes"
-  ],
-  "additionalProperties": false,
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cpscore.local/schemas/scored-report.schema.json",
-  "title": "CPScore generated score report 1.0",
-  "$comment": "Structural schema. validate_scored_report also recomputes every derived value and checks review semantics."
+  }
 }

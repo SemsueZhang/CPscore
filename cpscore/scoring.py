@@ -1,29 +1,47 @@
-"""The only implementation of CPScore's scoring rules."""
+"""The only implementation of CPScore's deterministic scoring rules."""
 
 from __future__ import annotations
 
 from copy import deepcopy
 from typing import Any, Iterable
 
-from .schema import OBJECTS, require_valid_report
-
-INITIAL_SCORE = 10
-PASS_THRESHOLD = 6
-PENALTIES = {"fatal": 10, "minor": 1}
+from .rubric import (
+    COMPLETE_COVERAGE_STATUSES, COVERAGE_ITEMS, INITIAL_SCORE, OBJECTS,
+    PASS_THRESHOLD, PENALTIES, SCHEMA_VERSION, STATUS_PRIORITY,
+)
+from .schema import require_valid_report
 
 
 def make_report(scope: Iterable[str] | None = None, *, review_id: str = "review-1", snapshot_id: str = "snapshot-1") -> dict[str, Any]:
-    """Create an unreviewed snapshot; writing findings never implies review."""
+    """Create an unchecked snapshot; writing findings never completes coverage."""
     report = {
-        "schema_version": "1.0",
+        "schema_version": SCHEMA_VERSION,
         "review_id": review_id,
         "snapshot": {"id": snapshot_id, "revision": 1, "supersedes": None},
         "scope": list(OBJECTS if scope is None else scope),
-        "objects": {name: {"review_status": "not_reviewed", "artifact_version": "v1", "findings": []} for name in OBJECTS},
+        "objects": {
+            name: {
+                "artifact_version": "v1",
+                "coverage": {
+                    item: {"status": "unchecked", "evidence": [], "reason": None}
+                    for item in COVERAGE_ITEMS[name]
+                },
+                "findings": [],
+            }
+            for name in OBJECTS
+        },
         "validations": [],
     }
     require_valid_report(report)
     return report
+
+
+def _evidence_refs(records: list[tuple[str, int, dict[str, Any]]]) -> list[dict[str, Any]]:
+    return [
+        {"object": obj, "finding_id": finding["id"], "evidence_index": index}
+        for obj, _, finding in sorted(records, key=lambda item: (OBJECTS.index(item[0]), item[2]["id"]))
+        for index in range(len(finding["evidence"]))
+    ]
 
 
 def _root_causes(records: list[tuple[str, int, dict[str, Any]]]) -> list[dict[str, Any]]:
@@ -33,40 +51,51 @@ def _root_causes(records: list[tuple[str, int, dict[str, Any]]]) -> list[dict[st
     aggregates = []
     for root in sorted(roots):
         occurrences = roots[root]
-        finding = occurrences[0][2]
+        severity = occurrences[0][2]["severity"]
+        status = max((record[2]["status"] for record in occurrences), key=STATUS_PRIORITY.__getitem__)
+        local_states = []
+        for obj in OBJECTS:
+            local = [record for record in occurrences if record[0] == obj]
+            if not local:
+                continue
+            local_status = local[0][2]["status"]
+            local_states.append({
+                "object": obj,
+                "status": local_status,
+                "points": PENALTIES[severity] if local_status == "confirmed" else 0,
+                "finding_ids": sorted(record[2]["id"] for record in local),
+                "evidence_refs": _evidence_refs(local),
+            })
         aggregates.append({
             "root_cause_id": root,
-            "severity": finding["severity"],
-            "status": finding["status"],
-            "points": PENALTIES[finding["severity"]] if finding["status"] == "confirmed" else 0,
+            "severity": severity,
+            "status": status,
+            "points": PENALTIES[severity] if status == "confirmed" else 0,
             "finding_ids": sorted(record[2]["id"] for record in occurrences),
-            "affected_objects": [name for name in OBJECTS if any(record[0] == name for record in occurrences)],
-            "evidence_refs": [
-                {"object": obj, "finding_id": finding["id"], "evidence_index": evidence_index}
-                for obj, _, finding in sorted(occurrences, key=lambda item: (OBJECTS.index(item[0]), item[2]["id"]))
-                for evidence_index in range(len(finding["evidence"]))
-            ],
+            "affected_objects": [state["object"] for state in local_states],
+            "local_states": local_states,
+            "evidence_refs": _evidence_refs(occurrences),
         })
     return aggregates
 
 
-def _assessment(records: list[tuple[str, int, dict[str, Any]]], *, reviewed: bool, incomplete: bool = False) -> dict[str, Any]:
-    deductions = [{key: value for key, value in root.items() if key != "status"} for root in _root_causes(records) if root["status"] == "confirmed"]
-    pending = sorted(finding["id"] for _, _, finding in records if finding["status"] == "suspected" and finding["severity"] == "fatal")
+def _assessment(records: list[tuple[str, int, dict[str, Any]]], *, has_checks: bool, complete: bool) -> dict[str, Any]:
+    roots = _root_causes(records)
+    deductions = [root for root in roots if root["status"] == "confirmed"]
     total = sum(deduction["points"] for deduction in deductions)
-    score = max(0, INITIAL_SCORE - total) if reviewed else None
-    if not reviewed:
-        status = "pending" if incomplete else "not_reviewed"
-    elif pending or incomplete:
-        status = "pending"
-    elif score < PASS_THRESHOLD:
-        status = "fail"
+    score = max(0, INITIAL_SCORE - total) if has_checks or records else None
+    pending_roots = {root["root_cause_id"] for root in roots if root["status"] == "suspected" and root["severity"] == "fatal"}
+    pending = sorted(finding["id"] for _, _, finding in records if finding["root_cause_id"] in pending_roots and finding["status"] == "suspected")
+    if score is not None and score < PASS_THRESHOLD:
+        qualification = "fail"
+    elif score is not None and complete and not pending:
+        qualification = "pass"
     else:
-        status = "pass"
+        qualification = "undetermined"
     return {
-        "status": status,
+        "qualification": qualification,
+        "completion": "complete" if complete else "incomplete",
         "score": score,
-        "qualified": True if status == "pass" else False if status == "fail" else None,
         "initial_score": INITIAL_SCORE,
         "pass_threshold": PASS_THRESHOLD,
         "total_penalty": total,
@@ -78,33 +107,34 @@ def _assessment(records: list[tuple[str, int, dict[str, Any]]], *, reviewed: boo
 
 
 def score_report(report: dict[str, Any]) -> dict[str, Any]:
-    """Validate and score a report; never trusts model-provided scores.
+    """Validate and score without trusting model-provided scores.
 
-    Explicit root_cause_id is the only deduplication key. A root is deducted
-    once per affected object and once in the overall score, never averaged.
+    Explicit root_cause_id is the sole deduplication key. Each object deducts
+    only locally confirmed roots. Overall roots use confirmed > suspected >
+    resolved across in-scope objects and deduct once, never average.
     """
     require_valid_report(report)
     object_scores: dict[str, Any] = {}
     all_records = []
-    reviewed_objects = []
-    unreviewed_objects = []
+    completed_objects = []
+    incomplete_objects = []
+    any_checks = False
     for name in OBJECTS:
         artifact = report["objects"][name]
-        reviewed = artifact["review_status"] == "reviewed"
+        states = [entry["status"] for entry in artifact["coverage"].values()]
+        complete = all(state in COMPLETE_COVERAGE_STATUSES for state in states)
+        has_checks = any(state in COMPLETE_COVERAGE_STATUSES for state in states)
         records = [(name, i, finding) for i, finding in enumerate(artifact["findings"])]
-        object_scores[name] = _assessment(records, reviewed=reviewed)
+        object_scores[name] = _assessment(records, has_checks=has_checks, complete=complete)
         if name in report["scope"]:
-            if reviewed:
-                reviewed_objects.append(name)
-                all_records.extend(records)
-            else:
-                unreviewed_objects.append(name)
-    overall = _assessment(all_records, reviewed=bool(reviewed_objects), incomplete=bool(unreviewed_objects))
+            (completed_objects if complete else incomplete_objects).append(name)
+            any_checks |= has_checks
+            all_records.extend(records)
+    overall = _assessment(all_records, has_checks=any_checks, complete=not incomplete_objects)
     overall.update({
         "scope": list(report["scope"]),
-        "reviewed_objects": reviewed_objects,
-        "unreviewed_objects": unreviewed_objects,
-        "completion": "pending" if unreviewed_objects else "complete",
-        "aggregation": "unique_root_causes_across_reviewed_objects",
+        "completed_objects": completed_objects,
+        "incomplete_objects": incomplete_objects,
+        "aggregation": "unique_root_causes_across_in_scope_objects",
     })
-    return {"schema_version": "1.0", "review": deepcopy(report), "root_causes": _root_causes(all_records), "objects": object_scores, "overall": overall}
+    return {"schema_version": SCHEMA_VERSION, "review": deepcopy(report), "root_causes": _root_causes(all_records), "objects": object_scores, "overall": overall}

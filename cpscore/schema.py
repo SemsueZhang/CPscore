@@ -14,7 +14,7 @@ import math
 import re
 from typing import Any
 
-OBJECTS = ("statement", "solution", "editorial")
+from .rubric import OBJECTS, RULE_SEVERITIES
 
 
 @dataclass(frozen=True)
@@ -63,7 +63,7 @@ def loads_json(text: str) -> Any:
 
 
 def load_schema(name: str = "report") -> dict[str, Any]:
-    if name not in {"report", "scored-report"}:
+    if name not in {"report", "scored-report", "legacy-report"}:
         raise ValueError(f"unknown schema: {name}")
     return loads_json(files("cpscore").joinpath("schemas", f"{name}.schema.json").read_text(encoding="utf-8"))
 
@@ -199,15 +199,27 @@ def validate_report(report: Any) -> list[ValidationIssue]:
         error("$.snapshot.supersedes", "revision 1 must not supersede another snapshot")
     if snapshot["revision"] > 1 and snapshot["supersedes"] is None:
         error("$.snapshot.supersedes", "a re-review must identify the preceding snapshot")
+
+    def check_evidence(evidence: dict[str, Any], path: str, artifact: dict[str, Any]) -> None:
+        if evidence["snapshot_id"] != snapshot["id"]:
+            error(f"{path}.snapshot_id", "stale evidence: snapshot does not match current review")
+        if evidence["artifact_version"] != artifact["artifact_version"]:
+            error(f"{path}.artifact_version", "stale evidence: artifact version does not match current object")
+
     seen_ids: dict[str, str] = {}
-    roots: dict[str, tuple[str, str, str]] = {}
+    roots: dict[str, tuple[str, str]] = {}
     for obj in OBJECTS:
         artifact = report["objects"][obj]
         path = f"$.objects.{obj}"
-        if obj not in report["scope"] and artifact["review_status"] != "not_reviewed":
-            error(f"{path}.review_status", "an object outside scope must be not_reviewed")
-        if artifact["review_status"] == "not_reviewed" and artifact["findings"]:
-            error(f"{path}.findings", "not_reviewed objects cannot contain findings")
+        local_roots: dict[str, tuple[str, str]] = {}
+        if obj not in report["scope"] and artifact["findings"]:
+            error(f"{path}.findings", "an object outside scope cannot contain findings")
+        for item, entry in artifact["coverage"].items():
+            cp = f"{path}.coverage.{item}"
+            if obj not in report["scope"] and entry["status"] != "unchecked":
+                error(f"{cp}.status", "an object outside scope must have unchecked coverage")
+            for ei, evidence in enumerate(entry["evidence"]):
+                check_evidence(evidence, f"{cp}.evidence[{ei}]", artifact)
         for index, finding in enumerate(artifact["findings"]):
             fp = f"{path}.findings[{index}]"
             identifier = finding["id"]
@@ -215,18 +227,20 @@ def validate_report(report: Any) -> list[ValidationIssue]:
                 error(f"{fp}.id", f"duplicate finding id, first used at {seen_ids[identifier]}")
             else:
                 seen_ids[identifier] = fp
+            expected_severity = RULE_SEVERITIES[finding["rule_id"]]
+            if expected_severity is not None and finding["severity"] != expected_severity:
+                error(f"{fp}.severity", f"rule {finding['rule_id']!r} requires severity {expected_severity!r}")
             root = finding["root_cause_id"]
-            state = (finding["severity"], finding["status"])
-            if root in roots and state != roots[root][:2]:
-                error(f"{fp}.root_cause_id", f"conflicting severity/status for root cause {root!r}, first used at {roots[root][2]}")
+            if root in roots and finding["severity"] != roots[root][0]:
+                error(f"{fp}.root_cause_id", f"conflicting severity for root cause {root!r}, first used at {roots[root][1]}")
             elif root not in roots:
-                roots[root] = (*state, fp)
+                roots[root] = (finding["severity"], fp)
+            if root in local_roots and finding["status"] != local_roots[root][0]:
+                error(f"{fp}.root_cause_id", f"conflicting local status for root cause {root!r}, first used at {local_roots[root][1]}")
+            elif root not in local_roots:
+                local_roots[root] = (finding["status"], fp)
             for ei, evidence in enumerate(finding["evidence"]):
-                ep = f"{fp}.evidence[{ei}]"
-                if evidence["snapshot_id"] != snapshot["id"]:
-                    error(f"{ep}.snapshot_id", "stale evidence: snapshot does not match current review")
-                if evidence["artifact_version"] != artifact["artifact_version"]:
-                    error(f"{ep}.artifact_version", "stale evidence: artifact version does not match current object")
+                check_evidence(evidence, f"{fp}.evidence[{ei}]", artifact)
             repair = finding["repair"]
             if repair["status"] == "applied" and finding["status"] != "resolved":
                 error(f"{fp}.repair.status", "applied repairs require a resolved finding and current verification evidence")
@@ -251,11 +265,7 @@ def validate_report(report: Any) -> list[ValidationIssue]:
             if check["reason"] is None:
                 error(f"{path}.reason", "unexecuted checks require an explicit reason")
         for ei, evidence in enumerate(check["evidence"]):
-            ep = f"{path}.evidence[{ei}]"
-            if evidence["snapshot_id"] != snapshot["id"]:
-                error(f"{ep}.snapshot_id", "stale validation evidence")
-            if evidence["artifact_version"] != report["objects"][check["object"]]["artifact_version"]:
-                error(f"{ep}.artifact_version", "stale validation artifact version")
+            check_evidence(evidence, f"{path}.evidence[{ei}]", report["objects"][check["object"]])
     return issues
 
 

@@ -9,6 +9,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
+from tests.test_review_fixtures import CASES, FIXTURES, case_report
+
 from cpscore.harness import HARNESSES, MANIFEST, SKILLS, InstallationError, check, install, uninstall
 
 SOURCE = Path(__file__).resolve().parents[1]
@@ -51,18 +53,68 @@ class HarnessTests(unittest.TestCase):
             self.assertEqual(process.returncode, 0, process.stdout + process.stderr)
             return process
         run("init-report", "--scope", "statement", "--output", str(report))
-        content = json.loads(report.read_text())
-        content["objects"]["statement"]["review_status"] = "reviewed"
+        content = json.loads(report.read_text(encoding="utf-8"))
+        # A fresh installed skeleton must never become a false pass.
+        initial = run("score", str(report), "--format", "json")
+        initial_assessment = json.loads(initial.stdout)["overall"]
+        self.assertIsNone(initial_assessment["score"])
+        self.assertEqual(initial_assessment["qualification"], "undetermined")
+        self.assertEqual(initial_assessment["completion"], "incomplete")
+        # Use the checked, concrete P1083 derivative with a content hash and
+        # dimension-specific observations, rather than changing a review flag.
+        case = CASES["statement_correct"]
+        shutil.copyfile(FIXTURES / case["artifact"], destination / "statement.md")
+        content = case_report(case)
+        for item in content["objects"]["statement"]["coverage"].values():
+            for evidence in item["evidence"]:
+                evidence["location"] = "statement.md"
         report.write_text(json.dumps(content))
         run("validate", str(report))
         scored = destination / "scored.json"
         run("score", str(report), "--format", "json", "--output", str(scored))
-        self.assertEqual(json.loads(scored.read_text())["overall"]["status"], "pass")
+        assessment = json.loads(scored.read_text(encoding="utf-8"))["overall"]
+        self.assertEqual(assessment["qualification"], "pass")
+        self.assertEqual(assessment["completion"], "complete")
+        # The moved bootstrap must also include the migration module and its
+        # legacy schema. Preserve historical model bytes, never grant a pass.
+        legacy = destination / "legacy.json"
+        shutil.copyfile(SOURCE / "tests/history/v1-codex-statement.json", legacy)
+        migrated = destination / "migrated.json"
+        run("migrate", str(legacy), "--output", str(migrated))
+        self.assertEqual(Path(str(migrated) + ".legacy.json").read_bytes(), legacy.read_bytes())
+        run("validate", str(migrated))
+        migrated_assessment = json.loads(run("score", str(migrated), "--format", "json").stdout)["overall"]
+        self.assertEqual(migrated_assessment["qualification"], "undetermined")
+        self.assertEqual(migrated_assessment["completion"], "incomplete")
         self.assertTrue(check(destination, ["codex"])["ok"])
         self.assertEqual(list((destination / ".cpscore").rglob("__pycache__")), [])
         uninstall(destination, ["codex"])
         install(destination, ["codex"], source=SOURCE)
         self.assertTrue(check(destination, ["codex"])["ok"])
+
+    def test_installed_migration_is_portable_and_does_not_inherit_pass(self):
+        self.install(["codex"])
+        moved = self.project.with_name("portable migration")
+        self.project.rename(moved)
+        entry = moved / ".agents/skills/cp-statement-review/scripts/cpscore.py"
+        legacy = moved / "old.json"
+        original = (SOURCE / "tests/history/v1-codex-statement.json").read_bytes()
+        legacy.write_bytes(original)
+        destination = moved / "new.json"
+        command = [sys.executable, "-I", str(entry), "migrate", str(legacy), "-o", str(destination)]
+        result = subprocess.run(command, cwd=moved.parent, capture_output=True, text=True, timeout=15)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertEqual(legacy.read_bytes(), original)
+        self.assertEqual(Path(str(destination) + ".legacy.json").read_bytes(), original)
+        scored = subprocess.run([sys.executable, "-I", str(entry), "score", str(destination), "--format", "json"],
+                                cwd=moved.parent, capture_output=True, text=True, timeout=15)
+        self.assertEqual(scored.returncode, 0, scored.stdout + scored.stderr)
+        self.assertEqual(json.loads(scored.stdout)["overall"]["qualification"], "undetermined")
+        before = destination.read_bytes()
+        repeated = subprocess.run(command, cwd=moved.parent, capture_output=True, text=True, timeout=15)
+        self.assertEqual(repeated.returncode, 2)
+        self.assertEqual(destination.read_bytes(), before)
+        self.assertTrue(check(moved, ["codex"])["ok"])
 
     def test_incremental_install_and_partial_uninstall(self):
         self.install(["codex"])
@@ -84,7 +136,7 @@ class HarnessTests(unittest.TestCase):
             self.install()
         self.assertFalse((self.project / ".cpscore").exists())
         self.assertFalse((self.project / ".agents").exists())
-        self.assertEqual((foreign / "SKILL.md").read_text(), "belongs to someone else")
+        self.assertEqual((foreign / "SKILL.md").read_text(encoding="utf-8"), "belongs to someone else")
 
     def test_modified_owned_file_blocks_update_and_uninstall(self):
         self.install(["codex"])
@@ -95,7 +147,7 @@ class HarnessTests(unittest.TestCase):
         for operation in (lambda: self.install(["codex"]), lambda: uninstall(self.project, ["codex"])):
             with self.assertRaises(InstallationError):
                 operation()
-        self.assertEqual(edited.read_text(), "user's edits")
+        self.assertEqual(edited.read_text(encoding="utf-8"), "user's edits")
         self.assertEqual((self.project / MANIFEST).read_bytes(), before)
 
     def test_reinstall_repairs_missing_managed_file(self):
@@ -111,7 +163,7 @@ class HarnessTests(unittest.TestCase):
         foreign = self.project / ".agents/skills/cp-statement-review/my-notes.txt"
         foreign.write_text("keep me")
         uninstall(self.project, ["codex"])
-        self.assertEqual(foreign.read_text(), "keep me")
+        self.assertEqual(foreign.read_text(encoding="utf-8"), "keep me")
 
     def test_no_fake_deepseek_harness_or_unknown_target(self):
         for name in ("deepseek", "made-up"):
@@ -133,13 +185,13 @@ class HarnessTests(unittest.TestCase):
         victim = self.project.parent / "victim.txt"
         victim.write_text("preserve")
         path = self.project / MANIFEST
-        content = json.loads(path.read_text())
+        content = json.loads(path.read_text(encoding="utf-8"))
         content["files"]["../victim.txt"] = "0" * 64
         path.write_text(json.dumps(content))
         for operation in (lambda: check(self.project, ["codex"]), lambda: uninstall(self.project, ["codex"]), lambda: self.install(["codex"])):
             with self.assertRaises(InstallationError):
                 operation()
-        self.assertEqual(victim.read_text(), "preserve")
+        self.assertEqual(victim.read_text(encoding="utf-8"), "preserve")
 
     def test_manifest_and_owned_file_symlinks_rejected(self):
         self.install(["codex"])
@@ -169,7 +221,7 @@ class HarnessTests(unittest.TestCase):
     def test_empty_or_incomplete_forged_manifest_rejected(self):
         self.install(["codex"])
         manifest = self.project / MANIFEST
-        content = json.loads(manifest.read_text())
+        content = json.loads(manifest.read_text(encoding="utf-8"))
         content["files"] = {}
         manifest.write_text(json.dumps(content))
         with self.assertRaises(InstallationError):
