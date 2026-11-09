@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-09",
+  "kind": "real_harness_smoke",
+  "harness": {
+    "name": "Codex CLI",
+    "version": "0.167.0-alpha.3.2",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh"
+  },
+  "skill": "cp-statement-review",
+  "launch_note": "Initial launch was prevented by outer sandbox initialization permissions; a reviewed, authorized retry launched successfully.",
+  "computed_result": {
+    "score": 9,
+    "status": "pass",
+    "confirmed_minor_findings": 1,
+    "scope": [
+      "statement"
+    ],
+    "other_objects": "not_reviewed"
+  },
+  "candidate_executed": false,
+  "statement_changed": false,
+  "installed_resource_sha256": {
+    ".agents/skills/cp-statement-review/SKILL.md": "bbda9d536dfd9db7c5bcbcb6351d3e54b31e7244f5275d67b2cdad0d3b9e9487",
+    ".agents/skills/cp-statement-review/scripts/cpscore.py": "440a2f0629cd46401c0bbd723ac99e8c852871f1537c0baa71baea88d46044ae",
+    ".cpscore/protocol.md": "88617cbf6a09cd4dd0289d38296a1e3b99527831787db23d20fd82c937c257f7"
+  },
+  "archived_file_sha256": {
+    "prompt.txt": "b4590aa047e978034bb65190cf2e896eee34de300b809361c22a1243942bfe91",
+    "statement.md": "82d96dfb622bc47e4e7a3840f2d8b4db0a575fb64222611d3efbd851d644bd11",
+    "review.json": "847be980773b61bf50d7514e50b9c654564a71210ea6aa42ddf99a9f154b339f",
+    "review.md": "809f7c7f7c3ae45095ff8934e567bb1e2b77f1ca59d4363a2fe7065c6d77778f",
+    "events-summary.jsonl": "f3aea9824b01427014f79b05345d5688521e4090c4324e5f9212c44b37b1d09b"
+  },
+  "limitations": [
+    "One artificial statement and one skill were exercised. This is a skill-loading and tool-integration smoke check, not a review-accuracy evaluation.",
+    "No candidate program was executed.",
+    "Claude Code and OpenCode + DeepSeek were not invoked in this check.",
+    "Only selected completed command events are archived. Absolute temporary project paths are replaced by <PROJECT>; this is not a complete execution log."
+  ]
+}

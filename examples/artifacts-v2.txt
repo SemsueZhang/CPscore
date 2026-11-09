@@ -1,0 +1,3 @@
+Statement excerpt: n is an integer.
+Solution comment: add the terms.
+Editorial excerpt: n is an integer.

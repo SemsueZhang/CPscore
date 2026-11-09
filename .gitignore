@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+/build/
+/dist/
+*.egg-info/
+/reports/
+/review.json
+/review.md
+/scored.json
+/.cpscore/

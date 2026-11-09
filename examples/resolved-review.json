@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0",
+  "review_id": "illustrative-review",
+  "snapshot": {
+    "id": "example-after",
+    "revision": 2,
+    "supersedes": "example-before"
+  },
+  "scope": [
+    "statement",
+    "solution",
+    "editorial"
+  ],
+  "objects": {
+    "statement": {
+      "review_status": "reviewed",
+      "artifact_version": "examples-v2",
+      "findings": [
+        {
+          "id": "statement-article",
+          "root_cause_id": "shared-article",
+          "severity": "minor",
+          "status": "resolved",
+          "title": "Article typo copied from shared prose",
+          "description": "Illustrative protocol fixture: a cosmetic language issue, with no change to mathematical meaning.",
+          "evidence": [
+            {
+              "snapshot_id": "example-after",
+              "artifact_version": "examples-v2",
+              "location": "examples/artifacts-v2.txt:1",
+              "observation": "Current excerpt contains the corrected phrase: n is an integer"
+            }
+          ],
+          "reproduction": {
+            "steps": [
+              "Read examples/artifacts-v2.txt line 1"
+            ],
+            "expected": "n is an integer",
+            "actual": "n is an integer"
+          },
+          "repair": {
+            "suggestion": "Replace 'n is a integer' with 'n is an integer'",
+            "auto_fixable": true,
+            "status": "applied",
+            "patch": null,
+            "verification": [
+              "Inspect examples/artifacts-v2.txt and confirm the corrected phrase is present."
+            ]
+          }
+        }
+      ]
+    },
+    "solution": {
+      "review_status": "reviewed",
+      "artifact_version": "examples-v2",
+      "findings": [
+        {
+          "id": "solution-word",
+          "root_cause_id": "duplicate-word",
+          "severity": "minor",
+          "status": "resolved",
+          "title": "Repeated word in a comment",
+          "description": "Illustrative protocol fixture: a cosmetic language issue, with no change to mathematical meaning.",
+          "evidence": [
+            {
+              "snapshot_id": "example-after",
+              "artifact_version": "examples-v2",
+              "location": "examples/artifacts-v2.txt:2",
+              "observation": "Current excerpt contains the corrected phrase: add the terms"
+            }
+          ],
+          "reproduction": {
+            "steps": [
+              "Read examples/artifacts-v2.txt line 2"
+            ],
+            "expected": "add the terms",
+            "actual": "add the terms"
+          },
+          "repair": {
+            "suggestion": "Replace 'add the the terms' with 'add the terms'",
+            "auto_fixable": true,
+            "status": "applied",
+            "patch": null,
+            "verification": [
+              "Inspect examples/artifacts-v2.txt and confirm the corrected phrase is present."
+            ]
+          }
+        }
+      ]
+    },
+    "editorial": {
+      "review_status": "reviewed",
+      "artifact_version": "examples-v2",
+      "findings": [
+        {
+          "id": "editorial-article",
+          "root_cause_id": "shared-article",
+          "severity": "minor",
+          "status": "resolved",
+          "title": "Article typo copied from shared prose",
+          "description": "Illustrative protocol fixture: a cosmetic language issue, with no change to mathematical meaning.",
+          "evidence": [
+            {
+              "snapshot_id": "example-after",
+              "artifact_version": "examples-v2",
+              "location": "examples/artifacts-v2.txt:3",
+              "observation": "Current excerpt contains the corrected phrase: n is an integer"
+            }
+          ],
+          "reproduction": {
+            "steps": [
+              "Read examples/artifacts-v2.txt line 3"
+            ],
+            "expected": "n is an integer",
+            "actual": "n is an integer"
+          },
+          "repair": {
+            "suggestion": "Replace 'n is a integer' with 'n is an integer'",
+            "auto_fixable": true,
+            "status": "applied",
+            "patch": null,
+            "verification": [
+              "Inspect examples/artifacts-v2.txt and confirm the corrected phrase is present."
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "validations": [
+    {
+      "id": "candidate-execution",
+      "name": "Compile and execute candidate",
+      "object": "solution",
+      "status": "unexecuted",
+      "command": null,
+      "outcome": null,
+      "reason": "Documentation fixtures contain excerpts rather than a runnable candidate; no program execution is asserted.",
+      "evidence": []
+    },
+    {
+      "id": "repair-inspection",
+      "name": "Inspect corrected excerpts",
+      "object": "solution",
+      "status": "executed",
+      "command": null,
+      "outcome": "passed",
+      "reason": null,
+      "evidence": [
+        {
+          "snapshot_id": "example-after",
+          "artifact_version": "examples-v2",
+          "location": "examples/artifacts-v2.txt:2",
+          "observation": "The corrected comment reads: add the terms."
+        }
+      ]
+    }
+  ]
+}

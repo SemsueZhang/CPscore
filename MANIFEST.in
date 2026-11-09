@@ -1,0 +1,15 @@
+include README.md pyproject.toml MANIFEST.in .gitignore Dockerfile.runner
+recursive-include cpscore/schemas *.json
+recursive-include skills *.md
+recursive-include docs *.md
+recursive-include scripts *.py
+recursive-include fixtures *
+recursive-include examples *.json *.md *.txt
+recursive-include tests *.py
+recursive-include tests/integration_evidence *.json *.jsonl *.md *.txt
+recursive-include .github *.yml *.yaml
+prune build
+prune dist
+prune reports
+prune .cpscore
+global-exclude __pycache__ *.py[cod] .DS_Store
