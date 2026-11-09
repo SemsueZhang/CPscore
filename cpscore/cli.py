@@ -74,7 +74,7 @@ def build_parser(*, extensions: bool = True) -> argparse.ArgumentParser:
     schema.add_argument("--output", "-o", default="-")
     schema.set_defaults(func=_schema)
     if extensions:
-        for module_name in ("cpscore.harness", "cpscore.validation"):
+        for module_name in ("cpscore.harness", "cpscore.validation", "cpscore.novelty_evidence"):
             try:
                 module = importlib.import_module(module_name)
             except ModuleNotFoundError as exc:

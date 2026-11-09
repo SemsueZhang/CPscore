@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0",
+  "review_id": "p17832-statement-review",
+  "snapshot": {
+    "id": "p17832-direction-review-2",
+    "revision": 2,
+    "supersedes": "p17832-user-text-1"
+  },
+  "scope": [
+    "statement"
+  ],
+  "objects": {
+    "statement": {
+      "review_status": "reviewed",
+      "artifact_version": "user-message:P17832-subway:2026-11-09:verbatim-scope",
+      "findings": [
+        {
+          "id": "statement-direction-1",
+          "root_cause_id": "unspecified-train-direction",
+          "severity": "fatal",
+          "status": "suspected",
+          "title": "线路运行方向未明示，存在影响答案的潜在解释分歧",
+          "description": "题面仅说线路依次经过所列站点，没有明确乘车可双向或仅按列举顺序。“往返耗时相同”明确修饰步行通道，不能直接移用于列车。双向是自然的地铁解释，给定样例结合连通性也支持该意图，因此不把单向解释与双向解释同等合理视作已证实事实，不直接扣Fatal。合法见证说明一旦允许不同方向解释，连通性本身不足以保证同一答案。",
+          "evidence": [
+            {
+              "snapshot_id": "p17832-direction-review-2",
+              "artifact_version": "user-message:P17832-subway:2026-11-09:verbatim-scope",
+              "location": "题目描述第二段“编号依次为a_{i,1},...,a_{i,k_i}”；第三段“任意两个地铁站…互相到达”",
+              "observation": "方向见证输入见direction-witness.in。两条线站序为1,2与2,1，w均为1，第一条线t均为1，第二条线t均为10，询问2到1。两种方向解释都满足互相可达及所有数据约束。双向乘坐第一条线的答案为1+1+1+1=4；若只按各线列举方向行驶，则从2到1必须利用第二条线，答案为1+10+10+1=22。"
+            }
+          ],
+          "reproduction": {
+            "steps": [
+              "读取direction-witness.in，核验n=2,m=2,d=2,q=1，站内线路数为2，线路内站点互异且所有费用为正。",
+              "双向解释：在站2进入第一条线，反向乘至站1。每次出行至少有两个w和两个t，本方案达到下界4。",
+              "单向解释：第一条线仅1到2，第二条线仅2到1，整个有向站点网络仍强连通。任何2到1出行必须使用第二条线，至少支付两端t=10及两端w=1，直接乘坐达到22。",
+              "该见证证明方向规定会影响答案，并不单独证明日常地铁语境下单向读法与双向读法同等合理。"
+            ],
+            "expected": "方向规则应由题面或明确适用的题目约定决定。若每线均可双向乘坐，答案4。",
+            "actual": "未找到显式方向规则；只按列举顺序乘坐的另一种形式化会得到22。"
+          },
+          "repair": {
+            "suggestion": "在介绍地铁线路后补充：“每条地铁线路均可双向乘坐，小R可以沿任意方向乘坐同一条线路，到达该线路上的任意车站。”",
+            "auto_fixable": false,
+            "status": "proposed",
+            "patch": null,
+            "verification": [
+              "确认双向运行是题目的预期规则，再核对正式发布题面是否已有适用说明。若已明确消除方向歧义，可将该疑点标记resolved。"
+            ]
+          }
+        }
+      ]
+    },
+    "solution": {
+      "review_status": "not_reviewed",
+      "artifact_version": "v1",
+      "findings": []
+    },
+    "editorial": {
+      "review_status": "not_reviewed",
+      "artifact_version": "v1",
+      "findings": []
+    }
+  },
+  "validations": [
+    {
+      "id": "definition",
+      "name": "问题定义与目标函数的语义审查",
+      "object": "statement",
+      "status": "executed",
+      "command": null,
+      "outcome": "inconclusive",
+      "reason": null,
+      "evidence": [
+        {
+          "snapshot_id": "p17832-direction-review-2",
+          "artifact_version": "user-message:P17832-subway:2026-11-09:verbatim-scope",
+          "location": "题目描述第1至5段",
+          "observation": "复核未修改的用户题面：步行通道往返及目标函数明确，但列车能否沿每条线路双向乘坐未显式说明。依次经过可以描述无向站序，也可能被读为行驶方向。地铁日常语境及给定样例支持双向意图，但此前据此断言完全无实质歧义过强。需确认方向规则。"
+        }
+      ]
+    },
+    {
+      "id": "format-bounds",
+      "name": "输入输出、变量、约束及边界审查",
+      "object": "statement",
+      "status": "executed",
+      "command": null,
+      "outcome": "passed",
+      "reason": null,
+      "evidence": [
+        {
+          "snapshot_id": "p17832-direction-review-2",
+          "artifact_version": "user-message:P17832-subway:2026-11-09:verbatim-scope",
+          "location": "输入格式；输出格式；数据范围的全部条目",
+          "observation": "五个首行整数的说明与随后更严格的正下界不矛盾。每线路1+2k_i个数及q组查询的行号一致。站号、线路内互异、每站线路数上界、连通性、所有时间为正均已限定。x_r≠y_r排除了原地出行语义问题。d是上界而非实际最大度，样例中的d=20合法。文件输入输出要求明确。"
+        }
+      ]
+    },
+    {
+      "id": "sample-1",
+      "name": "样例1的合法性与最优值手算",
+      "object": "statement",
+      "status": "executed",
+      "command": null,
+      "outcome": "passed",
+      "reason": null,
+      "evidence": [
+        {
+          "snapshot_id": "p17832-direction-review-2",
+          "artifact_version": "user-message:P17832-subway:2026-11-09:verbatim-scope",
+          "location": "输入输出样例#1；样例1解释",
+          "observation": "在每条地铁线路均可双向乘坐的预期解释下，重新核对：两线仅在站2相交，换乘步行费7+3=10。1到3必须从线路1转至线路2，最低为w1+t11+10+t22+w3=4+5+10+4+9=32。1到2留在线路1的步行时间4+5+7+1=17；改在线路2离站必须在站2支付额外正的换乘/站台费用，不能更优。站序、次数、权值及解释均与输入一致。"
+        }
+      ]
+    },
+    {
+      "id": "sample-2",
+      "name": "样例2的合法性与最优值手算",
+      "object": "statement",
+      "status": "executed",
+      "command": null,
+      "outcome": "passed",
+      "reason": null,
+      "evidence": [
+        {
+          "snapshot_id": "p17832-direction-review-2",
+          "artifact_version": "user-message:P17832-subway:2026-11-09:verbatim-scope",
+          "location": "输入输出样例#2；样例2解释",
+          "observation": "在每条地铁线路均可双向乘坐的预期解释下，重新核对：在线路图中，1—2唯一公共站2的换乘费用5+6=11，2—3唯一公共站3的费用1+2=3，1—3唯一公共站5的费用100+100=200。因此线路1到3的最短换乘费为14。站1到6只能由线路1进、线路3出，最低8+4+14+7+2=35。站2至3的进出站费为3+6=9，四种起终线路选择的站台及换乘费用分别为17、21、7、11，最低9+7=16。结果与输出、解释均相符。"
+        }
+      ]
+    },
+    {
+      "id": "subtasks",
+      "name": "分测试点表与特殊性质的一致性审查",
+      "object": "statement",
+      "status": "executed",
+      "command": null,
+      "outcome": "passed",
+      "reason": null,
+      "evidence": [
+        {
+          "snapshot_id": "p17832-direction-review-2",
+          "artifact_version": "user-message:P17832-subway:2026-11-09:verbatim-scope",
+          "location": "数据范围中的::cute-table{tuack}表；特殊性质A、B",
+          "observation": "按题面声明的tuack合并单元格语法，将^理解为承接同列上方单元格。1至25号测试点无遗漏或重叠，数值上界不超过总范围。A明确为每线至多2站，B明确为全局统一正整数T，量词与下标范围完整。没有把格式源标记本身当成题目错误。"
+        }
+      ]
+    },
+    {
+      "id": "attachments",
+      "name": "外部样例3至7文件核验",
+      "object": "statement",
+      "status": "unexecuted",
+      "command": null,
+      "outcome": null,
+      "reason": "用户消息仅给出subway/3.in至7.in及对应.ans的引用，未提供文件内容。本轮不验证这些文件的输出或是否满足所指测试点约束，也不因附件未粘贴而扣分。",
+      "evidence": []
+    },
+    {
+      "id": "rendering",
+      "name": "原平台表格实际渲染检查",
+      "object": "statement",
+      "status": "unexecuted",
+      "command": null,
+      "outcome": null,
+      "reason": "本轮审核所粘贴题面源文本，未打开原平台，不能确认tuack标记在发布环境中的实际渲染。未发现由此成立的严重疑点。",
+      "evidence": []
+    },
+    {
+      "id": "official-data",
+      "name": "官方来源及完整测试数据核验",
+      "object": "statement",
+      "status": "unexecuted",
+      "command": null,
+      "outcome": null,
+      "reason": "标题含“官方数据”不构成已检查数据的证据。本轮未获取或核验完整数据、原平台版本、时空限制、标程或题解，这些不属于本次题面文本评分的已验证范围。",
+      "evidence": []
+    },
+    {
+      "id": "direction-witness",
+      "name": "两个方向解释下的合法性及答案差异手算",
+      "object": "statement",
+      "status": "executed",
+      "command": null,
+      "outcome": "inconclusive",
+      "reason": null,
+      "evidence": [
+        {
+          "snapshot_id": "p17832-direction-review-2",
+          "artifact_version": "user-message:P17832-subway:2026-11-09:verbatim-scope",
+          "location": "题目描述第二、三段；本轮构造direction-witness.in",
+          "observation": "已手算确认见证在双向解释下为4、在按序单向解释下为22，且均满足连通性。未执行候选程序。给定原样例的线路在单向解释下并不强连通，因此原样例提示双向意图，但不能将这种反推等同于明确的运行规则。疑点是否达到确认Fatal仍待语义裁定。"
+        }
+      ]
+    }
+  ]
+}

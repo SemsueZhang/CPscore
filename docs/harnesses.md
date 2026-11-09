@@ -9,7 +9,7 @@
 | `opencode-deepseek` | OpenCode，模型由用户选择 DeepSeek | `.opencode/skills/<name>/SKILL.md` | `@cp-statement-review`，或要求 agent 按 ID 加载 |
 | `deepseek` | 未指定 Harness，仅模型/API | **不支持** | 返回 unsupported，不创建 `.deepseek` 目录 |
 
-表中的技能名均可换为 `cp-solution-review`、`cp-editorial-review`。共三个原始技能，适配器只将它们部署到各宿主目录，共享协议与评分运行时在每个项目中仅一份。不要把另外一个 Harness 的模型提供商名称当作新的技能目录标准。
+表中的技能名均可换为 `cp-solution-review`、`cp-editorial-review`或`cp-novelty-review`。共四个技能，适配器将它们部署到各宿主目录，共享运行时在每个项目中仅一份。正确性协议与新颖度手册分别按需读取，不把新颖度加入正确性10分制。不要把另外一个 Harness 的模型提供商名称当作新的技能目录标准。
 
 ## 安装与移除
 
@@ -24,7 +24,7 @@ python3 -m cpscore reinstall --project /absolute/path/to/problem --harness codex
 python3 -m cpscore uninstall --project /absolute/path/to/problem --harness codex
 ```
 
-`--harness` 可重复，省略时选择 all。重装使用同一安装逻辑，补回丢失的受管文件并更新未被修改的安装。安装时会复制完整共享包到 `.cpscore/runtime/cpscore/`，协议到 `.cpscore/protocol.md`，所有权与 SHA256 到 `.cpscore/manifest.json`。每个技能仅有本体与指向项目共享包的薄入口 `scripts/cpscore.py`，入口按自身路径定位，因此项目整体移动后仍可运行。入口不产生字节码缓存，正常运行后可卸载并重装。
+`--harness` 可重复，省略时选择 all。重装使用同一安装逻辑，补回丢失的受管文件并更新未被修改的安装。安装时会复制完整共享包到 `.cpscore/runtime/cpscore/`，协议到 `.cpscore/protocol.md`，新颖度手册到`.cpscore/novelty.md`，所有权与 SHA256 到 `.cpscore/manifest.json`。每个技能仅有本体与指向项目共享包的薄入口 `scripts/cpscore.py`，入口按自身路径定位，因此项目整体移动后仍可运行。入口不产生字节码缓存，正常运行后可卸载并重装。格式2记录四技能安装，格式1的旧三技能安装可检查、卸载或重装升级，仍须通过原文件修改与所有权保护。
 
 安装前预检全部目标。已有他人同名技能目录、无受管 manifest 的 `.cpscore`、受管文件已修改、内部符号链接、非法 manifest 路径均拒绝操作，不提供强制覆盖。若受管文件被修改，请先保存个人改动，再与原安装版本核对和恢复，随后重装或卸载。外部用户文件不会被删除。多个目标共存时，只卸载一个会保留其他目标及共享包，最后一个目标卸载后才删除未修改的共享受管文件。
 

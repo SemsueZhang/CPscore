@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-09",
+  "kind": "bounded_behavioral_calibration",
+  "agent_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "context": "Fresh independent subagent received only current skills, protocol, six materials and task instructions; no expected case labels or scores were supplied. The protocol itself includes the previously agreed subway convention example, so case A checks application of that rule, not held-out generalization.",
+  "candidate_execution": false,
+  "paths_normalized": "Temporary absolute material paths replaced by materials/; original material bytes and artifact hashes retained.",
+  "source_sha256": {
+    "docs/protocol.md": "e65f4aafa8b33d943dc0c2f55da8e0ebb689c9e13b5d78a30d9d270b58db8789",
+    "skills/cp-statement-review/SKILL.md": "07a4301723c0b5471bfe48795f1c8d071b03aeeaad225981d35e6bfb9f823ac8",
+    "skills/cp-solution-review/SKILL.md": "81de7a9f71d183ddea6b51f229da0686bf79aefc5cc9060a73bb3e1537aab6de",
+    "skills/cp-editorial-review/SKILL.md": "9c023319e6c5623453abf7e8bfd0e4db5da242e4e7657d8b8297e4fa6dc9f226"
+  },
+  "results": [
+    {
+      "case": "A",
+      "object": "statement",
+      "score": 9,
+      "status": "pass",
+      "root_causes": [
+        {
+          "severity": "minor",
+          "status": "confirmed",
+          "title": "未明示地铁线路可双向乘坐"
+        }
+      ]
+    },
+    {
+      "case": "B",
+      "object": "statement",
+      "score": 10,
+      "status": "pass",
+      "root_causes": []
+    },
+    {
+      "case": "C",
+      "object": "solution",
+      "score": 0,
+      "status": "fail",
+      "root_causes": [
+        {
+          "severity": "fatal",
+          "status": "confirmed",
+          "title": "求和切片排除了最后一个输入数"
+        }
+      ]
+    },
+    {
+      "case": "D",
+      "object": "solution",
+      "score": 10,
+      "status": "pass",
+      "root_causes": []
+    },
+    {
+      "case": "E",
+      "object": "editorial",
+      "score": 10,
+      "status": "pass",
+      "root_causes": []
+    },
+    {
+      "case": "F",
+      "object": "editorial",
+      "score": 0,
+      "status": "fail",
+      "root_causes": [
+        {
+          "severity": "fatal",
+          "status": "confirmed",
+          "title": "最大面值优先贪心不保证最少硬币数"
+        }
+      ]
+    }
+  ],
+  "limits": "Single reviewer and six constructed materials; no before/after baseline, no accuracy or false-positive/false-negative rate estimate. Shared code validates records and computes scores, not mathematical truth."
+}

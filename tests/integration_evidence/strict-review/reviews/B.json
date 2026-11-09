@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "review_id": "strict-B",
+  "snapshot": {
+    "id": "strict-B-v1",
+    "revision": 1,
+    "supersedes": null
+  },
+  "scope": [
+    "statement"
+  ],
+  "objects": {
+    "statement": {
+      "review_status": "reviewed",
+      "artifact_version": "sha256:5ca82cf071a0831e515c843f7b6553d32e6766d3e4b80b72f6e8c9062e2003bb",
+      "findings": []
+    },
+    "solution": {
+      "review_status": "not_reviewed",
+      "artifact_version": "v1",
+      "findings": []
+    },
+    "editorial": {
+      "review_status": "not_reviewed",
+      "artifact_version": "v1",
+      "findings": []
+    }
+  },
+  "validations": [
+    {
+      "id": "B-math",
+      "name": "完整求和题面核验",
+      "object": "statement",
+      "status": "executed",
+      "command": null,
+      "outcome": "passed",
+      "reason": null,
+      "evidence": [
+        {
+          "snapshot_id": "strict-B-v1",
+          "artifact_version": "sha256:5ca82cf071a0831e515c843f7b6553d32e6766d3e4b80b72f6e8c9062e2003bb",
+          "location": "materials/B.md:1",
+          "observation": "已读取B.md第1至8行。输入为两个范围明确的整数，输出为其唯一确定的整数和，标准输入输出规则完整。"
+        },
+        {
+          "snapshot_id": "strict-B-v1",
+          "artifact_version": "sha256:5ca82cf071a0831e515c843f7b6553d32e6766d3e4b80b72f6e8c9062e2003bb",
+          "location": "materials/B.md:1",
+          "observation": "a+b范围为[-2000000000,2000000000]，允许负数、零及两端点，不引入未规定的取模或精度语义。"
+        },
+        {
+          "snapshot_id": "strict-B-v1",
+          "artifact_version": "sha256:5ca82cf071a0831e515c843f7b6553d32e6766d3e4b80b72f6e8c9062e2003bb",
+          "location": "materials/B.md:1",
+          "observation": "样例-3+8=5，和所给输出一致。未确认缺陷，不以此声称机器验证了完全正确性。"
+        }
+      ]
+    }
+  ]
+}

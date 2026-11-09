@@ -1,8 +1,17 @@
 # CPscore
 
-CPscore 用于算法竞赛题的证据式审查。项目提供恰好三个 Agent Skills：`cp-statement-review` 审查题面，`cp-solution-review` 审查程序，`cp-editorial-review` 审查题解。它们可以独立工作，也可读取题面、程序与题解进行交叉核验。
+CPscore 用于算法竞赛题的证据式审查。项目提供四个 Agent Skills：
 
-模型分析问题并填写结构化证据，共享 Python 代码校验记录、按根因去重、计算分数并生成报告。数学推导优先，极小反例和有限测试辅助。项目不评文风、主观难度或原创性，也不会把测试通过当作正确性证明。
+| 技能 | 职责与输出 |
+| --- | --- |
+| `cp-statement-review` | 题面正确性审查，参与证据式10分制 |
+| `cp-solution-review` | 程序正确性审查，参与证据式10分制 |
+| `cp-editorial-review` | 题解正确性审查，参与证据式10分制 |
+| `cp-novelty-review` | 相似题与论文检索、方法对照，独立给出A–E（含C+）新颖度初判 |
+
+各技能可以独立工作。前三项也可读取题面、程序与题解交叉核验；新颖度最终判断由用户裁决。
+
+正确性审查中，模型填写结构化证据，共享 Python 代码校验、按根因去重、计算分数并生成报告。数学推导优先，极小反例和有限测试辅助；不按文风、主观难度或原创性扣分，也不把测试通过当作正确性证明。新颖度由独立技能依据实际检索及原文比较判断，不混入正确性分数。
 
 ## 快速开始
 
@@ -24,7 +33,7 @@ python3 -m cpscore validate scored.json --scored
 
 需要在任意目录使用命令时，可在虚拟环境执行 `python3 -m pip install -e .`，随后使用 `cpscore` 或 `python3 -m cpscore`。技能部署请保留完整源码，普通 wheel 未携带源码资源时只支持核心评分与报告，安装技能会明确报错。
 
-## 安装三个技能
+## 安装四个技能
 
 从本仓库运行，为已有目标项目部署：
 
@@ -47,7 +56,30 @@ python3 -m cpscore uninstall --project /absolute/path/to/problem --harness codex
 
 安装后只有一份 `.cpscore` 共享运行时与协议，各技能用自身目录的 `scripts/cpscore.py` 调用。不依赖原仓库绝对路径，整个目标项目移动后仍可运行。安装器用 manifest 与 SHA256 记录自己管理的文件，拒绝覆盖他人同名技能、拒绝安装内部符号链接，遇到用户改动会报错并保留文件。卸载一个目标不影响其他目标，最后一个才移除共享受管文件。
 
+新安装使用manifest格式2，重装可把旧格式1的三技能安装升级为四技能；已有受管文件被修改时仍拒绝覆盖。`check`会列出各宿主实际安装的技能。新颖度手册以`.cpscore/novelty.md`共享，只在需要参数或排错时读取。
+
 `check` 分别报告文件是否安装完整、CLI 是否出现在 PATH、真实 Harness 调用是否验证。文件检查成功不代表模型已经加载技能，也不代表 CLI 已登录。安装与 check 都不会调用模型 API 或花费额度。
+
+## 新颖度审查
+
+在已安装技能的项目中调用，例如：
+
+```text
+$cp-novelty-review 评审 statement.md 与 editorial.md 的新颖度，按当前题来源和评审时点检索先例，保存 novelty.md 及证据附件。
+```
+
+常规只加载技能正文。CPRet、arXiv和来源缓存由随包工具或宿主等价工具提供，普通网页补搜由宿主提供；未完成的覆盖如实记录。A为原题，B为做法可套用，C为想法类似且仍需新思考，C+表示虽属C但各项推导十分自然，推荐用于正式比赛，D为本轮未发现实质先例的新题，E还需有具体的正面质量依据。检索未完成时可待定，不宣称全球原创。
+
+源码工具入口示例：
+
+```sh
+python3 -m cpscore novelty --help
+python3 -m cpscore novelty search cpret --query-file model-query.txt --output searches/cpret.json
+python3 -m cpscore novelty search arxiv --query-file paper-query.txt --output searches/arxiv.json
+python3 -m cpscore novelty inspect --record searches/cpret.json --ids <索引中的ID>
+```
+
+安装后将`python3 -m cpscore`替换为该技能目录的`python3 <技能目录>/scripts/cpscore.py`。工具保存全量候选，先返回索引，再按需展开链接、摘要和正文片段，支持缓存与实际usage汇总；工具本身不调用模型或自动生成A–E（含C+）。详见[新颖度手册](docs/novelty.md)及[本次迁移验证](docs/novelty-migration.md)。
 
 ## 评分和报告
 

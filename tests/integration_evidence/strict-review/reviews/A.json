@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "review_id": "strict-A",
+  "snapshot": {
+    "id": "strict-A-v1",
+    "revision": 1,
+    "supersedes": null
+  },
+  "scope": [
+    "statement"
+  ],
+  "objects": {
+    "statement": {
+      "review_status": "reviewed",
+      "artifact_version": "sha256:0ae18779b1497681aae29565de14eab4ed0e77aa23a735678f799957ceca7916",
+      "findings": [
+        {
+          "id": "A-F1",
+          "root_cause_id": "A-root-1",
+          "severity": "minor",
+          "status": "confirmed",
+          "title": "未明示地铁线路可双向乘坐",
+          "description": "正文给出了线路依次经过的站序，但没有明示可从任一相邻站向两个方向乘车。乘车方向决定线路站台间的可达关系和答案。地铁的强领域惯例以及样例足以合理确定双向意图，因此这是需补写的局部规则缺漏，而非无法合理确定题意的致命歧义。",
+          "evidence": [
+            {
+              "snapshot_id": "strict-A-v1",
+              "artifact_version": "sha256:0ae18779b1497681aae29565de14eab4ed0e77aa23a735678f799957ceca7916",
+              "location": "materials/A.md:2",
+              "observation": "“每条线路依次经过给定的 k 个互异站点”未声明可沿两个方向乘坐。"
+            },
+            {
+              "snapshot_id": "strict-A-v1",
+              "artifact_version": "sha256:0ae18779b1497681aae29565de14eab4ed0e77aa23a735678f799957ceca7916",
+              "location": "materials/A.md:7",
+              "observation": "样例从站2到站1。第一条线路按1、2列出，站台步行时间均为1；答案4隐含可以反向乘坐第一条线路。"
+            }
+          ],
+          "reproduction": {
+            "steps": [
+              "阅读第2行站序及第3行最小步行目标，检查是否有线路乘车方向规则。",
+              "手算样例：允许双向时，乘第一条线路从2至1，步行1+1+1+1=4。",
+              "若将列出的站序仅视为单向，第一条线路不能从2至1，只能乘第二条线路，步行1+10+10+1=22。",
+              "结合地铁惯例及样例输出4，裁定双向意图可合理确定，但正文必要规则未明示。"
+            ],
+            "expected": "正文明确规定每条线路可沿给定站序的两个方向乘坐，使乘车可达关系可直接据定义建立。",
+            "actual": "正文未规定方向，需要借助领域惯例与样例补全；样例本身与双向语义一致。"
+          },
+          "repair": {
+            "suggestion": "补写“每条地铁线路均可双向乘坐”。",
+            "auto_fixable": false,
+            "status": "proposed",
+            "patch": null,
+            "verification": [
+              "修复未实施。应针对修订材料重新核验并建立新版本报告。"
+            ]
+          }
+        }
+      ]
+    },
+    "solution": {
+      "review_status": "not_reviewed",
+      "artifact_version": "v1",
+      "findings": []
+    },
+    "editorial": {
+      "review_status": "not_reviewed",
+      "artifact_version": "v1",
+      "findings": []
+    }
+  },
+  "validations": [
+    {
+      "id": "A-math",
+      "name": "完整题面语义和样例手算核验",
+      "object": "statement",
+      "status": "executed",
+      "command": null,
+      "outcome": "passed",
+      "reason": null,
+      "evidence": [
+        {
+          "snapshot_id": "strict-A-v1",
+          "artifact_version": "sha256:0ae18779b1497681aae29565de14eab4ed0e77aa23a735678f799957ceca7916",
+          "location": "materials/A.md:1",
+          "observation": "已读取A.md第1至11行，核验定义、输入输出、范围和样例；未使用额外题意来源。"
+        },
+        {
+          "snapshot_id": "strict-A-v1",
+          "artifact_version": "sha256:0ae18779b1497681aae29565de14eab4ed0e77aa23a735678f799957ceca7916",
+          "location": "materials/A.md:1",
+          "observation": "方向缺漏见A-F1。线路内站点互异、换乘走站厅、步行往返同耗时均有明示。"
+        },
+        {
+          "snapshot_id": "strict-A-v1",
+          "artifact_version": "sha256:0ae18779b1497681aae29565de14eab4ed0e77aa23a735678f799957ceca7916",
+          "location": "materials/A.md:1",
+          "observation": "x!=y、正步行时间及任意两站地铁连通保证合法输入有有限整数最优值；k=1的线路不破坏其他连通线路。"
+        },
+        {
+          "snapshot_id": "strict-A-v1",
+          "artifact_version": "sha256:0ae18779b1497681aae29565de14eab4ed0e77aa23a735678f799957ceca7916",
+          "location": "materials/A.md:1",
+          "observation": "双向意图下样例走第一条线路为4，进出站各1、两端站台步行各1，且正费用下不能更小。"
+        },
+        {
+          "snapshot_id": "strict-A-v1",
+          "artifact_version": "sha256:0ae18779b1497681aae29565de14eab4ed0e77aa23a735678f799957ceca7916",
+          "location": "materials/A.md:1",
+          "observation": "本轮未确认其他应扣分问题；这是语义审核与手算，不是整份题面的机器证明。"
+        }
+      ]
+    }
+  ]
+}

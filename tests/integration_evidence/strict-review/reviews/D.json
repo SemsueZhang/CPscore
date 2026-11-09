@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0",
+  "review_id": "strict-D",
+  "snapshot": {
+    "id": "strict-D-v1",
+    "revision": 1,
+    "supersedes": null
+  },
+  "scope": [
+    "solution"
+  ],
+  "objects": {
+    "statement": {
+      "review_status": "not_reviewed",
+      "artifact_version": "v1",
+      "findings": []
+    },
+    "solution": {
+      "review_status": "reviewed",
+      "artifact_version": "sha256:594f833de0d25d9a04e9e2aa3d6b230ce52443e949a51c448504edbe7a147cce",
+      "findings": []
+    },
+    "editorial": {
+      "review_status": "not_reviewed",
+      "artifact_version": "v1",
+      "findings": []
+    }
+  },
+  "validations": [
+    {
+      "id": "D-math",
+      "name": "完整程序静态语义与边界核验",
+      "object": "solution",
+      "status": "executed",
+      "command": null,
+      "outcome": "passed",
+      "reason": null,
+      "evidence": [
+        {
+          "snapshot_id": "strict-D-v1",
+          "artifact_version": "sha256:594f833de0d25d9a04e9e2aa3d6b230ce52443e949a51c448504edbe7a147cce",
+          "location": "materials/D.md:1",
+          "observation": "已读取D.md第1至7行完整规格和Python3程序。合法输入恰好包含n+1个整数，v[0]=n，v[1:]恰为a_1至a_n。"
+        },
+        {
+          "snapshot_id": "strict-D-v1",
+          "artifact_version": "sha256:594f833de0d25d9a04e9e2aa3d6b230ce52443e949a51c448504edbe7a147cce",
+          "location": "materials/D.md:1",
+          "observation": "sum(v[1:])因此按定义给出全部n个数的和，Python整数可精确容纳绝对值不超过10^14的结果。"
+        },
+        {
+          "snapshot_id": "strict-D-v1",
+          "artifact_version": "sha256:594f833de0d25d9a04e9e2aa3d6b230ce52443e949a51c448504edbe7a147cce",
+          "location": "materials/D.md:1",
+          "observation": "n=1时切片仅含唯一待求和数；全零、全负、正负混合均由同一等式覆盖。忽略n变量本身不违背合法输入规格。"
+        },
+        {
+          "snapshot_id": "strict-D-v1",
+          "artifact_version": "sha256:594f833de0d25d9a04e9e2aa3d6b230ce52443e949a51c448504edbe7a147cce",
+          "location": "materials/D.md:1",
+          "observation": "解析、切片及求和为O(n)时间、O(n)空间。n至多100000，整数位数受范围约束；没有目标机计时或内存实测。"
+        },
+        {
+          "snapshot_id": "strict-D-v1",
+          "artifact_version": "sha256:594f833de0d25d9a04e9e2aa3d6b230ce52443e949a51c448504edbe7a147cce",
+          "location": "materials/D.md:1",
+          "observation": "本轮未确认缺陷，静态审核不等于程序执行测试或整体验证的机器证明。"
+        }
+      ]
+    },
+    {
+      "id": "D-no-execution",
+      "name": "待审程序执行与资源实测",
+      "object": "solution",
+      "status": "unexecuted",
+      "command": null,
+      "outcome": null,
+      "reason": "本次试验明确禁止运行任何待审程序。仅完成静态语义、数学手算及渐近复杂度审查；未尝试容器、宿主执行或性能测量。",
+      "evidence": []
+    }
+  ]
+}
