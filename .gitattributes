@@ -1,0 +1,3 @@
+# Evidence hashes must survive checkout on Windows as well as Unix.
+* text=auto eol=lf
+*.zip binary
