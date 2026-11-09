@@ -55,7 +55,7 @@ python3 -m cpscore check --project /absolute/path/to/problem --harness codex
 $cp-solution-review 审查 statement.md 与 solution.cpp，保存 review.json 并生成 review.md。
 ```
 
-安装路径、各宿主调用、重装卸载和保护规则见[Harness 手册](docs/harnesses.md)。文件安装、CLI 在 PATH、真实模型加载是三层独立验证。真实调用脚本为 `python3 scripts/harness_smoke.py --help`，结果以实际留存记录为准。2026-11-10 本机验收：Codex 三个正确性技能均完成真实调用，Claude Code、OpenCode 因 CLI 缺失未验证。Docker 守护进程不可用，容器集成未执行。
+安装路径、各宿主调用、重装卸载和保护规则见[Harness 手册](docs/harnesses.md)。文件安装、CLI 在 PATH、真实模型加载是三层独立验证。真实调用脚本为 `python3 scripts/harness_smoke.py --help`，结果以实际留存记录为准。2026-11-10 本机验收：Codex 三个正确性技能均完成真实调用，Claude Code、OpenCode 因 CLI 缺失未验证。本机 Docker 守护进程不可用，另在 Linux GitHub Runner [完成了 5 项真实容器集成](https://github.com/SemsueZhang/CPscore/actions/runs/42662136100/job/129316155407)。
 
 ## 工具与验证边界
 
