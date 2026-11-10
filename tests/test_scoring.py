@@ -25,6 +25,8 @@ def finding(identifier="f1", root="root1", severity="minor", status="confirmed",
         "reproduction": {"steps": ["Run with n=1"], "expected": "1", "actual": "0"},
         "repair": {"suggestion": "Correct the boundary", "auto_fixable": True, "status": "not_attempted", "patch": None, "verification": []},
     }
+    if severity in ("major", "minor"):
+        result["impact"] = "Synthetic scoring fixture: the inconsistent boundary explanation obstructs verification; severity is supplied by the test, not a model verdict."
     if status == "suspected":
         result["evidence_gap"] = "The invariant needed to settle this defect has not been supplied."
     return result
@@ -61,6 +63,8 @@ class ScoringTests(unittest.TestCase):
                 self.assertEqual(result["overall"]["score"], expected)
                 self.assertEqual(result["overall"]["qualification"], "pass" if expected >= 6 else "fail")
                 self.assertEqual(result["overall"]["completion"], "complete")
+                self.assertEqual(result["overall"]["tier"], "excellent" if expected >= 9 else "acceptable" if expected >= 6 else "unacceptable")
+                self.assertEqual(result["overall"]["recommendable"], expected >= 9)
                 self.assertEqual(validate_scored_report(result), [])
 
     def test_fatal_and_floor(self):
@@ -145,12 +149,16 @@ class ScoringTests(unittest.TestCase):
         with self.assertRaises(ReportValidationError):
             score_report(report)
 
-    def test_conflicting_root_severity_rejected(self):
+    def test_cross_object_root_uses_highest_confirmed_local_severity(self):
         report = reviewed(("statement", "solution"))
         report["objects"]["statement"]["findings"] = [finding("s", "shared")]
-        report["objects"]["solution"]["findings"] = [finding("c", "shared", "fatal")]
-        with self.assertRaises(ReportValidationError):
-            score_report(report)
+        report["objects"]["solution"]["findings"] = [finding("c", "shared", "major")]
+        result = score_report(report)
+        self.assertEqual(result["objects"]["statement"]["score"], 9)
+        self.assertEqual(result["objects"]["solution"]["score"], 7)
+        self.assertEqual(result["overall"]["score"], 7)
+        self.assertEqual(result["overall"]["confirmed_counts"], {"fatal": 0, "major": 1, "minor": 0})
+        self.assertEqual([state["severity"] for state in result["root_causes"][0]["local_states"]], ["minor", "major"])
 
     def test_partial_repair_preserves_unfixed_object_failure(self):
         report = reviewed(("statement", "solution", "editorial"))
@@ -245,13 +253,94 @@ class ScoringTests(unittest.TestCase):
             changed = deepcopy(output)
             changed["overall"]["score"] = value
             self.assertTrue(validate_scored_report(changed))
-        for field, value in (("qualification", "fail"), ("completion", "incomplete")):
+        for field, value in (("qualification", "fail"), ("completion", "incomplete"), ("tier", "acceptable"), ("recommendable", False), ("confirmed_counts", {"fatal": 0, "major": 1, "minor": 0})):
             changed = deepcopy(output)
             changed["overall"][field] = value
             self.assertTrue(validate_scored_report(changed))
         changed = deepcopy(output)
         changed["overall"]["qualified"] = True
         self.assertTrue(validate_scored_report(changed))
+
+    def test_three_level_formula_combinations_and_confirmed_counts(self):
+        for severities, score in ((["major"], 7), (["major", "minor"], 6),
+                                  (["major", "major"], 4), (["major", "minor", "minor"], 5),
+                                  (["fatal", "minor", "minor"], 0)):
+            for complete in (True, False):
+                with self.subTest(severities=severities, complete=complete):
+                    report = reviewed() if complete else make_report(("solution",))
+                    report["objects"]["solution"]["findings"] = [finding(f"f{i}", f"r{i}", severity) for i, severity in enumerate(severities)]
+                    result = score_report(report)["overall"]
+                    self.assertEqual(result["score"], score)
+                    self.assertEqual(result["confirmed_counts"], {s: severities.count(s) for s in ("fatal", "major", "minor")})
+                    self.assertEqual(result["tier"], "unacceptable" if score < 6 else "acceptable" if complete else "undetermined")
+                    self.assertEqual(result["recommendable"], False if score < 6 or complete else None)
+
+    def test_high_provisional_score_never_recommends(self):
+        report = reviewed()
+        report["objects"]["solution"]["coverage"]["implementation"] = {"status": "unchecked", "evidence": [], "reason": None}
+        for severity in (None, "minor", "major", "fatal"):
+            for status in ("confirmed", "suspected"):
+                report["objects"]["solution"]["findings"] = [] if severity is None else [finding(severity=severity, status=status)]
+                result = score_report(report)["overall"]
+                if severity == "fatal" and status == "confirmed":
+                    self.assertEqual((result["tier"], result["recommendable"]), ("unacceptable", False))
+                else:
+                    self.assertEqual((result["tier"], result["recommendable"]), ("undetermined", None))
+
+    def test_mixed_states_never_hide_suspected_fatal_or_inflate_penalty(self):
+        for suspected_object in ("statement", "solution"):
+            report = reviewed(("statement", "solution", "editorial"))
+            confirmed_object = "solution" if suspected_object == "statement" else "statement"
+            report["objects"][suspected_object]["findings"] = [finding("sus", "shared", "fatal", "suspected")]
+            report["objects"][confirmed_object]["findings"] = [finding("con", "shared", "minor")]
+            report["objects"]["editorial"]["findings"] = [finding("res", "shared", "major", "resolved")]
+            result = score_report(report)
+            self.assertEqual(result["overall"]["score"], 9)
+            self.assertEqual(result["overall"]["pending_finding_ids"], ["sus"])
+            self.assertEqual((result["overall"]["tier"], result["overall"]["recommendable"]), ("undetermined", None))
+            self.assertEqual(result["root_causes"][0]["severity"], "minor")
+            self.assertEqual(result["root_causes"][0]["status"], "confirmed")
+            self.assertEqual(validate_scored_report(result), [])
+            # Once the only confirmed occurrence is repaired, the suspected
+            # Fatal controls the aggregate status but still does not deduct.
+            report["objects"][confirmed_object]["findings"][0]["status"] = "resolved"
+            result = score_report(report)
+            self.assertEqual((result["overall"]["score"], result["root_causes"][0]["severity"], result["root_causes"][0]["status"]), (10, "fatal", "suspected"))
+
+    def test_partial_repair_recalculates_severity_then_restores_recommendation(self):
+        report = reviewed(("statement", "editorial"))
+        report["objects"]["statement"]["findings"] = [finding("s", "shared", "minor")]
+        report["objects"]["editorial"]["findings"] = [finding("e", "shared", "major")]
+        self.assertEqual(score_report(report)["overall"]["score"], 7)
+        for obj, expected in (("editorial", 9), ("statement", 10)):
+            previous = report["snapshot"]["id"]
+            revision = report["snapshot"]["revision"] + 1
+            report["snapshot"] = {"id": f"snapshot-{revision}", "revision": revision, "supersedes": previous}
+            report["objects"][obj]["artifact_version"] = f"v{revision}"
+            # A new snapshot cannot blindly reuse any preceding evidence.
+            with self.assertRaises(ReportValidationError):
+                score_report(report)
+            for name in report["scope"]:
+                check_coverage(report, name)
+                for issue in report["objects"][name]["findings"]:
+                    issue["evidence"] = [evidence(snapshot=report["snapshot"]["id"], version=report["objects"][name]["artifact_version"], observation="Current snapshot verification of the local state.")]
+            issue = report["objects"][obj]["findings"][0]
+            issue["status"] = "resolved"
+            issue["repair"].update(status="applied", verification=["Verified the correction on the new artifact."])
+            result = score_report(report)["overall"]
+            self.assertEqual(result["score"], expected)
+            self.assertEqual((result["tier"], result["recommendable"]), ("excellent", True))
+
+    def test_duplicate_occurrences_use_maximum_not_sum_and_are_order_independent(self):
+        report = reviewed()
+        issues = [finding("m", "shared", "minor"), finding("M", "shared", "major")]
+        report["objects"]["solution"]["findings"] = issues
+        first = score_report(report)
+        report["objects"]["solution"]["findings"] = list(reversed(issues))
+        second = score_report(report)
+        self.assertEqual(first["overall"], second["overall"])
+        self.assertEqual(first["root_causes"], second["root_causes"])
+        self.assertEqual(first["overall"]["score"], 7)
 
 
 if __name__ == "__main__":

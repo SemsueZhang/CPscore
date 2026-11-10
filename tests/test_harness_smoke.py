@@ -55,7 +55,7 @@ class HarnessSmokeControllerTests(unittest.TestCase):
     def test_rescores_raw_review_and_records_command_and_protection(self):
         code, result, count = self.run_controller()
         self.assertEqual((code, count, result["status"]), (0, 1, "invoked_and_validated"))
-        self.assertEqual(result["assessment"], {"score":None,"qualification":"undetermined","completion":"incomplete"})
+        self.assertEqual(result["assessment"], {"score":None,"tier":"undetermined","recommendable":None,"qualification":"undetermined","completion":"incomplete"})
         self.assertEqual(result["ai_accuracy"], "not_established")
         self.assertEqual(result["command"][0], "/stub/codex")
         self.assertIn(MANIFEST, result["protected_files"])

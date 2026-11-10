@@ -1,0 +1,685 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "2.0"
+    },
+    "review_id": {
+      "$ref": "#/$defs/identifier"
+    },
+    "snapshot": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "supersedes": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/identifier"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "supersedes"
+      ],
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "statement",
+          "solution",
+          "editorial"
+        ]
+      }
+    },
+    "objects": {
+      "type": "object",
+      "properties": {
+        "statement": {
+          "type": "object",
+          "properties": {
+            "artifact_version": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "coverage": {
+              "type": "object",
+              "properties": {
+                "definition": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "io": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "constraints": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "boundaries": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "samples": {
+                  "$ref": "#/$defs/coverage_entry"
+                }
+              },
+              "required": [
+                "definition",
+                "io",
+                "constraints",
+                "boundaries",
+                "samples"
+              ],
+              "additionalProperties": false
+            },
+            "findings": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/finding"
+              }
+            }
+          },
+          "required": [
+            "artifact_version",
+            "coverage",
+            "findings"
+          ],
+          "additionalProperties": false
+        },
+        "solution": {
+          "type": "object",
+          "properties": {
+            "artifact_version": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "coverage": {
+              "type": "object",
+              "properties": {
+                "algorithm": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "correctness": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "complexity": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "implementation": {
+                  "$ref": "#/$defs/coverage_entry"
+                }
+              },
+              "required": [
+                "algorithm",
+                "correctness",
+                "complexity",
+                "implementation"
+              ],
+              "additionalProperties": false
+            },
+            "findings": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/finding"
+              }
+            }
+          },
+          "required": [
+            "artifact_version",
+            "coverage",
+            "findings"
+          ],
+          "additionalProperties": false
+        },
+        "editorial": {
+          "type": "object",
+          "properties": {
+            "artifact_version": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "coverage": {
+              "type": "object",
+              "properties": {
+                "claims": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "reasoning": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "proof": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "complexity": {
+                  "$ref": "#/$defs/coverage_entry"
+                }
+              },
+              "required": [
+                "claims",
+                "reasoning",
+                "proof",
+                "complexity"
+              ],
+              "additionalProperties": false
+            },
+            "findings": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/finding"
+              }
+            }
+          },
+          "required": [
+            "artifact_version",
+            "coverage",
+            "findings"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "statement",
+        "solution",
+        "editorial"
+      ],
+      "additionalProperties": false
+    },
+    "validations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/validation"
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "review_id",
+    "snapshot",
+    "scope",
+    "objects",
+    "validations"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpscore.local/schemas/v2/report.schema.json",
+  "title": "CPScore review input 2.0",
+  "$comment": "Structural constraints include coverage, rubric, and execution/repair requirements. validate_report additionally checks snapshot/version bindings, unique IDs, scope membership, snapshot ancestry, root severity consistency and same-object root status consistency.",
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"
+    },
+    "nonempty": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "snapshot_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "artifact_version": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "location": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "observation": {
+          "$ref": "#/$defs/nonempty"
+        }
+      },
+      "required": [
+        "snapshot_id",
+        "artifact_version",
+        "location",
+        "observation"
+      ],
+      "additionalProperties": false
+    },
+    "coverage_entry": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "unchecked",
+            "checked",
+            "blocked",
+            "not_applicable"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/nonempty"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "evidence",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "checked",
+                  "not_applicable"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "blocked",
+                  "not_applicable"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "reason": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "unchecked"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "evidence": {
+                "maxItems": 0
+              },
+              "reason": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "finding": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "root_cause_id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "rule_id": {
+          "enum": [
+            "incorrect_sample",
+            "wrong_answer",
+            "invalid_algorithm",
+            "invalid_proof",
+            "ambiguous_answer",
+            "incomplete_explanation",
+            "local_presentation",
+            "other"
+          ]
+        },
+        "severity": {
+          "enum": [
+            "fatal",
+            "minor"
+          ]
+        },
+        "status": {
+          "enum": [
+            "confirmed",
+            "suspected",
+            "resolved"
+          ]
+        },
+        "title": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "description": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "reproduction": {
+          "type": "object",
+          "properties": {
+            "steps": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/nonempty"
+              }
+            },
+            "expected": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "actual": {
+              "$ref": "#/$defs/nonempty"
+            }
+          },
+          "required": [
+            "steps",
+            "expected",
+            "actual"
+          ],
+          "additionalProperties": false
+        },
+        "repair": {
+          "type": "object",
+          "properties": {
+            "suggestion": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "auto_fixable": {
+              "type": "boolean"
+            },
+            "status": {
+              "enum": [
+                "not_attempted",
+                "proposed",
+                "applied",
+                "blocked"
+              ]
+            },
+            "patch": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/nonempty"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "verification": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          },
+          "required": [
+            "suggestion",
+            "auto_fixable",
+            "status",
+            "patch",
+            "verification"
+          ],
+          "additionalProperties": false
+        },
+        "evidence_gap": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/nonempty"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "root_cause_id",
+        "rule_id",
+        "severity",
+        "status",
+        "title",
+        "description",
+        "evidence",
+        "reproduction",
+        "repair"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "rule_id": {
+                "enum": [
+                  "incorrect_sample",
+                  "wrong_answer",
+                  "invalid_algorithm",
+                  "invalid_proof",
+                  "ambiguous_answer"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "severity": {
+                "const": "fatal"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "rule_id": {
+                "enum": [
+                  "incomplete_explanation",
+                  "local_presentation"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "severity": {
+                "const": "minor"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "repair": {
+                "properties": {
+                  "status": {
+                    "const": "applied"
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status": {
+                "const": "resolved"
+              },
+              "repair": {
+                "properties": {
+                  "verification": {
+                    "minItems": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "suspected"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "evidence_gap"
+            ],
+            "properties": {
+              "evidence_gap": {
+                "$ref": "#/$defs/nonempty"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/identifier"
+        },
+        "name": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "object": {
+          "enum": [
+            "statement",
+            "solution",
+            "editorial"
+          ]
+        },
+        "status": {
+          "enum": [
+            "executed",
+            "unexecuted"
+          ]
+        },
+        "command": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/nonempty"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "outcome": {
+          "enum": [
+            "passed",
+            "failed",
+            "inconclusive",
+            null
+          ]
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/nonempty"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "object",
+        "status",
+        "command",
+        "outcome",
+        "reason",
+        "evidence"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "executed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "outcome": {
+                "enum": [
+                  "passed",
+                  "failed",
+                  "inconclusive"
+                ]
+              },
+              "reason": {
+                "type": "null"
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "outcome": {
+                "type": "null"
+              },
+              "reason": {
+                "$ref": "#/$defs/nonempty"
+              },
+              "evidence": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

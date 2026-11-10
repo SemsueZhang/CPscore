@@ -7,7 +7,7 @@ import unittest
 import zipfile
 
 from cpscore.migration import migrate_document, migrate_file
-from cpscore.schema import ReportValidationError, validate_report
+from cpscore.schema import ReportValidationError, load_schema, validate_schema, validate_report
 from cpscore.scoring import score_report
 
 LEGACY = Path(__file__).parent / "history/v1-codex-statement.json"
@@ -33,7 +33,7 @@ class MigrationTests(unittest.TestCase):
         new = migrate_document(old)
         f = deepcopy(old["objects"]["statement"]["findings"][0])
         f.update(severity="fatal", rule_id="incorrect_sample")
-        f["description"] = "v2 human re-adjudication: the formal output 4 contradicts 1+2=3; ease of repair does not reduce severity."
+        f["description"] = "v3 human re-adjudication: the formal output 4 contradicts 1+2=3; ease of repair does not reduce severity."
         for e in f["evidence"]:
             e["snapshot_id"] = new["snapshot"]["id"]
         new["objects"]["statement"]["findings"].append(f)
@@ -87,9 +87,13 @@ class MigrationTests(unittest.TestCase):
 
     def test_reject_bad_version_and_malformed_old_input(self):
         with self.assertRaises(ValueError):
-            migrate_document({"schema_version": "2.0"})
+            migrate_document({"schema_version": "3.0"})
         with self.assertRaises(ReportValidationError):
             migrate_document({"schema_version": "1.0"})
+        with self.assertRaises(ReportValidationError):
+            migrate_document({"schema_version": "2.0"})
+        with self.assertRaises(ValueError):
+            migrate_document({"schema_version": "2.0", "review": {"schema_version": "1.0"}})
 
     def test_old_scored_wrapper_is_imported_without_authenticating_old_scores(self):
         old = json.loads(LEGACY.read_text(encoding="utf-8"))
@@ -99,8 +103,8 @@ class MigrationTests(unittest.TestCase):
 
 
 class ArchivedInvocationTests(unittest.TestCase):
-    def test_archived_real_outputs_are_intact_and_still_score_consistently(self):
-        """Replay saved evidence only; this unit test does not call a model."""
+    def test_archived_real_outputs_are_intact_and_require_fresh_v3_review(self):
+        """Preserve saved evidence and judgments; never rewrite v2 as v3."""
         with zipfile.ZipFile(LEGACY.parent / "codex-v2.zip") as archive:
             index = json.loads(archive.read("index.json"))
             self.assertEqual(set(index["runs"]), {"statement", "solution", "editorial"})
@@ -115,12 +119,38 @@ class ArchivedInvocationTests(unittest.TestCase):
                 self.assertEqual(run["status"], "invoked_and_validated")
                 self.assertEqual(run["exit_code"], 0)
                 self.assertEqual(report["scope"], [name])
-                self.assertEqual(validate_report(report), [])
-                result = score_report(report)["overall"]
-                for key, expected in record["human_verdict"].items():
-                    self.assertEqual(result[key], expected)
+                self.assertEqual(validate_schema(report, load_schema("report-v2")), [])
+                self.assertTrue(validate_report(report))
+                with self.assertRaises(ReportValidationError):
+                    score_report(report)
+                before = deepcopy(report)
+                result = score_report(migrate_document(report))["overall"]
+                self.assertEqual(report, before)
+                self.assertEqual(result["tier"], "undetermined")
+                self.assertIsNone(result["recommendable"])
+                self.assertIsNone(result["score"])
                 for material in run["materials"]:
                     self.assertEqual(hashlib.sha256(read(material["file"])).hexdigest(), material["sha256"])
+
+    def test_v2_raw_and_scored_sources_preserved_byte_for_byte(self):
+        with zipfile.ZipFile(LEGACY.parent / "codex-v2.zip") as archive:
+            index = json.loads(archive.read("index.json"))
+            raw = archive.read(index["runs"]["editorial"]["files"]["review.json"]["archive_path"])
+        old = json.loads(raw)
+        for version in (raw, json.dumps({"schema_version": "2.0", "review": old,
+                                        "overall": {"score": 10, "qualification": "pass"}}, ensure_ascii=False).encode()):
+            with tempfile.TemporaryDirectory() as tmp:
+                source, destination = Path(tmp) / "old.json", Path(tmp) / "new.json"
+                source.write_bytes(version)
+                meta = migrate_file(str(source), str(destination))
+                self.assertEqual(source.read_bytes(), version)
+                self.assertEqual(Path(str(destination) + ".legacy.json").read_bytes(), version)
+                self.assertEqual((meta["source_protocol"], meta["target_protocol"]), ("2.0", "3.0"))
+                new = json.loads(destination.read_text())
+                self.assertEqual(new["snapshot"]["supersedes"], old["snapshot"]["id"])
+                self.assertEqual(new["snapshot"]["revision"], old["snapshot"]["revision"] + 1)
+                self.assertTrue(all(not item["findings"] for item in new["objects"].values()))
+                self.assertEqual(score_report(new)["overall"]["tier"], "undetermined")
 
 
 if __name__ == "__main__":

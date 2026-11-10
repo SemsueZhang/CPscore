@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from cpscore.harness import HARNESSES, MANIFEST, install
 from cpscore.schema import loads_json, validate_report
 from cpscore.scoring import score_report
+from cpscore.rubric import SCHEMA_VERSION
 
 
 def _write_json_new(path, value):
@@ -134,7 +135,7 @@ def main(argv=None):
     skill = f"cp-{args.skill}-review"
     prompt = (f"Use the installed {skill} Skill. Read its SKILL.md and shared protocol. "
               f"Review material-0-{materials[0][0]} as {args.skill}; other material-* files are context only. "
-              f"Write protocol 2.0 input to review.json with scope [{args.skill!r}], actual category-specific "
+              f"Write protocol {SCHEMA_VERSION} input to review.json with scope [{args.skill!r}], actual category-specific "
               "coverage evidence, findings and unexecuted checks where applicable. Use the installed deterministic "
               "CLI to validate and score to scored.json. Do not edit the supplied materials or installed tools, "
               "schemas, protocol, skills or manifest. Do not create run.json or verified-scored.json; the "
@@ -178,7 +179,7 @@ def main(argv=None):
             return finish("invalid_output", "Review scope differs from the requested skill", 2)
         scored = score_report(report)
         _write_json_new(project / "verified-scored.json", scored)
-        metadata["assessment"] = {k: scored["overall"][k] for k in ("score", "qualification", "completion")}
+        metadata["assessment"] = {k: scored["overall"][k] for k in ("score", "tier", "recommendable", "qualification", "completion")}
     except (ValueError, OSError) as exc:
         return finish("invalid_output", str(exc), 2)
     return finish("invoked_and_validated", "Real CLI returned a structurally valid report, independently rescored; accuracy requires human adjudication", 0)

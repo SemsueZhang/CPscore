@@ -9,7 +9,15 @@ CPscore 是算法竞赛题的打分智能体，提供四个可独立调用的技
 | `cp-editorial-review` | 题解断言、推理、证明和复杂度 |
 | `cp-novelty-review` | 检索相似题与论文，给出 A、B、C、C+、D、F 等级，以合适度和质量作为 C→C+、D→F 的重要判据 |
 
-前三项采用 10 分制，由智能体填写核验记录，再由 Python 工具去重、算分并生成报告。每个已确认的 Fatal 根因扣 10 分，Minor 扣 1 分，最低 0 分。同根因只扣一次，总分按根因合并计算。新颖度单独评级。
+前三项采用统一 10 分制，由智能体填写证据，再由 Python 工具按独立根因去重算分。Fatal 扣 10 分、Major 扣 3 分、Minor 扣 1 分，最低 0 分。同根因跨对象按当前已确认的最高严重程度扣一次。疑点不扣分，修复后需重新核验。新颖度独立评级。
+
+| 分数 | 质量档次 | 含义 |
+| --- | --- | --- |
+| 9～10 | excellent（优秀） | 审核完成且无未决 Fatal 时值得推荐 |
+| 6～8 | acceptable（尚可） | 基本合格，值得打磨 |
+| 0～5 | unacceptable（不合格） | 累计缺陷严重影响交付 |
+
+未完成审核或有未决 Fatal，且确认扣分不足以判不合格时，档次为 undetermined，不能按暂定高分推荐。证明缺漏按重要性判 Major/Minor，只有算法或核心结论被证伪等致命问题才判 Fatal。
 
 ## 审查流程与交付
 
@@ -17,7 +25,7 @@ CPscore 是算法竞赛题的打分智能体，提供四个可独立调用的技
 
 | 审查部分 | 交付结果 |
 | --- | --- |
-| 题面、程序、题解 | `review.json` 核验记录、工具生成的 `scored.json` 和 `review.md`，包含分数、合格判定、覆盖完成度及问题证据 |
+| 题面、程序、题解 | `review.json` 核验记录、工具生成的 `scored.json` 和 `review.md`，包含分数、质量档次、合格/推荐判定、覆盖完成度及问题证据 |
 | 新颖度、合适度与质量 | `novelty.md` 和检索证据附件，包含等级、先例比较、合适度与质量结论、升级或不升级的依据 |
 
 判 C 要指明先例替代的非平凡关键步骤，仅共享通用工具不降级。没有核实到实质先例时，以 D 为基础关系。合适度与质量均通过时，C→C+、D→F，两者采用同一套质量标准。局部证明错误先尝试修复并核对替代解法，分别评价证明、算法和题目。新颖度报告逐题按“结论—题目分析（先例比较、质量分析）—判据来源”组织，直接给出判断和具体理由，材料版本简记一次，不默认制作哈希清单。具体判据与写作要求见[新颖度手册](docs/novelty.md)。
@@ -58,7 +66,7 @@ python3 -m cpscore score review.json --format json --output scored.json
 python3 -m cpscore validate scored.json --scored
 ```
 
-新建报告的分数为 `null`。结果分别给出分数、覆盖完成度 `completion` 和合格判定 `qualification`。旧版报告使用 `python3 -m cpscore migrate old.json -o new.json` 迁移后重新核验。
+新建报告的分数为 `null`。结果给出 `score`、`tier`、`recommendable`、`qualification`、`completion` 及去重的 Fatal/Major/Minor 计数。协议已升至 3.0（包版本 0.3.0），旧 1.0/2.0 报告不能直接重算。使用 `python3 -m cpscore migrate old.json -o new.json` 迁移后重新核验。命令会原样归档旧报告并创建待复核快照，保留历史结论，详见[迁移说明](docs/protocol.md#旧报告迁移)。
 
 ## 使用文档
 

@@ -1,4 +1,4 @@
-"""Conservative v1 import: preserve evidence, never invent v2 coverage."""
+"""Conservative v1/v2 import: archive the source and require v3 reassessment."""
 from __future__ import annotations
 
 import hashlib
@@ -8,6 +8,7 @@ from typing import Any
 
 from .schema import OBJECTS, ReportValidationError, load_schema, loads_json, require_valid_report, validate_schema
 from .scoring import make_report
+from .rubric import SCHEMA_VERSION
 
 
 def migrate_document(document: Any) -> dict[str, Any]:
@@ -15,14 +16,17 @@ def migrate_document(document: Any) -> dict[str, Any]:
 
     Old derived scores are archived, not authenticated or reinterpreted.
     """
-    if not isinstance(document, dict) or document.get("schema_version") != "1.0":
-        raise ValueError("migration requires an explicit protocol 1.0 document")
+    if not isinstance(document, dict) or document.get("schema_version") not in ("1.0", "2.0"):
+        raise ValueError("migration requires an explicit protocol 1.0 or 2.0 document")
+    version = document["schema_version"]
     old = document.get("review", document)
-    issues = validate_schema(old, load_schema("legacy-report"))
+    if not isinstance(old, dict) or old.get("schema_version") != version:
+        raise ValueError("wrapper and review protocol versions must match")
+    issues = validate_schema(old, load_schema("legacy-report" if version == "1.0" else "report-v2"))
     if issues:
         raise ReportValidationError(issues)
     report = make_report(old["scope"], review_id=old["review_id"],
-                         snapshot_id=old["snapshot"]["id"] + "-v2")
+                         snapshot_id=old["snapshot"]["id"] + "-v3")
     report["snapshot"].update(revision=old["snapshot"]["revision"] + 1,
                               supersedes=old["snapshot"]["id"])
     for name in OBJECTS:
@@ -30,7 +34,7 @@ def migrate_document(document: Any) -> dict[str, Any]:
         if name not in old["scope"]:
             continue
         for item in report["objects"][name]["coverage"].values():
-            item.update(status="blocked", reason="Legacy v1 review requires reassessment under v2 coverage and severity rules; consult the preserved legacy source.")
+            item.update(status="blocked", reason=f"Protocol {version} review requires reassessment under v3 quality and severity rules; consult the preserved legacy source.")
     require_valid_report(report)
     return report
 
@@ -42,7 +46,7 @@ def migrate_file(source: str, destination: str) -> dict[str, Any]:
     old = loads_json(raw.decode("utf-8"))
     report = migrate_document(old)
     metadata = {
-        "migration_version": "1.0", "source_protocol": "1.0", "target_protocol": "2.0",
+        "migration_version": "2.0", "source_protocol": old["schema_version"], "target_protocol": SCHEMA_VERSION,
         "source_path": str(src.resolve()), "source_sha256": hashlib.sha256(raw).hexdigest(),
         "legacy_snapshot": old.get("review", old)["snapshot"],
         "legacy_archive": dst.name + ".legacy.json", "requires_reassessment": True,

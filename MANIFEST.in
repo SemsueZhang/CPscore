@@ -9,5 +9,6 @@ recursive-include .github *.yml *.yaml
 prune build
 prune dist
 prune reports
+prune outputs
 prune .cpscore
 global-exclude __pycache__ *.py[cod] .DS_Store

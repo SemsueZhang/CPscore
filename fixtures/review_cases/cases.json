@@ -1,6 +1,6 @@
 {
-  "fixture_version": "1.0",
-  "protocol_version": "2.0",
+  "fixture_version": "2.0",
+  "protocol_version": "3.0",
   "sources": {
     "P1083": {
       "kind": "human_authored_derivative",
@@ -22,6 +22,20 @@
       "url": "https://www.luogu.com.cn/problem/P5020",
       "verified_on": "2026-11-10",
       "context": "context/p5020.md"
+    },
+    "P5020-runtime": {
+      "kind": "human_authored_derivative",
+      "source_problem": "P5020",
+      "url": "https://www.luogu.com.cn/problem/P5020",
+      "verified_on": "2026-11-10",
+      "context": "context/p5020_runtime.md"
+    },
+    "P17832-tree": {
+      "kind": "human_authored_derivative",
+      "source_problem": "P17832",
+      "url": "https://www.luogu.com.cn/problem/P17832",
+      "verified_on": "2026-11-10",
+      "context": "context/p17832_tree.md"
     }
   },
   "coverage_templates": {
@@ -72,7 +86,9 @@
         "score": 10,
         "qualification": "pass",
         "completion": "complete",
-        "finding": null
+        "finding": null,
+        "tier": "excellent",
+        "recommendable": true
       },
       "source": "P1083",
       "coverage_template": "statement_p1083"
@@ -104,7 +120,9 @@
             "actual": "0"
           },
           "repair_suggestion": "Replace the sample output with -1 and1 on separate lines."
-        }
+        },
+        "tier": "unacceptable",
+        "recommendable": false
       },
       "source": "P1083",
       "coverage_template": "statement_p1083"
@@ -135,8 +153,11 @@
             "expected": "State that each listed line supports travel in both directions.",
             "actual": "The direction rule is implicit in metro convention and the reverse example."
           },
-          "repair_suggestion": "Explicitly state that each listed line can be ridden in both directions."
-        }
+          "repair_suggestion": "Explicitly state that each listed line can be ridden in both directions.",
+          "impact": "The missing explicit two-way statement is a necessary clarification. Conventional metro service, mutual reachability and the reverse sample establish intent, so the omission is minor."
+        },
+        "tier": "excellent",
+        "recommendable": true
       },
       "source": "P17832",
       "coverage_template": "statement_p17832"
@@ -153,7 +174,9 @@
         "score": 10,
         "qualification": "pass",
         "completion": "complete",
-        "finding": null
+        "finding": null,
+        "tier": "excellent",
+        "recommendable": true
       },
       "source": "P5020",
       "coverage_template": "statement_p5020"
@@ -170,7 +193,9 @@
         "score": 10,
         "qualification": "pass",
         "completion": "complete",
-        "finding": null
+        "finding": null,
+        "tier": "excellent",
+        "recommendable": true
       },
       "source": "P5020",
       "coverage_template": "solution_p5020"
@@ -203,7 +228,9 @@
             "actual": "3"
           },
           "repair_suggestion": "Replace divisibility checks with reachability under unlimited kept coins."
-        }
+        },
+        "tier": "unacceptable",
+        "recommendable": false
       },
       "source": "P5020",
       "coverage_template": "solution_p5020",
@@ -240,8 +267,11 @@
             "expected": "The comment says amount zero is reachable initially.",
             "actual": "The comment says amount zero is initially unreachable."
           },
-          "repair_suggestion": "Correct the comment to say amount zero is reachable by using no coins."
-        }
+          "repair_suggestion": "Correct the comment to say amount zero is reachable by using no coins.",
+          "impact": "The false invariant comment contradicts the actual initialization and impedes local verification, while the executable algorithm remains correct."
+        },
+        "tier": "excellent",
+        "recommendable": true
       },
       "source": "P5020",
       "coverage_template": "solution_p5020",
@@ -261,7 +291,9 @@
         "score": 10,
         "qualification": "pass",
         "completion": "complete",
-        "finding": null
+        "finding": null,
+        "tier": "excellent",
+        "recommendable": true
       },
       "source": "P5020",
       "coverage_template": "solution_p5020"
@@ -278,7 +310,9 @@
         "score": 10,
         "qualification": "pass",
         "completion": "complete",
-        "finding": null
+        "finding": null,
+        "tier": "excellent",
+        "recommendable": true
       },
       "source": "P5020",
       "coverage_template": "editorial_p5020"
@@ -296,7 +330,7 @@
         "qualification": "fail",
         "completion": "complete",
         "finding": {
-          "rule_id": "invalid_proof",
+          "rule_id": "invalid_algorithm",
           "severity": "fatal",
           "status": "confirmed",
           "quote": "因此原系统和只含面额 g 的系统表示完全相同的非负金额。",
@@ -311,7 +345,9 @@
             "actual": "The editorial claims the answer is 1."
           },
           "repair_suggestion": "Use sorted complete-knapsack reachability and prove every retained denomination is mandatory."
-        }
+        },
+        "tier": "unacceptable",
+        "recommendable": false
       },
       "source": "P5020",
       "coverage_template": "editorial_p5020",
@@ -324,18 +360,18 @@
     {
       "id": "editorial_minor",
       "object": "editorial",
-      "category": "minor",
+      "category": "major",
       "artifact": "artifacts/editorial_minor.md",
       "artifact_sha256": "a4b71de0cb02120f683d3648502945375ba879feea8df09e6a49f912de35d396",
       "adjudication": {
         "kind": "human_authored_expectation",
-        "rationale": "The algorithm and feasibility argument are correct. The nontrivial optimality argument is absent, rather than replaced with a false proof, so the fixed incomplete_explanation rule is minor.",
-        "score": 9,
+        "rationale": "The greedy algorithm is correct by irreducible-denomination substitution, but the text omits the essential optimality lower bound against arbitrary equivalent systems. Feasibility alone is insufficient; this is a Major explanation gap, not an algorithm error.",
+        "score": 7,
         "qualification": "pass",
         "completion": "complete",
         "finding": {
           "rule_id": "incomplete_explanation",
-          "severity": "minor",
+          "severity": "major",
           "status": "confirmed",
           "quote": "这里未说明为何一个允许采用原系统以外面额的新系统也不可能用更少面额。",
           "observation": "Feasibility alone does not justify minimum cardinality. The reader must supply the problem-specific argument that every retained coin is mandatory even in arbitrary equivalent systems.",
@@ -347,8 +383,11 @@
             "expected": "Prove a lower bound covering all equivalent positive-denomination systems.",
             "actual": "Only equivalence of the chosen subset is justified; optimality is asserted without that lower bound."
           },
-          "repair_suggestion": "Add the substitution contradiction proving each irreducible retained denomination occurs in every equivalent system."
-        }
+          "repair_suggestion": "Add the substitution contradiction proving each irreducible retained denomination occurs in every equivalent system.",
+          "impact": "The greedy algorithm is correct by irreducible-denomination substitution, but the text omits the essential optimality lower bound against arbitrary equivalent systems. Feasibility alone is insufficient; this is a Major explanation gap, not an algorithm error."
+        },
+        "tier": "acceptable",
+        "recommendable": false
       },
       "source": "P5020",
       "coverage_template": "editorial_p5020",
@@ -368,10 +407,171 @@
         "score": 10,
         "qualification": "pass",
         "completion": "complete",
-        "finding": null
+        "finding": null,
+        "tier": "excellent",
+        "recommendable": true
       },
       "source": "P5020",
       "coverage_template": "editorial_p5020"
+    },
+    {
+      "id": "statement_major",
+      "object": "statement",
+      "category": "major",
+      "artifact": "artifacts/statement_major.md",
+      "artifact_sha256": "0aaa6b85cdbfa30460c796b2069b63cfec7a467d842c9a69d37baea02e3caddd",
+      "adjudication": {
+        "kind": "human_authored_expectation",
+        "rationale": "Direction is central to legal travel. Explicitly permitting one-way lines with no direction field forces the reader to prove, using both the tree constraint and all-ordered-pairs reachability, that every line must actually be bidirectional. The missing rule requires a problem-specific bridge-cut argument, not a preference for prose over formulas. The graph has unique semantics after that argument, so it is Major rather than Fatal.",
+        "score": 7,
+        "qualification": "pass",
+        "completion": "complete",
+        "finding": {
+          "rule_id": "incomplete_explanation",
+          "severity": "major",
+          "status": "confirmed",
+          "quote": "线路允许单向或双向运行，方向固定，但输入不提供方向字段。",
+          "observation": "The input has no direction field even though one-way service is explicitly allowed. Every tree edge is a bridge: deleting it separates A and B. The all-ordered-pairs reachability guarantee requires crossing that sole connection in both directions, so each line is forced to be bidirectional. Without this nontrivial inference, readers cannot determine which journeys are legal. State the central direction rule directly.",
+          "reproduction": {
+            "steps": [
+              "Remove any tree edge to split the station graph into A and B.",
+              "Reachability from every A station to every B station requires this edge in one direction; reverse reachability requires the reverse direction.",
+              "Conclude that all lines must be bidirectional despite the statement explicitly allowing one-way lines and not providing directions.",
+              "Compute the sample reverse journey cost 3+7+6+5+4+1=26."
+            ],
+            "expected": "The central travel rule explicitly says all lines are bidirectional.",
+            "actual": "The reader must prove bidirectionality from two separate global guarantees before using the input."
+          },
+          "repair_suggestion": "Replace the unexplained single/double-direction allowance with an explicit bidirectional rule, consistent with both guarantees.",
+          "impact": "Direction is central to legal travel. Explicitly permitting one-way lines with no direction field forces the reader to prove, using both the tree constraint and all-ordered-pairs reachability, that every line must actually be bidirectional. The missing rule requires a problem-specific bridge-cut argument, not a preference for prose over formulas. The graph has unique semantics after that argument, so it is Major rather than Fatal."
+        },
+        "tier": "acceptable",
+        "recommendable": false
+      },
+      "source": "P17832-tree",
+      "coverage_template": "statement_p17832",
+      "coverage_overrides": {
+        "definition": "Directions are not encoded despite explicit permission for one-way service. A tree bridge-cut argument and all-ordered-pairs reachability uniquely force bidirectional service.",
+        "io": "The header and per-line endpoint/time pairs are complete except for the unexplained missing direction field; the two guarantees logically determine it.",
+        "constraints": "The undirected line graph is a tree with n=m-1, k=2, m<=10 and positive costs. All ordered station pairs must be reachable.",
+        "boundaries": "For each bridge both cut directions must be traversable, forcing both directions independently of the input endpoint order.",
+        "samples": "The only 3->1 path has cost 3+7+6+5+4+1=26; no alternative tree path can avoid a transfer."
+      }
+    },
+    {
+      "id": "solution_major",
+      "object": "solution",
+      "category": "major",
+      "artifact": "artifacts/solution_major.py",
+      "artifact_sha256": "7fe9ec0b16fab817db1ee58d5a5dbfcd21c1524c6c0f416f544b48a64f358138",
+      "adjudication": {
+        "kind": "human_authored_expectation",
+        "rationale": "The sorted complete-knapsack algorithm is unchanged and correct. A fixed 10,000,001-element CPython list is indexed only through M<=100. At 8 bytes per reference, at least 79,999,200 bytes (76.29 MiB) are unused, consuming most of the 128 MiB allowance without useful work. This is an objective important resource defect, not an unverified timeout claim.",
+        "score": 7,
+        "qualification": "pass",
+        "completion": "complete",
+        "finding": {
+          "rule_id": "quality_defect",
+          "severity": "major",
+          "status": "confirmed",
+          "quote": "reachable = [False] * 10_000_001",
+          "observation": "Only slots 0..max(coins), at most 101, are accessed. At least 9,999,900 unused 8-byte references waste over 76 MiB in the specified 128 MiB CPython environment. Replacing the fixed size restores the intended O(M) workspace; no TLE or MLE is asserted.",
+          "reproduction": {
+            "steps": [
+              "Read 1<=a_i<=100 in p5020.md and 8-byte list references / 128 MiB in p5020_runtime.md.",
+              "Trace all accesses: 0, coin, value and value-coin are between 0 and M.",
+              "Compute (10,000,001-101)*8=79,999,200 unused bytes."
+            ],
+            "expected": "Allocate at most M+1<=101 references for reachability.",
+            "actual": "Allocate 10,000,001 references regardless of M, most never read or written."
+          },
+          "repair_suggestion": "Allocate [False]*(limit+1).",
+          "impact": "The sorted complete-knapsack algorithm is unchanged and correct. A fixed 10,000,001-element CPython list is indexed only through M<=100. At 8 bytes per reference, at least 79,999,200 bytes (76.29 MiB) are unused, consuming most of the 128 MiB allowance without useful work. This is an objective important resource defect, not an unverified timeout claim."
+        },
+        "tier": "acceptable",
+        "recommendable": false
+      },
+      "source": "P5020-runtime",
+      "coverage_template": "solution_p5020",
+      "coverage_overrides": {
+        "implementation": "All indices remain within 0..M. A fixed list of 10,000,001 slots wastes at least 76.29 MiB under the specified 64-bit CPython memory model.",
+        "complexity": "Useful work remains O(nM+n log n). The fixed list allocates 80,000,008 bytes of references even at M<=100. No measured limit violation is claimed."
+      }
+    },
+    {
+      "id": "editorial_proof_gap",
+      "object": "editorial",
+      "category": "major",
+      "artifact": "artifacts/editorial_proof_gap.md",
+      "artifact_sha256": "13e9676c1d53fca90664317098d91af197c5bea300cf75f7852283b7efa94d5e",
+      "adjudication": {
+        "kind": "human_authored_expectation",
+        "rationale": "The actual algorithm is sorted knapsack and admits the mandatory-denomination proof. The supplied gcd-to-equal-cardinality implication is false: equivalent systems {2,3} and {2,3,5} have different cardinalities. This breaks the core proof, not the independently valid algorithm.",
+        "score": 7,
+        "qualification": "pass",
+        "completion": "complete",
+        "finding": {
+          "rule_id": "invalid_proof",
+          "severity": "major",
+          "status": "confirmed",
+          "quote": "因此任意等价系统的面额种数也相同",
+          "observation": "Equivalent systems [2,3] and [2,3,5] generate exactly the same amounts (5=2+3) but have 2 and 3 denominations. Equal gcd does not establish cardinality. The sorted-knapsack algorithm still works because any equivalent positive system must contain each irreducible retained denomination.",
+          "reproduction": {
+            "steps": [
+              "Compare systems [2,3] and [2,3,5].",
+              "Substitute 5=2+3 to prove equivalence; compare cardinalities 2 and 3.",
+              "Independently prove: if a retained c is represented without c in an equivalent positive system, all summands are <c and expand into original coins <c, contradicting irreducibility."
+            ],
+            "expected": "Prove the lower bound by mandatory irreducible denominations.",
+            "actual": "The proof incorrectly infers equal numbers of denominations from equivalent systems."
+          },
+          "repair_suggestion": "Replace the false cardinality argument with the substitution contradiction.",
+          "impact": "The actual algorithm is sorted knapsack and admits the mandatory-denomination proof. The supplied gcd-to-equal-cardinality implication is false: equivalent systems {2,3} and {2,3,5} have different cardinalities. This breaks the core proof, not the independently valid algorithm."
+        },
+        "tier": "acceptable",
+        "recommendable": false
+      },
+      "source": "P5020",
+      "coverage_template": "editorial_p5020",
+      "coverage_overrides": {
+        "proof": "The gcd-to-equal-cardinality proof is false for [2,3] vs [2,3,5]; the actual greedy algorithm has an independent valid mandatory-denomination proof."
+      }
+    },
+    {
+      "id": "editorial_local_minor",
+      "object": "editorial",
+      "category": "minor",
+      "artifact": "artifacts/editorial_local_minor.md",
+      "artifact_sha256": "54ae36433beb5ee05dcc9b135efe4cda26dd660c49fcb5ba13422ee4f2bf7b70",
+      "adjudication": {
+        "kind": "human_authored_expectation",
+        "rationale": "The full correct optimality proof and algorithm remain present. Only a supplemental worked-example formula is wrong: 8/4=2, not 3. The local explanation needs correction but has no role in the main inference.",
+        "score": 9,
+        "qualification": "pass",
+        "completion": "complete",
+        "finding": {
+          "rule_id": "local_presentation",
+          "severity": "minor",
+          "status": "confirmed",
+          "quote": "此处计算结果为3，理由略",
+          "observation": "The worked example gives 8/4 as 3 without a valid derivation. Two coins of value 4 make 8. This local formula obscures the illustrative explanation, while the complete algorithm and optimality proof above remain valid.",
+          "reproduction": {
+            "steps": [
+              "Read the complete greedy algorithm and irreducibility proof above the supplement.",
+              "Compute 4+4=8, so the illustrative coin count is 2."
+            ],
+            "expected": "The noncritical example explains 8/4=2.",
+            "actual": "The example claims 8/4=3 and omits its calculation."
+          },
+          "repair_suggestion": "Correct the local count to 2 and show 4+4=8.",
+          "impact": "The full correct optimality proof and algorithm remain present. Only a supplemental worked-example formula is wrong: 8/4=2, not 3. The local explanation needs correction but has no role in the main inference."
+        },
+        "tier": "excellent",
+        "recommendable": true
+      },
+      "source": "P5020",
+      "coverage_template": "editorial_p5020",
+      "coverage_overrides": {}
     }
   ]
 }

@@ -14,9 +14,9 @@ class SchemaTests(unittest.TestCase):
         self.assertEqual(validate_schema(report, load_schema()), [])
         self.assertEqual(validate_scored_report(score_report(report)), [])
 
-    def test_v2_skeleton_has_fixed_unchecked_dimensions(self):
+    def test_v3_skeleton_has_fixed_unchecked_dimensions(self):
         report = make_report()
-        self.assertEqual(report["schema_version"], "2.0")
+        self.assertEqual(report["schema_version"], "3.0")
         for name, dimensions in COVERAGE_ITEMS.items():
             artifact = report["objects"][name]
             self.assertEqual(set(artifact), {"artifact_version", "coverage", "findings"})
@@ -104,8 +104,8 @@ class SchemaTests(unittest.TestCase):
             self.assertEqual(validate_report(report), [])
 
     def test_rule_id_is_required_known_and_severity_is_fixed(self):
-        fixed = {"incorrect_sample": "fatal", "wrong_answer": "fatal", "invalid_algorithm": "fatal", "invalid_proof": "fatal",
-                 "ambiguous_answer": "fatal", "incomplete_explanation": "minor", "local_presentation": "minor"}
+        fixed = {"incorrect_sample": "fatal", "wrong_answer": "fatal", "invalid_algorithm": "fatal", "invalid_proof": "major",
+                 "ambiguous_answer": "fatal", "quality_defect": "major", "local_presentation": "minor"}
         for rule, severity in fixed.items():
             report = reviewed()
             issue = finding(rule_id=rule, severity=severity)
@@ -117,7 +117,7 @@ class SchemaTests(unittest.TestCase):
             report = reviewed(); issue = finding(); mutate(issue)
             report["objects"]["solution"]["findings"] = [issue]
             self.assertTrue(validate_report(report))
-        for severity in ("fatal", "minor"):
+        for severity in ("fatal", "major", "minor"):
             report = reviewed(); report["objects"]["solution"]["findings"] = [finding(rule_id="other", severity=severity)]
             self.assertEqual(validate_report(report), [])
 
@@ -133,6 +133,25 @@ class SchemaTests(unittest.TestCase):
             self.assertTrue(validate_report(report))
         report["objects"]["solution"]["findings"][0]["evidence_gap"] = "Need the missing invariant proof to establish reachability."
         self.assertEqual(validate_report(report), [])
+
+    def test_explanation_severity_and_quality_impact_are_explicit(self):
+        for severity in ("major", "minor"):
+            report = reviewed(("editorial",))
+            issue = finding(severity=severity, rule_id="incomplete_explanation")
+            report["objects"]["editorial"]["findings"] = [issue]
+            self.assertEqual(validate_report(report), [])
+            for impact in (None, "", " "):
+                issue["impact"] = impact
+                self.assertTrue(validate_report(report))
+            issue.pop("impact")
+            self.assertTrue(validate_report(report))
+        issue["severity"] = "fatal"
+        self.assertTrue(validate_report(report))
+
+    def test_local_root_status_conflict_requires_a_coherent_current_state(self):
+        report = reviewed()
+        report["objects"]["solution"]["findings"] = [finding("f1", "shared", "major"), finding("f2", "shared", "minor", "resolved")]
+        self.assertTrue(any("conflicting local status" in i.message for i in validate_report(report)))
 
     def test_duplicate_finding_ids_across_objects(self):
         report = reviewed(("statement", "solution"))

@@ -63,7 +63,7 @@ def loads_json(text: str) -> Any:
 
 
 def load_schema(name: str = "report") -> dict[str, Any]:
-    if name not in {"report", "scored-report", "legacy-report"}:
+    if name not in {"report", "scored-report", "legacy-report", "report-v2"}:
         raise ValueError(f"unknown schema: {name}")
     return loads_json(files("cpscore").joinpath("schemas", f"{name}.schema.json").read_text(encoding="utf-8"))
 
@@ -207,7 +207,6 @@ def validate_report(report: Any) -> list[ValidationIssue]:
             error(f"{path}.artifact_version", "stale evidence: artifact version does not match current object")
 
     seen_ids: dict[str, str] = {}
-    roots: dict[str, tuple[str, str]] = {}
     for obj in OBJECTS:
         artifact = report["objects"][obj]
         path = f"$.objects.{obj}"
@@ -228,13 +227,10 @@ def validate_report(report: Any) -> list[ValidationIssue]:
             else:
                 seen_ids[identifier] = fp
             expected_severity = RULE_SEVERITIES[finding["rule_id"]]
-            if expected_severity is not None and finding["severity"] != expected_severity:
-                error(f"{fp}.severity", f"rule {finding['rule_id']!r} requires severity {expected_severity!r}")
+            allowed = (expected_severity,) if isinstance(expected_severity, str) else expected_severity
+            if allowed is not None and finding["severity"] not in allowed:
+                error(f"{fp}.severity", f"rule {finding['rule_id']!r} requires severity in {allowed!r}")
             root = finding["root_cause_id"]
-            if root in roots and finding["severity"] != roots[root][0]:
-                error(f"{fp}.root_cause_id", f"conflicting severity for root cause {root!r}, first used at {roots[root][1]}")
-            elif root not in roots:
-                roots[root] = (finding["severity"], fp)
             if root in local_roots and finding["status"] != local_roots[root][0]:
                 error(f"{fp}.root_cause_id", f"conflicting local status for root cause {root!r}, first used at {local_roots[root][1]}")
             elif root not in local_roots:

@@ -16,17 +16,18 @@ from tests.test_scoring import finding, reviewed
 @unittest.skipIf(Draft202012Validator is None, "optional QA dependency jsonschema is not installed")
 class StandardSchemaTests(unittest.TestCase):
     def test_versioned_schema_ids_and_independent_validation(self):
-        schemas = {name: load_schema(name) for name in ("report", "scored-report", "legacy-report")}
-        self.assertEqual(len({s["$id"] for s in schemas.values()}), 3)
+        schemas = {name: load_schema(name) for name in ("report", "scored-report", "legacy-report", "report-v2")}
+        self.assertEqual(len({s["$id"] for s in schemas.values()}), 4)
         registry = Registry()
         for schema in schemas.values():
             Draft202012Validator.check_schema(schema)
             registry = registry.with_resource(schema["$id"], Resource.from_contents(schema))
         reports = [make_report(), reviewed()]
         for state in ("confirmed", "suspected", "resolved"):
-            report = reviewed()
-            report["objects"]["solution"]["findings"] = [finding(status=state)]
-            reports.append(report)
+            for severity in ("fatal", "major", "minor"):
+                report = reviewed()
+                report["objects"]["solution"]["findings"] = [finding(status=state, severity=severity)]
+                reports.append(report)
         for report in reports:
             for name, value in (("report", report), ("scored-report", score_report(report))):
                 validator = Draft202012Validator(schemas[name], registry=registry)

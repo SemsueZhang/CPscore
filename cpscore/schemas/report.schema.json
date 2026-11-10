@@ -2,7 +2,7 @@
   "type": "object",
   "properties": {
     "schema_version": {
-      "const": "2.0"
+      "const": "3.0"
     },
     "review_id": {
       "$ref": "#/$defs/identifier"
@@ -211,9 +211,9 @@
   ],
   "additionalProperties": false,
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://cpscore.local/schemas/v2/report.schema.json",
-  "title": "CPScore review input 2.0",
-  "$comment": "Structural constraints include coverage, rubric, and execution/repair requirements. validate_report additionally checks snapshot/version bindings, unique IDs, scope membership, snapshot ancestry, root severity consistency and same-object root status consistency.",
+  "$id": "https://cpscore.local/schemas/v3/report.schema.json",
+  "title": "CPScore review input 3.0",
+  "$comment": "Structural constraints include coverage, rubric, impact and execution/repair requirements. validate_report additionally checks snapshot/version bindings, unique IDs, scope membership, snapshot ancestry and same-object root status consistency. Cross-object severities may differ.",
   "$defs": {
     "identifier": {
       "type": "string",
@@ -361,12 +361,14 @@
             "ambiguous_answer",
             "incomplete_explanation",
             "local_presentation",
+            "quality_defect",
             "other"
           ]
         },
         "severity": {
           "enum": [
             "fatal",
+            "major",
             "minor"
           ]
         },
@@ -466,6 +468,9 @@
               "type": "null"
             }
           ]
+        },
+        "impact": {
+          "$ref": "#/$defs/nonempty"
         }
       },
       "required": [
@@ -490,7 +495,6 @@
                   "incorrect_sample",
                   "wrong_answer",
                   "invalid_algorithm",
-                  "invalid_proof",
                   "ambiguous_answer"
                 ]
               }
@@ -509,7 +513,6 @@
             "properties": {
               "rule_id": {
                 "enum": [
-                  "incomplete_explanation",
                   "local_presentation"
                 ]
               }
@@ -567,6 +570,61 @@
                 "$ref": "#/$defs/nonempty"
               }
             }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "rule_id": {
+                "enum": [
+                  "invalid_proof",
+                  "quality_defect"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "severity": {
+                "const": "major"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "rule_id": {
+                "const": "incomplete_explanation"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "severity": {
+                "enum": [
+                  "major",
+                  "minor"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "severity": {
+                "enum": [
+                  "major",
+                  "minor"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "impact"
+            ]
           }
         }
       ]

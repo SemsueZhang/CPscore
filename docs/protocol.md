@@ -17,7 +17,7 @@ python3 -m cpscore score review.json --output review.md
 
 ## 范围、版本与核验项
 
-顶层字段为 `schema_version: "2.0"`、`review_id`、`snapshot`、`scope`、`objects`、`validations`。`scope` 选择本次打分对象，`objects` 始终保留三个对象，每个包含 `artifact_version`、`coverage`、`findings`。范围外对象的覆盖状态保持 `unchecked`，findings 为空。
+顶层字段为 `schema_version: "3.0"`、`review_id`、`snapshot`、`scope`、`objects`、`validations`。`scope` 选择本次打分对象，`objects` 始终保留三个对象，每个包含 `artifact_version`、`coverage`、`findings`。范围外对象的覆盖状态保持 `unchecked`，findings 为空。
 
 `snapshot` 包含 `id`、正整数 `revision`、`supersedes`。首轮 revision 为 1，supersedes 为 null。材料更新后换新 id、递增 revision，以 supersedes 引用上轮 id，并重新核验当前材料。`artifact_version` 推荐填写文件 SHA256，也可使用对应材料的版本标签。
 
@@ -50,20 +50,31 @@ python3 -m cpscore score review.json --output review.md
 
 以可正式交付选手使用的材料为标准核验。数学推导和语义分析优先，有限测试用于核验具体输入。文风、命名、主观难度、原创性和个人算法偏好不扣分。官方来源、已有 AC 或修复容易不改变已确认问题的分级。
 
+统一使用 Fatal（−10）、Major（−3）、Minor（−1）。No Issue（0）不写成缺陷。只有确认的真实缺陷扣分，疑点保留 suspected。Major 是有证据的重要质量缺陷，不能作为不确定时的默认等级。不得刻意凑扣分，材料优秀时允许自然获得 10 分。修复难易不决定严重程度。同一错误的多个后果不能重复计分。
+
 | rule_id | severity | 适用情况 |
 | --- | --- | --- |
-| `incorrect_sample` | fatal | 正式样例输入、输出或解释与题意矛盾，导致错误答案或非法样例 |
+| `incorrect_sample` | fatal | 正式样例输入、输出或解释有已确认的实质错误 |
 | `wrong_answer` | fatal | 合法输入上的答案错误 |
-| `invalid_algorithm` | fatal | 算法不能覆盖声明的合法输入或保证所声称结论 |
-| `invalid_proof` | fatal | 关键证明存在无效推理或被证伪断言 |
-| `ambiguous_answer` | fatal | 合理解释导致不同合法答案，或无法确定合法性 |
-| `incomplete_explanation` | minor | 可以补足但影响理解、复现或验证的必要解释缺漏 |
-| `local_presentation` | minor | 有具体影响的局部误述，核心答案与论证仍成立 |
-| `other` | 显式填写 fatal 或 minor | 说明实质影响及分级理由 |
+| `invalid_algorithm` | fatal | 核心算法或结论错误，或无法满足约束 |
+| `ambiguous_answer` | fatal | 合理解释导致不同答案，或无法确定合法性 |
+| `invalid_proof` | major | 证明有实质漏洞，但算法与结论已由独立有效论证确认成立 |
+| `incomplete_explanation` | major / minor | 缺失核心依据、非平凡观察为 Major，非关键必要说明的小缺漏为 Minor |
+| `quality_defect` | major | 已确认的重要非致命实现、性能或交付质量缺陷 |
+| `local_presentation` | minor | 确有理解/核验影响的局部误述 |
+| `other` | fatal / major / minor | 其他真实缺陷，说明具体影响及分级依据 |
 
-例如，求和题正式样例把 `1 + 2` 写成 `4`，按 Fatal 处理。上下文已唯一确定含义但缺少必要明示，按 Minor 处理。标准结论和面向目标读者的常规推导可以省略，必要论证缺漏与无效核心证明分别按 Minor、Fatal 处理。
+三个 Skill 的对象标准：
 
-finding 必填 `id`（全报告唯一）、`root_cause_id`、`rule_id`、`severity`、`status`、`title`、`description`、非空 `evidence`、`reproduction`、`repair`。
+| 对象 | Fatal | Major | Minor / No Issue |
+| --- | --- | --- | --- |
+| 题面 | 实质歧义改变答案、必要约束缺失、正式样例错误、定义重大矛盾、判定规则不明 | 核心语义唯一但重要特有规则严重缺漏，需非平凡推断或大幅整理 | 易由明确上下文/惯例补足的局部规则或符号缺漏为 Minor，故事、文风、篇幅和排版偏好不扣分 |
+| 标程 | WA、可触发且导致失败的 UB/运行错误、算法不满足约束、有充分证据的资源/环境违例 | 算法正确但有客观证据的重要可靠性、性能余量或工程缺陷，显著影响稳定运行、核验或维护 | 局部错误注释或有实际影响的非关键冗余为 Minor，代码长度、无详细注释、数据结构和风格偏好不扣分 |
+| 题解 | 核心算法被证伪、数学错误导致解法不成立、复杂度实质错误使算法无法满足要求 | 算法正确但缺核心依据/非平凡观察，证明存在可由其他有效论证修复的实质漏洞，关键转换或复杂度缺必要论证 | 非关键必要推导/公式/复杂度说明的局部问题为 Minor，标准算法/定理、常规推导、简洁完整证明和等价实现不扣分 |
+
+证明不完整不等于算法错误。先判断算法及核心结论，再分级。不能仅凭“可补证”把核心证明缺失降为 Minor，也不能把所有证明问题判 Fatal。《货币系统》缺少每个不可约面额在任意等价系统中必选的最优性依据是 Major（7 分），算法用 gcd 替代整个系统且被 [2,3] 反驳才是 Fatal（0 分）。性能问题结合数据范围、目标环境和实际证据，超时猜测保持 suspected，不因有更快算法而扣分。
+
+finding 必填 `id`（全报告唯一）、`root_cause_id`、`rule_id`、`severity`、`status`、`title`、`description`、非空 `evidence`、`reproduction`、`repair`。Major/Minor 还必须填写非空 `impact`，说明对实际理解、验证、维护或运行质量的具体影响及分级理由。不能仅重复“有缺陷”。
 
 | status | 使用条件 |
 | --- | --- |
@@ -75,27 +86,36 @@ finding 必填 `id`（全报告唯一）、`root_cause_id`、`rule_id`、`severi
 
 ## 算分与判定
 
-有核验活动的对象从 10 分开始，每个 confirmed fatal 根因扣 10 分，confirmed minor 扣 1 分，最低 0 分。suspected 和 resolved 不扣分。
+有核验活动的对象从 10 分开始，只对 confirmed 独立根因扣分：
 
-`root_cause_id` 是去重键。机制相同、同一修复能消除相关问题，且各对象均有自身证据时，才共用 ID。同根因 severity 必须一致，跨对象 status 可不同。对象按自身 confirmed 根因扣分，总评合并 scope 内的 confirmed 根因，每个只扣一次，不取平均。
+```text
+score = max(0, 10 - 10 * fatal_count - 3 * major_count - minor_count)
+```
 
-根因聚合状态按 `confirmed > suspected > resolved` 计算，同时保留各对象的 `local_states`。任一范围内对象仍为 confirmed，总评就保留该根因扣分。
+固定整数权重，无小数或自由调整。同根因不重复扣分，suspected/resolved 不扣分。1 Major + 1 Minor = 6，2 Major = 4，1 Major + 2 Minor = 5，Fatal 与任意其他缺陷合计最低 0。
 
-`completion` 由覆盖决定，`qualification` 按以下顺序计算：
+`root_cause_id` 是唯一去重键。机制相同、同一修复能消除相关问题，且各对象均有自身证据时，才共用 ID。跨对象 severity 和 status 均可不同，同一对象同根因的 status 必须一致，避免互相矛盾的修复状态。相同对象的重复观察取最高严重程度。
 
-| 条件 | qualification |
-| --- | --- |
-| 已确认扣分使分数低于 6 | `fail` |
-| 分数至少 6、覆盖完成、没有 suspected fatal | `pass` |
-| 其余情况，包括分数为 null | `undetermined` |
+对象按自身 confirmed 根因扣分，总评合并 scope 内根因，不取平均。聚合状态按 `confirmed > suspected > resolved`，严重程度只从该状态的记录中取最高级别。因此只要还有 confirmed，就按当前已确认且未修复对象的最高级别扣一次。全部修复时扣分归零，只剩疑点时不扣分。输出 `local_states` 保留各对象 severity、status、points 和证据引用。
 
-因此只确认一个 Fatal、其余尚未核验时，结果为 `0 / fail / incomplete`。覆盖完成但仍有 suspected fatal、尚无确认扣分时，结果为 `10 / undetermined / complete`。
+例如同根因在题面 confirmed Minor、题解 confirmed Major 时，对象分别为 9、7 分，总评为 7 分。题解修复并复核后总评为 9 分，全部修复后 10 分。若题解仍有 suspected Fatal，即使题面同根因 confirmed Minor，也必须保留该未决 Fatal，不能让聚合状态掩盖它。
 
-输出包含原始 `review`、各对象结果、`overall`、`root_causes`，保留扣分、证据引用、未决和已解决问题。Markdown 报告展示覆盖、问题、复现、修复与核验记录。
+`completion` 独立由覆盖决定。判定顺序如下：
+
+| 条件 | qualification | tier | recommendable |
+| --- | --- | --- | --- |
+| 已确认扣分使分数低于 6，无论覆盖和未决状态 | fail | unacceptable | false |
+| 9～10 分、覆盖完成、无任何 suspected Fatal | pass | excellent | true |
+| 6～8 分、覆盖完成、无任何 suspected Fatal | pass | acceptable | false |
+| 其他情况，包括 score=null | undetermined | undetermined | null |
+
+6 分是合格线，9 分是推荐线。6～8 分表示基本合格、值得打磨。9～10 分不要求完美，但不能有实质性质量缺陷。未完成的暂定 10 分不能称优秀。已确认缺陷累计使分数低于 6，即使审核未完成也可确认不合格。
+
+输出包含原始 `review`、各对象结果、`overall`、`root_causes`。`confirmed_counts` 按实际扣分的去重根因分级统计，不按 finding 数量计数。`pending_finding_ids` 包含每一个 suspected Fatal，`suspected_finding_ids` 包含全部疑点，`resolved_finding_ids` 保留已解决记录。Markdown 首先展示总分、质量档次、合格/推荐判定、计数，然后展示根因、证据、影响、疑点及覆盖状态。
 
 ## 交付结果
 
-交付填写后的 `review.json`、工具生成并校验的 `scored.json` 和 `review.md`。最终回复概述范围内各对象及总评的分数、`qualification`、`completion`，列出决定结果的主要问题或未决事项，并附报告链接。只有部分核验完成时如实说明，不能只报分数而省略未完成状态。
+交付填写后的 `review.json`、工具生成并校验的 `scored.json` 和 `review.md`。最终回复概述范围内各对象及总评的分数、`tier`、`qualification`、`recommendable`、`completion`，列出决定结果的主要问题或未决事项，并附报告链接。只有部分核验完成时如实说明，不能只报分数而省略未完成状态。
 
 同时进行新颖度审查时，按[新颖度手册](novelty.md)逐题给出等级、题目分析与判据来源。C+/F由先例关系、合适度和质量共同决定，局部证明错误按修复与替代解法的核验结果评价。这些判断独立于本协议的confirmed证据要求、扣分规则与覆盖状态。
 
@@ -116,4 +136,6 @@ finding 必填 `id`（全报告唯一）、`root_cause_id`、`rule_id`、`severi
 python3 -m cpscore migrate old.json -o new.json
 ```
 
-迁移把旧源保存在 `new.json.legacy.json`，路径、SHA256 和版本写入 `new.json.migration.json`，拒绝覆盖已有目标。新报告的范围内覆盖项为 blocked。读取旧证据作为线索，重新核验当前材料并填写覆盖与问题，旧分数、findings 和完成结论不自动继承。
+协议 3.0 显式取代 1.0/2.0，包版本为 0.3.0。`score`/`validate` 拒绝旧协议，不会静默重算。2.0 的 `invalid_proof=fatal` 和 `incomplete_explanation=minor` 不再能直接沿用，旧问题需按算法是否成立及缺漏重要性重新裁定。`schema --kind report-v2` 可查看冻结的旧结构。
+
+迁移接受旧输入或带 `review` 的旧评分报告，只校验旧 review 的结构，不认证旧模型分数。迁移把旧源保存在 `new.json.legacy.json`，路径、SHA256 和版本写入 `new.json.migration.json`，拒绝覆盖已有目标。新报告使用新快照 ID 并链接旧快照，保留材料版本标签，范围内覆盖项为 blocked。读取旧证据作为线索，重新核验当前材料并填写覆盖与问题，旧分数、findings 和完成结论不自动继承。

@@ -54,7 +54,7 @@ class CliTests(unittest.TestCase):
     def test_schema_and_core_commands_do_not_import_integrations(self):
         result=cli("schema")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertEqual(json.loads(result.stdout)["title"], "CPScore review input 2.0")
+        self.assertEqual(json.loads(result.stdout)["title"], "CPScore review input 3.0")
         script = "import sys; from cpscore.cli import main; main(['init-report']); assert 'cpscore.validation' not in sys.modules; assert 'cpscore.harness' not in sys.modules"
         result=subprocess.run([sys.executable,"-c",script],cwd=ROOT,capture_output=True,text=True,timeout=10)
         self.assertEqual(result.returncode,0,result.stderr)

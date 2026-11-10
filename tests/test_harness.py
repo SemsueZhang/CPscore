@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import zipfile
 from unittest.mock import patch
 
 from tests.test_review_fixtures import CASES, FIXTURES, case_report
@@ -41,6 +42,34 @@ class HarnessTests(unittest.TestCase):
             self.assertEqual(entry["file_installation"], "verified")
             self.assertFalse(entry["cli"]["on_path"])
             self.assertEqual(entry["invocation"], "not_verified")
+
+    def test_all_harness_entries_run_v3_and_include_portable_v2_migration(self):
+        self.install()
+        source = self.project / "review.json"
+        source.write_text(json.dumps(case_report(CASES["editorial_minor"])))
+        with zipfile.ZipFile(SOURCE / "tests/history/codex-v2.zip") as archive:
+            index = json.loads(archive.read("index.json"))
+            old_bytes = archive.read(index["runs"]["editorial"]["files"]["review.json"]["archive_path"])
+        old = self.project / "v2.json"
+        old.write_bytes(old_bytes)
+        for name, config in HARNESSES.items():
+            with self.subTest(harness=name):
+                entry = self.project / config["directory"] / "cp-editorial-review/scripts/cpscore.py"
+                def run(*args):
+                    return subprocess.run([sys.executable, "-I", str(entry), *args], cwd=self.project.parent,
+                                          capture_output=True, text=True, timeout=15)
+                result = run("score", str(source), "--format", "json")
+                self.assertEqual(result.returncode, 0, result.stderr)
+                scored = json.loads(result.stdout)
+                self.assertEqual(scored["schema_version"], "3.0")
+                self.assertEqual((scored["overall"]["score"], scored["overall"]["tier"], scored["overall"]["recommendable"]), (7, "acceptable", False))
+                self.assertEqual(run("validate", str(old)).returncode, 2)
+                new = self.project / f"{name}-migrated.json"
+                result = run("migrate", str(old), "-o", str(new))
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertEqual(Path(str(new) + ".legacy.json").read_bytes(), old_bytes)
+                assessment = json.loads(run("score", str(new), "--format", "json").stdout)["overall"]
+                self.assertEqual((assessment["tier"], assessment["recommendable"]), ("undetermined", None))
 
     def test_installed_runtime_moves_and_runs_without_source_or_pip(self):
         self.install(["codex"])

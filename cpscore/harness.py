@@ -61,7 +61,7 @@ def _allowed(relative: str) -> bool:
         return True
     if re.fullmatch(r"\.cpscore/runtime/cpscore/[a-z_][a-z0-9_]*\.py", relative):
         return True
-    if relative in tuple(f".cpscore/runtime/cpscore/schemas/{name}.schema.json" for name in ("report", "scored-report", "legacy-report")):
+    if relative in tuple(f".cpscore/runtime/cpscore/schemas/{name}.schema.json" for name in ("report", "scored-report", "legacy-report", "report-v2")):
         return True
     return any(
         relative == f"{h['directory']}/{skill}/{suffix}"
@@ -140,7 +140,7 @@ def _source_payload(source: Path, names: list[str]) -> dict[str, bytes]:
             raise InstallationError(f"Unsafe source file: {path}")
         payload[f".cpscore/runtime/cpscore/{path.name}"] = path.read_bytes()
     try:
-        for filename in ("report.schema.json", "scored-report.schema.json", "legacy-report.schema.json"):
+        for filename in ("report.schema.json", "scored-report.schema.json", "legacy-report.schema.json", "report-v2.schema.json"):
             schema = runtime / "schemas" / filename
             if schema.is_symlink():
                 raise InstallationError(f"Unsafe source file: {schema}")
