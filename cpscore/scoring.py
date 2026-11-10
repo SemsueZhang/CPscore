@@ -8,27 +8,30 @@ from typing import Any, Iterable
 from .rubric import (
     COMPLETE_COVERAGE_STATUSES, COVERAGE_ITEMS, INITIAL_SCORE, OBJECTS,
     PASS_THRESHOLD, PENALTIES, RECOMMEND_THRESHOLD, SCHEMA_VERSION, STATUS_PRIORITY,
+    DATA_COVERAGE_ITEMS, REVIEW_OBJECTS,
 )
 from .schema import require_valid_report
 
 
 def make_report(scope: Iterable[str] | None = None, *, review_id: str = "review-1", snapshot_id: str = "snapshot-1") -> dict[str, Any]:
     """Create an unchecked snapshot; writing findings never completes coverage."""
+    scope = list(OBJECTS if scope is None else scope)
+    names = (*OBJECTS, "data") if "data" in scope else OBJECTS
     report = {
         "schema_version": SCHEMA_VERSION,
         "review_id": review_id,
         "snapshot": {"id": snapshot_id, "revision": 1, "supersedes": None},
-        "scope": list(OBJECTS if scope is None else scope),
+        "scope": scope,
         "objects": {
             name: {
                 "artifact_version": "v1",
                 "coverage": {
                     item: {"status": "unchecked", "evidence": [], "reason": None}
-                    for item in COVERAGE_ITEMS[name]
+                    for item in (DATA_COVERAGE_ITEMS if name == "data" else COVERAGE_ITEMS[name])
                 },
                 "findings": [],
             }
-            for name in OBJECTS
+            for name in names
         },
         "validations": [],
     }
@@ -39,7 +42,7 @@ def make_report(scope: Iterable[str] | None = None, *, review_id: str = "review-
 def _evidence_refs(records: list[tuple[str, int, dict[str, Any]]]) -> list[dict[str, Any]]:
     return [
         {"object": obj, "finding_id": finding["id"], "evidence_index": index}
-        for obj, _, finding in sorted(records, key=lambda item: (OBJECTS.index(item[0]), item[2]["id"]))
+        for obj, _, finding in sorted(records, key=lambda item: (REVIEW_OBJECTS.index(item[0]), item[2]["id"]))
         for index in range(len(finding["evidence"]))
     ]
 
@@ -55,7 +58,7 @@ def _root_causes(records: list[tuple[str, int, dict[str, Any]]]) -> list[dict[st
         # Resolved/suspected occurrences must never inflate a confirmed penalty.
         severity = max((record[2]["severity"] for record in occurrences if record[2]["status"] == status), key=PENALTIES.__getitem__)
         local_states = []
-        for obj in OBJECTS:
+        for obj in REVIEW_OBJECTS:
             local = [record for record in occurrences if record[0] == obj]
             if not local:
                 continue
@@ -129,7 +132,9 @@ def score_report(report: dict[str, Any]) -> dict[str, Any]:
     completed_objects = []
     incomplete_objects = []
     any_checks = False
-    for name in OBJECTS:
+    for name in REVIEW_OBJECTS:
+        if name not in report["objects"]:
+            continue
         artifact = report["objects"][name]
         states = [entry["status"] for entry in artifact["coverage"].values()]
         complete = all(state in COMPLETE_COVERAGE_STATUSES for state in states)

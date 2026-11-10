@@ -1,78 +1,63 @@
 # CPscore
 
-CPscore 是算法竞赛题的打分智能体，提供四个可独立调用的技能：
+算法竞赛题审查与打分工具，由智能体分析材料并记录证据，Python 校验、算分和生成报告。需要 Python 3.10+，核心仅依赖标准库。
 
-| 技能 | 打分内容 |
-| --- | --- |
-| `cp-statement-review` | 题面定义、输入输出、约束、边界和样例 |
-| `cp-solution-review` | 程序算法、正确性、复杂度和实现 |
-| `cp-editorial-review` | 题解断言、推理、证明和复杂度 |
-| `cp-novelty-review` | 检索相似题与论文，给出 A、B、C、C+、D、F 等级，以合适度和质量作为 C→C+、D→F 的重要判据 |
-
-前三项采用统一 10 分制，由智能体填写证据，再由 Python 工具按独立根因去重算分。Fatal 扣 10 分、Major 扣 3 分、Minor 扣 1 分，最低 0 分。同根因跨对象按当前已确认的最高严重程度扣一次。疑点不扣分，修复后需重新核验。新颖度独立评级。
-
-| 分数 | 质量档次 | 含义 |
+| 技能 | 内容 | 交付 |
 | --- | --- | --- |
-| 9～10 | excellent（优秀） | 审核完成且无未决 Fatal 时值得推荐 |
-| 6～8 | acceptable（尚可） | 基本合格，值得打磨 |
-| 0～5 | unacceptable（不合格） | 累计缺陷严重影响交付 |
+| `cp-statement-review` | 定义、输入输出、约束、边界、样例 | 10分制报告 |
+| `cp-solution-review` | 算法、正确性、复杂度、实现 | 10分制报告 |
+| `cp-editorial-review` | 断言、推理、证明、复杂度 | 10分制报告 |
+| `cp-data-review` | 错解漏网、子任务得分、数据强度 | 10分制报告 |
+| `cp-novelty-review` | 检索并核对相似题与论文 | `novelty.md`，A/B/C/C+/D/F |
+| `cp-problem-review` | 汇总已有审查，评价解法空间和整体设计 | `problem.md`，三档结论及修改意见 |
+| `cp-contest-review` | 结合具体比赛要求评价题目组合 | `contest.md`，三档结论及修改意见 |
+| `cp-performance-predict` | 预测路线、障碍、耗时和得分 | `performance.md`，无须盲测 |
 
-未完成审核或有未决 Fatal，且确认扣分不足以判不合格时，档次为 undetermined，不能按暂定高分推荐。证明缺漏按重要性判 Major/Minor，只有算法或核心结论被证伪等致命问题才判 Fatal。
+10分制按独立根因扣分：Fatal −10、Major −3、Minor −1，最低0分。9～10分推荐、6～8分合格、0～5分不合格，未完成或有未决Fatal时不能按高分推荐。证明缺漏与算法错误分别核验，疑点不扣分。联合正确性审查按根因合并扣分。
 
-## 审查流程与交付
-
-按用户指定范围选择技能，先读取当前材料和版本，再核验并记录证据。多个正确性对象共同审查时使用同一份 `review.json`，各技能只更新自己负责的对象，最后统一生成结果。新颖度在独立报告中先判定先例关系，再对 C/D 核验合适度与质量，决定是否升为 C+/F。
-
-| 审查部分 | 交付结果 |
-| --- | --- |
-| 题面、程序、题解 | `review.json` 核验记录、工具生成的 `scored.json` 和 `review.md`，包含分数、质量档次、合格/推荐判定、覆盖完成度及问题证据 |
-| 新颖度、合适度与质量 | `novelty.md` 和检索证据附件，包含等级、先例比较、合适度与质量结论、升级或不升级的依据 |
-
-判 C 要指明先例替代的非平凡关键步骤，仅共享通用工具不降级。没有核实到实质先例时，以 D 为基础关系。合适度与质量均通过时，C→C+、D→F，两者采用同一套质量标准。局部证明错误先尝试修复并核对替代解法，分别评价证明、算法和题目。新颖度报告逐题按“结论—题目分析（先例比较、质量分析）—判据来源”组织，直接给出判断和具体理由，材料版本简记一次，不默认制作哈希清单。具体判据与写作要求见[新颖度手册](docs/novelty.md)。
-
-最终回复给出已审查部分的结论、决定性理由和报告链接。完整问题、推导和检索记录留在报告及附件中。
+题目和比赛总评按所有审查结果取最低档。新颖度A/B对应不合格、C/D合格、C+/F推荐。原做法不适合竞赛时，已核验的更简单竞赛做法只允许该项判为合格，并提出修改意见，其他不合格项仍保留。
 
 ## 安装与调用
 
-需要 Python 3.10+。在完整源码目录中，为已有项目安装技能：
+从完整源码目录安装到已有题目项目：
 
 ```sh
 python3 -m cpscore install --project /absolute/path/to/problem --harness codex
 python3 -m cpscore check --project /absolute/path/to/problem --harness codex
 ```
 
-`--harness` 支持 `codex`、`claude-code`、`opencode-deepseek`，省略时安装全部适配。各宿主的调用方式见[安装与调用](docs/harnesses.md)。
-
-例如在 Codex 中调用：
+`--harness` 支持 `codex`、`claude-code`、`opencode-deepseek`，省略则全部安装。宿主中按技能名调用，例如：
 
 ```text
-$cp-solution-review 为 statement.md 对应的 solution.cpp 打分，保存 review.json 并生成 review.md。
+$cp-data-review 结合题面、题解、std和suite.json评估数据，保存review.json并生成review.md。
+$cp-problem-review 综合当前题目材料和全部审查，生成problem.md。
+$cp-contest-review 按具体比赛要求和逐题总评生成contest.md。
+$cp-performance-predict 按目标选手和比赛条件生成performance.md。
 ```
 
-## 命令行
+## 工具入口
 
-从源码运行，或先执行 `python3 -m pip install -e .`。核心工具仅依赖 Python 标准库。
-
-```sh
-python3 -m cpscore init-report --scope statement,solution,editorial --output review.json
-```
-
-按[打分规则与报告格式](docs/protocol.md)填写材料版本、核验项和问题证据，再校验并生成结果：
+从源码运行，或先执行 `python3 -m pip install -e .`。智能体填写记录后生成报告：
 
 ```sh
+python3 -m cpscore init-report --scope statement,solution,editorial,data -o review.json
 python3 -m cpscore validate review.json
-python3 -m cpscore score review.json --output review.md
-python3 -m cpscore score review.json --format json --output scored.json
+python3 -m cpscore score review.json -o review.md
+python3 -m cpscore score review.json --format json -o scored.json
 python3 -m cpscore validate scored.json --scored
+python3 -m cpscore assess init problem -o problem.json
+python3 -m cpscore assess report problem.json -o problem.md
 ```
 
-新建报告的分数为 `null`。结果给出 `score`、`tier`、`recommendable`、`qualification`、`completion` 及去重的 Fatal/Major/Minor 计数。协议已升至 3.0（包版本 0.3.0），旧 1.0/2.0 报告不能直接重算。使用 `python3 -m cpscore migrate old.json -o new.json` 迁移后重新核验。命令会原样归档旧报告并创建待复核快照，保留历史结论，详见[迁移说明](docs/protocol.md#旧报告迁移)。
+新记录不会自动通过。正确性协议为3.0，旧1.0/2.0报告需用 `migrate old.json -o new.json` 原样归档并重新核验。总评与预测使用独立输入格式。
 
-## 使用文档
+## 文档与验证
 
-- [安装与调用](docs/harnesses.md)：宿主路径、安装、更新、卸载及调用脚本。
-- [打分规则与报告格式](docs/protocol.md)：核验项、分级、证据和算分规则。
-- [程序运行工具](docs/validation.md)：样例检查、差分验证、反例保存和性能测量。
-- [新颖度工具](docs/novelty.md)：CPRet、arXiv、来源读取、缓存和用量汇总。
+- [安装与宿主调用](docs/harnesses.md)：更新、卸载、可移动安装和模型调用脚本。
+- [评分协议](docs/protocol.md)：根因、证据、完成度和迁移。
+- [程序运行](docs/validation.md)：隔离、反例保存、输出比较和性能测量。
+- [数据强度](docs/data.md)：错解分析、冻结实测和计分规则。
+- [新颖度](docs/novelty.md)：先例关系、合适度与质量、检索和证据工具。
+- [总评与预测](docs/assessment.md)：三档汇总、比赛要求和预测报告格式。
 
-`cpscore/` 存放工具代码，`skills/` 存放技能，`tests/` 和 `fixtures/` 存放测试及数据。运行测试：`python3 -m unittest discover -s tests -v`。
+`cpscore/` 存放工具，`skills/` 存放技能，`tests/` 与 `fixtures/` 存放回归测试及夹具。运行 `python3 -m unittest discover -s tests -v`。

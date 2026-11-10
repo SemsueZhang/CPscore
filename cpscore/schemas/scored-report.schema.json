@@ -18,6 +18,9 @@
         },
         "editorial": {
           "$ref": "#/$defs/assessment"
+        },
+        "data": {
+          "$ref": "#/$defs/assessment"
         }
       },
       "required": [
@@ -62,7 +65,8 @@
           "enum": [
             "statement",
             "solution",
-            "editorial"
+            "editorial",
+            "data"
           ]
         },
         "finding_id": {
@@ -87,7 +91,8 @@
           "enum": [
             "statement",
             "solution",
-            "editorial"
+            "editorial",
+            "data"
           ]
         },
         "status": {
@@ -181,7 +186,8 @@
             "enum": [
               "statement",
               "solution",
-              "editorial"
+              "editorial",
+              "data"
             ]
           },
           "minItems": 1
@@ -510,7 +516,8 @@
             "enum": [
               "statement",
               "solution",
-              "editorial"
+              "editorial",
+              "data"
             ]
           },
           "minItems": 1
@@ -522,7 +529,8 @@
             "enum": [
               "statement",
               "solution",
-              "editorial"
+              "editorial",
+              "data"
             ]
           }
         },
@@ -533,7 +541,8 @@
             "enum": [
               "statement",
               "solution",
-              "editorial"
+              "editorial",
+              "data"
             ]
           }
         },

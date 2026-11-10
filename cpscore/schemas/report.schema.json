@@ -43,7 +43,8 @@
         "enum": [
           "statement",
           "solution",
-          "editorial"
+          "editorial",
+          "data"
         ]
       }
     },
@@ -169,6 +170,54 @@
                 "reasoning",
                 "proof",
                 "complexity"
+              ],
+              "additionalProperties": false
+            },
+            "findings": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/finding"
+              }
+            }
+          },
+          "required": [
+            "artifact_version",
+            "coverage",
+            "findings"
+          ],
+          "additionalProperties": false
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "artifact_version": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "coverage": {
+              "type": "object",
+              "properties": {
+                "integrity": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "judging": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "mechanisms": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "execution": {
+                  "$ref": "#/$defs/coverage_entry"
+                },
+                "scoring": {
+                  "$ref": "#/$defs/coverage_entry"
+                }
+              },
+              "required": [
+                "integrity",
+                "judging",
+                "mechanisms",
+                "execution",
+                "scoring"
               ],
               "additionalProperties": false
             },
@@ -362,7 +411,14 @@
             "incomplete_explanation",
             "local_presentation",
             "quality_defect",
-            "other"
+            "other",
+            "data_gross_escape",
+            "data_local_escape",
+            "data_subtle_escape",
+            "data_invalid_input",
+            "data_bad_answer",
+            "data_bad_judge",
+            "data_bad_scoring"
           ]
         },
         "severity": {
@@ -626,6 +682,63 @@
               "impact"
             ]
           }
+        },
+        {
+          "if": {
+            "properties": {
+              "rule_id": {
+                "enum": [
+                  "data_gross_escape",
+                  "data_invalid_input",
+                  "data_bad_answer",
+                  "data_bad_judge"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "severity": {
+                "const": "fatal"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "rule_id": {
+                "enum": [
+                  "data_local_escape"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "severity": {
+                "const": "major"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "rule_id": {
+                "enum": [
+                  "data_subtle_escape"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "severity": {
+                "const": "minor"
+              }
+            }
+          }
         }
       ]
     },
@@ -642,7 +755,8 @@
           "enum": [
             "statement",
             "solution",
-            "editorial"
+            "editorial",
+            "data"
           ]
         },
         "status": {
@@ -739,5 +853,31 @@
         }
       ]
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "scope": {
+            "items": {
+              "enum": [
+                "statement",
+                "solution",
+                "editorial"
+              ]
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "objects": {
+            "required": [
+              "data"
+            ]
+          }
+        }
+      }
+    }
+  ]
 }

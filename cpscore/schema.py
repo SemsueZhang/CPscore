@@ -14,7 +14,7 @@ import math
 import re
 from typing import Any
 
-from .rubric import OBJECTS, RULE_SEVERITIES
+from .rubric import OBJECTS, REVIEW_OBJECTS, RULE_SEVERITIES, DATA_RULE_SEVERITIES
 
 
 @dataclass(frozen=True)
@@ -207,7 +207,9 @@ def validate_report(report: Any) -> list[ValidationIssue]:
             error(f"{path}.artifact_version", "stale evidence: artifact version does not match current object")
 
     seen_ids: dict[str, str] = {}
-    for obj in OBJECTS:
+    for obj in REVIEW_OBJECTS:
+        if obj not in report["objects"]:
+            continue
         artifact = report["objects"][obj]
         path = f"$.objects.{obj}"
         local_roots: dict[str, tuple[str, str]] = {}
@@ -227,6 +229,9 @@ def validate_report(report: Any) -> list[ValidationIssue]:
             else:
                 seen_ids[identifier] = fp
             expected_severity = RULE_SEVERITIES[finding["rule_id"]]
+            data_rule = finding["rule_id"] in DATA_RULE_SEVERITIES
+            if (obj == "data" and not data_rule and finding["rule_id"] != "other") or (obj != "data" and data_rule):
+                error(f"{fp}.rule_id", "data rules apply only to the data object; use the object's own defect classification")
             allowed = (expected_severity,) if isinstance(expected_severity, str) else expected_severity
             if allowed is not None and finding["severity"] not in allowed:
                 error(f"{fp}.severity", f"rule {finding['rule_id']!r} requires severity in {allowed!r}")

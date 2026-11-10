@@ -13,6 +13,7 @@ from cpscore.harness import (
     check, install, uninstall,
 )
 from tests.test_novelty_evidence import fixture, options
+from tests import downgrade_installation
 
 SOURCE = Path(__file__).resolve().parents[1]
 
@@ -37,21 +38,7 @@ class NoveltyIntegrationTests(unittest.TestCase):
 
     def legacy_install(self):
         install(self.project, ["codex"], source=SOURCE)
-        path = self.project / MANIFEST
-        record = json.loads(path.read_text())
-        for relative in list(record["files"]):
-            if "/cp-novelty-review/" in relative or relative in {
-                ".cpscore/novelty.md", ".cpscore/runtime/cpscore/novelty_evidence.py",
-                ".cpscore/runtime/cpscore/novelty_search.py",
-            }:
-                (self.project/relative).unlink()
-                del record["files"][relative]
-        # The old installer left no fourth skill directory.
-        novelty = self.project / ".agents/skills/cp-novelty-review"
-        (novelty/"scripts").rmdir()
-        novelty.rmdir()
-        record["format"] = 1
-        path.write_text(json.dumps(record))
+        downgrade_installation(self.project, 1)
 
     def test_source_cli_recovers_all_candidates_and_required_url_parameters(self):
         path = self.root / "record.json"
@@ -102,22 +89,22 @@ class NoveltyIntegrationTests(unittest.TestCase):
         uninstall(destination, ["codex"])
         self.assertFalse((destination/MANIFEST).exists())
 
-    def test_all_harnesses_receive_four_skills_and_one_novelty_runtime(self):
+    def test_all_harnesses_receive_current_skills_and_one_novelty_runtime(self):
         install(self.project, source=SOURCE)
-        self.assertEqual(len(list(self.project.rglob("SKILL.md"))), 12)
+        self.assertEqual(len(list(self.project.rglob("SKILL.md"))), len(SKILLS) * len(HARNESSES))
         self.assertEqual(len(list(self.project.rglob("novelty_evidence.py"))), 1)
         self.assertEqual(len(list(self.project.rglob("novelty_search.py"))), 1)
         for harness, state in check(self.project)["harnesses"].items():
             self.assertEqual(state["skills"], list(SKILLS), harness)
             self.assertEqual(state["file_installation"], "verified")
 
-    def test_legacy_manifest_checks_and_upgrades_to_four_skills(self):
+    def test_legacy_manifest_checks_and_upgrades_to_current_skills(self):
         self.legacy_install()
         state = check(self.project, ["codex"])
         self.assertTrue(state["ok"])
         self.assertEqual(state["harnesses"]["codex"]["skills"], list(LEGACY_SKILLS))
         install(self.project, ["codex"], source=SOURCE)
-        self.assertEqual(json.loads((self.project/MANIFEST).read_text())["format"], 2)
+        self.assertEqual(json.loads((self.project/MANIFEST).read_text())["format"], 4)
         self.assertEqual(check(self.project, ["codex"])["harnesses"]["codex"]["skills"], list(SKILLS))
 
     def test_legacy_uninstall_remains_supported(self):

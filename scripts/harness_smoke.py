@@ -76,7 +76,7 @@ def _cli_version(cli):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--harness", choices=HARNESSES, required=True)
-    parser.add_argument("--skill", choices=("statement", "solution", "editorial"), required=True)
+    parser.add_argument("--skill", choices=("statement", "solution", "editorial", "data"), required=True)
     parser.add_argument("--material", type=Path, required=True)
     parser.add_argument("--context", type=Path, action="append", default=[])
     parser.add_argument("--model", required=True, help="Explicit available model; for OpenCode use provider/model")

@@ -12,7 +12,9 @@ import tempfile
 from typing import Any
 
 LEGACY_SKILLS = ("cp-statement-review", "cp-solution-review", "cp-editorial-review")
-SKILLS = (*LEGACY_SKILLS, "cp-novelty-review")
+V2_SKILLS = (*LEGACY_SKILLS, "cp-novelty-review")
+V3_SKILLS = (*V2_SKILLS, "cp-data-review")
+SKILLS = (*V3_SKILLS, "cp-problem-review", "cp-contest-review", "cp-performance-predict")
 HARNESSES = {
     "codex": {"directory": ".agents/skills", "cli": "codex"},
     "claude-code": {"directory": ".claude/skills", "cli": "claude"},
@@ -57,7 +59,7 @@ def _allowed(relative: str) -> bool:
     path = PurePosixPath(relative)
     if path.is_absolute() or ".." in path.parts or str(path) != relative or "\\" in relative:
         return False
-    if relative in (".cpscore/protocol.md", ".cpscore/novelty.md"):
+    if relative in (".cpscore/protocol.md", ".cpscore/novelty.md", ".cpscore/data.md", ".cpscore/assessment.md"):
         return True
     if re.fullmatch(r"\.cpscore/runtime/cpscore/[a-z_][a-z0-9_]*\.py", relative):
         return True
@@ -96,7 +98,7 @@ def _load(root: Path) -> dict[str, Any] | None:
     except (OSError, ValueError) as exc:
         raise InstallationError(f"Cannot read installation manifest: {exc}") from exc
     if (not isinstance(manifest, dict) or manifest.get("owner") != OWNER or
-            type(manifest.get("format")) is not int or manifest["format"] not in (1, 2)):
+            type(manifest.get("format")) is not int or manifest["format"] not in (1, 2, 3, 4)):
         raise InstallationError("Unrecognized installation manifest; refusing to claim ownership")
     files = manifest.get("files")
     harnesses = manifest.get("harnesses")
@@ -111,11 +113,15 @@ def _load(root: Path) -> dict[str, Any] | None:
             raise InstallationError(f"Invalid manifest hash: {relative}")
         if not relative.startswith(".cpscore/") and not any(relative.startswith(HARNESSES[h]["directory"] + "/") for h in harnesses):
             raise InstallationError("Manifest claims files for an unregistered harness")
-    installed_skills = LEGACY_SKILLS if manifest["format"] == 1 else SKILLS
+    installed_skills = {1: LEGACY_SKILLS, 2: V2_SKILLS, 3: V3_SKILLS, 4: SKILLS}[manifest["format"]]
     expected = {f"{HARNESSES[h]['directory']}/{skill}/{suffix}" for h in harnesses for skill in installed_skills for suffix in ("SKILL.md", "scripts/cpscore.py")}
     shared = {".cpscore/protocol.md", ".cpscore/runtime/cpscore/__main__.py", ".cpscore/runtime/cpscore/schemas/report.schema.json", ".cpscore/runtime/cpscore/schemas/scored-report.schema.json"}
-    if manifest["format"] == 2:
+    if manifest["format"] >= 2:
         shared.update({".cpscore/novelty.md", ".cpscore/runtime/cpscore/novelty_search.py", ".cpscore/runtime/cpscore/novelty_evidence.py"})
+    if manifest["format"] >= 3:
+        shared.update({".cpscore/data.md", ".cpscore/runtime/cpscore/data.py"})
+    if manifest["format"] >= 4:
+        shared.update({".cpscore/assessment.md", ".cpscore/runtime/cpscore/assessment.py"})
     if not expected.issubset(files) or not shared.issubset(files):
         raise InstallationError("Manifest omits required installed files")
     return manifest
@@ -147,6 +153,8 @@ def _source_payload(source: Path, names: list[str]) -> dict[str, bytes]:
             payload[f".cpscore/runtime/cpscore/schemas/{filename}"] = schema.read_bytes()
         payload[".cpscore/protocol.md"] = (source / "docs/protocol.md").read_bytes()
         payload[".cpscore/novelty.md"] = (source / "docs/novelty.md").read_bytes()
+        payload[".cpscore/data.md"] = (source / "docs/data.md").read_bytes()
+        payload[".cpscore/assessment.md"] = (source / "docs/assessment.md").read_bytes()
         adapter = (source / "scripts/skill_entry.py").read_bytes()
         for name in names:
             for skill in SKILLS:
@@ -206,7 +214,7 @@ def install(project: str | Path, harnesses: list[str] | None = None, *, source: 
     # Removed upstream files are deleted only when unchanged and already owned.
     for relative in set(old_files) - set(payload):
         _safe_path(root, relative).unlink(missing_ok=True)
-    manifest = {"owner": OWNER, "format": 2, "harnesses": selected, "files": {p: _digest(data) for p, data in sorted(payload.items())}}
+    manifest = {"owner": OWNER, "format": 4, "harnesses": selected, "files": {p: _digest(data) for p, data in sorted(payload.items())}}
     _write_manifest(root, manifest)
     return {"action": "install", "project": str(root), "harnesses": selected, "managed_files": len(payload), "runtime_copies": 1, "invocation": "not_verified"}
 

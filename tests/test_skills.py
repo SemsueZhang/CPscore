@@ -8,10 +8,10 @@ SOURCE = Path(__file__).resolve().parents[1]
 
 
 class SkillsTests(unittest.TestCase):
-    def test_exactly_four_portable_manifests(self):
+    def test_all_portable_manifests(self):
         manifests = sorted((SOURCE / "skills").rglob("SKILL.md"))
         self.assertEqual({p.parent.name for p in manifests}, set(SKILLS))
-        self.assertEqual(len(manifests), 4)
+        self.assertEqual(len(manifests), len(SKILLS))
         for path in manifests:
             content = path.read_text(encoding="utf-8")
             frontmatter = content.split("---", 2)

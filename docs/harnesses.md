@@ -1,18 +1,18 @@
 # 安装与调用
 
-CPscore 将四个打分技能安装到目标项目，并在项目内共享一份 `.cpscore` 运行时。安装需要完整源码目录，调用技能需要已配置的宿主。
+八个技能安装到目标项目，共享一份 `.cpscore` 运行时。需要完整源码和已配置的宿主，技能名称与用途见[README](../README.md)。
 
 | `--harness` | 技能目录 | 调用方式 |
 | --- | --- | --- |
-| `codex` | `.agents/skills/<name>/SKILL.md` | `$cp-statement-review`，或从 `/skills` 选择 |
-| `claude-code` | `.claude/skills/<name>/SKILL.md` | `/cp-statement-review` |
-| `opencode-deepseek` | `.opencode/skills/<name>/SKILL.md` | 按技能 ID 加载，调用语法以宿主版本为准 |
+| `codex` | `.agents/skills/<name>/` | `$cp-statement-review` 或 `/skills` |
+| `claude-code` | `.claude/skills/<name>/` | `/cp-statement-review` |
+| `opencode-deepseek` | `.opencode/skills/<name>/` | 按技能ID加载，语法以宿主版本为准 |
 
-表中的技能名可替换为其他三个技能。使用 OpenCode 时，先通过 `/connect` 连接 DeepSeek，再用 `/models` 选择模型。裸 DeepSeek API 不支持技能安装。
+OpenCode先用 `/connect` 连接DeepSeek，再用 `/models` 选模型。裸DeepSeek API不支持技能安装。
 
 ## 安装、更新与卸载
 
-在源码目录运行，目标须为已有项目：
+目标须为已有目录，在源码目录运行：
 
 ```sh
 python3 -m cpscore install --project /absolute/path/to/problem --harness codex
@@ -21,28 +21,17 @@ python3 -m cpscore reinstall --project /absolute/path/to/problem --harness codex
 python3 -m cpscore uninstall --project /absolute/path/to/problem --harness codex
 ```
 
-`--harness` 可重复，设为 `all` 或省略时选择全部宿主。`reinstall` 更新受管安装并补回丢失文件。遇到同名外部技能、用户修改或内部符号链接时，先保存改动并处理冲突，再重新执行。
+`--harness` 可重复，省略或设为 `all` 时选择全部宿主。安装和卸载串行执行。`reinstall` 更新受管文件并补回缺失文件，同名外部技能、用户改动或内部符号链接会阻止写入，须先保存和处理冲突。
 
-共享代码、打分规则、新颖度手册和安装清单分别位于 `.cpscore/runtime/cpscore/`、`.cpscore/protocol.md`、`.cpscore/novelty.md`、`.cpscore/manifest.json`。卸载一个宿主会保留其他宿主及共享文件，卸载最后一个宿主时移除共享文件。安装和卸载应串行执行。
+`.cpscore/runtime/cpscore/` 保存代码，`.cpscore/` 下另有 `protocol.md`、`novelty.md`、`data.md`、`assessment.md` 和 `manifest.json`。清单格式4兼容旧格式1/2/3。卸载部分宿主保留共享文件，卸载最后一个时移除。项目可整体移动，不单独移动技能目录。普通wheel缺少技能资源时只能使用核心算分与报告工具。
 
-技能入口按自身路径定位运行时，项目整体移动后仍可运行，请勿单独移动技能目录。安装支持源码运行和 `pip install -e .`，普通 wheel 缺少技能资源时只能使用核心算分与报告工具。
+## 调用与验证
 
-## 调用技能
+宿主按技能名调用，示例见README。新技能未出现时检查列表并重启会话；同名冲突时核对加载路径。宿主说明：[Codex](https://learn.chatgpt.com/docs/build-skills)、[Claude Code](https://code.claude.com/docs/en/skills)、[OpenCode](https://opencode.ai/docs/skills/)。
 
-例如在 Codex 中输入：
+安装后的工具入口为 `python3 <实际技能目录>/scripts/cpscore.py`，参数与 `python3 -m cpscore` 相同，含空格路径须加引号。10分制记录按[评分协议](protocol.md)处理，总评和预测用[assess入口](assessment.md)。
 
-```text
-$cp-statement-review 为 statement.md 打分，保存 review.json 并生成 review.md。
-$cp-novelty-review 为 statement.md 和 editorial.md 评定新颖度，保存 novelty.md 和检索附件。
-```
-
-新技能未出现时检查宿主技能列表，并重启会话。出现同名技能时核对实际加载路径。宿主配置参考 [Codex](https://learn.chatgpt.com/docs/build-skills)、[Claude Code](https://code.claude.com/docs/en/skills) 和 [OpenCode](https://opencode.ai/docs/skills/) 的技能文档。
-
-安装后的命令行入口为 `python3 <实际技能目录>/scripts/cpscore.py`，参数与 `python3 -m cpscore` 相同。路径含空格时使用引号。
-
-`check` 的 `file_installation` 表示文件及哈希状态，`cli.on_path` 表示是否找到 CLI，`invocation` 保持 `not_verified`。实际模型调用使用下面的脚本。
-
-## 脚本调用
+`check` 只验证文件与哈希：`file_installation` 为安装状态，`cli.on_path` 为CLI是否存在，`invocation` 保持 `not_verified`。实际10分制模型调用可用：
 
 ```sh
 python3 scripts/harness_smoke.py --harness codex --skill statement \
@@ -50,6 +39,8 @@ python3 scripts/harness_smoke.py --harness codex --skill statement \
   --output-dir /absolute/path/to/new-run
 ```
 
-脚本会调用所选模型。`--skill` 支持 `statement`、`solution`、`editorial`，`--context` 可重复，`--timeout` 默认 600 秒。输出目录须不存在，OpenCode 模型名使用 `provider/model`。
+脚本支持 `statement`、`solution`、`editorial`、`data`，`--context` 可重复，默认超时600秒，输出目录须不存在。OpenCode模型名用 `provider/model`。三个总评与预测技能直接在宿主中调用。
 
-输出包括输入材料、prompt、事件、stderr、原始 `review.json`、独立重算的 `verified-scored.json` 和 `run.json`。CLI 缺失返回 `unavailable`，执行及结构校验通过返回 `invoked_and_validated`，其他状态及原因写入 `run.json`。
+输出保留输入、prompt、事件、stderr、原始记录、独立重算结果和 `run.json`。CLI缺失返回 `unavailable`，执行及结构校验通过返回 `invoked_and_validated`，不代表审查结论准确。
+
+脚本只复制显式文件，不递归搬运数据套件依赖。数据技能宜在已有题目项目调用，或先准备完整独立目录；缺依赖时报告未执行。

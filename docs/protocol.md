@@ -1,6 +1,6 @@
 # 打分规则与报告格式
 
-题面 `statement`、程序 `solution`、题解 `editorial` 使用统一的 10 分制。打分智能体填写核验记录，Python 工具校验、按根因去重、算分并生成报告。新颖度使用[独立评级](novelty.md)。
+题面 `statement`、程序 `solution`、题解 `editorial`、测试数据 `data` 使用统一的 10 分制。打分智能体填写核验记录，Python 工具校验、按根因去重、算分并生成报告。新颖度使用[独立评级](novelty.md)。
 
 ## 创建与生成报告
 
@@ -17,7 +17,7 @@ python3 -m cpscore score review.json --output review.md
 
 ## 范围、版本与核验项
 
-顶层字段为 `schema_version: "3.0"`、`review_id`、`snapshot`、`scope`、`objects`、`validations`。`scope` 选择本次打分对象，`objects` 始终保留三个对象，每个包含 `artifact_version`、`coverage`、`findings`。范围外对象的覆盖状态保持 `unchecked`，findings 为空。
+顶层字段为 `schema_version: "3.0"`、`review_id`、`snapshot`、`scope`、`objects`、`validations`。`scope` 选择本次打分对象，`objects` 始终保留原三个对象，选择data时另含data对象（旧三对象报告无需增加字段），每个包含 `artifact_version`、`coverage`、`findings`。范围外对象的覆盖状态保持 `unchecked`，findings 为空。
 
 `snapshot` 包含 `id`、正整数 `revision`、`supersedes`。首轮 revision 为 1，supersedes 为 null。材料更新后换新 id、递增 revision，以 supersedes 引用上轮 id，并重新核验当前材料。`artifact_version` 推荐填写文件 SHA256，也可使用对应材料的版本标签。
 
@@ -34,6 +34,7 @@ python3 -m cpscore score review.json --output review.md
 | statement | `definition`、`io`、`constraints`、`boundaries`、`samples` |
 | solution | `algorithm`、`correctness`、`complexity`、`implementation` |
 | editorial | `claims`、`reasoning`、`proof`、`complexity` |
+| data | `integrity`、`judging`、`mechanisms`、`execution`、`scoring` |
 
 每项为 `{status, evidence, reason}`，按实际核验情况填写：
 
@@ -64,7 +65,7 @@ python3 -m cpscore score review.json --output review.md
 | `local_presentation` | minor | 确有理解/核验影响的局部误述 |
 | `other` | fatal / major / minor | 其他真实缺陷，说明具体影响及分级依据 |
 
-三个 Skill 的对象标准：
+原三个 Skill 的对象标准如下。数据对象的错误机制、部分分、独立反例与实测门槛见[数据手册](data.md)，其 `data_*` 规则仅用于data，原正确性规则不用于data（`other`除外）。
 
 | 对象 | Fatal | Major | Minor / No Issue |
 | --- | --- | --- | --- |
@@ -128,7 +129,7 @@ score = max(0, 10 - 10 * fatal_count - 3 * major_count - minor_count)
 - `executed`：outcome 为 passed、failed 或 inconclusive，reason 为 null，evidence 包含当前版本记录。
 - `unexecuted`：outcome 为 null，evidence 为空数组，reason 说明未执行原因。
 
-手算时 command 可为 null。执行候选程序、oracle、生成器或校验器时使用 `check-candidate` 或 `bench`，先读取对应的 `--help`。隔离不可用时记 unexecuted。运行结果经核实后再填写 findings，不自动扣分。
+手算时 command 可为 null。执行候选程序、oracle、生成器或校验器时使用 `check-candidate` 或 `bench`，先读取对应的 `--help`。数据对象可用 `test-data` 在冻结原集上批量执行，见[数据手册](data.md)。隔离不可用时记 unexecuted。运行结果经核实后再填写 findings，不自动扣分。
 
 ## 旧报告迁移
 
@@ -136,6 +137,6 @@ score = max(0, 10 - 10 * fatal_count - 3 * major_count - minor_count)
 python3 -m cpscore migrate old.json -o new.json
 ```
 
-协议 3.0 显式取代 1.0/2.0，包版本为 0.3.0。`score`/`validate` 拒绝旧协议，不会静默重算。2.0 的 `invalid_proof=fatal` 和 `incomplete_explanation=minor` 不再能直接沿用，旧问题需按算法是否成立及缺漏重要性重新裁定。`schema --kind report-v2` 可查看冻结的旧结构。
+协议 3.0 显式取代 1.0/2.0，包版本为 0.3.1。`score`/`validate` 拒绝旧协议，不会静默重算。2.0 的 `invalid_proof=fatal` 和 `incomplete_explanation=minor` 不再能直接沿用，旧问题需按算法是否成立及缺漏重要性重新裁定。`schema --kind report-v2` 可查看冻结的旧结构。
 
 迁移接受旧输入或带 `review` 的旧评分报告，只校验旧 review 的结构，不认证旧模型分数。迁移把旧源保存在 `new.json.legacy.json`，路径、SHA256 和版本写入 `new.json.migration.json`，拒绝覆盖已有目标。新报告使用新快照 ID 并链接旧快照，保留材料版本标签，范围内覆盖项为 blocked。读取旧证据作为线索，重新核验当前材料并填写覆盖与问题，旧分数、findings 和完成结论不自动继承。

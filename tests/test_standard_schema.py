@@ -22,7 +22,7 @@ class StandardSchemaTests(unittest.TestCase):
         for schema in schemas.values():
             Draft202012Validator.check_schema(schema)
             registry = registry.with_resource(schema["$id"], Resource.from_contents(schema))
-        reports = [make_report(), reviewed()]
+        reports = [make_report(), reviewed(), make_report(["data"])]
         for state in ("confirmed", "suspected", "resolved"):
             for severity in ("fatal", "major", "minor"):
                 report = reviewed()
