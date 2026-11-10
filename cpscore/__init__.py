@@ -1,4 +1,4 @@
-"""CPScore's shared, dependency-free review protocol and scoring engine."""
+"""CPscore's shared, dependency-free scoring protocol and tools."""
 
 __version__ = "0.2.0"
 

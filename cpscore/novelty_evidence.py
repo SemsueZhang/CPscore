@@ -429,7 +429,7 @@ def execute(args):
 def register_cli(subparsers):
     parser = subparsers.add_parser(
         "novelty", parents=[build_parser("cpscore novelty")], add_help=False,
-        help="retrieve and inspect novelty evidence (A-E (including C+) judgments are made by the skill)")
+        help="retrieve and inspect novelty evidence (A, B, C, C+, D, F judgments are made by the skill)")
     parser.set_defaults(func=execute)
 
 

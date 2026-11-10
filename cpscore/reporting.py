@@ -31,8 +31,8 @@ def render_markdown(scored: dict[str, Any]) -> str:
     review, overall = scored["review"], scored["overall"]
     snapshot = review["snapshot"]
     lines = [
-        "# CPScore review", "",
-        f"Review: {_text(review['review_id'])}  ",
+        "# CPscore 打分报告", "",
+        f"Assessment: {_text(review['review_id'])}  ",
         f"Snapshot: {_text(snapshot['id'])}, revision {_text(snapshot['revision'])}, supersedes {_text(snapshot['supersedes'] or 'none')}  ",
         f"Requested scope: {', '.join(review['scope'])}  ",
         f"Completion: {overall['completion']}; qualification: **{overall['qualification']}**", "",
@@ -80,7 +80,7 @@ def render_markdown(scored: dict[str, Any]) -> str:
         if not assessment["deductions"]:
             lines.append("No confirmed deductions.")
         if assessment["pending_finding_ids"]:
-            lines.append(f"Pending fatal review: {_text(', '.join(assessment['pending_finding_ids']))}.")
+            lines.append(f"Pending fatal findings: {_text(', '.join(assessment['pending_finding_ids']))}.")
         lines.append("")
     lines += ["## Findings and repair information", ""]
     for name in OBJECTS:

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "cpscore"
 version = "0.2.0"
-description = "Evidence-based competitive-programming artifact review and deterministic scoring"
+description = "Competitive-programming scoring agents and tools"
 requires-python = ">=3.10"
 dependencies = []
 

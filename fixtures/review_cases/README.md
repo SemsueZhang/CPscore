@@ -1,15 +1,15 @@
-# 人工裁定的真实竞赛衍生夹具
+# 打分测试数据
 
-这些材料以真实竞赛题的模型为来源，全部由本项目人工摘编、限制规模或施加变异。它们不代表官方题面、官方程序或官方题解存在相应错误，也不评价源题全文。P1083 特意只使用正容量与正需求的受限子域。来源页面于 2026-11-10 核对：
+`cases.json` 为题面、程序和题解打分技能分别提供 correct、fatal、minor、boundary 四类预期结果。`context/` 保存任务定义，`artifacts/` 保存打分材料。
 
-- [P5020 / NOIP 2018 货币系统](https://www.luogu.com.cn/problem/P5020)：无限张正面额货币，比较全部非负金额的可表示性。
-- [P1083 / NOIP 2012 借教室](https://www.luogu.com.cn/problem/P1083)：闭区间占用、按订单顺序、首次失败编号。
-- [P17832 / CSP-S 2026 地铁](https://www.luogu.com.cn/problem/P17832)：站厅与站台步行模型、连通地铁网络、最小步行时间。
+材料由下列题目摘编、限制规模或施加变异，使用时以本目录任务定义为准：
 
-`cases.json` 为每个正确性技能提供 correct、fatal、minor、boundary 各一例。`context/` 是自足的受限任务，`artifacts/` 是实际待审材料。同文题面、相同程序和相同题解由多条裁定复用一个文件，正确例与边界例保留独立裁定。statement 的待审材料自身即为题面，其 context 仅用于解释变异来源。solution 和 editorial 的 context 是应遵守的题意。
+| 来源 | 任务模型 |
+| --- | --- |
+| [P5020 / NOIP 2018 货币系统](https://www.luogu.com.cn/problem/P5020) | 无限张正面额货币的金额可表示性 |
+| [P1083 / NOIP 2012 借教室](https://www.luogu.com.cn/problem/P1083) | 闭区间占用、订单顺序和首次失败编号，使用正容量及正需求 |
+| [P17832 / CSP-S 2026 地铁](https://www.luogu.com.cn/problem/P17832) | 站厅、站台和地铁网络中的最小步行时间 |
 
-boundary 是不应因常规符号、标准完全背包或合理省略而扣分的边界案例。minor 明确包含必要明示或局部准确性缺陷。fatal 具有可手算的合法反例，不因修复短小而降级。地铁例只是人工省略了“双向乘坐”的受限材料，结合地铁惯例、互相可达及反向样例，意图足够明确，按必要明示缺失判 minor。
+`sources` 保存来源和上下文，`coverage_templates` 保存共享核验记录，每例的 `coverage_overrides` 覆盖不同项，`adjudication` 保存预期分级和结果。boundary 用于检查常规符号、标准算法及合理省略是否被误扣分。
 
-`sources` 集中保存相同来源与上下文，`coverage_templates` 保存相同核验观察，每例的 `coverage_overrides` 仅覆盖不同观察。测试读取时直接用字典合并，展开后的每例仍有完整来源、覆盖与裁定。
-
-这些是人工编写的预期裁定，不是模型执行记录。测试核验材料、反例的算术事实、裁定转为协议2.0报告后的确定性评分。它不会运行待审程序，也不能证明模型或技能已能发现这些问题。实际模型评测应独立执行、保留原始输出，并与这些预期比较。
+运行数据与算分测试：`python3 -m unittest tests.test_review_fixtures -v`。测试只读取材料及预期结果。测试智能体时，将 artifact 与对应 context 交给技能，再将生成报告与 adjudication 比较。

@@ -57,17 +57,17 @@ def _schema(args: argparse.Namespace) -> int:
 
 
 def build_parser(*, extensions: bool = True) -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="cpscore", description="Evidence-based artifact review with deterministic, root-cause-deduplicated scores.")
+    parser = argparse.ArgumentParser(prog="cpscore", description="CPscore: competitive-programming scoring agents and tools.")
     parser.add_argument("--version", action="version", version=f"cpscore {__version__}")
     commands = parser.add_subparsers(dest="command", required=True)
-    init = commands.add_parser("init-report", help="create an explicit, unreviewed report snapshot")
+    init = commands.add_parser("init-report", help="create a scoring report snapshot to fill in")
     init.add_argument("--scope", default="statement,solution,editorial", help="comma-separated requested objects")
     init.add_argument("--review-id", default="review-1")
     init.add_argument("--snapshot-id", default="snapshot-1")
     init.add_argument("--output", "-o", default="-", help="destination; '-' means stdout")
     init.set_defaults(func=_init)
     score = commands.add_parser("score", help="validate input and generate deterministic scores and report")
-    score.add_argument("report", help="input review JSON; '-' means stdin")
+    score.add_argument("report", help="input scoring record JSON; '-' means stdin")
     score.add_argument("--format", choices=("markdown", "json"), default="markdown")
     score.add_argument("--output", "-o", default="-")
     score.set_defaults(func=_score)
