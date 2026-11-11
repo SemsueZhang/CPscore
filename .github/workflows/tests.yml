@@ -1,40 +1,19 @@
-name: Tests
+name: Skills
 
 on:
   push:
   pull_request:
   workflow_dispatch:
-    inputs:
-      sandbox_integration:
-        description: Build Docker runner and execute real sandbox integration tests
-        type: boolean
-        default: false
 
 jobs:
-  unit:
+  copy-checks:
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python: ['3.10', '3.14']
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python }}
-      - run: python -m pip install jsonschema
-      - run: python -m unittest discover -s tests -v
-
-  sandbox:
-    if: github.event_name == 'workflow_dispatch' && inputs.sandbox_integration
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.14'
-      - run: docker build -f Dockerfile.runner -t cpscore-runner:local .
-      - run: python -m unittest tests.test_validation.SandboxIntegrationTests -v
-        env:
-          CPSCORE_RUN_SANDBOX_TESTS: '1'
+      - name: Check skill directories and documented copy operations
+        shell: bash
+        run: sh tests/check.sh
