@@ -1,77 +1,62 @@
-# CPScore : 面向算法竞赛的题目评价系统
+# CPScore：算法竞赛题目评价 Skills
 
-CPScore 是一个面向算法竞赛的独立评分 Skill。安装需要的技能，在本地智能体中提供材料，即可直接收到有依据的 Markdown 评审报告。现已支持 codex、claude code、opencode、deepseek harness 等多平台。
-
-目前总共有 8 个子 Skills，每个 Skill 可单独安装和调用。默认直接输出报告，只有你要求保存时才创建文件。
+CPScore 为算法竞赛出题、验题和组卷提供 8 个独立技能，覆盖材料审核、新颖度、单题与整套设计、选手表现预测。把题面、题解、标程或数据交给本地智能体，即可收到包含依据与修改建议的 Markdown 报告。默认在对话中返回，要求保存时才写文件。
 
 ## 技能清单
 
 | Skill | 用途 | 结果 |
 | --- | --- | --- |
-| [cp-statement-review](skills/cp-statement-review/SKILL.md) | 定义、输入输出、约束、边界、样例 | 10分制评分及修改建议 |
-| [cp-solution-review](skills/cp-solution-review/SKILL.md) | 算法、正确性、复杂度、实现 | 10分制评分及修改建议 |
-| [cp-editorial-review](skills/cp-editorial-review/SKILL.md) | 关键思想、证明、复杂度 | 10分制评分及修改建议 |
+| [cp-statement-review](skills/cp-statement-review/SKILL.md) | 规格、边界、样例与易读性 | 10分制评分及修改建议 |
+| [cp-solution-review](skills/cp-solution-review/SKILL.md) | std 正确性、复杂度、表达及与给定题解的对应 | 10分制评分及修改建议 |
+| [cp-editorial-review](skills/cp-editorial-review/SKILL.md) | 关键思想、证明、复杂度、逻辑衔接与可理解性 | 10分制评分及修改建议 |
 | [cp-data-review](skills/cp-data-review/SKILL.md) | 数据合法性、错解漏网、子任务得分 | 10分制评分及补点建议 |
 | [cp-novelty-review](skills/cp-novelty-review/SKILL.md) | 相似题、论文、独立考点和推导质量 | A/B/C/C+/D/F |
 | [cp-problem-review](skills/cp-problem-review/SKILL.md) | 单题材料、解法空间与整体设计 | 推荐 / 合格 / 不合格 |
-| [cp-contest-review](skills/cp-contest-review/SKILL.md) | 按实际比赛要求审核题目组合 | 推荐 / 合格 / 不合格 |
+| [cp-contest-review](skills/cp-contest-review/SKILL.md) | 赛前预测整套区分度、做题体验和整体质量 | 推荐 / 合格 / 不合格 |
 | [cp-performance-predict](skills/cp-performance-predict/SKILL.md) | 预测选手路线、障碍、时间和得分 | 预测分析，不作质量评级 |
 
 ## 安装与调用
 
-下载仓库，或执行 `git clone https://github.com/SemsueZhang/CPscore.git`。进入仓库目录后，将所需 Skill 复制到宿主技能目录。例如在 macOS、Linux 或 Git Bash 中全局安装一个 Codex Skill：
+下载或克隆仓库后，复制所需技能的完整目录。例如在 macOS、Linux 或 Git Bash 中全局安装 Codex 技能：
 
 ```sh
 mkdir -p "$HOME/.agents/skills"
 cp -R skills/cp-editorial-review "$HOME/.agents/skills/"
 ```
 
-其他宿主、项目级或批量安装、Windows PowerShell、更新与卸载统一见[安装说明](install.md)。已有同名技能时先保存自己的修改。
+安装后新建宿主会话，在题目项目中调用：
 
-安装后启动宿主的新会话，在题目项目中提供文件或粘贴材料。例如：
+```text
+$cp-editorial-review 审核 editorial.md，结合 statement.md。
+```
 
-| 宿主 | 输入示例 |
-| --- | --- |
-| Codex | `$cp-editorial-review 审核 editorial.md，结合 statement.md。` |
-| Claude Code | `/cp-editorial-review 审核 editorial.md，结合 statement.md。` |
-| OpenCode | `请加载 cp-editorial-review 技能，审核 editorial.md，结合 statement.md。` |
+需要文件时追加“将审核保存为 review.md”。其他用途替换技能名和材料即可，题目总评可直接审核原始材料或复用已有评审。
 
-其他用途只需替换技能名和材料。例如让 `cp-data-review` 结合原数据、答案、判定器和子任务检查是否有漏网错解，或让 `cp-problem-review` 直接审核全部题目材料。已有评审可直接复用，不必先运行其他技能。
-
-**重要**：需要文件时直接说“将审核保存为 review.md”，否则报告在对话中返回。简短报告示例：
-
-> **评分：7/10 — 尚可，值得打磨**
->
-> **[Major −3] 缺少最优性论证**
->
-> 当前只证明删去冗余面额后系统等价，还需证明任意等价系统都必须包含每个不可约面额。
->
-> **修改建议**：补充不可约面额必选的替换反证，建立种数下界。
+Codex、Claude Code、OpenCode、DeepSeek Harness 的安装位置与调用方式，以及批量安装、Windows、更新和卸载，见[安装说明](install.md)。已有同名技能时先保存自定义修改，再按更新步骤替换。
 
 ## 结果说明
 
-10分制从10分起，Fatal −10、Major −3、Minor −1，最低0分。同一根因只扣一次，未确认疑点不扣分。9～10分为优秀、具备推荐资格，6～8分为尚可、值得打磨，0～5分为不合格。关键核验未完成时标明暂定和具体缺口，暂定高分的档次待定。算法错误与证明缺漏分别判断，简洁正确的题解、公认结论和个人文风偏好不扣分。
+- **材料评分**：从10分起，Fatal −10、Major −3、Minor −1，允许负分。同一根因只扣一次，疑点不扣分。9～10分为优秀，6～8分为尚可，5分及以下为不合格。关键核验未完成时注明缺口，暂定6～10分的档次待定。
+- **新颖度**：独立使用A/B/C/C+/D/F，C+与F质量标准相同，区别在先例关系。
+- **题目总评**：推荐、合格、不合格，按单题协议汇总材料和设计判断。
+- **比赛总评**：默认依据赛前材料预测区分度、做题体验与整体质量，按逐题占比及整体否决条件判定。仅明确要求复盘时使用本场实际成绩，详见[比赛总评协议](skills/cp-contest-review/references/assessment.md)。
+- **表现预测**：给出路线、时间和得分区间，不作质量评级或实测成绩。
 
-新颖度独立使用A/B/C/C+/D/F。C+和F的质量标准相同，区别在先例关系。题目及比赛总评取各适用项的最低档，不取平均。选手表现预测是基于材料的分析，不是实测成绩。
+题解审核兼顾正确性与讲解质量，std 审核兼顾实现与题解对应。具体分级见各技能的 `references/`。读取、检索和执行使用宿主已有能力，实测结论须有真实结果，有限测试不替代证明。
 
-检索、读取和代码执行使用宿主已有能力。数据实际通过率和运行时间需要真实执行，缺少工具时会说明具体未完成部分。审核流程见各技能的 `SKILL.md`，详细协议放在相应技能的 `references/` 中，由入口说明何时读取。安装和更新时复制整个技能目录。
+新颖度检索附带可选的 Python 3.8+ 标准库辅助脚本，用于候选索引、原文缓存和分段读取。技能先检测已有解释器，不可用时回退到宿主工具，无需安装依赖，详见[检索说明](skills/cp-novelty-review/references/retrieval.md)。
 
 ## 项目目录
 
 ```text
 CPscore/
-├── .github/    # CI 配置与检查脚本
-├── examples/
-│   └── editorial-review.md     # 题解审核示例
-└── skills/
-    ├── cp-statement-review/    # 题面审核
-    ├── cp-solution-review/     # 程序审核
-    ├── cp-editorial-review/    # 题解审核
-    ├── cp-data-review/         # 数据审核
-    ├── cp-novelty-review/      # 新颖度审核
-    ├── cp-problem-review/      # 题目总评
-    ├── cp-contest-review/      # 比赛总评
-    └── cp-performance-predict/ # 选手表现预测
+├── .github/               # CI、安装复制与检索辅助检查
+├── examples/              # 审核案例、解法与核验代码
+├── install.md             # 多宿主安装说明
+└── skills/<skill>/
+    ├── SKILL.md           # 技能说明、核心流程与交付要求
+    ├── references/        # 详细协议，按入口指引读取
+    └── retrieve.py        # 仅新颖度技能附带的可选检索工具
 ```
 
 ## 示例
@@ -79,8 +64,11 @@ CPscore/
 | 项目 | 链接 | 摘要 |
 | --- | --- | --- |
 | 题解审核 | [货币系统](examples/editorial-review.md) | 算法正确但缺少最优性下界，评分7/10。此为编写的使用示例。 |
-
-更多实际评审案例待补充。
+| 题解审核实例 | [CCPC 2026 长春 L：故事](examples/editorial-review-story.md) | 最少剩余 1 的公式正确，缺少达到该数量时保留端点的判定，评分7/10。 |
+| std 审核示例 | [CSP-S 2026 迁徙](examples/solution-review.md) | 人工变体含 Fatal、Major、Minor 各一项，评分−4/10，附题解与实际反例。 |
+| 比赛评价实例 | [ICPC 2026 西安区域赛](examples/contest-review-xian-2026.md) | 整套合格，中段区分度有风险，附[解法推导](examples/contest-review-xian-2026-solutions.md)与[核验方法](examples/contest-review-xian-2026/README.md)。这是已暴露赛后结果的材料回放。 |
+| 新颖度与质量评审实例 | [CSP-S 2026 全卷](examples/novelty-review-csps2026.md) | 四题评级 A / B / F / C+，附先例比较、整套设计与检索范围。 |
+| 数据审核实例 | [CSP-S 2026 地铁](examples/data-review-subway.md) | 原集25点实测，评分−13/10，含8项独立缺陷及复现方法。 |
 
 ## 许可证
 
