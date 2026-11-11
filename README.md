@@ -61,8 +61,17 @@ cp -R skills/cp-editorial-review "$HOME/.agents/skills/"
 ```text
 CPscore/
 ├── .github/    # CI 配置与检查脚本
-├── examples/   # 使用示例
-└── skills/     # 八个独立 Skill 及其 references 协议
+├── examples/
+│   └── editorial-review.md     # 题解审核示例
+└── skills/
+    ├── cp-statement-review/    # 题面审核
+    ├── cp-solution-review/     # 程序审核
+    ├── cp-editorial-review/    # 题解审核
+    ├── cp-data-review/         # 数据审核
+    ├── cp-novelty-review/      # 新颖度审核
+    ├── cp-problem-review/      # 题目总评
+    ├── cp-contest-review/      # 比赛总评
+    └── cp-performance-predict/ # 选手表现预测
 ```
 
 ## 示例
