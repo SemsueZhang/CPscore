@@ -1,7 +1,7 @@
 #!/bin/sh
 # File and copy-operation checks only; no model calls or global changes.
 set -eu
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")/../.."
 cpscore_source=$(pwd)
 cpscore_temp=$(mktemp -d "${TMPDIR:-/tmp}/cpscore-check.XXXXXX")
 trap 'rm -rf "$cpscore_temp"' EXIT HUP INT TERM
@@ -23,6 +23,27 @@ for cpscore_dir in skills/*/; do
   if grep -E '\.cpscore/|scripts/cpscore\.py|python3 -m cpscore|docs/(protocol|assessment|data)\.md' "${cpscore_dir}SKILL.md"; then
     fail "Removed dependency in $cpscore_name"
   fi
+  # Validate references from the entrypoint and bundled Markdown protocols.
+  for cpscore_doc in "${cpscore_dir}SKILL.md" "${cpscore_dir}"references/*.md; do
+    test -f "$cpscore_doc" || continue
+    cpscore_doc_dir=$(dirname "$cpscore_doc")
+    awk '{
+      remaining=$0
+      while (match(remaining, /\]\([^)]*\)/)) {
+        print substr(remaining, RSTART + 2, RLENGTH - 3)
+        remaining=substr(remaining, RSTART + RLENGTH)
+      }
+    }' "$cpscore_doc" | while IFS= read -r cpscore_link; do
+      case "$cpscore_link" in
+        *://*|\#*|mailto:*) continue;;
+      esac
+      cpscore_target=${cpscore_link%%#*}
+      case "$cpscore_target" in
+        /*|../*|*/../*) fail "Reference leaves the skill package: $cpscore_doc -> $cpscore_link";;
+      esac
+      test -f "$cpscore_doc_dir/$cpscore_target" || fail "Missing reference: $cpscore_doc -> $cpscore_link"
+    done
+  done
   cpscore_count=$((cpscore_count + 1))
 done
 test "$cpscore_count" -gt 0 || fail 'No skills discovered'
@@ -33,11 +54,12 @@ cp -R skills "$cpscore_temp/source/"
 mkdir -p "$cpscore_temp/source/skills/cp-future-check"
 printf '%s\n' '---' 'name: cp-future-check' 'description: Temporary acceptance fixture.' '---' 'Reply in chat.' > "$cpscore_temp/source/skills/cp-future-check/SKILL.md"
 cd "$cpscore_temp/source"
-for cpscore_harness in codex claude-code opencode; do
+for cpscore_harness in codex claude-code opencode deepseek-harness; do
   case "$cpscore_harness" in
     codex) cpscore_global='.agents/skills'; cpscore_project='.agents/skills';;
     claude-code) cpscore_global='.claude/skills'; cpscore_project='.claude/skills';;
     opencode) cpscore_global='.config/opencode/skills'; cpscore_project='.opencode/skills';;
+    deepseek-harness) cpscore_global='.dsh/skills'; cpscore_project='.dsh/skills';;
   esac
   for cpscore_scope in global project; do
     if test "$cpscore_scope" = global; then
@@ -78,4 +100,4 @@ for cpscore_harness in codex claude-code opencode; do
   done
 done
 cd "$cpscore_source"
-printf '%s\n' "PASS $cpscore_count current skills: frontmatter and removed-dependency checks"
+printf '%s\n' "PASS $cpscore_count current skills: frontmatter, bundled references and removed-dependency checks"

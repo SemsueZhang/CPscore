@@ -16,4 +16,4 @@ jobs:
       - uses: actions/checkout@v4
       - name: Check skill directories and documented copy operations
         shell: bash
-        run: sh tests/check.sh
+        run: sh .github/scripts/check-skills.sh

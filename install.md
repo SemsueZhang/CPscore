@@ -1,20 +1,23 @@
 # 安装、调用、更新与卸载
 
-CPScore遵循[Agent Skills规范](https://agentskills.io/specification)：每个技能目录内有一个带 `name` 和 `description` 的 `SKILL.md`。所有当前技能都可独立复制，不需要公共协议、其他技能或运行时。
+CPScore遵循[Agent Skills规范](https://agentskills.io/specification)：每个技能目录内有一个带 `name` 和 `description` 的 `SKILL.md`，详细协议按需放在该技能的 `references/` 中。安装时复制整个技能目录，包含所有引用文件。各技能可独立使用，不依赖其他技能或额外运行时。
 
 ## 选择安装位置
 
-2026-11-11核对官方文档，以下为本地宿主的默认位置：
+以下为本地宿主的默认位置：
 
 | 宿主 | 全局 | 项目级 | 调用 |
 | --- | --- | --- | --- |
 | [Codex](https://learn.chatgpt.com/docs/build-skills) | `~/.agents/skills/` | `.agents/skills/` | `$cp-editorial-review`，或从技能选择器选择 |
 | [Claude Code](https://code.claude.com/docs/en/skills) | `~/.claude/skills/` | `.claude/skills/` | `/cp-editorial-review` |
 | [OpenCode](https://opencode.ai/docs/skills/) | `~/.config/opencode/skills/` | `.opencode/skills/` | 要求模型加载技能ID，新版本也可 `@cp-editorial-review` |
+| [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/skill/skill-filesystem/README.md) | `~/.dsh/skills/` | `.dsh/skills/` | [`/cp-editorial-review`](https://github.com/deepseek-ai/deepseek-harness/blob/master/packages/skill/tool-skill/README.md) |
 
 项目级目录在要审核的项目中，不一定是CPScore源码目录。全局会影响该宿主的其他本地项目。已有同名技能或全局、项目重复安装时，应核对实际加载路径，避免审到旧规则。宿主版本与当前文档不一致时，以实际版本的技能列表和加载路径为准。
 
 OpenCode支持DeepSeek等提供商。按[OpenCode提供商说明](https://opencode.ai/docs/providers/)或[DeepSeek官方接入说明](https://api-docs.deepseek.com/quick_start/agent_integrations/opencode/)，用 `/connect` 连接已有账户，再用 `/models` 选择模型。技能安装在OpenCode中，裸DeepSeek API没有这里的目录发现和调用机制。
+
+DeepSeek Harness支持当前的 `<技能名>/SKILL.md` 格式，默认也扫描项目级和全局的 `.agents/skills/`。设置了 `DSH_HOME` 时，其全局技能目录为该目录下的 `skills/`。以上接入方式依据官方文档，本项目尚未完成DeepSeek Harness的实际加载与审核验证。
 
 ## macOS、Linux、Git Bash
 
@@ -32,9 +35,11 @@ cpscore_skill=cp-editorial-review
 cpscore_dest="$HOME/.claude/skills"
 # OpenCode全局（如自行配置了其他配置根目录，使用实际路径）
 cpscore_dest="$HOME/.config/opencode/skills"
+# DeepSeek Harness全局（如设置了 DSH_HOME，使用其下的 skills 目录）
+cpscore_dest="$HOME/.dsh/skills"
 # 项目级示例：请换成已有题目项目的实际绝对路径
 cpscore_dest="/absolute/path/to/problem/.agents/skills"
-# Claude Code和OpenCode项目级分别使用 .claude/skills、.opencode/skills
+# Claude Code、OpenCode和DeepSeek Harness项目级分别使用 .claude/skills、.opencode/skills、.dsh/skills
 ```
 
 这些是备选赋值，选择其中一个即可。然后执行对应安装操作：
@@ -56,7 +61,7 @@ for cpscore_skill_dir in skills/*/; do
 done
 ```
 
-循环扫描实际目录，没有硬编码技能数量。不要只复制文件正文，保留 `<技能名>/SKILL.md` 目录结构。
+循环扫描实际目录，没有硬编码技能数量。保留完整的 `<技能名>/` 目录，包括 `SKILL.md` 和已有的 `references/`，不要只复制入口文件。
 
 **更新和卸载：**
 
@@ -80,7 +85,7 @@ New-Item -ItemType Directory -Force -Path $cpscoreDest | Out-Null
 Copy-Item -Recurse -Path "skills/$cpscoreSkill" -Destination $cpscoreDest
 ```
 
-全局Claude Code换为 `Join-Path $HOME '.claude/skills'`，OpenCode换为 `Join-Path $HOME '.config/opencode/skills'`。项目级改为实际路径，例如 `C:/problems/demo/.agents/skills`，其他宿主替换相应目录。
+全局Claude Code换为 `Join-Path $HOME '.claude/skills'`，OpenCode换为 `Join-Path $HOME '.config/opencode/skills'`，DeepSeek Harness换为 `Join-Path $HOME '.dsh/skills'`（自定义 `DSH_HOME` 时使用其下的 `skills` 目录）。项目级改为实际路径，例如 `C:/problems/demo/.agents/skills`，DeepSeek Harness可使用 `C:/problems/demo/.dsh/skills`。
 
 安装全部技能时，用以下操作替换最后一行：
 
@@ -105,4 +110,4 @@ Copy-Item -Recurse -Path "skills/$cpscoreSkill" -Destination $cpscoreDest
 
 重启或新建宿主会话，用对应名称调用，确认实际加载了所复制目录的 `SKILL.md`，提供一份题面或题解。预期直接在对话收到报告，不需要预建文件或执行CPScore命令。看不到技能时检查路径层级、名称冲突、宿主版本及技能访问权限。
 
-官方文档核对不等于本机调用成功。各宿主真实验证情况、命令与限制见[验收记录](review-notes.md)。
+DeepSeek Harness中可输入 `/cp-editorial-review 审核 editorial.md，结合 statement.md。`。若未发现技能，检查本地技能发现与加载插件是否启用，以及会话工作目录是否对应题目项目。
