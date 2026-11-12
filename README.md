@@ -36,7 +36,7 @@ Codex、Claude Code、OpenCode、DeepSeek Harness 的安装位置与调用方式
 
 ## 结果说明
 
-- **材料评分**：从10分起，Fatal −10、Major −3、Minor −1，允许负分。同一根因只扣一次，疑点不扣分。9～10分为优秀，6～8分为尚可，5分及以下为不合格。关键核验未完成时注明缺口，暂定6～10分的档次待定。
+- **材料评分**：从10分起，Fatal −10、Major −2、Minor −1，允许负分。同一根因只扣一次，疑点不扣分。9～10分为优秀，6～8分为尚可，5分及以下为不合格。关键核验未完成时注明缺口，暂定6～10分的档次待定。
 - **新颖度**：独立使用A/B/C/C+/D/F，C+与F质量标准相同，区别在先例关系。
 - **题目总评**：推荐、合格、不合格，按单题协议汇总材料和设计判断。
 - **比赛总评**：默认依据赛前材料预测区分度、做题体验与整体质量，按逐题占比及整体否决条件判定。仅明确要求复盘时使用本场实际成绩，详见[比赛总评协议](skills/cp-contest-review/references/assessment.md)。
@@ -63,12 +63,12 @@ CPscore/
 
 | 项目 | 链接 | 摘要 |
 | --- | --- | --- |
-| 题解审核 | [货币系统](examples/editorial-review.md) | 算法正确但缺少最优性下界，评分7/10。此为编写的使用示例。 |
-| 题解审核实例 | [CCPC 2026 长春 L：故事](examples/editorial-review-story.md) | 最少剩余 1 的公式正确，缺少达到该数量时保留端点的判定，评分7/10。 |
-| std 审核示例 | [CSP-S 2026 迁徙](examples/solution-review.md) | 人工变体含 Fatal、Major、Minor 各一项，评分−4/10，附题解与实际反例。 |
+| 题解审核 | [货币系统](examples/editorial-review.md) | 算法正确但缺少最优性下界，评分8/10。此为编写的使用示例。 |
+| 题解审核实例 | [CCPC 2026 长春 L：故事](examples/editorial-review-story.md) | 最少剩余 1 的公式正确，缺少达到该数量时保留端点的判定，评分8/10。 |
+| std 审核示例 | [CSP-S 2026 迁徙](examples/solution-review.md) | 人工变体含 Fatal、Major、Minor 各一项，评分−3/10，附题解与实际反例。 |
 | 比赛评价实例 | [ICPC 2026 西安区域赛](examples/contest-review-xian-2026.md) | 整套合格，中段区分度有风险，附[解法推导](examples/contest-review-xian-2026-solutions.md)与[核验方法](examples/contest-review-xian-2026/README.md)。这是已暴露赛后结果的材料回放。 |
 | 新颖度与质量评审实例 | [CSP-S 2026 全卷](examples/novelty-review-csps2026.md) | 四题评级 A / B / F / C+，附先例比较、整套设计与检索范围。 |
-| 数据审核实例 | [CSP-S 2026 地铁](examples/data-review-subway.md) | 原集25点实测，评分−13/10，含8项独立缺陷及复现方法。 |
+| 数据审核实例 | [CSP-S 2026 地铁](examples/data-review-subway.md) | 原集25点实测，评分−10/10，含8项独立缺陷及复现方法。 |
 
 ## 许可证
 
