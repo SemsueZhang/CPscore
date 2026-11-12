@@ -6,9 +6,9 @@ CPScore 为算法竞赛出题、验题和组卷提供 8 个独立技能，覆盖
 
 | Skill | 用途 | 结果 |
 | --- | --- | --- |
-| [cp-statement-review](skills/cp-statement-review/SKILL.md) | 规格、边界、样例与易读性 | 10分制评分及修改建议 |
+| [cp-statement-review](skills/cp-statement-review/SKILL.md) | 规格、边界、样例、洛谷规范与易读性 | 10分制评分及修改建议 |
 | [cp-solution-review](skills/cp-solution-review/SKILL.md) | std 正确性、复杂度、表达及与给定题解的对应 | 10分制评分及修改建议 |
-| [cp-editorial-review](skills/cp-editorial-review/SKILL.md) | 关键思想、证明、复杂度、逻辑衔接与可理解性 | 10分制评分及修改建议 |
+| [cp-editorial-review](skills/cp-editorial-review/SKILL.md) | 关键思想、证明、复杂度、讲解与洛谷题解规范 | 10分制评分及修改建议 |
 | [cp-data-review](skills/cp-data-review/SKILL.md) | 数据合法性、错解漏网、子任务得分 | 10分制评分及补点建议 |
 | [cp-novelty-review](skills/cp-novelty-review/SKILL.md) | 相似题、论文、独立考点和推导质量 | A/B/C/C+/D/F |
 | [cp-problem-review](skills/cp-problem-review/SKILL.md) | 单题材料、解法空间与整体设计 | 推荐 / 合格 / 不合格 |
@@ -42,7 +42,11 @@ Codex、Claude Code、OpenCode、DeepSeek Harness 的安装位置与调用方式
 - **比赛总评**：默认依据赛前材料预测区分度、做题体验与整体质量，按逐题占比及整体否决条件判定。仅明确要求复盘时使用本场实际成绩，详见[比赛总评协议](skills/cp-contest-review/references/assessment.md)。
 - **表现预测**：给出路线、时间和得分区间，不作质量评级或实测成绩。
 
-题解审核兼顾正确性与讲解质量，std 审核兼顾实现与题解对应。具体分级见各技能的 `references/`。读取、检索和执行使用宿主已有能力，实测结论须有真实结果，有限测试不替代证明。
+题面审核参照[洛谷主题库题目规范](https://help.luogu.com.cn/rules/academic/problem-standard)，覆盖排版、输入输出、数据范围、部分分、多语言及有材料支持的时空裕量检查。明确格式违规至少为 Major −2，严重妨碍核心题意或判定理解的可为 Fatal −10。建议未采纳不直接扣分，同一排版规则的重复违反合并一次，详见[规范核对表](skills/cp-statement-review/references/luogu-standard.md)和[评分协议](skills/cp-statement-review/references/scoring.md)。
+
+题解审核参照[洛谷主题库题解规范](https://help.luogu.com.cn/rules/academic/solution-standard)，兼顾正确性、讲解、Markdown、公式、代码及引用，按投稿场景核对图片托管和 GenAI 等来源要求。明确格式违规至少为 Major −2，严重的可为 Fatal −10，详见[题解规范核对表](skills/cp-editorial-review/references/luogu-standard.md)和[评分协议](skills/cp-editorial-review/references/scoring.md)。证明缺漏与算法错误分别判断，建议项及合理例外不直接扣分。
+
+std 审核兼顾实现与题解对应。具体分级见各技能的 `references/`。读取、检索和执行使用宿主已有能力，实测结论须有真实结果，有限测试不替代证明。
 
 新颖度检索附带可选的 Python 3.8+ 标准库辅助脚本，用于候选索引、原文缓存和分段读取。技能先检测已有解释器，不可用时回退到宿主工具，无需安装依赖，详见[检索说明](skills/cp-novelty-review/references/retrieval.md)。
 
@@ -63,8 +67,8 @@ CPscore/
 
 | 项目 | 链接 | 摘要 |
 | --- | --- | --- |
-| 题解审核 | [货币系统](examples/editorial-review.md) | 算法正确但缺少最优性下界，评分8/10。此为编写的使用示例。 |
-| 题解审核实例 | [CCPC 2026 长春 L：故事](examples/editorial-review-story.md) | 最少剩余 1 的公式正确，缺少达到该数量时保留端点的判定，评分8/10。 |
+| 题解审核 | [货币系统](examples/editorial-review.md) | 数学证明缺漏的编写示例，演示评分8/10，未演示新版洛谷规范全项核验。 |
+| 题解审核实例 | [CCPC 2026 长春 L：故事](examples/editorial-review-story.md) | 缺少达到最少剩余 1 时保留端点的判定，旧版数学审核评分8/10，未按新版规范复审。 |
 | std 审核示例 | [CSP-S 2026 迁徙](examples/solution-review.md) | 人工变体含 Fatal、Major、Minor 各一项，评分−3/10，附题解与实际反例。 |
 | 比赛评价实例 | [ICPC 2026 西安区域赛](examples/contest-review-xian-2026.md) | 整套合格，中段区分度有风险，附[解法推导](examples/contest-review-xian-2026-solutions.md)与[核验方法](examples/contest-review-xian-2026/README.md)。这是已暴露赛后结果的材料回放。 |
 | 新颖度与质量评审实例 | [CSP-S 2026 全卷](examples/novelty-review-csps2026.md) | 四题评级 A / B / F / C+，附先例比较、整套设计与检索范围。 |
