@@ -42,11 +42,13 @@ Codex、Claude Code、OpenCode、DeepSeek Harness 的安装位置与调用方式
 - **比赛总评**：默认依据赛前材料预测区分度、做题体验与整体质量，按逐题占比及整体否决条件判定。仅明确要求复盘时使用本场实际成绩，详见[比赛总评协议](skills/cp-contest-review/references/assessment.md)。
 - **表现预测**：给出路线、时间和得分区间，不作质量评级或实测成绩。
 
-题面审核参照[洛谷主题库题目规范](https://help.luogu.com.cn/rules/academic/problem-standard)，覆盖排版、输入输出、数据范围、部分分、多语言及有材料支持的时空裕量检查。明确格式违规至少为 Major −2，严重妨碍核心题意或判定理解的可为 Fatal −10。建议未采纳不直接扣分，同一排版规则的重复违反合并一次，详见[规范核对表](skills/cp-statement-review/references/luogu-standard.md)和[评分协议](skills/cp-statement-review/references/scoring.md)。
+题面审核先独立重建规格，再主动核验疑点，最后交叉核对材料并提出最小修订。方法分别维护在[规格核验](skills/cp-statement-review/references/specification.md)与[阅读和修订](skills/cp-statement-review/references/readability.md)，包括适用的洛谷规范；分级、去重及未完成状态统一见[评分协议](skills/cp-statement-review/references/scoring.md)。
 
 题解审核参照[洛谷主题库题解规范](https://help.luogu.com.cn/rules/academic/solution-standard)，兼顾正确性、讲解、Markdown、公式、代码及引用，按投稿场景核对图片托管和 GenAI 等来源要求。明确格式违规至少为 Major −2，严重的可为 Fatal −10，详见[题解规范核对表](skills/cp-editorial-review/references/luogu-standard.md)和[评分协议](skills/cp-editorial-review/references/scoring.md)。证明缺漏与算法错误分别判断，建议项及合理例外不直接扣分。
 
 std 审核兼顾实现与题解对应。具体分级见各技能的 `references/`。读取、检索和执行使用宿主已有能力，实测结论须有真实结果，有限测试不替代证明。
+
+各技能独立安装，入口只负责范围、流程、Reference 加载和交付。核验方法与评分或汇总规则分开维护，不依赖跨技能共享文件；表现预测足够简短，保留单文件。题面小案例、推演结果与验证边界见[方法验收材料](examples/statement-review-cases/README.md)。
 
 新颖度检索附带可选的 Python 3.8+ 标准库辅助脚本，用于候选索引、原文缓存和分段读取。技能先检测已有解释器，不可用时回退到宿主工具，无需安装依赖，详见[检索说明](skills/cp-novelty-review/references/retrieval.md)。
 
