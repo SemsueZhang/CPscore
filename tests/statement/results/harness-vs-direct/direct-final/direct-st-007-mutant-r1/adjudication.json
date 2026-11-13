@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-007-mutant-r1",
+  "raw_sha256": "2e5fe7af54f3af633580bdcf2a7179fcba146f9eb464f1a294c926202348e503",
+  "prediction_sha256": "fd1511e85d4977b5539db3e5b1cc2f6167d1fb90fcfb842d386753670f743021",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert claim",
+  "reviewed_at": "2026-11-13T03:31:31.408956+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "equivalence",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "aa/a有两个下标序列、只有一个选出字符串；两项明示计数规则给2与1，正式样例均1不能排除。",
+      "novel_issue_review": null
+    }
+  ]
+}

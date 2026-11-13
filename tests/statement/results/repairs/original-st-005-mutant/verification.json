@@ -1,0 +1,10 @@
+{
+  "case_id": "st-005-mutant",
+  "candidate_sha256": "dd117366b24c99be94b07d74dca1f26da02df70590e17b9cdace99369025055c",
+  "checks": [
+    "tie and non-tie departure arithmetic; actual sample"
+  ],
+  "scope": "finite witnesses; general argument and prose mapping are in proof.md",
+  "status": "passed",
+  "verification_script_sha256": "ca0571fb36e887489b81ac33e9cd128315bdd8667651a145116e5e90aa729fab"
+}

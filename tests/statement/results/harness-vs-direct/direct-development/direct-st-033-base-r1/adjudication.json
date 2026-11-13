@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-033-base-r1",
+  "raw_sha256": "a0c2b43e45d4512fa3f1aa55b65dfefa5cd478189aabf4ff7ff4a4bde782d4bb",
+  "prediction_sha256": "3588e2149c1ed7b90dbb01a611d98491009f0fd5b7ff2372559c14539c6f72ff",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T03:10:11.858570+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "query_budget",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐项核对空图轨迹最多M−1询问，留下未问边e；空图和仅含e的图产生同样回复但总边数0、1不同。没有误用图的状态数与标量输出数作比较。",
+      "novel_issue_review": null
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-028-base-r1",
+  "raw_sha256": "09715a002043503dd2fcffe9025442f5fd6f1893482a55143dbe45ed8e570bfd",
+  "prediction_sha256": "eab425fe7dc1bcdde16db96d8abb1b22050736b10f77b1f71ef9804a0d255956",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T01:16:53.182695+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "zero_total",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "n=1,w=0,c=0或1均合法，公式分别为0/0或1/0，有限实数输出及绝对误差无法定义。",
+      "novel_issue_review": null
+    }
+  ]
+}

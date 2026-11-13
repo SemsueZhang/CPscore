@@ -1,0 +1,20 @@
+{
+  "score": 9,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Minor",
+      "quote": "输出一行，一个有限实数 $y$，表示最短时简。",
+      "evidence": "“时简”是“时间”的局部错字；结合题意和后续误差判定公式，含义可直接恢复，不影响正确答案或接受规则。",
+      "repairs": [
+        {
+          "find": "表示最短时简",
+          "replace": "表示最短时间",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

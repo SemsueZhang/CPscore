@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-012-mutant-r4",
+  "raw_sha256": "36e537559fd50b5403b38a5e245439b29f4103f4f1f6e019e3a401db862d6d6c",
+  "prediction_sha256": "68f32a6748c6539bcd87d6f3587a41538e534d3a654b66f5c555f6c6d970584e",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human claim",
+  "reviewed_at": "2026-11-13T02:11:00.586994+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "time_typo",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "已逐次读过报告，时简为可唯一恢复的时间错字，正文及判定公式已定义输出。报告未因该错字编造两套数学任务，仅按Minor扣一次。",
+      "novel_issue_review": null
+    }
+  ]
+}

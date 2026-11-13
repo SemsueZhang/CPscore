@@ -1,0 +1,10 @@
+{
+  "case_id": "st-035-base",
+  "candidate_sha256": "4fc3edb63d478f6eb43dc7af5e01d9ad901ea5408a543db87d2e3b1de9404e99",
+  "checks": [
+    "finite settlement domain, nonnegative invariant, sample and old witness"
+  ],
+  "scope": "finite witnesses; general argument and prose mapping are in proof.md",
+  "status": "passed",
+  "verification_script_sha256": "823b62134ac284a93e7588f7d78f3ca2477468a57afd6a22a9d0d47684010e5c"
+}

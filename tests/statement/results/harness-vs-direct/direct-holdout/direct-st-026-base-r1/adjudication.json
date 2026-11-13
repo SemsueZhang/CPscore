@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-026-base-r1",
+  "raw_sha256": "c5a084dfa782eea3153b2e2c2b2ac5f3ae6a45b97b1bb8508da2ee0044f227be",
+  "prediction_sha256": "13eb084e75e671ae0351e4a2b7bf892f80899e3726cf412fbe45f224761521ca",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert claim",
+  "reviewed_at": "2026-11-13T03:31:31.423481+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "singleton",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "n=1,a=0合法，下标对集合空，整数最小值未定义且无输出约定。",
+      "novel_issue_review": null
+    }
+  ]
+}

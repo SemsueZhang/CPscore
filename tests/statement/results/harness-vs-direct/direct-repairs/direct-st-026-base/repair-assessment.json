@@ -1,0 +1,36 @@
+{
+  "case_id": "st-026-base",
+  "root_id": "singleton",
+  "parent_run_id": "direct-st-026-base-r1",
+  "review_run_id": "direct-st-026-base-r1-repair-ffa02a27de",
+  "review_run_directory": "../../direct-repair-reviews/direct-st-026-base-r1-repair-ffa02a27de",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": true,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "e1da9207408cabbaa56687ee348a8bd6d018a22283226fa468d3fb2aa9886a6d",
+      "result": "Maintainer-model general argument tied to exact candidate; not human confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "ef8d90b4cf62ca21d1d148381fd8678fb0868d8197283b88056ce45c40fc09b4",
+      "result": "Actual executed finite checks: [\"excluded singleton; nonempty minimum and adjacent-sorted invariant\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex maintainer; written proof and finite checks plus fresh real host review; not human expert",
+  "reason": "已阅读实际独立新会话复审，结合绑定候选的数学论证及已执行程序，目标根因被消除，未确认新增规格错误；不从模型满分推定保留了原规则。",
+  "complete": true,
+  "scope_change": "n=1 inputs excluded by raising lower bound to 2.",
+  "reviewed_at": "2026-11-13T03:40:52.629388+00:00",
+  "review_raw_sha256": "e0946d62833e03a1cdbfc02d286d03a88a239a14d262304e38387fbf2e2dad72",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

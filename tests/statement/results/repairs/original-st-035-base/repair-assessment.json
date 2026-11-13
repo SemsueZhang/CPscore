@@ -1,0 +1,36 @@
+{
+  "case_id": "st-035-base",
+  "root_id": "settlement_order",
+  "parent_run_id": "original-st-035-base-r1",
+  "review_run_id": "original-st-035-base-r1-repair-d40123f140",
+  "review_run_directory": "../../repair-reviews/original-st-035-base-r1-repair-d40123f140",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "569b167f37c9f7680302bdeae0b9ff5cf5b5eb9db7ebe977f19618d9fdd23958",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "8e909332b0811ca240a972c664b5624dd7fae58915a08ef653fdc2a20de63753",
+      "result": "Actual executed finite checks: [\"finite settlement domain, nonnegative invariant, sample and old witness\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+  "complete": true,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "reviewed_at": "2026-11-13T02:28:27.288379+00:00",
+  "review_raw_sha256": "07f7b6e458478cee65d6e7500a0a7a28a975247917d431b3ae054fe4cb250f6a",
+  "review_prediction_sha256": "52df012e559f20ad4b6605cda8439b52b40e11516db5c73ce4eab93ab9c06248",
+  "remaining_preexisting_defects": []
+}

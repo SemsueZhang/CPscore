@@ -1,0 +1,97 @@
+{
+  "registered_at": "2026-11-13T01:29:46.593929+00:00",
+  "targets": [
+    {
+      "case_id": "st-001-mutant",
+      "root_id": "order"
+    },
+    {
+      "case_id": "st-002-mutant",
+      "root_id": "sample_explanation"
+    },
+    {
+      "case_id": "st-003-mutant",
+      "root_id": "distance_definition"
+    },
+    {
+      "case_id": "st-004-mutant",
+      "root_id": "unbounded"
+    },
+    {
+      "case_id": "st-005-mutant",
+      "root_id": "time_tie"
+    },
+    {
+      "case_id": "st-006-mutant",
+      "root_id": "sample_components"
+    },
+    {
+      "case_id": "st-007-mutant",
+      "root_id": "equivalence"
+    },
+    {
+      "case_id": "st-008-mutant",
+      "root_id": "construct_impossible"
+    },
+    {
+      "case_id": "st-009-mutant",
+      "root_id": "literal_markup"
+    },
+    {
+      "case_id": "st-010-mutant",
+      "root_id": "matrix_sample"
+    },
+    {
+      "case_id": "st-011-mutant",
+      "root_id": "zero_relative"
+    },
+    {
+      "case_id": "st-014-mutant",
+      "root_id": "reply_mapping"
+    },
+    {
+      "case_id": "st-015-mutant",
+      "root_id": "distance_transcript"
+    },
+    {
+      "case_id": "st-016-mutant",
+      "root_id": "index_shift"
+    },
+    {
+      "case_id": "st-025-base",
+      "root_id": "direction"
+    },
+    {
+      "case_id": "st-026-base",
+      "root_id": "singleton"
+    },
+    {
+      "case_id": "st-029-base",
+      "root_id": "sample_value"
+    },
+    {
+      "case_id": "st-037-base",
+      "root_id": "input_typo"
+    },
+    {
+      "case_id": "st-034-base",
+      "root_id": "message_budget"
+    },
+    {
+      "case_id": "st-035-base",
+      "root_id": "settlement_order"
+    }
+  ],
+  "selection": "Choose the first coherent model-proposed option in report order; include all additive edits in that option. Do not combine mutually exclusive alternatives, switch after re-review, or use Gold to generate edits.",
+  "conditional_author": "Synthetic case author is Codex maintainer model, not a claimed human or inferred real author.",
+  "scope_rule": "Record numerical input-domain and protocol-budget changes separately. changed_clear_semantics refers to changes to previously clear non-defective input/output or model rules beyond the defect being repaired. Author approval does not conceal such changes.",
+  "coverage_adjustment": "Two redundant typo targets replaced by communication/simulation before any independent repair re-review.",
+  "variants": [
+    "original",
+    "improved"
+  ],
+  "independent_defect_targets": 20,
+  "planned_candidate_rechecks": 40,
+  "paired_extension_registered_at": "2026-11-13T01:44:31.172906+00:00",
+  "paired_extension_reason": "Evaluate repair effectiveness on the same 20 roots for both Skill versions, so absolute success is not mistaken for evidence of improvement. Registered before any candidate re-review; all first candidates retained."
+}

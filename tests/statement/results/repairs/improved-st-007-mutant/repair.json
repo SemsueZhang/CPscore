@@ -1,0 +1,22 @@
+{
+  "case_id": "st-007-mutant",
+  "parent_run_id": "improved-st-007-mutant-r1",
+  "parent_raw_sha256": "e626157d4ceb9cda02f9fe27658fec45305bbe293b93b91ae26d290d1370c537",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "不同下标序列若选出字符串相同，则视为同一方案。",
+      "replace": "不同下标序列视为不同方案，即使选出的字符串相同。",
+      "conditional": true
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic case author (Codex maintainer model) selects the first coherent model-proposed option before re-review under the registered policy.",
+  "original_sha256": "b839af58e3e59dff28177da8c9591483f2dcf532cc8fc466a55ddf25cb610e50",
+  "statement_sha256": "222bf145ffd5ad50fa446e0a1484989e3eea81c8798fe7ff46f5ca85dee1ca03",
+  "created_at": "2026-11-13T01:58:36.226977+00:00",
+  "independent_verification": "pending"
+}

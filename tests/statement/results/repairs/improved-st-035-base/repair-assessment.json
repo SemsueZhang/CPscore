@@ -1,0 +1,36 @@
+{
+  "case_id": "st-035-base",
+  "root_id": "settlement_order",
+  "parent_run_id": "improved-st-035-base-r1",
+  "review_run_id": "improved-st-035-base-r1-repair-4fc3edb63d",
+  "review_run_directory": "../../repair-reviews/improved-st-035-base-r1-repair-4fc3edb63d",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "a95f9eb2fa9e83e0d57c9f7a48de13e53661e26327105172e694ef54927e0cb0",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "a12ebdb85dac96bae3cefd7410b6f83727699ae0a0f8c23b32a984125b8cb3d6",
+      "result": "Actual executed finite checks: [\"finite settlement domain, nonnegative invariant, sample and old witness\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+  "complete": true,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "reviewed_at": "2026-11-13T02:33:48.932106+00:00",
+  "review_raw_sha256": "2d96b8d8517a6b8151bcb381eb6586d2113a6b2fe61f34c118b08f85731db7e1",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

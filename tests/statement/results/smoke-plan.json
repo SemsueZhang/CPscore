@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "suite": "smoke",
+  "split": "all",
+  "created_at": "2026-11-13T00:36:02.924222+00:00",
+  "model": "gpt-6.1-sol",
+  "effort": "xhigh",
+  "host": "codex-exec",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied"
+  },
+  "skills": {
+    "original": {
+      "label": "original",
+      "commit": "db9e9f6fba2370ce04a6b4c0f60b1608f48ae2d8",
+      "sha256": "3ea94c8c971a84928d37246b60dbd9847f1331a58196be2334d3353eea26cc0a"
+    },
+    "improved": {
+      "label": "improved",
+      "commit": "5af3cda53b95ef963c81ff0cd6abd3658836d072",
+      "sha256": "2193fd7c97cde1094d7bae28f71a7956c087d97c2ea5814ef27ea84961fdb5aa"
+    }
+  },
+  "runs": [
+    {
+      "run_id": "original-st-001-base-r1",
+      "case_id": "st-001-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "7781eb1c8fc9115162b8f08130d06c4c38353841986104546ddf89db8d1400b5"
+    },
+    {
+      "run_id": "original-st-008-base-r1",
+      "case_id": "st-008-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9"
+    },
+    {
+      "run_id": "original-st-011-base-r1",
+      "case_id": "st-011-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe"
+    },
+    {
+      "run_id": "original-st-014-base-r1",
+      "case_id": "st-014-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "64eef07822273207212eeab62bcb613f1c27ed9f7a9f5498ae8b36bf076b65ff"
+    },
+    {
+      "run_id": "original-st-017-base-r1",
+      "case_id": "st-017-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "3d3584f92d7adb230ab83ca2e5e5f011b6216d96dd72ca3b1d40cfc6ec03240f"
+    },
+    {
+      "run_id": "original-st-020-base-r1",
+      "case_id": "st-020-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "e0304ced4e629cc0159835c30447d1f6123ce77db3ae88c6146d2a00bb0e5bb6"
+    },
+    {
+      "run_id": "original-st-025-base-r1",
+      "case_id": "st-025-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "8a599f85cfbc77978606308a7dc15ded13972a714eaece24f92074c990d581b0"
+    },
+    {
+      "run_id": "original-st-035-base-r1",
+      "case_id": "st-035-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "ae3f2688807f1892352667ae008d9dfa55a3435d3f0cec82bd65d8dcbf7ab10f"
+    },
+    {
+      "run_id": "improved-st-001-base-r1",
+      "case_id": "st-001-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "7781eb1c8fc9115162b8f08130d06c4c38353841986104546ddf89db8d1400b5"
+    },
+    {
+      "run_id": "improved-st-008-base-r1",
+      "case_id": "st-008-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9"
+    },
+    {
+      "run_id": "improved-st-011-base-r1",
+      "case_id": "st-011-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe"
+    },
+    {
+      "run_id": "improved-st-014-base-r1",
+      "case_id": "st-014-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "64eef07822273207212eeab62bcb613f1c27ed9f7a9f5498ae8b36bf076b65ff"
+    },
+    {
+      "run_id": "improved-st-017-base-r1",
+      "case_id": "st-017-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "3d3584f92d7adb230ab83ca2e5e5f011b6216d96dd72ca3b1d40cfc6ec03240f"
+    },
+    {
+      "run_id": "improved-st-020-base-r1",
+      "case_id": "st-020-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "e0304ced4e629cc0159835c30447d1f6123ce77db3ae88c6146d2a00bb0e5bb6"
+    },
+    {
+      "run_id": "improved-st-025-base-r1",
+      "case_id": "st-025-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "8a599f85cfbc77978606308a7dc15ded13972a714eaece24f92074c990d581b0"
+    },
+    {
+      "run_id": "improved-st-035-base-r1",
+      "case_id": "st-035-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "ae3f2688807f1892352667ae008d9dfa55a3435d3f0cec82bd65d8dcbf7ab10f"
+    }
+  ]
+}

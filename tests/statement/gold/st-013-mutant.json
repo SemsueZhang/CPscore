@@ -1,0 +1,73 @@
+{
+  "case_id": "st-013-mutant",
+  "family_id": "st-013",
+  "version": "mutant",
+  "problem_type": "floating",
+  "legal_input_domain": {
+    "summary": "前向无环随机转移，终点固定终止。",
+    "input_contract": "第一行输入整数 $n$。随后 $n$ 行，每行输入三个整数 $p_i,q_i,b_i$。",
+    "bounds": "$1\\le n\\le2\\times10^5$，$0\\le p_i\\le q_i\\le10^6$，$q_i\\ge1$，$1\\le b_i\\le n$。其余保证如题目描述。",
+    "additional_guarantees_source": "cases/st-013-mutant.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "有限前向试验的期望及误差关系不变，存在局部错字。",
+  "oracle": {
+    "name": "expectation",
+    "args": {
+      "states": [
+        [
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    "expected": 1.5
+  },
+  "defects": [
+    {
+      "root_id": "choice_typo",
+      "category": "local_typo",
+      "severity": "Minor",
+      "quote": "随机选则",
+      "evidence": "“选则”应为“选择”，独立性与概率协议不变。",
+      "witness": null,
+      "acceptable_repairs": [
+        {
+          "find": "随机选则",
+          "replace": "随机选择",
+          "conditional": false,
+          "changes_domain": false
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "2\n1 2 2\n0 1 2\n",
+      "output": "1.500000\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-013-mutant.md",
+  "statement_sha256": "785fe3ce86c2fdca0688b4234f78e07f3b080b275abc0548dc0d3ab59d40725c",
+  "has_known_defects": true,
+  "original_kind": "clean",
+  "completeness_review": "有向前向转移保证最多n次，最后一次终止试验也计时；概率0、1及n=1齐全。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 9,
+  "reference_relation": "每次含终止试验计时，E_i=1+p_i/q_i E_b。"
+}

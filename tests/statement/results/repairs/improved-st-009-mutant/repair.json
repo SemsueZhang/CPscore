@@ -1,0 +1,22 @@
+{
+  "case_id": "st-009-mutant",
+  "parent_run_id": "improved-st-009-mutant-r1",
+  "parent_raw_sha256": "584f595fcf55d7c4cd60607b5eecfdecf9ee75f6984e6074aa1d6e4c6ec247b0",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "无解输出一行 NO。",
+      "replace": "无解输出一行 `NO`。",
+      "conditional": false
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic case author (Codex maintainer model) selects the first coherent model-proposed option before re-review under the registered policy.",
+  "original_sha256": "74c4f3cfe42ea66f26d0285ff718ac6eef977256027063773aa5655b9a3d2f78",
+  "statement_sha256": "72565cbc4176611d6248a5007bff8ee1404e4fec136145a7079fe29f8c1dade7",
+  "created_at": "2026-11-13T01:58:36.285382+00:00",
+  "independent_verification": "pending"
+}

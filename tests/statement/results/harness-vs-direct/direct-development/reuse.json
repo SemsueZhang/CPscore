@@ -1,0 +1,5 @@
+{
+  "source": "../direct-smoke",
+  "reused_runs": 8,
+  "rule": "All exact-input/model/prompt/Skill-mode matches reused; not selected by score."
+}

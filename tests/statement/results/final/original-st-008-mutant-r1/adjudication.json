@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-008-mutant-r1",
+  "raw_sha256": "6dfc9aaf88fd294a25e82077579e5d2de24c4a8c6ff9fadb5523d31ce5d195c7",
+  "prediction_sha256": "b23be17272f1a94b488d42cfa2129c0a45b9f438eb38231018d3bc1e2f42232b",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T01:16:53.164335+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "construct_impossible",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "合法n=1,k=1，唯一排列逆序数0，NO同时被正文要求及输出格式禁止；与Gold同一协议根因。",
+      "novel_issue_review": null
+    }
+  ]
+}

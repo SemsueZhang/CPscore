@@ -1,0 +1,50 @@
+{
+  "case_id": "st-010-base",
+  "family_id": "st-010",
+  "version": "base",
+  "problem_type": "construction",
+  "legal_input_domain": {
+    "summary": "行列配额各在合法范围内，但不保证可同时满足。",
+    "input_contract": "第一行输入两个整数 $n,m$。第二行输入 $n$ 个整数 $r_i$。第三行输入 $m$ 个整数 $c_j$。",
+    "bounds": "$1\\le n,m\\le60$，$0\\le r_i\\le m$，$0\\le c_j\\le n$。",
+    "additional_guarantees_source": "cases/st-010-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "满足二进制矩阵边际和的关系或 NO。",
+  "oracle": {
+    "name": "matrix",
+    "args": {
+      "rows": [
+        1,
+        1
+      ],
+      "cols": [
+        1,
+        1
+      ],
+      "matrix": [
+        "10",
+        "01"
+      ]
+    },
+    "expected": true
+  },
+  "defects": [],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "2 2\n1 1\n1 1\n",
+      "output": "YES\n10\n01\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-010-base.md",
+  "statement_sha256": "2f2ce7779a4de87b48ae77870d264f50291c5d06ccbccdf7a17db86ba939863e",
+  "has_known_defects": false,
+  "original_kind": "clean",
+  "completeness_review": "不保证行列总和相等，NO覆盖不可能情况，多合法矩阵均接受。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 10
+}

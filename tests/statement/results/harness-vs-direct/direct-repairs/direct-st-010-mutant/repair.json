@@ -1,0 +1,22 @@
+{
+  "case_id": "st-010-mutant",
+  "parent_run_id": "direct-st-010-mutant-r1",
+  "parent_raw_sha256": "a72d71550ed644f845b2e00ea81d82add9abc8104f99d13cd9cc2b555bcad79d",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "YES\n11\n00",
+      "replace": "YES\n10\n01",
+      "conditional": false
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic author (Codex maintainer model) selects first coherent actual option before re-review under the registered policy.",
+  "original_sha256": "65478aac9524e829e0e71d5b4244cd41e26ccacb2be61a04b4b7c84d178eec30",
+  "statement_sha256": "2f2ce7779a4de87b48ae77870d264f50291c5d06ccbccdf7a17db86ba939863e",
+  "created_at": "2026-11-13T03:24:29.114020+00:00",
+  "independent_verification": "pending"
+}

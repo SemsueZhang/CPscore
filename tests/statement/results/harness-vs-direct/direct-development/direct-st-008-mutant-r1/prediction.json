@@ -1,0 +1,20 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "不论是否有解，都必须输出排列，不允许输出无解标记。",
+      "evidence": "正文要求“若不存在则输出 `NO`”，与输出格式直接矛盾。合法输入 n=1、k=1 无解：唯一排列 [1] 的逆序对数为 0。此时无法同时满足输出 NO 与禁止无解标记、必须输出排列的要求，影响输出及接受规则。",
+      "repairs": [
+        {
+          "find": "不论是否有解，都必须输出排列，不允许输出无解标记。",
+          "replace": "若不存在满足要求的排列，输出一行 `NO`。",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

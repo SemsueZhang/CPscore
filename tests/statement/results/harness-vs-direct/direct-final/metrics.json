@@ -1,0 +1,1121 @@
+{
+  "created_at": "2026-11-13T03:36:14.584331+00:00",
+  "plan_suite": "combined",
+  "execution": {
+    "completed": 108
+  },
+  "planned_runs": 108,
+  "observed_unique_sessions": 108,
+  "runs": [
+    {
+      "run_id": "direct-st-001-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-001-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-003-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-003-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-005-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-005-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-008-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-008-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-011-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-011-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-014-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-014-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-017-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-020-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-025-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-028-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-030-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-033-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-035-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-037-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-039-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-001-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-001-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-001-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-001-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-008-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-008-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-008-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-008-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-011-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-011-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-011-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-011-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-014-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-014-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-014-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-014-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-017-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-017-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-017-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-017-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-020-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-020-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-020-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-020-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-001-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-001-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-001-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-001-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-025-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-025-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-025-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-025-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-033-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-033-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-033-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-033-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-001-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-008-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-011-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-020-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-002-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-002-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-004-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-004-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-006-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-006-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-007-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-007-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-009-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-009-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-010-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-010-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-012-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-012-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-013-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-013-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-015-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-015-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-016-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-016-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-018-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-019-base-r1",
+      "status": "completed",
+      "adjudicated": false
+    },
+    {
+      "run_id": "direct-st-021-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-022-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-023-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-024-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-026-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-027-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-029-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-031-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-032-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-034-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-036-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-038-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-040-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-009-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-009-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-009-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-009-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-012-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-012-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-012-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-012-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-034-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-034-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-034-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "direct-st-034-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    }
+  ],
+  "triage": [
+    {
+      "run_id": "direct-st-019-base-r1",
+      "case_id": "st-019-base",
+      "complete": false,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "pending",
+          "root_id": null,
+          "extra_root_id": null,
+          "evidence_valid": null,
+          "reason": "现有文字给出了抽象边集、整数、二进制串和布尔函数协议，未指定固定C++ ABI。不同C++容器会影响某固定外部接口，但该接口是否为本材料必须给出的内容尚未确定。保留待独立接口规范复核，不直接记FP，也不据被测报告升级冻结Gold。",
+          "novel_issue_review": null
+        }
+      ]
+    }
+  ],
+  "detection": {
+    "direct": {
+      "reviewed_runs": 53,
+      "excluded_unconfirmed_gold_runs": 2,
+      "counts": {
+        "tp": 29,
+        "fp": 0,
+        "gold": 30,
+        "fatal_total": 25,
+        "fatal_hit": 25,
+        "important_total": 26,
+        "important_hit": 25,
+        "severity_total": 29,
+        "severity_correct": 27,
+        "evidence_total": 29,
+        "evidence_valid": 29,
+        "novel_confirmed": 0,
+        "duplicates": 0,
+        "clean_total": 23,
+        "clean_fp": 0,
+        "score_total": 53,
+        "score_arithmetic_error": 0,
+        "deduplicated_score_error": 0
+      }
+    }
+  },
+  "detection_by_split": {
+    "direct": {
+      "development": {
+        "reviewed_runs": 19,
+        "excluded_unconfirmed_gold_runs": 2,
+        "counts": {
+          "tp": 11,
+          "fp": 0,
+          "gold": 11,
+          "fatal_total": 10,
+          "fatal_hit": 10,
+          "important_total": 10,
+          "important_hit": 10,
+          "severity_total": 11,
+          "severity_correct": 11,
+          "evidence_total": 11,
+          "evidence_valid": 11,
+          "novel_confirmed": 0,
+          "duplicates": 0,
+          "clean_total": 8,
+          "clean_fp": 0,
+          "score_total": 19,
+          "score_arithmetic_error": 0,
+          "deduplicated_score_error": 0
+        }
+      },
+      "holdout": {
+        "reviewed_runs": 34,
+        "excluded_unconfirmed_gold_runs": 0,
+        "counts": {
+          "tp": 18,
+          "fp": 0,
+          "gold": 19,
+          "fatal_total": 15,
+          "fatal_hit": 15,
+          "important_total": 16,
+          "important_hit": 15,
+          "severity_total": 18,
+          "severity_correct": 16,
+          "evidence_total": 18,
+          "evidence_valid": 18,
+          "novel_confirmed": 0,
+          "duplicates": 0,
+          "clean_total": 15,
+          "clean_fp": 0,
+          "score_total": 34,
+          "score_arithmetic_error": 0,
+          "deduplicated_score_error": 0
+        }
+      }
+    }
+  },
+  "consistency": [
+    {
+      "skill": "direct",
+      "case_id": "st-001-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-001-mutant",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "order": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-008-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-009-mutant",
+      "core_modal": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 0.6,
+      "severity": {
+        "extra:phantom_double_backslash": {
+          "labels": [
+            "absent",
+            "absent",
+            "absent",
+            "absent",
+            "Minor"
+          ],
+          "modal_count": 4,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        9
+      ],
+      "score_range": 1,
+      "score_stddev": 0.4,
+      "unsupported_deductions": 1,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty",
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-011-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-012-mutant",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "time_typo": {
+          "labels": [
+            "Minor",
+            "Minor",
+            "Minor",
+            "Minor",
+            "Minor"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-014-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-017-base",
+      "core_modal": {
+        "numerator": 4,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 0.6,
+      "severity": {
+        "extra:phantom_double_backslash": {
+          "labels": [
+            "absent",
+            "absent",
+            "absent",
+            "Minor",
+            "absent"
+          ],
+          "modal_count": 4,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        10,
+        10,
+        10,
+        9,
+        10
+      ],
+      "score_range": 1,
+      "score_stddev": 0.4,
+      "unsupported_deductions": 1,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty",
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-020-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-025-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "direction": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-033-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "query_budget": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-034-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "message_budget": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    }
+  ],
+  "equivalence": [
+    {
+      "skill": "direct",
+      "case_id": "st-001-equivalent",
+      "equivalent_to": "st-001-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-008-equivalent",
+      "equivalent_to": "st-008-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-011-equivalent",
+      "equivalent_to": "st-011-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "direct",
+      "case_id": "st-020-equivalent",
+      "equivalent_to": "st-020-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    }
+  ],
+  "repairs": [],
+  "repair_results_source": "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/harness-vs-direct/direct-repairs",
+  "targets": {
+    "important_recall": 0.85,
+    "precision": 0.9,
+    "clean_fpr": 0.1,
+    "core_consistency": 0.8,
+    "effective_repair": 0.85,
+    "new_substantive_errors": 0
+  },
+  "target_status": "not_established; requires complete coverage and closed adjudications",
+  "comparison": [],
+  "consistency_aggregate": {
+    "direct": {
+      "complete_groups": 12,
+      "planned_groups": 12,
+      "core_modal_consistency": {
+        "numerator": 58,
+        "denominator": 60,
+        "value": 0.9666666666666667
+      },
+      "mean_pairwise_jaccard": 0.9333333333333333
+    }
+  },
+  "repair_aggregate": {
+    "direct": {
+      "closed_records": 0,
+      "target_defects": 20,
+      "complete": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "partial": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "failed": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "unclosed": 20,
+      "effective_without_new_error_or_changed_task": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "changed_clear_semantics": 0,
+      "domain_model_or_protocol_changed": [],
+      "new_spec_errors": 0,
+      "local_and_necessary": 0
+    }
+  },
+  "repair_comparison": []
+}

@@ -1,0 +1,10 @@
+{
+  "case_id": "st-014-mutant",
+  "candidate_sha256": "403f483db3dbdc862362897ee779240e7d75ad533ad794a3aaa58b20e30b5d9d",
+  "checks": [
+    "actual letter mapping supports all hidden values for N<=64"
+  ],
+  "scope": "finite witnesses; general argument and prose mapping are in proof.md",
+  "status": "passed",
+  "verification_script_sha256": "abf04b230bcd92d4d45cd971553ddb2afde4b90aa372c6f13b76b84e9c3f37f3"
+}

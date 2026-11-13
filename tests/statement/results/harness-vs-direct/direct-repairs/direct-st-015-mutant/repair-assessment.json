@@ -1,0 +1,42 @@
+{
+  "case_id": "st-015-mutant",
+  "root_id": "distance_transcript",
+  "parent_run_id": "direct-st-015-mutant-r1",
+  "review_run_id": "direct-st-015-mutant-r1-repair-35c836f0ea",
+  "review_run_directory": "../../direct-repair-reviews/direct-st-015-mutant-r1-repair-35c836f0ea",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "3026474ca095ff71cba55f4e1ee5a1b4a1b2653ede0c218b9f593673ba044570",
+      "result": "Maintainer-model general argument tied to exact candidate; not human confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "b05d4010f757ccbb209ea7b0276573b322b150e9f114a1f37e62acbdfc679dfd",
+      "result": "Actual executed finite checks: [\"interaction transcript distance independently calculated\"]"
+    },
+    {
+      "kind": "exact_reference",
+      "artifact": "reference-check.json",
+      "artifact_sha256": "3c17987e804a974de43d8d6e5afcf279803cdd80a5fb1c3a110327cf4fdf19ab",
+      "result": "Exact clean reference confirms local restoration only; preservation separately assessed."
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex maintainer; written proof and finite checks plus fresh real host review; not human expert",
+  "reason": "已阅读实际独立新会话复审，结合绑定候选的数学论证及已执行程序，目标根因被消除，未确认新增规格错误；不从模型满分推定保留了原规则。",
+  "complete": true,
+  "scope_change": "No numeric input/model/budget scope change.",
+  "reviewed_at": "2026-11-13T03:40:52.622195+00:00",
+  "review_raw_sha256": "d3b12b04b8bc9043fbfcfd292ed3f80e0d3f2093283d311321849209e2788bb7",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

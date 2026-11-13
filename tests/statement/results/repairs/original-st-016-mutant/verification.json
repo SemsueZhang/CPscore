@@ -1,0 +1,10 @@
+{
+  "case_id": "st-016-mutant",
+  "candidate_sha256": "6d81810d6a06ce4acc7ac7b20b0427eb99f95b2d4cbc97a482e4388bc862de59",
+  "scope": "finite witnesses; maintainer-model general argument in proof.md",
+  "status": "passed",
+  "checks": [
+    "all nonempty subsets and singleton reconstruction through n=5"
+  ],
+  "verification_script_sha256": "88d3f7b04d0a480faaa37a9f5a3897c048bb501aed5380f185e02c11ce810e3c"
+}

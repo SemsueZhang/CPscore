@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-035-base-r1",
+  "raw_sha256": "20847e6e1b4efad5926b0f71ef371a9b4edd19c04c83e1ebec6d17b5b81e28b0",
+  "prediction_sha256": "61a1b0ab75798147ea5930686382ace1833e6fb8aa9a84a3adadbfee916da847",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert claim",
+  "reviewed_at": "2026-11-13T02:59:25.651691+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "settlement_order",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "独立算d=1,S=0,收入=支出=1：先收入输出0 0，先支付输出1 1，正式样例初始3收入2支付1两解释均0 4。",
+      "novel_issue_review": null
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "run_id": "improved-st-006-base-r1",
+  "raw_sha256": "0f465bd41e1fef44bc2a8f0007cec939af926ad566ac0303dbeb61e920c63a61",
+  "prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "judge_kind": "automatic_empty",
+  "judge_identity": "Structured-output empty-list check only",
+  "reviewed_at": "2026-11-13T01:59:22.800668+00:00",
+  "complete": true,
+  "findings": [],
+  "overall_note": "空列表不证明题面或Gold正确；Gold有缺陷时仍记漏检。"
+}

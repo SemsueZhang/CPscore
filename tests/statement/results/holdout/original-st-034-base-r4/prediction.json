@@ -1,0 +1,25 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "发送方必须一次发送恰好 $n-1$ 位二进制消息，接收方判断 $u$ 在排列中是否出现在 $v$ 之前。",
+      "evidence": "消息必须在不知道 u,v 时确定，且对每个合法排列和有序数对均须正确。任意两个不同排列至少有一对元素的先后关系不同，因此编码必须区分全部 n! 个排列，至少需要 ceil(log2(n!)) 位。n=3 时有 6 个排列，但 2 位消息只有 4 种；全部给定规模均有 n!>2^(n-1)，故不存在满足要求的确定性实现。",
+      "repairs": [
+        {
+          "find": "发送方必须一次发送恰好 $n-1$ 位二进制消息",
+          "replace": "发送方必须一次发送恰好 $\\lceil\\log_2(n!)\\rceil$ 位二进制消息",
+          "conditional": true
+        },
+        {
+          "find": "编码函数返回恰好 $n-1$ 位的二进制串",
+          "replace": "编码函数返回恰好 $\\lceil\\log_2(n!)\\rceil$ 位的二进制串",
+          "conditional": true
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

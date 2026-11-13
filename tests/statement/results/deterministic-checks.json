@@ -1,0 +1,679 @@
+{
+  "checked_versions": 60,
+  "formal_families": 40,
+  "formal_versions": 56,
+  "equivalences": 4,
+  "pending": [
+    [
+      "st-030-base",
+      "alias_path"
+    ],
+    [
+      "st-039-base",
+      "background_mapping"
+    ]
+  ],
+  "checks": [
+    {
+      "case_id": "st-001-base",
+      "gold_status": "confirmed",
+      "oracle": "booking",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-001-mutant",
+      "gold_status": "confirmed",
+      "oracle": "booking",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-002-base",
+      "gold_status": "confirmed",
+      "oracle": "dag",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-002-mutant",
+      "gold_status": "confirmed",
+      "oracle": "dag",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-003-base",
+      "gold_status": "confirmed",
+      "oracle": "tree_xor",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-003-mutant",
+      "gold_status": "confirmed",
+      "oracle": "tree_xor",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-004-base",
+      "gold_status": "confirmed",
+      "oracle": "circular",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-004-mutant",
+      "gold_status": "confirmed",
+      "oracle": "circular",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "increasing_finite_prefix_plus_unbounded_length_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-005-base",
+      "gold_status": "confirmed",
+      "oracle": "ferry",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-005-mutant",
+      "gold_status": "confirmed",
+      "oracle": "ferry",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-006-base",
+      "gold_status": "confirmed",
+      "oracle": "components",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-006-mutant",
+      "gold_status": "confirmed",
+      "oracle": "components",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-007-base",
+      "gold_status": "confirmed",
+      "oracle": "embedding",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-007-mutant",
+      "gold_status": "confirmed",
+      "oracle": "embedding",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-008-base",
+      "gold_status": "confirmed",
+      "oracle": "permutation",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-008-mutant",
+      "gold_status": "confirmed",
+      "oracle": "permutation",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-009-base",
+      "gold_status": "confirmed",
+      "oracle": "degree_tree",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-009-mutant",
+      "gold_status": "confirmed",
+      "oracle": "degree_tree",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "textual_norm_applicability_requiring_written_rubric",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-010-base",
+      "gold_status": "confirmed",
+      "oracle": "matrix",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-010-mutant",
+      "gold_status": "confirmed",
+      "oracle": "matrix",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-011-base",
+      "gold_status": "confirmed",
+      "oracle": "centroid",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-011-mutant",
+      "gold_status": "confirmed",
+      "oracle": "centroid",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-012-base",
+      "gold_status": "confirmed",
+      "oracle": "meeting",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-012-mutant",
+      "gold_status": "confirmed",
+      "oracle": "meeting",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "quoted_local_typo_and_exact_repair; not mathematical_language_validation",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-013-base",
+      "gold_status": "confirmed",
+      "oracle": "expectation",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-013-mutant",
+      "gold_status": "confirmed",
+      "oracle": "expectation",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "quoted_local_typo_and_exact_repair; not mathematical_language_validation",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-014-base",
+      "gold_status": "confirmed",
+      "oracle": "interactive_search",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-014-mutant",
+      "gold_status": "confirmed",
+      "oracle": "interactive_search",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-015-base",
+      "gold_status": "confirmed",
+      "oracle": "tree_distance",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-015-mutant",
+      "gold_status": "confirmed",
+      "oracle": "tree_distance",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-016-base",
+      "gold_status": "confirmed",
+      "oracle": "parity",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-016-mutant",
+      "gold_status": "confirmed",
+      "oracle": "parity",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-017-base",
+      "gold_status": "confirmed",
+      "oracle": "comm_index",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-018-base",
+      "gold_status": "confirmed",
+      "oracle": "comm_sum",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-019-base",
+      "gold_status": "confirmed",
+      "oracle": "comm_components",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-020-base",
+      "gold_status": "confirmed",
+      "oracle": "warehouse",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-021-base",
+      "gold_status": "confirmed",
+      "oracle": "robots",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-022-base",
+      "gold_status": "confirmed",
+      "oracle": "round_robin",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-023-base",
+      "gold_status": "confirmed",
+      "oracle": "portal",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-024-base",
+      "gold_status": "confirmed",
+      "oracle": "multiset",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-025-base",
+      "gold_status": "confirmed",
+      "oracle": "direction_witness",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-026-base",
+      "gold_status": "confirmed",
+      "oracle": "empty_minimum",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-027-base",
+      "gold_status": "confirmed",
+      "oracle": "tree_edge_count",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "sample_edge_count_plus_tree_edge_theorem",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-028-base",
+      "gold_status": "confirmed",
+      "oracle": "zero_denominator",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-029-base",
+      "gold_status": "confirmed",
+      "oracle": "mst",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-030-base",
+      "gold_status": "needs_review",
+      "oracle": "ledger",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "needs_independent_reader",
+        "passed": null
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-031-base",
+      "gold_status": "confirmed",
+      "oracle": "odd_cycle",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-032-base",
+      "gold_status": "confirmed",
+      "oracle": "sqrt_irrational",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "nonsquare_integer_plus_rational_square_root_theorem",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-033-base",
+      "gold_status": "confirmed",
+      "oracle": "edge_query_budget",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "all_zero_transcripts_leave_an_unqueried_edge; not a graph-state leaf-count argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-034-base",
+      "gold_status": "confirmed",
+      "oracle": "permutation_communication_bound",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "exhaustive_pairwise_order_signatures_plus_injective_encoding_bound",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-035-base",
+      "gold_status": "confirmed",
+      "oracle": "account_order",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-036-base",
+      "gold_status": "confirmed",
+      "oracle": "matching_conflict",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-037-base",
+      "gold_status": "confirmed",
+      "oracle": "delete_range",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "quoted_local_typo_and_exact_repair; not mathematical_language_validation",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-038-base",
+      "gold_status": "confirmed",
+      "oracle": "shortest",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "quoted_local_typo_and_exact_repair; not mathematical_language_validation",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-039-base",
+      "gold_status": "needs_review",
+      "oracle": "carriages",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "needs_independent_reader",
+        "passed": null
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-040-base",
+      "gold_status": "confirmed",
+      "oracle": "test_count",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "finite_witness_plus_written_argument",
+        "passed": true
+      },
+      "clean_sample_parsed": null
+    },
+    {
+      "case_id": "st-001-equivalent",
+      "gold_status": "confirmed",
+      "oracle": "booking",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-008-equivalent",
+      "gold_status": "confirmed",
+      "oracle": "permutation",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-011-equivalent",
+      "gold_status": "confirmed",
+      "oracle": "centroid",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    },
+    {
+      "case_id": "st-020-equivalent",
+      "gold_status": "confirmed",
+      "oracle": "warehouse",
+      "oracle_passed": true,
+      "defect_witness": {
+        "method": "clean_sample_and_written_domain_audit",
+        "passed": true
+      },
+      "clean_sample_parsed": true
+    }
+  ],
+  "checked_at": "2026-11-13T02:34:59.007367+00:00"
+}

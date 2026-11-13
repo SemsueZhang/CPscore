@@ -1,0 +1,34 @@
+{
+  "case_id": "st-019-base",
+  "family_id": "st-019",
+  "version": "base",
+  "problem_type": "communication",
+  "legal_input_domain": {
+    "summary": "任意简单无向图及任意有序顶点对，公开 n。",
+    "input_contract": "提交 `encode(n,edges)` 和 `decode(n,message,u,v)` 两个函数。分别运行于独立进程，接收方没有边集。顶点编号为 $1$ 至 $n$。",
+    "bounds": "$1\\le n\\le200$，$0\\le m\\le n(n-1)/2$，$1\\le u,v\\le n$。图无自环、重边。",
+    "additional_guarantees_source": "cases/st-019-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "由单向固定长度摘要准确判断连通性。",
+  "oracle": {
+    "name": "comm_components",
+    "args": {
+      "max_n": 4
+    },
+    "expected": true
+  },
+  "defects": [],
+  "gold_status": "confirmed",
+  "samples": [],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-019-base.md",
+  "statement_sha256": "c3be5b7e82a5533a6775ee2612700cb6ba3062e301417ccd74883fa2360529f3",
+  "has_known_defects": false,
+  "original_kind": "clean",
+  "completeness_review": "n=1时L=1，组件编号不超过n；等长编码与任意合法编码均可，图不连通也定义明确。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 10
+}

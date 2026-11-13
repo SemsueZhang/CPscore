@@ -1,0 +1,22 @@
+{
+  "case_id": "st-004-mutant",
+  "parent_run_id": "improved-st-004-mutant-r1",
+  "parent_raw_sha256": "f5263964f65ffbe9497fe321489591df7670e120a9b748ba53758d523cbcb033",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "允许同一位置被反复选择，不限制长度。",
+      "replace": "所取元素个数不超过 $n$。",
+      "conditional": true
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic case author (Codex maintainer model) selects the first coherent model-proposed option before re-review under the registered policy.",
+  "original_sha256": "d74813008a6f52f6e4dbc1a2e38b84c89daaea8a6f1e6a5b774224d3b292a81b",
+  "statement_sha256": "2f8885bb75b40df042066d30ec975faf6c3c0997cad3fec91e39e18e865fc065",
+  "created_at": "2026-11-13T01:58:36.119278+00:00",
+  "independent_verification": "pending"
+}

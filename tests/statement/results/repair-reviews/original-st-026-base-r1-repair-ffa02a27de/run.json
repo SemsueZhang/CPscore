@@ -1,0 +1,84 @@
+{
+  "run_id": "original-st-026-base-r1-repair-ffa02a27de",
+  "case_id": "st-026-base",
+  "skill": "original",
+  "repeat": 1,
+  "phase": "repair",
+  "statement_sha256": "ffa02a27de3877e96605f2649d738ff188a8db0b083abcaa17f0b211ea2b92ac",
+  "parent_run_id": "original-st-026-base-r1",
+  "repair_bundle": "results/repairs/original-st-026-base",
+  "model": "gpt-6.1-sol",
+  "model_identity_source": "requested CLI model alias",
+  "effort": "xhigh",
+  "skill_version": {
+    "label": "original",
+    "commit": "db9e9f6fba2370ce04a6b4c0f60b1608f48ae2d8",
+    "sha256": "3ea94c8c971a84928d37246b60dbd9847f1331a58196be2334d3353eea26cc0a"
+  },
+  "started_at": "2026-11-13T02:23:48.612466+00:00",
+  "execution_status": "completed",
+  "source": "real_host",
+  "gold_sha256": "9e6ab071ad105a4d8b270475a19692a30d02f5fc9c2d26ccca89b1a6814a3918",
+  "batch_workers": 4,
+  "timeout_seconds": 240,
+  "source_file_sha256_at_run_start": "a369aad51c7df7e650e7baba753041229ac2390ba1ca3ddc2df7a0552937a62b",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied"
+  },
+  "payload": {
+    "files": {
+      ".agents/skills/cp-statement-review/SKILL.md": "92e430fbc9dbc82e5abcc136bdfbef49911825b79377931d8c5494293ac3b70d",
+      ".agents/skills/cp-statement-review/references/luogu-standard.md": "731e3a921ad1fc53284ddb9c7690cb9775c7fdec7d93cc52ee814cae97a474b7",
+      ".agents/skills/cp-statement-review/references/readability.md": "6d692ce7a359d57a16995c274a1b86158d786d168fa21866eedddc1934850267",
+      ".agents/skills/cp-statement-review/references/scoring.md": "1afb51edd2e235601b6d39a1d0ad41f2913fa5a31c4bab3f7fadd5bd4656c0de",
+      "material.md": "ffa02a27de3877e96605f2649d738ff188a8db0b083abcaa17f0b211ea2b92ac",
+      "request.txt": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+    },
+    "prompt_sha256": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+  },
+  "host_version": "codex-cli 0.167.0-alpha.4.1",
+  "command": [
+    "codex",
+    "--no-daemon",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--color",
+    "never",
+    "--json",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "-C",
+    "/tmp/cp-statement-ugprcxlf",
+    "-o",
+    "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/repair-reviews/original-st-026-base-r1-repair-ffa02a27de/report.md",
+    "-"
+  ],
+  "pid": 78415,
+  "returncode": 0,
+  "raw_sha256": "e3312636cb52ba130a25a2430aa7ec28049eadc81f5663afd9165e21da24ec20",
+  "session_id": "01a1d2b7-e235-7f60-a5ec-126b00bec867",
+  "observed_session_ids": [
+    "01a1d2b7-e235-7f60-a5ec-126b00bec867"
+  ],
+  "token_usage": {
+    "input_tokens": 56287,
+    "cached_input_tokens": 47104,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1379,
+    "reasoning_output_tokens": 586
+  },
+  "finished_at": "2026-11-13T02:24:47.727542+00:00"
+}

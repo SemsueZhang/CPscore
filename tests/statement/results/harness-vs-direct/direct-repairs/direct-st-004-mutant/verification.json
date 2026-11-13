@@ -1,0 +1,10 @@
+{
+  "case_id": "st-004-mutant",
+  "candidate_sha256": "dec79bed9ce27012f2b55de425f6ce94d90674733b3e73ca77ccfc15bfb1eecd",
+  "scope": "finite witnesses; general argument in proof.md",
+  "status": "passed",
+  "checks": [
+    "finite nonempty circular domains, including n=1 and negative values"
+  ],
+  "verification_script_sha256": "bd2855f70974afdd7460e41deee5997075ca432358c22b49300b214dbf6ce799"
+}

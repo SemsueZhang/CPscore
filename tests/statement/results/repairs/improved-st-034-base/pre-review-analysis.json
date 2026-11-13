@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T02:07:16.921827+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-034-base",
+  "root_id": "message_budget",
+  "skill": "improved",
+  "candidate_sha256": "45d1c2c26753491ad19bb06075a3951d1a97a2984c1f389d66ae0ed9f5bc6d01",
+  "domain_changed": true,
+  "scope_change": "Message budget increases from n-1 to ceil(log2(n!)); feasibility repair changes protocol resources.",
+  "changed_clear_semantics": false,
+  "locality": true,
+  "necessary": true,
+  "reason": "Inherent patch effects assessed against original and independent proof before re-review; no success outcome assigned.",
+  "author_identity": "Codex maintainer model, not human"
+}

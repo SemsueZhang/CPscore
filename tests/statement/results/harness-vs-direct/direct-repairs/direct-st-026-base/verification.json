@@ -1,0 +1,10 @@
+{
+  "case_id": "st-026-base",
+  "candidate_sha256": "ffa02a27de3877e96605f2649d738ff188a8db0b083abcaa17f0b211ea2b92ac",
+  "scope": "finite witnesses; general argument in proof.md",
+  "status": "passed",
+  "checks": [
+    "excluded singleton; nonempty minimum and adjacent-sorted invariant"
+  ],
+  "verification_script_sha256": "238c4b7168ebfb31218c2ff36ab7ff7b60f6d966ab7fd3535468c3e910e5a37b"
+}

@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-012-mutant-r1",
+  "raw_sha256": "a494b65fe2ea8dede5388da564f845df4988a0981f70bee82d0bf35d210f914e",
+  "prediction_sha256": "e0e23ebd395394e472299eed9d0e2662c913d93030762e86408035890ea43ac7",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; same-model limitation; not human expert",
+  "reviewed_at": "2026-11-13T01:59:34.679717+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "time_typo",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "原句时简可唯一恢复为时间，最短时间定义及判定未变；是局部Minor，不是规格Fatal。",
+      "novel_issue_review": null
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "run_id": "improved-st-001-base-r1",
+  "raw_sha256": "bfb47a95c031a0a41d115d6bf4eef7f27c82faadb19f4ae4ff070cc68760fcaf",
+  "prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "judge_kind": "automatic_empty",
+  "judge_identity": "Structured-output empty-list check; not a semantic or human correctness confirmation",
+  "reviewed_at": "2026-11-13T00:44:40.801833+00:00",
+  "complete": true,
+  "findings": []
+}

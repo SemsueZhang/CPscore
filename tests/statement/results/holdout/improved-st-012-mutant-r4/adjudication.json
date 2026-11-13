@@ -1,0 +1,20 @@
+{
+  "run_id": "improved-st-012-mutant-r4",
+  "raw_sha256": "35cd2cc1b8a27cb305a060d34ba04ae94880faa02948a81048adf498b0ce7f45",
+  "prediction_sha256": "fc56856b5b586274396ff432fbcb61e6943b399feac20d2da72dccf02313771c",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human claim",
+  "reviewed_at": "2026-11-13T02:17:14.321123+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "time_typo",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐次阅读报告及原句：时简为可恢复的时间错字，正文目标和误差式定义完整；报告均正确区分文字错误与数学规格错误。",
+      "novel_issue_review": null
+    }
+  ]
+}

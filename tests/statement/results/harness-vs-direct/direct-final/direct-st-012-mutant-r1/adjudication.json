@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-012-mutant-r1",
+  "raw_sha256": "3ebc26aa37b8e532c9128f34d05ff803ea7be4c7f0a757d411158761f8ce926a",
+  "prediction_sha256": "72d2b34a10b4fa77a589787947df2be08b4750cd240e4a6e0f8723e16d7d4dec",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert claim",
+  "reviewed_at": "2026-11-13T03:31:31.414520+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "time_typo",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "时简为时间错字，目标数学公式明确，局部Minor合理。",
+      "novel_issue_review": null
+    }
+  ]
+}

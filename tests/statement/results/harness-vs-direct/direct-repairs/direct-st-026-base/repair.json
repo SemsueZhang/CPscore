@@ -1,0 +1,22 @@
+{
+  "case_id": "st-026-base",
+  "parent_run_id": "direct-st-026-base-r1",
+  "parent_raw_sha256": "c5a084dfa782eea3153b2e2c2b2ac5f3ae6a45b97b1bb8508da2ee0044f227be",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "$1\\le n\\le2\\times10^5$，$-10^9\\le a_i\\le10^9$。",
+      "replace": "$2\\le n\\le2\\times10^5$，$-10^9\\le a_i\\le10^9$。",
+      "conditional": true
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic author (Codex maintainer model) selects first coherent actual option before re-review under the registered policy.",
+  "original_sha256": "94bc954a7d7b4ecd24b170770ef6b0aaa525600ae8a711afc618819af8a9f0ec",
+  "statement_sha256": "ffa02a27de3877e96605f2649d738ff188a8db0b083abcaa17f0b211ea2b92ac",
+  "created_at": "2026-11-13T03:33:40.773402+00:00",
+  "independent_verification": "pending"
+}

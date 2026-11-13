@@ -1,0 +1,20 @@
+{
+  "score": 9,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Minor",
+      "quote": "$1\\\\le n\\\\le2\\\\times10^5$，$1\\\\le j\\\\le n$",
+      "evidence": "material.md 第 15 行实际使用连续两个反斜杠；所需的 LaTeX 命令应为单反斜杠的 \\le 和 \\times。预期含义可直接恢复，属于局部符号问题。",
+      "repairs": [
+        {
+          "find": "$1\\\\le n\\\\le2\\\\times10^5$，$1\\\\le j\\\\le n$",
+          "replace": "$1\\le n\\le2\\times10^5$，$1\\le j\\le n$",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

@@ -1,0 +1,20 @@
+{
+  "run_id": "improved-st-031-base-r1",
+  "raw_sha256": "e669f2b985d3ad6d0563a9982435abb7e4753ce4c7b9cf842a74058ffb563b5b",
+  "prediction_sha256": "6f5cbd49c4e03509db21aad1442854fd9a4000f98941c08682e9a5f6a9d46156",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; same-model limitation; not human expert",
+  "reviewed_at": "2026-11-13T02:06:49.625134+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "no_solution",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "合法三角形无两色染色：沿两边推出1与3同色，第三边又须异色；无有解保证且禁止其他输出。",
+      "novel_issue_review": null
+    }
+  ]
+}

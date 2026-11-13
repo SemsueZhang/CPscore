@@ -1,0 +1,25 @@
+{
+  "score": 9,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Minor",
+      "quote": "以丁栏标号找到乙栏所指的登记对象",
+      "evidence": "第3行两处使用“乙栏”，第5行实际定义的名称为“乙册”，第7行也使用“乙册”。同一登记层的名称不一致，增加局部指代确认负担，但上下文足以恢复含义。依据易读性检查的语言与指代项及评分协议，判为 Minor，扣1分。",
+      "repairs": [
+        {
+          "find": "以丁栏标号找到乙栏所指的登记对象",
+          "replace": "以丁栏标号找到乙册所指的登记对象",
+          "conditional": false
+        },
+        {
+          "find": "这里的“乙栏所指”需经下述登记关系换算",
+          "replace": "这里的“乙册所指”需经下述登记关系换算",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

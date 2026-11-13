@@ -1,0 +1,36 @@
+{
+  "case_id": "st-007-mutant",
+  "root_id": "equivalence",
+  "parent_run_id": "direct-st-007-mutant-r1",
+  "review_run_id": "direct-st-007-mutant-r1-repair-158f957243",
+  "review_run_directory": "../../direct-repair-reviews/direct-st-007-mutant-r1-repair-158f957243",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "d871edd1e10ff78e66c23c831048099991e03e28d8c74468bcc86e2a65ebe5ca",
+      "result": "Maintainer-model general argument tied to exact candidate; not human confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "06025cbc4e609e04204bed9f8348f9cf8b077953d59456228053da5e4d10d8e9",
+      "result": "Actual executed finite checks: [\"index-subsequence count: enumeration vs independent DP\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex maintainer; written proof and finite checks plus fresh real host review; not human expert",
+  "reason": "已阅读实际独立新会话复审，结合绑定候选的数学论证及已执行程序，目标根因被消除，未确认新增规格错误；不从模型满分推定保留了原规则。",
+  "complete": true,
+  "scope_change": "No numeric input/model/budget scope change.",
+  "reviewed_at": "2026-11-13T03:40:52.609134+00:00",
+  "review_raw_sha256": "88637c38e967cc18d47187ac3e8f95f98fbdf0b564af80676ec0e7347112087c",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

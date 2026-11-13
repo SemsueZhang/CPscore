@@ -1,0 +1,35 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "允许同一位置被反复选择，不限制长度。求所取元素之和的最大值。",
+      "evidence": "当一圈元素和 S>0 时，连续取 kn 个元素可得到 kS，元素和无界，不存在要求输出的最大整数。最小合法反例为 n=1、a_1=1。正式样例的一圈元素和为4，从位置3开始取3+4k个元素可得到12+4k，因此样例输出12错误。无界情形与样例冲突按同一根因扣一次。以下第1项修订属于方案A，第2至第4项须作为方案B一并采用；两方案互斥，需作者选择。",
+      "repairs": [
+        {
+          "find": "允许同一位置被反复选择，不限制长度。",
+          "replace": "所取元素个数不超过 $n$。",
+          "conditional": true
+        },
+        {
+          "find": "求所取元素之和的最大值。",
+          "replace": "若所取元素之和有上界，求其最大值；否则报告其无上界。",
+          "conditional": true
+        },
+        {
+          "find": "输出一行，一个整数，表示最大元素和。",
+          "replace": "输出一行：若所取元素之和无上界，输出 `Infinity`；否则输出一个整数，表示最大元素和。",
+          "conditional": true
+        },
+        {
+          "find": "## 样例输出\n\n```text\n12\n```",
+          "replace": "## 样例输出\n\n```text\nInfinity\n```",
+          "conditional": true
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

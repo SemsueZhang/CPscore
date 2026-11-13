@@ -1,0 +1,36 @@
+{
+  "case_id": "st-034-base",
+  "root_id": "message_budget",
+  "parent_run_id": "improved-st-034-base-r1",
+  "review_run_id": "improved-st-034-base-r1-repair-45d1c2c267",
+  "review_run_directory": "../../repair-reviews/improved-st-034-base-r1-repair-45d1c2c267",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": true,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "d54efa3f093fe6aa78d4fa6ff0aa12a72a2034101b96eab95d115d3c5756c090",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "52f118aa722c07ea2626f9246e17ee04b5292a6e9b9e516ec6954d46037d35d0",
+      "result": "Actual executed finite checks: [\"n=3..8 capacity, permutation distinguishability and rank encoding\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+  "complete": true,
+  "scope_change": "Message budget increases from n-1 to ceil(log2(n!)); feasibility repair changes protocol resources.",
+  "reviewed_at": "2026-11-13T02:33:48.930125+00:00",
+  "review_raw_sha256": "5265ac71be10fd12c95b085f741869d0e73156b3cf8d620b7a2dc03a2c82d582",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

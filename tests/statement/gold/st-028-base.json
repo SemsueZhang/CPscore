@@ -1,0 +1,70 @@
+{
+  "case_id": "st-028-base",
+  "family_id": "st-028",
+  "version": "base",
+  "problem_type": "floating",
+  "legal_input_domain": {
+    "summary": "数量可全部为零，总价可正。",
+    "input_contract": "第一行输入整数 $n$。随后 $n$ 行，每行输入两个整数 $w_i,c_i$。",
+    "bounds": "$1\\le n\\le10^5$，$0\\le w_i,c_i\\le10^6$。",
+    "additional_guarantees_source": "cases/st-028-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "分母为零时无有限精确均价。",
+  "oracle": {
+    "name": "zero_denominator",
+    "args": {
+      "numerator": 1,
+      "denominator": 0
+    },
+    "expected": true
+  },
+  "defects": [
+    {
+      "root_id": "zero_total",
+      "category": "boundary",
+      "severity": "Fatal",
+      "quote": "$0\\le w_i,c_i\\le10^6$",
+      "evidence": "输入 n=1,w=0,c=1 合法，均价公式分母为零，且输出要求有限实数。",
+      "witness": {
+        "input": "1\n0 1",
+        "interpretations": [
+          {
+            "rule": "题面公式",
+            "output": null
+          }
+        ]
+      },
+      "acceptable_repairs": [
+        {
+          "find": "$0\\le w_i,c_i\\le10^6$",
+          "replace": "$0\\le w_i,c_i\\le10^6$，并保证 $\\sum_iw_i>0$",
+          "conditional": true,
+          "changes_domain": true
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "2\n1 3\n2 6\n",
+      "output": "3.000000\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "development",
+  "statement_path": "cases/st-028-base.md",
+  "statement_sha256": "fe491e9040c6087e03b3e1fe0eee887b2436293323c9491f8af1ba750771d2f4",
+  "has_known_defects": true,
+  "original_kind": "defective",
+  "completeness_review": "缺陷及其证明见独立根因；修订后仍须整体核验。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 0
+}

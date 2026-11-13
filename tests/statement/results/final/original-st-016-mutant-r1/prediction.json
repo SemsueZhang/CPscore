@@ -1,0 +1,20 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "交互器回复所选位的异或值，即 $b_{i_1-1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k-1}$。",
+      "evidence": "正文定义隐藏串为 b_1 至 b_n，下标从 1 开始，询问下标范围为 [1,n]。当 n=1 时，合法询问 ? 1 1 按公式需要返回未定义的 b_0，按“所选位”则应返回 b_1，导致交互回复规则矛盾。依据评分协议，核心定义矛盾为 Fatal，扣 10 分。",
+      "repairs": [
+        {
+          "find": "交互器回复所选位的异或值，即 $b_{i_1-1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k-1}$。",
+          "replace": "交互器回复所选位的异或值，即 $b_{i_1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k}$。",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

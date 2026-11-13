@@ -1,0 +1,42 @@
+{
+  "case_id": "st-010-mutant",
+  "root_id": "matrix_sample",
+  "parent_run_id": "direct-st-010-mutant-r1",
+  "review_run_id": "direct-st-010-mutant-r1-repair-2f2ce7779a",
+  "review_run_directory": "../../direct-repair-reviews/direct-st-010-mutant-r1-repair-2f2ce7779a",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "65e8f4f4754d85637802242d82f086edcbcd08f22fea8b7534b9eea1cfaf0ea7",
+      "result": "Maintainer-model general argument tied to exact candidate; not human confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "a2c7aa7e3a91af742dba138db9d9fb0cb057c205aa8457ed4f2b219c2d341a66",
+      "result": "Actual executed finite checks: [\"actual candidate sample satisfies row and column margins\"]"
+    },
+    {
+      "kind": "exact_reference",
+      "artifact": "reference-check.json",
+      "artifact_sha256": "482e3c93e6d2ad0047c9b761d4a3b1d589454121e3016d89e6ea4267205243e1",
+      "result": "Exact clean reference confirms local restoration only; preservation separately assessed."
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex maintainer; written proof and finite checks plus fresh real host review; not human expert",
+  "reason": "已阅读实际独立新会话复审，结合绑定候选的数学论证及已执行程序，目标根因被消除，未确认新增规格错误；不从模型满分推定保留了原规则。",
+  "complete": true,
+  "scope_change": "No numeric input/model/budget scope change.",
+  "reviewed_at": "2026-11-13T03:40:52.614494+00:00",
+  "review_raw_sha256": "d8f4f785201525df55a61273995a700d9901bc34d06953d17c8e3e22d3c5e8e0",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

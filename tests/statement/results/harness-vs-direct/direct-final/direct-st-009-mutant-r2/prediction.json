@@ -1,0 +1,8 @@
+{
+  "score": 10,
+  "complete": true,
+  "findings": [],
+  "optional_suggestions": [
+    "补充顶点编号为 1 至 n、d_i 对应顶点 i，并明确输出的两个整数是边的端点编号。"
+  ]
+}

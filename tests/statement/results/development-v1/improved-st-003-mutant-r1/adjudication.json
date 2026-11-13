@@ -1,0 +1,20 @@
+{
+  "run_id": "improved-st-003-mutant-r1",
+  "raw_sha256": "b495742734ca4b13ccaa9430c39f1436c781241959977704b557385ad96ff5d9",
+  "prediction_sha256": "f9d86e1ba9cfef17341897df2d6e889743d292a5646f4cc3274de995fe2701b8",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T01:16:53.134785+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "distance_definition",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "核对三点链两边权1时最大距离：算术和为2，异或为1；样例3、5两边口径为8、6。两个明示定义冲突，同根因一次。",
+      "novel_issue_review": null
+    }
+  ]
+}

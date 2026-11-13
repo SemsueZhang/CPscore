@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-033-base-r1",
+  "raw_sha256": "36d9e621b0f556f723b9011805c3664c9cfc251328d7516abb5dc0d8fb81ba8f",
+  "prediction_sha256": "8eebf303e27a34c5d0cd84d2722bbc7f7ccf455be63ea80f54dada5076120afb",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T01:16:53.184108+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "query_budget",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "核对全0轨迹：最多N−1个不同边对，未问e上的空图与单边图有同样历史却总边数0和1。论证针对边查询结构而非错误地比较图数与输出数。",
+      "novel_issue_review": null
+    }
+  ]
+}

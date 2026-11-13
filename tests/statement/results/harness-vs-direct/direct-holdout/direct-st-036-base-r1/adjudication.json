@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-036-base-r1",
+  "raw_sha256": "47f502cfab8ff45c5b535663ee95f315861db9e74307c38c8660bd2d979c2338",
+  "prediction_sha256": "ea0c6db84ca37ed52c2200424d14c34d7f02fcfd59c4e5f15e3c4c1adc804d9c",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert claim",
+  "reviewed_at": "2026-11-13T03:31:31.429220+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "missing_negation",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "发现了相反的核心条件并给出样例答案2对1。按冻结CPScore属于影响正确输出的定义矛盾Fatal，不能因猜到漏否定字而按Minor；检测仍匹配同根因。",
+      "novel_issue_review": null
+    }
+  ]
+}

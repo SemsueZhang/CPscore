@@ -1,0 +1,10 @@
+{
+  "run_id": "improved-st-011-base-r1",
+  "raw_sha256": "f8d259a5337f1abca0e61b9f2e45ef905a7ff82262123cb1601f702c3b59f536",
+  "prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; not independent expert",
+  "reviewed_at": "2026-11-13T00:44:40.802783+00:00",
+  "complete": true,
+  "findings": []
+}

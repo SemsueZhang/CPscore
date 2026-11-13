@@ -1,0 +1,42 @@
+{
+  "case_id": "st-010-mutant",
+  "root_id": "matrix_sample",
+  "parent_run_id": "original-st-010-mutant-r1",
+  "review_run_id": "original-st-010-mutant-r1-repair-2f2ce7779a",
+  "review_run_directory": "../../repair-reviews/original-st-010-mutant-r1-repair-2f2ce7779a",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "139174986a5357200c849cb46e479ccae2b0a843c1dbac20e1b899c4eac630a5",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "83b2165ce4222a5285ac135eac3cc0e0aea085aed99a045d12b2a7b6b5264800",
+      "result": "Actual executed finite checks: [\"actual candidate sample satisfies row and column margins\"]"
+    },
+    {
+      "kind": "exact_reference",
+      "artifact": "reference-check.json",
+      "artifact_sha256": "ffee16613b9b291e9a97c640180c2213b918122e8e3f23d7b82ff6a5542ae701",
+      "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+  "complete": true,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "reviewed_at": "2026-11-13T02:23:51.625933+00:00",
+  "review_raw_sha256": "2a9f9df500644e1daf51d8b83908e41160c48d6ae88fd82ebe99adbe4be41d37",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

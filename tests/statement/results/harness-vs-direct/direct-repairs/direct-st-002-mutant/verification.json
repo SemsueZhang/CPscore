@@ -1,0 +1,10 @@
+{
+  "case_id": "st-002-mutant",
+  "candidate_sha256": "9a433aca01453b9a29ba9568fdbc161f6a80f9098fe3463fcbaeb19038205568",
+  "scope": "finite witnesses; general argument in proof.md",
+  "status": "passed",
+  "checks": [
+    "all sample source-target paths independently enumerated"
+  ],
+  "verification_script_sha256": "8a6e60cca8abe218ba9cc9edb890f664ca04bbc61cc16148610cf33d5fa1c169"
+}

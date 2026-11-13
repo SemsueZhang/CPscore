@@ -1,0 +1,10 @@
+{
+  "case_id": "st-025-base",
+  "candidate_sha256": "f35e1486cda5124f0042aa9bf6e64afa16ce961c8ebc022ed80b30d229ebcb61",
+  "checks": [
+    "chosen directed interpretation and unchanged official sample"
+  ],
+  "scope": "finite witnesses; general argument and prose mapping are in proof.md",
+  "status": "passed",
+  "verification_script_sha256": "751d28385b2bfb5272296cb9767d3532f1b6f5a4f5a3729d67c62e6e410b17e8"
+}

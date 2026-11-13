@@ -1,0 +1,20 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "3\n3\n3",
+      "evidence": "样例初始有 3 个连通块；加入边 {1,2} 后只有 {1,2} 和 {3} 两个连通块，第二次查询应输出 2；删除反向书写的同一条无向边后恢复为 3 个连通块。正确输出为 3、2、3。依评分协议，正式样例输出的实质错误扣 10 分。",
+      "repairs": [
+        {
+          "find": "```text\n3\n3\n3\n```",
+          "replace": "```text\n3\n2\n3\n```",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

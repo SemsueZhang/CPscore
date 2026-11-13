@@ -1,0 +1,42 @@
+{
+  "case_id": "st-006-mutant",
+  "root_id": "sample_components",
+  "parent_run_id": "improved-st-006-mutant-r1",
+  "review_run_id": "improved-st-006-mutant-r1-repair-1c16d6ddde",
+  "review_run_directory": "../../repair-reviews/improved-st-006-mutant-r1-repair-1c16d6ddde",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "c90666da36a90b4a5ab348206ea715592957d5935612fa298d08a9ee3aea721c",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "74b51347ac4f7589a0763ef4f7b5264e07a85444ef3cab60fd3723524929d65c",
+      "result": "Actual executed finite checks: [\"sample operations simulated independently\"]"
+    },
+    {
+      "kind": "exact_reference",
+      "artifact": "reference-check.json",
+      "artifact_sha256": "979284c771c3246e665b118b630ba50fd87c2749904c0ac20ac5295ba543ccd3",
+      "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+  "complete": true,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "reviewed_at": "2026-11-13T02:30:55.000533+00:00",
+  "review_raw_sha256": "1d8c730cf566d18a8f93ad3b130cdf64f984781ad5d29f19a8cafd80f6cb6423",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

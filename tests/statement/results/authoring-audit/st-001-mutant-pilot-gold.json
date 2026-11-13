@@ -1,0 +1,95 @@
+{
+  "case_id": "st-001-mutant",
+  "family_id": "st-001",
+  "version": "mutant",
+  "problem_type": "standard",
+  "legal_input_domain": {
+    "summary": "n,m 均为正整数，各预约端点合法，容量允许零。",
+    "input_contract": "第一行输入两个整数 $n,m$。第二行输入 $n$ 个整数 $c_i$。随后 $m$ 行，每行输入三个整数 $l,r,d$。",
+    "bounds": "$1\\le n,m\\le 2\\times10^5$，$0\\le c_i\\le10^9$，$1\\le l\\le r\\le n$，$1\\le d\\le10^9$。",
+    "additional_guarantees_source": "cases/st-001-mutant.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "处理顺序未被输入固定，第一份失败的输入编号可能随之改变；不能重建唯一确定的任务关系。",
+  "oracle": {
+    "name": "booking",
+    "args": {
+      "capacity": [
+        3,
+        2,
+        4
+      ],
+      "orders": [
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          1
+        ]
+      ]
+    },
+    "expected": 2
+  },
+  "defects": [
+    {
+      "root_id": "order",
+      "category": "operation_order",
+      "severity": "Fatal",
+      "quote": "以任意顺序处理",
+      "evidence": "容量1，两份需求均1；先处理1则失败2，先处理2则失败1，输出依赖未输入的排列。",
+      "witness": {
+        "input": "1 2\n1\n1 1 1\n1 1 1",
+        "interpretations": [
+          {
+            "rule": "先1后2",
+            "output": "2"
+          },
+          {
+            "rule": "先2后1",
+            "output": "1"
+          }
+        ]
+      },
+      "acceptable_repairs": [
+        {
+          "find": "以任意顺序处理 $m$ 份预约，但输出编号仍采用输入编号。",
+          "replace": "按输入顺序处理 $m$ 份预约。",
+          "conditional": false,
+          "changes_domain": false
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "3 3\n3 2 4\n1 2 1\n2 3 2\n1 3 1\n",
+      "output": "2\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "development",
+  "statement_path": "cases/st-001-mutant.md",
+  "statement_sha256": "d2f8cfeebd8904fe5695a108d3d6042a807f82150fca3f9131dcae6af1b03e04",
+  "has_known_defects": true,
+  "original_kind": "clean",
+  "completeness_review": "容量为零、预约首份失败及全部成功均有输出；订单从输入顺序确定，闭区间端点包含。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 0,
+  "reference_relation": "依输入顺序扣容量，输出首次失败编号。"
+}

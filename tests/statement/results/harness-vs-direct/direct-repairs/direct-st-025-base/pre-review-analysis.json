@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T03:08:09.319294+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-025-base",
+  "root_id": "direction",
+  "skill": "direct",
+  "candidate_sha256": "f35e1486cda5124f0042aa9bf6e64afa16ce961c8ebc022ed80b30d229ebcb61",
+  "domain_changed": true,
+  "scope_change": "Mixed single/double-way model replaced by all-directed roads.",
+  "changed_clear_semantics": true,
+  "locality": true,
+  "necessary": false,
+  "reason": "Actual patch classified before independent re-review; no success outcome assigned.",
+  "author_identity": "Codex maintainer model, not human"
+}

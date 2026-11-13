@@ -1,0 +1,4958 @@
+{
+  "created_at": "2026-11-13T02:34:52.031710+00:00",
+  "plan_suite": "combined",
+  "execution": {
+    "completed": 216
+  },
+  "planned_runs": 216,
+  "observed_unique_sessions": 216,
+  "runs": [
+    {
+      "run_id": "original-st-001-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-003-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-003-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-005-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-005-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-017-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-025-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-028-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-030-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-033-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-035-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-037-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-039-base-r1",
+      "status": "completed",
+      "adjudicated": false
+    },
+    {
+      "run_id": "improved-st-001-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-003-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-003-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-005-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-005-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-017-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-025-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-028-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-030-base-r1",
+      "status": "completed",
+      "adjudicated": false
+    },
+    {
+      "run_id": "improved-st-033-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-035-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-037-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-039-base-r1",
+      "status": "completed",
+      "adjudicated": false
+    },
+    {
+      "run_id": "original-st-001-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-017-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-017-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-017-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-017-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-025-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-025-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-025-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-025-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-033-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-033-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-033-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-033-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-017-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-017-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-017-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-017-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-025-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-025-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-025-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-025-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-033-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-033-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-033-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-033-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-002-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-002-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-004-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-004-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-006-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-006-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-007-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-007-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-009-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-009-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-010-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-010-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-012-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-012-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-013-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-013-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-015-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-015-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-016-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-016-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-018-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-019-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-021-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-022-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-023-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-024-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-026-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-027-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-029-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-031-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-032-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-034-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-036-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-038-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-040-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-002-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-002-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-004-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-004-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-006-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-006-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-007-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-007-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-009-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-009-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-010-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-010-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-012-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-012-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-013-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-013-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-015-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-015-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-016-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-016-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-018-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-019-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-021-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-022-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-023-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-024-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-026-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-027-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-029-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-031-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-032-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-034-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-036-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-038-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-040-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-009-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-009-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-009-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-009-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-012-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-012-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-012-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-012-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-034-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-034-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-034-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-034-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-009-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-009-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-009-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-009-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-012-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-012-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-012-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-012-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-034-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-034-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-034-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-034-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    }
+  ],
+  "triage": [
+    {
+      "run_id": "original-st-030-base-r1",
+      "case_id": "st-030-base",
+      "complete": true,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "new_confirmed",
+          "root_id": null,
+          "extra_root_id": "alias_name_mismatch",
+          "evidence_valid": true,
+          "reason": "逐字核对首段两处“乙栏”，后文仅定义“乙册”；册与栏在这套四层登记规则中不是已声明的别名。局部术语不一致与层级组织负担需要不同修订，作为Gold未记载的独立Minor记录，未直接当作误报。",
+          "novel_issue_review": {
+            "status": "confirmed",
+            "basis": "逐字核对首段两处“乙栏”，后文仅定义“乙册”；册与栏在这套四层登记规则中不是已声明的别名。局部术语不一致与层级组织负担需要不同修订，作为Gold未记载的独立Minor记录，未直接当作误报。"
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "original-st-039-base-r1",
+      "case_id": "st-039-base",
+      "complete": false,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "pending",
+          "root_id": "background_mapping",
+          "extra_root_id": null,
+          "evidence_valid": null,
+          "reason": "与Gold中背景映射疑点对应，但显著负担及Major严重程度仍需独立读者确认，不以被测模型同意自动升级Gold。",
+          "novel_issue_review": null
+        }
+      ]
+    },
+    {
+      "run_id": "improved-st-030-base-r1",
+      "case_id": "st-030-base",
+      "complete": false,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "pending",
+          "root_id": null,
+          "extra_root_id": "initial_balance_type",
+          "evidence_valid": null,
+          "reason": "是否可从整数调拨及整数输出恢复a_i类型，以及明确格式要求是否适用到需单独写“整数”，尚待独立规范/语义复核；不能因Gold未列就判误报。",
+          "novel_issue_review": null
+        },
+        {
+          "finding_id": "f2",
+          "disposition": "new_confirmed",
+          "root_id": null,
+          "extra_root_id": "alias_name_mismatch",
+          "evidence_valid": true,
+          "reason": "逐字核对首段两处“乙栏”，后文仅定义“乙册”；册与栏在这套四层登记规则中不是已声明的别名。局部术语不一致与层级组织负担需要不同修订，作为Gold未记载的独立Minor记录，未直接当作误报。",
+          "novel_issue_review": {
+            "status": "confirmed",
+            "basis": "逐字核对首段两处“乙栏”，后文仅定义“乙册”；册与栏在这套四层登记规则中不是已声明的别名。局部术语不一致与层级组织负担需要不同修订，作为Gold未记载的独立Minor记录，未直接当作误报。"
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "improved-st-039-base-r1",
+      "case_id": "st-039-base",
+      "complete": false,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "pending",
+          "root_id": "background_mapping",
+          "extra_root_id": null,
+          "evidence_valid": null,
+          "reason": "与Gold中背景映射疑点对应，但显著负担及Major严重程度仍需独立读者确认，不以被测模型同意自动升级Gold。",
+          "novel_issue_review": null
+        }
+      ]
+    },
+    {
+      "run_id": "original-st-029-base-r1",
+      "case_id": "st-029-base",
+      "complete": true,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "matched",
+          "root_id": "sample_value",
+          "extra_root_id": null,
+          "evidence_valid": true,
+          "reason": "三点样例选择权1及2的两边连通且总3，任意连通边集至少两边、正权不改进，输出9错误。",
+          "novel_issue_review": null
+        },
+        {
+          "finding_id": "f2",
+          "disposition": "new_confirmed",
+          "root_id": null,
+          "extra_root_id": "input_field_meanings",
+          "evidence_valid": true,
+          "reason": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+          "novel_issue_review": {
+            "status": "confirmed",
+            "basis": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+            "judge_kind": "maintainer_model",
+            "limitation": "This is a normative omission, not proof of multiple mathematical interpretations; no human confirmation.",
+            "expected_severity": "Major"
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "original-st-031-base-r1",
+      "case_id": "st-031-base",
+      "complete": true,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "matched",
+          "root_id": "no_solution",
+          "extra_root_id": null,
+          "evidence_valid": true,
+          "reason": "合法三角形无两色染色：沿两边推出1与3同色，第三边又须异色；无有解保证且禁止其他输出。",
+          "novel_issue_review": null
+        },
+        {
+          "finding_id": "f2",
+          "disposition": "new_confirmed",
+          "root_id": null,
+          "extra_root_id": "input_field_meanings",
+          "evidence_valid": true,
+          "reason": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+          "novel_issue_review": {
+            "status": "confirmed",
+            "basis": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+            "judge_kind": "maintainer_model",
+            "limitation": "This is a normative omission, not proof of multiple mathematical interpretations; no human confirmation.",
+            "expected_severity": "Major"
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "original-st-036-base-r1",
+      "case_id": "st-036-base",
+      "complete": true,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "matched",
+          "root_id": "missing_negation",
+          "extra_root_id": null,
+          "evidence_valid": true,
+          "reason": "两条无公共端点边按顶点最多一条可全取2，按任意两条有公共端点只能取1。明示定义冲突，样例不能使错误等价句成立。",
+          "novel_issue_review": null
+        },
+        {
+          "finding_id": "f2",
+          "disposition": "new_confirmed",
+          "root_id": null,
+          "extra_root_id": "input_field_meanings",
+          "evidence_valid": true,
+          "reason": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+          "novel_issue_review": {
+            "status": "confirmed",
+            "basis": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+            "judge_kind": "maintainer_model",
+            "limitation": "This is a normative omission, not proof of multiple mathematical interpretations; no human confirmation.",
+            "expected_severity": "Major"
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "original-st-038-base-r1",
+      "case_id": "st-038-base",
+      "complete": true,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "new_confirmed",
+          "root_id": null,
+          "extra_root_id": "input_field_meanings",
+          "evidence_valid": true,
+          "reason": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+          "novel_issue_review": {
+            "status": "confirmed",
+            "basis": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+            "judge_kind": "maintainer_model",
+            "limitation": "This is a normative omission, not proof of multiple mathematical interpretations; no human confirmation.",
+            "expected_severity": "Major"
+          }
+        },
+        {
+          "finding_id": "f2",
+          "disposition": "matched",
+          "root_id": "duplicate_word",
+          "extra_root_id": null,
+          "evidence_valid": true,
+          "reason": "原句均均为正整数重复一字，易恢复且不改变正权条件，Minor。",
+          "novel_issue_review": null
+        }
+      ]
+    },
+    {
+      "run_id": "improved-st-029-base-r1",
+      "case_id": "st-029-base",
+      "complete": true,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "matched",
+          "root_id": "sample_value",
+          "extra_root_id": null,
+          "evidence_valid": true,
+          "reason": "三点样例选择权1及2的两边连通且总3，任意连通边集至少两边、正权不改进，输出9错误。",
+          "novel_issue_review": null
+        },
+        {
+          "finding_id": "f2",
+          "disposition": "new_confirmed",
+          "root_id": null,
+          "extra_root_id": "input_field_meanings",
+          "evidence_valid": true,
+          "reason": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+          "novel_issue_review": {
+            "status": "confirmed",
+            "basis": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+            "judge_kind": "maintainer_model",
+            "expected_severity": "Major",
+            "limitation": "This is a normative omission, not proof of multiple mathematical interpretations; no human confirmation."
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "improved-st-038-base-r1",
+      "case_id": "st-038-base",
+      "complete": true,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "new_confirmed",
+          "root_id": null,
+          "extra_root_id": "input_field_meanings",
+          "evidence_valid": true,
+          "reason": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+          "novel_issue_review": {
+            "status": "confirmed",
+            "basis": "独立检查全文：描述只称给定（带权）图，输入仅列n,m及(u,v[,w])的类型和数量，数据范围仅列界，未在任何段落说明字段对应的对象或边权。冻结的两版Skill均明确要求交代输入量含义；此处是可恢复的图输入惯例但仍缺少适用明确条款所需说明。按该协议确认独立Major，未修改冻结Gold，不记误报。",
+            "judge_kind": "maintainer_model",
+            "expected_severity": "Major",
+            "limitation": "This is a normative omission, not proof of multiple mathematical interpretations; no human confirmation."
+          }
+        },
+        {
+          "finding_id": "f2",
+          "disposition": "matched",
+          "root_id": "duplicate_word",
+          "extra_root_id": null,
+          "evidence_valid": true,
+          "reason": "原句均均为正整数重复一字，易恢复且不改变正权条件，Minor。",
+          "novel_issue_review": null
+        }
+      ]
+    }
+  ],
+  "detection": {
+    "original": {
+      "reviewed_runs": 54,
+      "excluded_unconfirmed_gold_runs": 1,
+      "counts": {
+        "tp": 34,
+        "fp": 0,
+        "gold": 30,
+        "fatal_total": 25,
+        "fatal_hit": 25,
+        "important_total": 26,
+        "important_hit": 26,
+        "severity_total": 30,
+        "severity_correct": 30,
+        "evidence_total": 34,
+        "evidence_valid": 34,
+        "novel_confirmed": 4,
+        "duplicates": 0,
+        "clean_total": 24,
+        "clean_fp": 0,
+        "score_total": 54,
+        "score_arithmetic_error": 0,
+        "deduplicated_score_error": 0,
+        "novel_severity_total": 4,
+        "novel_severity_correct": 4
+      }
+    },
+    "improved": {
+      "reviewed_runs": 54,
+      "excluded_unconfirmed_gold_runs": 0,
+      "counts": {
+        "tp": 32,
+        "fp": 0,
+        "gold": 30,
+        "fatal_total": 25,
+        "fatal_hit": 25,
+        "important_total": 26,
+        "important_hit": 26,
+        "severity_total": 30,
+        "severity_correct": 30,
+        "evidence_total": 32,
+        "evidence_valid": 32,
+        "novel_confirmed": 2,
+        "duplicates": 0,
+        "clean_total": 24,
+        "clean_fp": 0,
+        "score_total": 54,
+        "score_arithmetic_error": 0,
+        "deduplicated_score_error": 0,
+        "novel_severity_total": 2,
+        "novel_severity_correct": 1
+      }
+    }
+  },
+  "detection_by_split": {
+    "original": {
+      "development": {
+        "reviewed_runs": 19,
+        "excluded_unconfirmed_gold_runs": 1,
+        "counts": {
+          "tp": 11,
+          "fp": 0,
+          "gold": 11,
+          "fatal_total": 10,
+          "fatal_hit": 10,
+          "important_total": 10,
+          "important_hit": 10,
+          "severity_total": 11,
+          "severity_correct": 11,
+          "evidence_total": 11,
+          "evidence_valid": 11,
+          "novel_confirmed": 0,
+          "duplicates": 0,
+          "clean_total": 8,
+          "clean_fp": 0,
+          "score_total": 19,
+          "score_arithmetic_error": 0,
+          "deduplicated_score_error": 0
+        }
+      },
+      "holdout": {
+        "reviewed_runs": 35,
+        "excluded_unconfirmed_gold_runs": 0,
+        "counts": {
+          "tp": 23,
+          "fp": 0,
+          "gold": 19,
+          "fatal_total": 15,
+          "fatal_hit": 15,
+          "important_total": 16,
+          "important_hit": 16,
+          "severity_total": 19,
+          "severity_correct": 19,
+          "evidence_total": 23,
+          "evidence_valid": 23,
+          "novel_confirmed": 4,
+          "duplicates": 0,
+          "clean_total": 16,
+          "clean_fp": 0,
+          "score_total": 35,
+          "score_arithmetic_error": 0,
+          "deduplicated_score_error": 0,
+          "novel_severity_total": 4,
+          "novel_severity_correct": 4
+        }
+      }
+    },
+    "improved": {
+      "development": {
+        "reviewed_runs": 19,
+        "excluded_unconfirmed_gold_runs": 0,
+        "counts": {
+          "tp": 11,
+          "fp": 0,
+          "gold": 11,
+          "fatal_total": 10,
+          "fatal_hit": 10,
+          "important_total": 10,
+          "important_hit": 10,
+          "severity_total": 11,
+          "severity_correct": 11,
+          "evidence_total": 11,
+          "evidence_valid": 11,
+          "novel_confirmed": 0,
+          "duplicates": 0,
+          "clean_total": 8,
+          "clean_fp": 0,
+          "score_total": 19,
+          "score_arithmetic_error": 0,
+          "deduplicated_score_error": 0
+        }
+      },
+      "holdout": {
+        "reviewed_runs": 35,
+        "excluded_unconfirmed_gold_runs": 0,
+        "counts": {
+          "tp": 21,
+          "fp": 0,
+          "gold": 19,
+          "fatal_total": 15,
+          "fatal_hit": 15,
+          "important_total": 16,
+          "important_hit": 16,
+          "severity_total": 19,
+          "severity_correct": 19,
+          "evidence_total": 21,
+          "evidence_valid": 21,
+          "novel_confirmed": 2,
+          "duplicates": 0,
+          "clean_total": 16,
+          "clean_fp": 0,
+          "score_total": 35,
+          "score_arithmetic_error": 0,
+          "deduplicated_score_error": 0,
+          "novel_severity_total": 2,
+          "novel_severity_correct": 1
+        }
+      }
+    }
+  },
+  "consistency": [
+    {
+      "skill": "improved",
+      "case_id": "st-001-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-001-mutant",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "order": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-008-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-009-mutant",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "literal_markup": {
+          "labels": [
+            "Major",
+            "Major",
+            "Major",
+            "Major",
+            "Major"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-011-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-012-mutant",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "time_typo": {
+          "labels": [
+            "Minor",
+            "Minor",
+            "Minor",
+            "Minor",
+            "Minor"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-014-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-017-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-020-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-025-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "direction": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-033-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "query_budget": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-034-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "message_budget": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-001-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-001-mutant",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "order": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-008-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-009-mutant",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "literal_markup": {
+          "labels": [
+            "Major",
+            "Major",
+            "Major",
+            "Major",
+            "Major"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        8,
+        8,
+        8,
+        8,
+        8
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-011-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-012-mutant",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "time_typo": {
+          "labels": [
+            "Minor",
+            "Minor",
+            "Minor",
+            "Minor",
+            "Minor"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-014-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-017-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-020-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-025-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "direction": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-033-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "query_budget": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-034-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "message_budget": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    }
+  ],
+  "equivalence": [
+    {
+      "skill": "original",
+      "case_id": "st-001-equivalent",
+      "equivalent_to": "st-001-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-001-equivalent",
+      "equivalent_to": "st-001-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-008-equivalent",
+      "equivalent_to": "st-008-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-008-equivalent",
+      "equivalent_to": "st-008-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-011-equivalent",
+      "equivalent_to": "st-011-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-011-equivalent",
+      "equivalent_to": "st-011-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-020-equivalent",
+      "equivalent_to": "st-020-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-020-equivalent",
+      "equivalent_to": "st-020-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    }
+  ],
+  "repairs": [
+    {
+      "case_id": "st-001-mutant",
+      "root_id": "order",
+      "parent_run_id": "improved-st-001-mutant-r1",
+      "review_run_id": "improved-st-001-mutant-r1-repair-e82b6c90df",
+      "review_run_directory": "../../repair-reviews/improved-st-001-mutant-r1-repair-e82b6c90df",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": true,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "0f1a826a603fd186735e7b764997da1ab3288f7332e31322168e901170fcdc3e",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "47716114cf377ed00ddf9f8a565aa117e211b4b97a8c9fe2ea10c0b8ab0a8356",
+          "result": "Actual executed finite checks: [\"prefix-demand vs sequential booking on small complete domains\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "Private unavailable processing order replaced by input order; model restriction at the defective order rule.",
+      "reviewed_at": "2026-11-13T02:28:27.255539+00:00",
+      "review_raw_sha256": "d8c70995281505f357c470cbed5c3fbb220de8041c6c4fee3432a946e26885db",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "e82b6c90dfca4489395fc7d4cce879103f202b02cd7c082fcf411f5bf146cfe1"
+    },
+    {
+      "case_id": "st-002-mutant",
+      "root_id": "sample_explanation",
+      "parent_run_id": "improved-st-002-mutant-r1",
+      "review_run_id": "improved-st-002-mutant-r1-repair-9a433aca01",
+      "review_run_directory": "../../repair-reviews/improved-st-002-mutant-r1-repair-9a433aca01",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "56c94e2b99324b93f2fea3219f779feff28cdbc76a6215a631abc602eccd2ee2",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "bdd3cd9193f8a7ce040a2d3884306e8af31d224a5306ed316e8b615dd2ecf11a",
+          "result": "Actual executed finite checks: [\"all sample source-target paths independently enumerated\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "a79221fe610c557998c78364f47c51f5203677667bfe5666f360af266162a851",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:28:27.259601+00:00",
+      "review_raw_sha256": "ab9bad5f14af65e0653e5fed9dd748ffac42b8cee92b4730015a951f2aa371a9",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "9a433aca01453b9a29ba9568fdbc161f6a80f9098fe3463fcbaeb19038205568"
+    },
+    {
+      "case_id": "st-003-mutant",
+      "root_id": "distance_definition",
+      "parent_run_id": "improved-st-003-mutant-r1",
+      "review_run_id": "improved-st-003-mutant-r1-repair-547ce96e37",
+      "review_run_directory": "../../repair-reviews/improved-st-003-mutant-r1-repair-547ce96e37",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "c0aeacd165e391093d32f5fe1e8ac6b7a9f304207a008e893804769665fe5095",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "d2cb92f87f69d7372047ee06022f6995753894fd7107b2a88a05b74e06751226",
+          "result": "Actual executed finite checks: [\"exact clean-reference restoration and independent tree witnesses\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "2f7f4be98795426fedd6c8a9416dbad7390078bcb6f92ba9128239982141b741",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:28:27.278076+00:00",
+      "review_raw_sha256": "6e647f6449c32c9a83cec42eef9878bcae4316b2bea70e3a1ce2ae320bedcd62",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "547ce96e372a2c937345964f10e18b3b901c3688fd81b740fd1f8ebe0c14fc06"
+    },
+    {
+      "case_id": "st-004-mutant",
+      "root_id": "unbounded",
+      "parent_run_id": "improved-st-004-mutant-r1",
+      "review_run_id": "improved-st-004-mutant-r1-repair-2f8885bb75",
+      "review_run_directory": "../../repair-reviews/improved-st-004-mutant-r1-repair-2f8885bb75",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": true,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "8040624273c0b25f571eaee69140e53d1944aeb1181c23cdbb191da6c79c9370",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "bcf569f119a607a0078751ce697181a141d9cea265f0b9a4b0cc1053864f7668",
+          "result": "Actual executed finite checks: [\"finite nonempty circular domains, including n=1 and negative values\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "Unlimited traversal replaced by length at most n; operation set restricted. Previously finite optima (nonpositive cycle sum) are retained.",
+      "reviewed_at": "2026-11-13T02:28:27.282203+00:00",
+      "review_raw_sha256": "240cded045ebc55bff33943e4c24e5231f087ca375cd1560fa416a0da5aed7a7",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "2f8885bb75b40df042066d30ec975faf6c3c0997cad3fec91e39e18e865fc065"
+    },
+    {
+      "case_id": "st-005-mutant",
+      "root_id": "time_tie",
+      "parent_run_id": "improved-st-005-mutant-r1",
+      "review_run_id": "improved-st-005-mutant-r1-repair-b0c2fbcf57",
+      "review_run_directory": "../../repair-reviews/improved-st-005-mutant-r1-repair-b0c2fbcf57",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "eea8566940cbecc0f401020d13b064208c36188287143d15dc69a5d1af5ec1cf",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "576c07018068462aaa14585dd1a101ea28358a7728ff9817631bb44a5fa03e3e",
+          "result": "Actual executed finite checks: [\"tie and non-tie departure arithmetic; actual sample\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:30:54.996833+00:00",
+      "review_raw_sha256": "ac562cf32c0bee62b90849bf768b15e8f307bf488f8d18be70075076725a3e14",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "b0c2fbcf57eb12d955c2f093c3b15b4c443a939eefa9c79aa937b8ee58b8c65b"
+    },
+    {
+      "case_id": "st-006-mutant",
+      "root_id": "sample_components",
+      "parent_run_id": "improved-st-006-mutant-r1",
+      "review_run_id": "improved-st-006-mutant-r1-repair-1c16d6ddde",
+      "review_run_directory": "../../repair-reviews/improved-st-006-mutant-r1-repair-1c16d6ddde",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "c90666da36a90b4a5ab348206ea715592957d5935612fa298d08a9ee3aea721c",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "74b51347ac4f7589a0763ef4f7b5264e07a85444ef3cab60fd3723524929d65c",
+          "result": "Actual executed finite checks: [\"sample operations simulated independently\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "979284c771c3246e665b118b630ba50fd87c2749904c0ac20ac5295ba543ccd3",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:30:55.000533+00:00",
+      "review_raw_sha256": "1d8c730cf566d18a8f93ad3b130cdf64f984781ad5d29f19a8cafd80f6cb6423",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "1c16d6ddde180f0c08ff20e32e0570430ce5b6cf0a0fba813570a889e77efb07"
+    },
+    {
+      "case_id": "st-007-mutant",
+      "root_id": "equivalence",
+      "parent_run_id": "improved-st-007-mutant-r1",
+      "review_run_id": "improved-st-007-mutant-r1-repair-222bf145ff",
+      "review_run_directory": "../../repair-reviews/improved-st-007-mutant-r1-repair-222bf145ff",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "a1b824133949dd20bf7e534687a412d0426c072c7cf85526648ea6ef4574feb6",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "ef65a4ef9096873596a7ebad54c7fff01461942cf674597af608b6a26f2a86af",
+          "result": "Actual executed finite checks: [\"index-subsequence count: enumeration vs independent DP\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:30:55.003724+00:00",
+      "review_raw_sha256": "5559a801d401532cd7c779fdb41edf459e21c4b8302886a5b061c0f5af306d95",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "222bf145ffd5ad50fa446e0a1484989e3eea81c8798fe7ff46f5ca85dee1ca03"
+    },
+    {
+      "case_id": "st-008-mutant",
+      "root_id": "construct_impossible",
+      "parent_run_id": "improved-st-008-mutant-r1",
+      "review_run_id": "improved-st-008-mutant-r1-repair-27971ce088",
+      "review_run_directory": "../../repair-reviews/improved-st-008-mutant-r1-repair-27971ce088",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "a06250501909e5c47802656b91945501e5b9bd4f3263b3d332afd93abbad3d38",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "92d4dc48adde8a21529851d6e1ef4fed095ccec07c2b51d4cdac5d13a2a31780",
+          "result": "Actual executed finite checks: [\"all permutations up to n=6; no-solution and sample acceptance\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:30:55.007109+00:00",
+      "review_raw_sha256": "a9c18e58c8127ae445ebcfb1f0f3ef4eb4fb94dcea83ff5c463d5e14f72ac1e6",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "27971ce088bb5a5f4b6631411da719aa59bd917b27016bd0479ddbf70420ce8f"
+    },
+    {
+      "case_id": "st-009-mutant",
+      "root_id": "literal_markup",
+      "parent_run_id": "improved-st-009-mutant-r1",
+      "review_run_id": "improved-st-009-mutant-r1-repair-72565cbc41",
+      "review_run_directory": "../../repair-reviews/improved-st-009-mutant-r1-repair-72565cbc41",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "461776e95e4aa9b6f4cced7cada0cf928c65b14c4f23475b5658fc3ce7f7d5bd",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "6fc4db5d7590a7ecfd9d673fec678e3dfcaa640050aee7b174eb18cba26254fc",
+          "result": "Actual executed finite checks: [\"exact one local markup change; semantic token NO retained\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "c839bd859bbde9b755127af56759a51053ee405babcde9ae0d4acec26013bb78",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:30:55.010346+00:00",
+      "review_raw_sha256": "343d4ac59ad5bbe473cec0a373a4babf53bce13af79cf74e1f0ecfb0758fbf25",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "72565cbc4176611d6248a5007bff8ee1404e4fec136145a7079fe29f8c1dade7"
+    },
+    {
+      "case_id": "st-010-mutant",
+      "root_id": "matrix_sample",
+      "parent_run_id": "improved-st-010-mutant-r1",
+      "review_run_id": "improved-st-010-mutant-r1-repair-2f2ce7779a",
+      "review_run_directory": "../../repair-reviews/improved-st-010-mutant-r1-repair-2f2ce7779a",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "139174986a5357200c849cb46e479ccae2b0a843c1dbac20e1b899c4eac630a5",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "83b2165ce4222a5285ac135eac3cc0e0aea085aed99a045d12b2a7b6b5264800",
+          "result": "Actual executed finite checks: [\"actual candidate sample satisfies row and column margins\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "891b627b49444acb90481ca3b4375bf3318a0a53a69d00c944c1c94d5fae5d9c",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:30:55.013031+00:00",
+      "review_raw_sha256": "fb22cffb50bc62ccfa63a6889241c7e1ae13ef2e7232c3058524ad22b7942bd4",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "2f2ce7779a4de87b48ae77870d264f50291c5d06ccbccdf7a17db86ba939863e"
+    },
+    {
+      "case_id": "st-011-mutant",
+      "root_id": "zero_relative",
+      "parent_run_id": "improved-st-011-mutant-r1",
+      "review_run_id": "improved-st-011-mutant-r1-repair-79028bf4a5",
+      "review_run_directory": "../../repair-reviews/improved-st-011-mutant-r1-repair-79028bf4a5",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "ba11ce29d4640c066cf52a75591e59948eabc89211980e34b83b17220bf433d8",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "ba392495cf49127029158ebc4eb377a32b7e930a76156701bc68636c3e750870",
+          "result": "Actual executed finite checks: [\"zero branch defined; every tested nonzero acceptance preserved exactly\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:33:48.917451+00:00",
+      "review_raw_sha256": "a8f7e05f613b5a081230fd8831fd6512c5d50464f0201358a5255f85ce1fedb8",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "79028bf4a581575df412eea62079fc8c64408dc5b681cb4e525539bd059e4599"
+    },
+    {
+      "case_id": "st-014-mutant",
+      "root_id": "reply_mapping",
+      "parent_run_id": "improved-st-014-mutant-r1",
+      "review_run_id": "improved-st-014-mutant-r1-repair-403f483db3",
+      "review_run_directory": "../../repair-reviews/improved-st-014-mutant-r1-repair-403f483db3",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "6dc8d5aaff6b3e10ca0da4c168f666d546a06cf1161dc424c4a768bf0a6a8662",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "30d0cae328f9f76afa8b70d6853f41c76b6366a071695563da5c63885a0a81f9",
+          "result": "Actual executed finite checks: [\"actual letter mapping supports all hidden values for N<=64\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:30:55.015865+00:00",
+      "review_raw_sha256": "563fa78e2688e8c3faaf5522eace5427cea7d76b2544168c9e388497b76ccb39",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "403f483db3dbdc862362897ee779240e7d75ad533ad794a3aaa58b20e30b5d9d"
+    },
+    {
+      "case_id": "st-015-mutant",
+      "root_id": "distance_transcript",
+      "parent_run_id": "improved-st-015-mutant-r1",
+      "review_run_id": "improved-st-015-mutant-r1-repair-35c836f0ea",
+      "review_run_directory": "../../repair-reviews/improved-st-015-mutant-r1-repair-35c836f0ea",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "ed3e8500be60761fa24cc922c8be3574e5cbbb1f193b711975c7307f52dc4d77",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "9d1962b15fd2d3a8e68b5632020ff46e87a8d201863ce5e7bd97fc66224e2200",
+          "result": "Actual executed finite checks: [\"interaction transcript distance independently calculated\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "c8d83597bc1a692a1a9a3a99e838b4e3345540983bd79551663ccfe3cde1cfd8",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:33:48.920762+00:00",
+      "review_raw_sha256": "099e1dceb323ccca8344de5332fce638929c115f36ee7bdedb6f36ddd4d5c6c5",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "35c836f0eaa10badff58e6293d692e230b27cab0ee9bf5969e2a79d4b7eed1ed"
+    },
+    {
+      "case_id": "st-016-mutant",
+      "root_id": "index_shift",
+      "parent_run_id": "improved-st-016-mutant-r1",
+      "review_run_id": "improved-st-016-mutant-r1-repair-6d81810d6a",
+      "review_run_directory": "../../repair-reviews/improved-st-016-mutant-r1-repair-6d81810d6a",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "daeff64cbd9c6d5bcc8a3369b9045d5a825b097ba2740fdd04abdf87f7d8f235",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "4c0c31edf1e7c665af19ac2e077ec935bf7538eff627ca4bee9a34d4c3e2009d",
+          "result": "Actual executed finite checks: [\"all nonempty subsets and singleton reconstruction through n=5\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "0216f8f06398e076a40b3f516244f704dd424f21722d9788792ac70392239793",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:33:48.923410+00:00",
+      "review_raw_sha256": "ddbcb5d73ee26de67608eb20c1cc08b616fe68170c61ad2c15dc8ad47a30bc69",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "6d81810d6a06ce4acc7ac7b20b0427eb99f95b2d4cbc97a482e4388bc862de59"
+    },
+    {
+      "case_id": "st-025-base",
+      "root_id": "direction",
+      "parent_run_id": "improved-st-025-base-r1",
+      "review_run_id": "improved-st-025-base-r1-repair-9ea6ed3746",
+      "review_run_directory": "../../repair-reviews/improved-st-025-base-r1-repair-9ea6ed3746",
+      "resolved": "complete",
+      "changed_clear_semantics": true,
+      "domain_changed": true,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": false,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "110ed2dda5b0bc68be088e1b195a6694b7deda8be479b016767aa9f65c35a9a9",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "9e56bfe90f74abde505516379528c7edc33e8739dd448370998eea260e02b39e",
+          "result": "Actual executed finite checks: [\"chosen directed interpretation and unchanged official sample\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。 独立反例或模型范围对照确认改变了缺陷之外已明确的规则；即使复审10分，也不计严格有效修复。",
+      "complete": true,
+      "scope_change": "Explicitly mixed single/double-way road model replaced by all-directed model. This exceeds merely adding missing per-road direction data; changed_clear_semantics=true.",
+      "reviewed_at": "2026-11-13T02:33:48.925682+00:00",
+      "review_raw_sha256": "ce708184e904f749b2898c8c481bc8452c9e1dd9433f74c2f04c55777611e949",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "9ea6ed37467f9759bb1e694b42fad1400b53c16657d2699d8e61dba3b3d1a957"
+    },
+    {
+      "case_id": "st-026-base",
+      "root_id": "singleton",
+      "parent_run_id": "improved-st-026-base-r1",
+      "review_run_id": "improved-st-026-base-r1-repair-ffa02a27de",
+      "review_run_directory": "../../repair-reviews/improved-st-026-base-r1-repair-ffa02a27de",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": true,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "4c53b3d1176833a7333fa2ce948c5200ba4cc0605e46277fa8c0c72812d35714",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "4555b6c8181b4f81131a4fc82c71c77f021fcebd257991ad0ca453a1af0ff2ab",
+          "result": "Actual executed finite checks: [\"excluded singleton; nonempty minimum and adjacent-sorted invariant\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "Input n=1 removed. Numeric input domain changes even though no answer had been defined for that input.",
+      "reviewed_at": "2026-11-13T02:33:48.928056+00:00",
+      "review_raw_sha256": "d4d0ad5122f902add4b61d217bd568af832b80ec23c2eb1aaa31d85dd305f1a4",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "ffa02a27de3877e96605f2649d738ff188a8db0b083abcaa17f0b211ea2b92ac"
+    },
+    {
+      "case_id": "st-029-base",
+      "root_id": "sample_value",
+      "parent_run_id": "improved-st-029-base-r1",
+      "review_run_id": "improved-st-029-base-r1-repair-ce6a5e92e2",
+      "review_run_directory": "../../repair-reviews/improved-st-029-base-r1-repair-ce6a5e92e2",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "d0da64d6d6b8833d6d16b213ea74123f89eb60f4641546849b93787dd77ada86",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "a9700178bc91e4119611b853d1955be41533f27bc1d90ed3fce50132db82d8e9",
+          "result": "Actual executed finite checks: [\"all sample spanning trees enumerated\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。 样例最优值由9改3已由穷举和下界证明确认；输入字段含义缺项在原题中已存在，本候选未改该行，保留为既有Major，不宣称全文无缺陷。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:34:51.664798+00:00",
+      "review_raw_sha256": "222775b623ebb30aa52743155a16aba2586172abdc3fb609b2e34293a6974624",
+      "review_prediction_sha256": "3ccdefd0839f4cdda5ce4369c5597ab306b44b152935f55ff8069863ca5a6fd5",
+      "remaining_preexisting_defects": [
+        {
+          "root_id": "input_field_meanings",
+          "severity": "Major",
+          "reported_in_recheck": true,
+          "basis": "The complete input tuple line still lacks its edge/field meaning in both original and candidate; confirmed in main triage. The sample-only patch did not introduce or repair it."
+        }
+      ],
+      "skill": "improved",
+      "candidate_sha256": "ce6a5e92e28368a21d9ae04b3623b8bce40413a7ddc836c077e20c4b76f37395"
+    },
+    {
+      "case_id": "st-034-base",
+      "root_id": "message_budget",
+      "parent_run_id": "improved-st-034-base-r1",
+      "review_run_id": "improved-st-034-base-r1-repair-45d1c2c267",
+      "review_run_directory": "../../repair-reviews/improved-st-034-base-r1-repair-45d1c2c267",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": true,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "d54efa3f093fe6aa78d4fa6ff0aa12a72a2034101b96eab95d115d3c5756c090",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "52f118aa722c07ea2626f9246e17ee04b5292a6e9b9e516ec6954d46037d35d0",
+          "result": "Actual executed finite checks: [\"n=3..8 capacity, permutation distinguishability and rank encoding\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "Message budget increases from n-1 to ceil(log2(n!)); feasibility repair changes protocol resources.",
+      "reviewed_at": "2026-11-13T02:33:48.930125+00:00",
+      "review_raw_sha256": "5265ac71be10fd12c95b085f741869d0e73156b3cf8d620b7a2dc03a2c82d582",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "45d1c2c26753491ad19bb06075a3951d1a97a2984c1f389d66ae0ed9f5bc6d01"
+    },
+    {
+      "case_id": "st-035-base",
+      "root_id": "settlement_order",
+      "parent_run_id": "improved-st-035-base-r1",
+      "review_run_id": "improved-st-035-base-r1-repair-4fc3edb63d",
+      "review_run_directory": "../../repair-reviews/improved-st-035-base-r1-repair-4fc3edb63d",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "a95f9eb2fa9e83e0d57c9f7a48de13e53661e26327105172e694ef54927e0cb0",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "a12ebdb85dac96bae3cefd7410b6f83727699ae0a0f8c23b32a984125b8cb3d6",
+          "result": "Actual executed finite checks: [\"finite settlement domain, nonnegative invariant, sample and old witness\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:33:48.932106+00:00",
+      "review_raw_sha256": "2d96b8d8517a6b8151bcb381eb6586d2113a6b2fe61f34c118b08f85731db7e1",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "4fc3edb63d478f6eb43dc7af5e01d9ad901ea5408a543db87d2e3b1de9404e99"
+    },
+    {
+      "case_id": "st-037-base",
+      "root_id": "input_typo",
+      "parent_run_id": "improved-st-037-base-r1",
+      "review_run_id": "improved-st-037-base-r1-repair-c6e1ea7e2f",
+      "review_run_directory": "../../repair-reviews/improved-st-037-base-r1-repair-c6e1ea7e2f",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "2cc630a6a17c79f52bdaf06d6493a12d6659af589fa367e79a8136a69378eb53",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "90c7a9ebe8a0ef071c00d2f0a0cbd3457c1ea46a2313f5f377100efa0add18a1",
+          "result": "Actual executed finite checks: [\"all small arrays: deletion enumeration vs extreme-deletion characterization\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:33:48.934093+00:00",
+      "review_raw_sha256": "7aae83bae8f9e53da78c4ca968dfa124ceae7d6f69c1d1448515dbc8af90127e",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "improved",
+      "candidate_sha256": "c6e1ea7e2f746f5ae558354065e3d0d1ed198a684aca34fb3bace3bb3f50fd7d"
+    },
+    {
+      "case_id": "st-001-mutant",
+      "root_id": "order",
+      "parent_run_id": "original-st-001-mutant-r1",
+      "review_run_id": "original-st-001-mutant-r1-repair-e82b6c90df",
+      "review_run_directory": "../../repair-reviews/original-st-001-mutant-r1-repair-e82b6c90df",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": true,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "0f1a826a603fd186735e7b764997da1ab3288f7332e31322168e901170fcdc3e",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "47716114cf377ed00ddf9f8a565aa117e211b4b97a8c9fe2ea10c0b8ab0a8356",
+          "result": "Actual executed finite checks: [\"prefix-demand vs sequential booking on small complete domains\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "Private unavailable processing order replaced by input order; model restriction at the defective order rule.",
+      "reviewed_at": "2026-11-13T02:21:22.553989+00:00",
+      "review_raw_sha256": "a2209d208825b0245b8ae82361311e47367f2a282b8ec64436b0128f13eb9997",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "e82b6c90dfca4489395fc7d4cce879103f202b02cd7c082fcf411f5bf146cfe1"
+    },
+    {
+      "case_id": "st-002-mutant",
+      "root_id": "sample_explanation",
+      "parent_run_id": "original-st-002-mutant-r1",
+      "review_run_id": "original-st-002-mutant-r1-repair-9a433aca01",
+      "review_run_directory": "../../repair-reviews/original-st-002-mutant-r1-repair-9a433aca01",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "56c94e2b99324b93f2fea3219f779feff28cdbc76a6215a631abc602eccd2ee2",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "bdd3cd9193f8a7ce040a2d3884306e8af31d224a5306ed316e8b615dd2ecf11a",
+          "result": "Actual executed finite checks: [\"all sample source-target paths independently enumerated\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "23b810c353d71efc09cd35b76e1dd7d229d0036c0475ff399b0411d611970c62",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:21:22.556925+00:00",
+      "review_raw_sha256": "e68475bf5a36a2b8ec23d9897d584f9157dcf1c4181244e6256d88fb40e427b7",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "9a433aca01453b9a29ba9568fdbc161f6a80f9098fe3463fcbaeb19038205568"
+    },
+    {
+      "case_id": "st-003-mutant",
+      "root_id": "distance_definition",
+      "parent_run_id": "original-st-003-mutant-r1",
+      "review_run_id": "original-st-003-mutant-r1-repair-547ce96e37",
+      "review_run_directory": "../../repair-reviews/original-st-003-mutant-r1-repair-547ce96e37",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "c0aeacd165e391093d32f5fe1e8ac6b7a9f304207a008e893804769665fe5095",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "d2cb92f87f69d7372047ee06022f6995753894fd7107b2a88a05b74e06751226",
+          "result": "Actual executed finite checks: [\"exact clean-reference restoration and independent tree witnesses\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "550ad3ec6e98989b663321dd739f4e8a9cc5b33c36ffef57bf8b845168f6338d",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:21:22.560092+00:00",
+      "review_raw_sha256": "9d6295141609ed6111037faf73c2b36c0835dfea57f42f8040c3097529cf14a7",
+      "review_prediction_sha256": "1f10ecfaa997ff02a1e764f06afb0874ebdc234c73399ffedbae52fcacddcf21",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "547ce96e372a2c937345964f10e18b3b901c3688fd81b740fd1f8ebe0c14fc06"
+    },
+    {
+      "case_id": "st-004-mutant",
+      "root_id": "unbounded",
+      "parent_run_id": "original-st-004-mutant-r1",
+      "review_run_id": "original-st-004-mutant-r1-repair-2f8885bb75",
+      "review_run_directory": "../../repair-reviews/original-st-004-mutant-r1-repair-2f8885bb75",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": true,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "8040624273c0b25f571eaee69140e53d1944aeb1181c23cdbb191da6c79c9370",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "bcf569f119a607a0078751ce697181a141d9cea265f0b9a4b0cc1053864f7668",
+          "result": "Actual executed finite checks: [\"finite nonempty circular domains, including n=1 and negative values\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "Unlimited traversal replaced by length at most n; operation set restricted. Previously finite optima (nonpositive cycle sum) are retained.",
+      "reviewed_at": "2026-11-13T02:21:22.562925+00:00",
+      "review_raw_sha256": "6d07b935a1e67f18ba1ef3aa69f0836f9d53947c66b7a8b439cc3d93bddb077e",
+      "review_prediction_sha256": "101f940725965d03511a9b08db2b3b7a36db7968d7a6d8d6d55db2cc5402a64e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "2f8885bb75b40df042066d30ec975faf6c3c0997cad3fec91e39e18e865fc065"
+    },
+    {
+      "case_id": "st-005-mutant",
+      "root_id": "time_tie",
+      "parent_run_id": "original-st-005-mutant-r1",
+      "review_run_id": "original-st-005-mutant-r1-repair-dd117366b2",
+      "review_run_directory": "../../repair-reviews/original-st-005-mutant-r1-repair-dd117366b2",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "5bfe2e5adaef9589ea8431b79734aac27a06456888a84266900b5bd8c256aabb",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "d3d8e46a96d37c501cd1fda418c51608715ec4fdea0313d941526dcb725ef344",
+          "result": "Actual executed finite checks: [\"tie and non-tie departure arithmetic; actual sample\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:23:18.673109+00:00",
+      "review_raw_sha256": "6aa360afa1623c8c683c16b060330dc0683e967ac59a43188b7920a05d225b73",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "dd117366b24c99be94b07d74dca1f26da02df70590e17b9cdace99369025055c"
+    },
+    {
+      "case_id": "st-006-mutant",
+      "root_id": "sample_components",
+      "parent_run_id": "original-st-006-mutant-r1",
+      "review_run_id": "original-st-006-mutant-r1-repair-1c16d6ddde",
+      "review_run_directory": "../../repair-reviews/original-st-006-mutant-r1-repair-1c16d6ddde",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "c90666da36a90b4a5ab348206ea715592957d5935612fa298d08a9ee3aea721c",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "74b51347ac4f7589a0763ef4f7b5264e07a85444ef3cab60fd3723524929d65c",
+          "result": "Actual executed finite checks: [\"sample operations simulated independently\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "7c19d6e97d46a0d7c109d16b6718bcc1829e116af7d8b1a92ee13ad23b10fe42",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:23:18.676065+00:00",
+      "review_raw_sha256": "5cdf60bf2ac1d508909de3d8146fd61815cccf7007d4d3ea0d2381bc0b65fd26",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "1c16d6ddde180f0c08ff20e32e0570430ce5b6cf0a0fba813570a889e77efb07"
+    },
+    {
+      "case_id": "st-007-mutant",
+      "root_id": "equivalence",
+      "parent_run_id": "original-st-007-mutant-r1",
+      "review_run_id": "original-st-007-mutant-r1-repair-25dbd1effc",
+      "review_run_directory": "../../repair-reviews/original-st-007-mutant-r1-repair-25dbd1effc",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "6d21377e15aca2a17878e80ada15e4fb6df2c26b3db289cd6d46004162f7dc7e",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "eed93576c6cdd91d1bf7de1dd3de843bdf559a2d49eec5285ba6f0cc146b9a9a",
+          "result": "Actual executed finite checks: [\"index-subsequence count: enumeration vs independent DP\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:23:18.678755+00:00",
+      "review_raw_sha256": "535362b0c04446f8f3b83d894c01af65a822931da226b78f320cd7f5b0942454",
+      "review_prediction_sha256": "f64b171f64ca0d7980d39cc4c155f86d587904cd2d36e89f2f5949f09df52e67",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "25dbd1effc98df33b1fa3ffb0df5f9b17c10956dec5773653a36b03923eddf68"
+    },
+    {
+      "case_id": "st-008-mutant",
+      "root_id": "construct_impossible",
+      "parent_run_id": "original-st-008-mutant-r1",
+      "review_run_id": "original-st-008-mutant-r1-repair-bff09bdc3f",
+      "review_run_directory": "../../repair-reviews/original-st-008-mutant-r1-repair-bff09bdc3f",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "2785e726ac8f98f6bbf93e2c39461f9153fa0612e8126a5299b610a928f164fa",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "2af38c0519d852415f6d5b565070b1ed49a5a5b0e2cc891bd2aae7949fc64a7b",
+          "result": "Actual executed finite checks: [\"all permutations up to n=6; no-solution and sample acceptance\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:23:18.681248+00:00",
+      "review_raw_sha256": "52b911aea7cc3ea8b3f674980b60e8a473b92b179365048fb400d358e3b5120f",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "bff09bdc3f1154999bc3b424e512643974bbda33817da2c63f5bf5c6cd9727dc"
+    },
+    {
+      "case_id": "st-009-mutant",
+      "root_id": "literal_markup",
+      "parent_run_id": "original-st-009-mutant-r1",
+      "review_run_id": "original-st-009-mutant-r1-repair-72565cbc41",
+      "review_run_directory": "../../repair-reviews/original-st-009-mutant-r1-repair-72565cbc41",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "461776e95e4aa9b6f4cced7cada0cf928c65b14c4f23475b5658fc3ce7f7d5bd",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "6fc4db5d7590a7ecfd9d673fec678e3dfcaa640050aee7b174eb18cba26254fc",
+          "result": "Actual executed finite checks: [\"exact one local markup change; semantic token NO retained\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "c21aad4f92e5c2ee6da5add1695f02176e55549b8e66d37d7a82625df51e78f7",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:23:51.622899+00:00",
+      "review_raw_sha256": "f0a811bdb040bc4d2bb566d17c3d7af9b5c63f6e3d87314a548c417146c4b40e",
+      "review_prediction_sha256": "b22fa3a2aa6f3cbe0e604f35222f699a867c033a5152d472f17ae3419e7601d6",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "72565cbc4176611d6248a5007bff8ee1404e4fec136145a7079fe29f8c1dade7"
+    },
+    {
+      "case_id": "st-010-mutant",
+      "root_id": "matrix_sample",
+      "parent_run_id": "original-st-010-mutant-r1",
+      "review_run_id": "original-st-010-mutant-r1-repair-2f2ce7779a",
+      "review_run_directory": "../../repair-reviews/original-st-010-mutant-r1-repair-2f2ce7779a",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "139174986a5357200c849cb46e479ccae2b0a843c1dbac20e1b899c4eac630a5",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "83b2165ce4222a5285ac135eac3cc0e0aea085aed99a045d12b2a7b6b5264800",
+          "result": "Actual executed finite checks: [\"actual candidate sample satisfies row and column margins\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "ffee16613b9b291e9a97c640180c2213b918122e8e3f23d7b82ff6a5542ae701",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:23:51.625933+00:00",
+      "review_raw_sha256": "2a9f9df500644e1daf51d8b83908e41160c48d6ae88fd82ebe99adbe4be41d37",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "2f2ce7779a4de87b48ae77870d264f50291c5d06ccbccdf7a17db86ba939863e"
+    },
+    {
+      "case_id": "st-011-mutant",
+      "root_id": "zero_relative",
+      "parent_run_id": "original-st-011-mutant-r1",
+      "review_run_id": "original-st-011-mutant-r1-repair-e6bf8bd222",
+      "review_run_directory": "../../repair-reviews/original-st-011-mutant-r1-repair-e6bf8bd222",
+      "resolved": "complete",
+      "changed_clear_semantics": true,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": false,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "9fdc62d555b13e09d36d1a31b45d96d3d5ec38c85bc6a1bc661474ce853b7ed9",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "9094a056490d7c3904a766a8cc5627ba4bb460f3e11b5f7a2f87aeb439cd936c",
+          "result": "Actual executed finite checks: [\"zero denominator removed; legal nonzero witness proves acceptance relation broadened\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "187aa1b34e16ea7fcd5662b632036232bad7a8574b2b9b063eb3c55bd753bc38",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。 独立反例或模型范围对照确认改变了缺陷之外已明确的规则；即使复审10分，也不计严格有效修复。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:23:51.628707+00:00",
+      "review_raw_sha256": "7c6a9e21e347b892af45677b8ebb2f55323f6b64835614de7e8c36d9ecb40584",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe"
+    },
+    {
+      "case_id": "st-014-mutant",
+      "root_id": "reply_mapping",
+      "parent_run_id": "original-st-014-mutant-r1",
+      "review_run_id": "original-st-014-mutant-r1-repair-f8c3973354",
+      "review_run_directory": "../../repair-reviews/original-st-014-mutant-r1-repair-f8c3973354",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "ba53556f4d80d0f24497478949594d435aed97ea9a67d1a6db85b1442728ac84",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "8e81f810f17759bc0ecba4e870ffadf3173319a4c991372d89c534d2e24c666e",
+          "result": "Actual executed finite checks: [\"actual letter mapping supports all hidden values for N<=64\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:25:53.007276+00:00",
+      "review_raw_sha256": "c7b950b77bcb8ac3082b993e90c277525258eef02562e1f77388c02d924e0903",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "f8c3973354e3dc45db521c1aed09a0a23f25cbaa1dd883af58e2abb4ecb17238"
+    },
+    {
+      "case_id": "st-015-mutant",
+      "root_id": "distance_transcript",
+      "parent_run_id": "original-st-015-mutant-r1",
+      "review_run_id": "original-st-015-mutant-r1-repair-35c836f0ea",
+      "review_run_directory": "../../repair-reviews/original-st-015-mutant-r1-repair-35c836f0ea",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "ed3e8500be60761fa24cc922c8be3574e5cbbb1f193b711975c7307f52dc4d77",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "9d1962b15fd2d3a8e68b5632020ff46e87a8d201863ce5e7bd97fc66224e2200",
+          "result": "Actual executed finite checks: [\"interaction transcript distance independently calculated\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "53e701fc089df0e1f2442521a31d2bb36a0c20cef79cb6bd2593655fffda628e",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:25:53.010638+00:00",
+      "review_raw_sha256": "53637ee24a2414d9e7016dfa71c406e946e388a4506d1b75ea9396c235d264d4",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "35c836f0eaa10badff58e6293d692e230b27cab0ee9bf5969e2a79d4b7eed1ed"
+    },
+    {
+      "case_id": "st-016-mutant",
+      "root_id": "index_shift",
+      "parent_run_id": "original-st-016-mutant-r1",
+      "review_run_id": "original-st-016-mutant-r1-repair-6d81810d6a",
+      "review_run_directory": "../../repair-reviews/original-st-016-mutant-r1-repair-6d81810d6a",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "daeff64cbd9c6d5bcc8a3369b9045d5a825b097ba2740fdd04abdf87f7d8f235",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "4c0c31edf1e7c665af19ac2e077ec935bf7538eff627ca4bee9a34d4c3e2009d",
+          "result": "Actual executed finite checks: [\"all nonempty subsets and singleton reconstruction through n=5\"]"
+        },
+        {
+          "kind": "exact_reference",
+          "artifact": "reference-check.json",
+          "artifact_sha256": "2f76d458720ee9a8c9223f7eadac25d17a52d705ef5f4b3af652fbf38dda6489",
+          "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:25:53.013531+00:00",
+      "review_raw_sha256": "b9f397559a62ab9eea82a6e160b987a90e27dc62d08e7ca41b51355838ba06b5",
+      "review_prediction_sha256": "57333a93a54cf09fda199828d47f3d7ac22b153b7faa3437a5d79db3cedcbbbf",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "6d81810d6a06ce4acc7ac7b20b0427eb99f95b2d4cbc97a482e4388bc862de59"
+    },
+    {
+      "case_id": "st-025-base",
+      "root_id": "direction",
+      "parent_run_id": "original-st-025-base-r1",
+      "review_run_id": "original-st-025-base-r1-repair-23c77bd6f0",
+      "review_run_directory": "../../repair-reviews/original-st-025-base-r1-repair-23c77bd6f0",
+      "resolved": "complete",
+      "changed_clear_semantics": true,
+      "domain_changed": true,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": false,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "e58e93d74a035344d8724cb835533f5064f11bc91a42576b42efd8a324b992f4",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "09b6357e371b72a016d49e0e9e8fdb65569199292621ab361a8450cb01292815",
+          "result": "Actual executed finite checks: [\"chosen directed interpretation and unchanged official sample\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。 独立反例或模型范围对照确认改变了缺陷之外已明确的规则；即使复审10分，也不计严格有效修复。",
+      "complete": true,
+      "scope_change": "Explicitly mixed single/double-way road model replaced by all-directed model. This exceeds merely adding missing per-road direction data; changed_clear_semantics=true.",
+      "reviewed_at": "2026-11-13T02:25:53.015705+00:00",
+      "review_raw_sha256": "25219b6435d71d38a83026a67cb43bb4a03338f7fc12dfd8284b1ededa5de241",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "23c77bd6f037a8647316af8dc331c6da2e5ee82fd94446399ea12918b8e0e219"
+    },
+    {
+      "case_id": "st-026-base",
+      "root_id": "singleton",
+      "parent_run_id": "original-st-026-base-r1",
+      "review_run_id": "original-st-026-base-r1-repair-ffa02a27de",
+      "review_run_directory": "../../repair-reviews/original-st-026-base-r1-repair-ffa02a27de",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": true,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "4c53b3d1176833a7333fa2ce948c5200ba4cc0605e46277fa8c0c72812d35714",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "4555b6c8181b4f81131a4fc82c71c77f021fcebd257991ad0ca453a1af0ff2ab",
+          "result": "Actual executed finite checks: [\"excluded singleton; nonempty minimum and adjacent-sorted invariant\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "Input n=1 removed. Numeric input domain changes even though no answer had been defined for that input.",
+      "reviewed_at": "2026-11-13T02:25:53.018342+00:00",
+      "review_raw_sha256": "e3312636cb52ba130a25a2430aa7ec28049eadc81f5663afd9165e21da24ec20",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "ffa02a27de3877e96605f2649d738ff188a8db0b083abcaa17f0b211ea2b92ac"
+    },
+    {
+      "case_id": "st-029-base",
+      "root_id": "sample_value",
+      "parent_run_id": "original-st-029-base-r1",
+      "review_run_id": "original-st-029-base-r1-repair-ce6a5e92e2",
+      "review_run_directory": "../../repair-reviews/original-st-029-base-r1-repair-ce6a5e92e2",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "d0da64d6d6b8833d6d16b213ea74123f89eb60f4641546849b93787dd77ada86",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "a9700178bc91e4119611b853d1955be41533f27bc1d90ed3fce50132db82d8e9",
+          "result": "Actual executed finite checks: [\"all sample spanning trees enumerated\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。 样例最优值由9改3已由穷举和下界证明确认；输入字段含义缺项在原题中已存在，本候选未改该行，保留为既有Major，不宣称全文无缺陷。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:26:41.046936+00:00",
+      "review_raw_sha256": "fdfa73d889df87be773844ac3e961b7f4c2a5c30e908f65c3bcd8a0c2da47c35",
+      "review_prediction_sha256": "dcdf7a1472a0998a411920863b705f8059e7392d216b6853c4c9fd456c30980e",
+      "remaining_preexisting_defects": [
+        {
+          "root_id": "input_field_meanings",
+          "severity": "Major",
+          "reported_in_recheck": true,
+          "basis": "The complete input tuple line still lacks its edge/field meaning in both original and candidate; confirmed in main triage. The sample-only patch did not introduce or repair it."
+        }
+      ],
+      "skill": "original",
+      "candidate_sha256": "ce6a5e92e28368a21d9ae04b3623b8bce40413a7ddc836c077e20c4b76f37395"
+    },
+    {
+      "case_id": "st-034-base",
+      "root_id": "message_budget",
+      "parent_run_id": "original-st-034-base-r1",
+      "review_run_id": "original-st-034-base-r1-repair-45d1c2c267",
+      "review_run_directory": "../../repair-reviews/original-st-034-base-r1-repair-45d1c2c267",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": true,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "d54efa3f093fe6aa78d4fa6ff0aa12a72a2034101b96eab95d115d3c5756c090",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "52f118aa722c07ea2626f9246e17ee04b5292a6e9b9e516ec6954d46037d35d0",
+          "result": "Actual executed finite checks: [\"n=3..8 capacity, permutation distinguishability and rank encoding\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "Message budget increases from n-1 to ceil(log2(n!)); feasibility repair changes protocol resources.",
+      "reviewed_at": "2026-11-13T02:28:27.284961+00:00",
+      "review_raw_sha256": "7d2989e004e7a58a0333ab40976a2a9fad191f8ff09b4fbefec4f8cb87eb378c",
+      "review_prediction_sha256": "d7bef55bc00d868bb255f9131e024a77e39dbf8463c8c52647b54a911fadb1bb",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "45d1c2c26753491ad19bb06075a3951d1a97a2984c1f389d66ae0ed9f5bc6d01"
+    },
+    {
+      "case_id": "st-035-base",
+      "root_id": "settlement_order",
+      "parent_run_id": "original-st-035-base-r1",
+      "review_run_id": "original-st-035-base-r1-repair-d40123f140",
+      "review_run_directory": "../../repair-reviews/original-st-035-base-r1-repair-d40123f140",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "569b167f37c9f7680302bdeae0b9ff5cf5b5eb9db7ebe977f19618d9fdd23958",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "8e909332b0811ca240a972c664b5624dd7fae58915a08ef653fdc2a20de63753",
+          "result": "Actual executed finite checks: [\"finite settlement domain, nonnegative invariant, sample and old witness\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:28:27.288379+00:00",
+      "review_raw_sha256": "07f7b6e458478cee65d6e7500a0a7a28a975247917d431b3ae054fe4cb250f6a",
+      "review_prediction_sha256": "52df012e559f20ad4b6605cda8439b52b40e11516db5c73ce4eab93ab9c06248",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "d40123f14026c57f6b80d75cecb92071077641657d77f8ab86934ea40f140866"
+    },
+    {
+      "case_id": "st-037-base",
+      "root_id": "input_typo",
+      "parent_run_id": "original-st-037-base-r1",
+      "review_run_id": "original-st-037-base-r1-repair-c6e1ea7e2f",
+      "review_run_directory": "../../repair-reviews/original-st-037-base-r1-repair-c6e1ea7e2f",
+      "resolved": "complete",
+      "changed_clear_semantics": false,
+      "domain_changed": false,
+      "new_spec_errors": [],
+      "locality": true,
+      "necessary": true,
+      "verification": [
+        {
+          "kind": "mathematical_proof",
+          "artifact": "proof.md",
+          "artifact_sha256": "2cc630a6a17c79f52bdaf06d6493a12d6659af589fa367e79a8136a69378eb53",
+          "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+        },
+        {
+          "kind": "enumeration",
+          "artifact": "verification.json",
+          "artifact_sha256": "90c7a9ebe8a0ef071c00d2f0a0cbd3457c1ea46a2313f5f377100efa0add18a1",
+          "result": "Actual executed finite checks: [\"all small arrays: deletion enumeration vs extreme-deletion characterization\"]"
+        }
+      ],
+      "judge_kind": "maintainer_model",
+      "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+      "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+      "complete": true,
+      "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+      "reviewed_at": "2026-11-13T02:25:53.020492+00:00",
+      "review_raw_sha256": "cecf335a52005fed58d1dc19d98a1aa6a66901161a474265c9daab00f6830d18",
+      "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+      "remaining_preexisting_defects": [],
+      "skill": "original",
+      "candidate_sha256": "c6e1ea7e2f746f5ae558354065e3d0d1ed198a684aca34fb3bace3bb3f50fd7d"
+    }
+  ],
+  "repair_results_source": "tests/statement/results/repairs",
+  "targets": {
+    "important_recall": 0.85,
+    "precision": 0.9,
+    "clean_fpr": 0.1,
+    "core_consistency": 0.8,
+    "effective_repair": 0.85,
+    "new_substantive_errors": 0
+  },
+  "target_status": "not_established; requires complete coverage and closed adjudications",
+  "comparison": [
+    {
+      "case_id": "st-001-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-001-equivalent",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-001-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "order": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-002-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-002-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "sample_explanation": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-003-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-003-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "distance_definition": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-004-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-004-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "unbounded": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-005-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-005-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "time_tie": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-006-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-006-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "sample_components": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-007-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-007-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "equivalence": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-008-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-008-equivalent",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-008-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "construct_impossible": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-009-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-009-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "literal_markup": [
+          "Major",
+          "Major"
+        ]
+      }
+    },
+    {
+      "case_id": "st-010-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-010-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "matrix_sample": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-011-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-011-equivalent",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-011-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "zero_relative": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-012-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-012-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "time_typo": [
+          "Minor",
+          "Minor"
+        ]
+      }
+    },
+    {
+      "case_id": "st-013-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-013-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "choice_typo": [
+          "Minor",
+          "Minor"
+        ]
+      }
+    },
+    {
+      "case_id": "st-014-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-014-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "reply_mapping": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-015-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-015-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "distance_transcript": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-016-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-016-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "index_shift": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-017-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-018-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-019-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-020-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-020-equivalent",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-021-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-022-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-023-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-024-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-025-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "direction": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-026-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "singleton": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-027-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "edge_count": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-028-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "zero_total": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-029-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {
+        "input_field_meanings": "Major"
+      },
+      "improved_novel": {
+        "input_field_meanings": "Minor"
+      },
+      "severity_pairs": {
+        "sample_value": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-031-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {
+        "input_field_meanings": "Major"
+      },
+      "improved_novel": {},
+      "severity_pairs": {
+        "no_solution": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-032-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "float_acceptance": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-033-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "query_budget": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-034-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "message_budget": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-035-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "settlement_order": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-036-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {
+        "input_field_meanings": "Major"
+      },
+      "improved_novel": {},
+      "severity_pairs": {
+        "missing_negation": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-037-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "input_typo": [
+          "Minor",
+          "Minor"
+        ]
+      }
+    },
+    {
+      "case_id": "st-038-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {
+        "input_field_meanings": "Major"
+      },
+      "improved_novel": {
+        "input_field_meanings": "Major"
+      },
+      "severity_pairs": {
+        "duplicate_word": [
+          "Minor",
+          "Minor"
+        ]
+      }
+    },
+    {
+      "case_id": "st-040-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "sample_truncated": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    }
+  ],
+  "consistency_aggregate": {
+    "original": {
+      "complete_groups": 12,
+      "planned_groups": 12,
+      "core_modal_consistency": {
+        "numerator": 60,
+        "denominator": 60,
+        "value": 1.0
+      },
+      "mean_pairwise_jaccard": 1.0
+    },
+    "improved": {
+      "complete_groups": 12,
+      "planned_groups": 12,
+      "core_modal_consistency": {
+        "numerator": 60,
+        "denominator": 60,
+        "value": 1.0
+      },
+      "mean_pairwise_jaccard": 1.0
+    }
+  },
+  "repair_aggregate": {
+    "original": {
+      "closed_records": 20,
+      "target_defects": 20,
+      "complete": {
+        "numerator": 20,
+        "denominator": 20,
+        "value": 1.0
+      },
+      "partial": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "failed": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "unclosed": 0,
+      "effective_without_new_error_or_changed_task": {
+        "numerator": 18,
+        "denominator": 20,
+        "value": 0.9
+      },
+      "changed_clear_semantics": 2,
+      "domain_model_or_protocol_changed": [
+        "st-001-mutant",
+        "st-004-mutant",
+        "st-025-base",
+        "st-026-base",
+        "st-034-base"
+      ],
+      "new_spec_errors": 0,
+      "local_and_necessary": 18
+    },
+    "improved": {
+      "closed_records": 20,
+      "target_defects": 20,
+      "complete": {
+        "numerator": 20,
+        "denominator": 20,
+        "value": 1.0
+      },
+      "partial": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "failed": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "unclosed": 0,
+      "effective_without_new_error_or_changed_task": {
+        "numerator": 19,
+        "denominator": 20,
+        "value": 0.95
+      },
+      "changed_clear_semantics": 1,
+      "domain_model_or_protocol_changed": [
+        "st-001-mutant",
+        "st-004-mutant",
+        "st-025-base",
+        "st-026-base",
+        "st-034-base"
+      ],
+      "new_spec_errors": 0,
+      "local_and_necessary": 19
+    }
+  },
+  "repair_comparison": [
+    {
+      "case_id": "st-001-mutant",
+      "root_id": "order",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-002-mutant",
+      "root_id": "sample_explanation",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-003-mutant",
+      "root_id": "distance_definition",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-004-mutant",
+      "root_id": "unbounded",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-005-mutant",
+      "root_id": "time_tie",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-006-mutant",
+      "root_id": "sample_components",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-007-mutant",
+      "root_id": "equivalence",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-008-mutant",
+      "root_id": "construct_impossible",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-009-mutant",
+      "root_id": "literal_markup",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-010-mutant",
+      "root_id": "matrix_sample",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-011-mutant",
+      "root_id": "zero_relative",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": false,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-014-mutant",
+      "root_id": "reply_mapping",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-015-mutant",
+      "root_id": "distance_transcript",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-016-mutant",
+      "root_id": "index_shift",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-025-base",
+      "root_id": "direction",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": false,
+      "improved_effective": false
+    },
+    {
+      "case_id": "st-026-base",
+      "root_id": "singleton",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-029-base",
+      "root_id": "sample_value",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-034-base",
+      "root_id": "message_budget",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-035-base",
+      "root_id": "settlement_order",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    },
+    {
+      "case_id": "st-037-base",
+      "root_id": "input_typo",
+      "original_resolved": "complete",
+      "improved_resolved": "complete",
+      "original_effective": true,
+      "improved_effective": true
+    }
+  ]
+}

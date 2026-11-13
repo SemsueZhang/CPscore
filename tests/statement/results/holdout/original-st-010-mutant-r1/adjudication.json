@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-010-mutant-r1",
+  "raw_sha256": "8eea5b75657c9c903cdd03c40978c3e8fb65d6552a76475e1a31e6845ef47edc",
+  "prediction_sha256": "a713bae1fe78cae8a4cc679ae49c9e5dca99ebfb12c141ca958cde079c307097",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; same-model limitation; not human expert",
+  "reviewed_at": "2026-11-13T01:59:22.816036+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "matrix_sample",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "原矩阵11/00的行和2、0，不是要求的1、1；列和虽符合不能补救。报告替代10/01合法，多解不要求唯一。",
+      "novel_issue_review": null
+    }
+  ]
+}

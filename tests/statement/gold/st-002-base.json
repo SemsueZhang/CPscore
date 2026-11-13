@@ -1,0 +1,64 @@
+{
+  "case_id": "st-002-base",
+  "family_id": "st-002",
+  "version": "base",
+  "problem_type": "standard",
+  "legal_input_domain": {
+    "summary": "无环简单有向图，边权为正。",
+    "input_contract": "第一行输入两个整数 $n,m$。随后 $m$ 行，每行输入三个整数 $u,v,w$，表示边 $u\\to v$ 及其权值。",
+    "bounds": "$1\\le n\\le2\\times10^5$，$0\\le m\\le4\\times10^5$，$1\\le u,v\\le n$，$1\\le w\\le10^6$。保证图无环、无重边。",
+    "additional_guarantees_source": "cases/st-002-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "最长路及按边序列区分的最长路数量。",
+  "oracle": {
+    "name": "dag",
+    "args": {
+      "n": 4,
+      "edges": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          4
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ]
+    },
+    "expected": [
+      7,
+      2
+    ]
+  },
+  "defects": [],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "4 4\n1 2 3\n1 3 2\n2 4 4\n3 4 5\n",
+      "output": "7 2\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-002-base.md",
+  "statement_sha256": "9a433aca01453b9a29ba9568fdbc161f6a80f9098fe3463fcbaeb19038205568",
+  "has_known_defects": false,
+  "original_kind": "clean",
+  "completeness_review": "无路径、单顶点、路径按边序列区分及模数在两处均明确；正边权且DAG可拓扑。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 10
+}

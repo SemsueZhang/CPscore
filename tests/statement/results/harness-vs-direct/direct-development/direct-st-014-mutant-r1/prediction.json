@@ -1,0 +1,20 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "交互器回复一个字符，取值范围为 `A`、`Q`、`Z`。该字符由隐藏值与本次询问值的大小关系决定。",
+      "evidence": "全文未定义字符与大小关系的对应规则。N=2 时，h=1 且 A、Q、Z 分别表示 h=x、h<x、h>x，与 h=2 且 A、Q、Z 分别表示 h>x、h=x、h<x，均符合现有描述；两者对询问 1、2 均分别回复 A、Q，却要求不同的最终答案。该缺失影响正确答案的确定。",
+      "repairs": [
+        {
+          "find": "该字符由隐藏值与本次询问值的大小关系决定。",
+          "replace": "当 $h<x$ 时回复 `A`；当 $h=x$ 时回复 `Q`；当 $h>x$ 时回复 `Z`。",
+          "conditional": true
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

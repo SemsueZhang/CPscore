@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-009-mutant-r5",
+  "raw_sha256": "35040fd51eb64da0732f59a48fc24c37a88638f6a3348bf1c2347b1be02dc6ec",
+  "prediction_sha256": "4f4e0a1b6c7d34b8249fc8616dbd971b962cd975a6fdd5ec2e0fff460a5d26a7",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human claim",
+  "reviewed_at": "2026-11-13T02:09:26.473843+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "literal_markup",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐次检查输出节未标记的字面NO，冻结规范明确固定输出字符串须行内代码。报告均仅扣该一个根因Major，未把合理多解或无解当缺陷。",
+      "novel_issue_review": null
+    }
+  ]
+}

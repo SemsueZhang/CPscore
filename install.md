@@ -2,6 +2,8 @@
 
 CPScore 遵循[Agent Skills 规范](https://agentskills.io/specification)。各技能独立使用，不强制依赖其他技能或额外运行时。安装时复制整个技能目录，包括 `SKILL.md`、引用文件与随包脚本。新颖度审核会自动探测 Python 3.8 及以上的可用环境，符合时使用标准库辅助脚本，否则使用宿主工具，无需安装 Python 或第三方包。
 
+难度评定技能 `cp-difficulty-rate` 也可独立安装。它随包提供三维规范、洛谷八档总难度、CF/AT 换算表与数据快照；可选数字工具仅用 Python 3.8+ 标准库，没有 Python 时按表评定即可。调用示例：`$cp-difficulty-rate 评定 statement.md，结合 editorial.md 和 std.cpp。`
+
 先下载仓库 ZIP，或执行 `git clone https://github.com/SemsueZhang/CPscore.git`，再进入 CPScore 目录。
 
 ## 选择安装位置

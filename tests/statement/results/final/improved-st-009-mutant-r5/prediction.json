@@ -1,0 +1,31 @@
+{
+  "score": 8,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Major",
+      "quote": "无解输出一行 NO。",
+      "evidence": "material.md 第 11 行中的固定输出字符串 NO 未使用行内代码。readability.md 明确要求固定输出字符串用行内代码；scoring.md 规定适用的明确格式要求未满足至少为 Major，扣 2 分。",
+      "repairs": [
+        {
+          "find": "无解输出一行 NO。",
+          "replace": "无解输出一行 `NO`。",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": [
+    {
+      "suggestion": "显式说明顶点编号及其与输入度数的对应关系，便于对照输入与输出；当前可按上下文和竞赛常用约定理解，不扣分。",
+      "repairs": [
+        {
+          "find": "给定 $n$ 个顶点及每个顶点要求的度数 $d_i$。",
+          "replace": "给定 $n$ 个编号为 $1,2,\\ldots,n$ 的顶点，第 $i$ 个顶点要求的度数为 $d_i$。",
+          "conditional": false
+        }
+      ]
+    }
+  ]
+}

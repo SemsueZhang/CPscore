@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T02:07:16.883059+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-005-mutant",
+  "root_id": "time_tie",
+  "skill": "original",
+  "candidate_sha256": "dd117366b24c99be94b07d74dca1f26da02df70590e17b9cdace99369025055c",
+  "domain_changed": false,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "changed_clear_semantics": false,
+  "locality": true,
+  "necessary": true,
+  "reason": "Inherent patch effects assessed against original and independent proof before re-review; no success outcome assigned.",
+  "author_identity": "Codex maintainer model, not human"
+}

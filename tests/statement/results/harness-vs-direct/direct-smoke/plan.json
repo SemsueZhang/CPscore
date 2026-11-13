@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "benchmark_revision": "1.0.0",
+  "manifest_sha256": "d97d5163271aa8c202473f700d60392d998ec0f20c4730d9bed6582762f9dbfe",
+  "gold_sha256": {
+    "st-001-base": "1cfa1d2ff0bc9e6cfd15799e582bd2eb1d100bfd458a969f762d113f2d16f350",
+    "st-008-base": "e38805f1447a79f217f073628edcb9aa7282876144eab2d1fd9eba3d41d90a5f",
+    "st-011-base": "4fe79c2c8dbad24e7feb95c7632e671ff8385f182ad497913a9d8a47187d0803",
+    "st-014-base": "2a4670197a77f5e306a49e2ce2717912009dc693c45a88bfcf1026ca912d815a",
+    "st-017-base": "1ef60f5b462d4f9db414516314e037050bcdced041e8911a801e6208e0a0ad07",
+    "st-020-base": "51b35fd2ed4d9f59513b6870cfb29cca620414927dce4694e9e49f64d83f4454",
+    "st-025-base": "c122c21f9681bdd5011ae49136eb678d8c86695781beb149f891aa7e86b61afa",
+    "st-035-base": "e946c89a512d022f91475fb88596c458d5ef070700689c913c2d68e8d2ea044c"
+  },
+  "suite": "smoke",
+  "split": "development",
+  "created_at": "2026-11-13T02:52:56.931352+00:00",
+  "model": "gpt-6.1-sol",
+  "effort": "xhigh",
+  "host": "codex-exec",
+  "prompt_sha256": "abb2271bcea2579181826f19bf478bdfb1bb6a6d289576d19be8127bcee99dbb",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied",
+    "cpscore_skill_loading": "disabled by exact names; none staged; prompt prohibits other Skills"
+  },
+  "skills": {
+    "direct": {
+      "label": "direct",
+      "commit": null,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "runs": [
+    {
+      "run_id": "direct-st-001-base-r1",
+      "case_id": "st-001-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "7781eb1c8fc9115162b8f08130d06c4c38353841986104546ddf89db8d1400b5",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-008-base-r1",
+      "case_id": "st-008-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-011-base-r1",
+      "case_id": "st-011-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-014-base-r1",
+      "case_id": "st-014-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "64eef07822273207212eeab62bcb613f1c27ed9f7a9f5498ae8b36bf076b65ff",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-017-base-r1",
+      "case_id": "st-017-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "3d3584f92d7adb230ab83ca2e5e5f011b6216d96dd72ca3b1d40cfc6ec03240f",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-020-base-r1",
+      "case_id": "st-020-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "e0304ced4e629cc0159835c30447d1f6123ce77db3ae88c6146d2a00bb0e5bb6",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-025-base-r1",
+      "case_id": "st-025-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "8a599f85cfbc77978606308a7dc15ded13972a714eaece24f92074c990d581b0",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-035-base-r1",
+      "case_id": "st-035-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "ae3f2688807f1892352667ae008d9dfa55a3435d3f0cec82bd65d8dcbf7ab10f",
+      "review_mode": "direct"
+    }
+  ],
+  "review_mode": "direct",
+  "disabled_skill_names": [
+    "cp-contest-review",
+    "cp-data-review",
+    "cp-editorial-review",
+    "cp-novelty-review",
+    "cp-performance-predict",
+    "cp-problem-review",
+    "cp-solution-review",
+    "cp-statement-review"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "score": 10,
+  "complete": true,
+  "findings": [],
+  "optional_suggestions": [
+    "可直接补充“$x,y$ 均为整数”，使输入类型更直观；现有整数模运算和定长二进制表示的常规语境足以理解其含义，此项不扣分。"
+  ]
+}

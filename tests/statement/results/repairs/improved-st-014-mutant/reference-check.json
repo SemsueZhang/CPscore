@@ -1,0 +1,16 @@
+{
+  "case_id": "st-014-mutant",
+  "checked_at": "2026-11-13T02:30:55.015072+00:00",
+  "source": "deterministic_reference_check",
+  "status": "needs_review",
+  "full_repair_confirmed": false,
+  "statement_sha256": "403f483db3dbdc862362897ee779240e7d75ad533ad794a3aaa58b20e30b5d9d",
+  "checks": [
+    {
+      "kind": "exact_clean_reference",
+      "passed": false,
+      "reference_sha256": "64eef07822273207212eeab62bcb613f1c27ed9f7a9f5498ae8b36bf076b65ff"
+    }
+  ],
+  "note": "Reference equivalence verifies the original local defect under the authored reference; it is not an independent human audit or a successful model re-review."
+}

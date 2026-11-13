@@ -1,0 +1,46 @@
+{
+  "case_id": "st-015-base",
+  "family_id": "st-015",
+  "version": "base",
+  "problem_type": "interactive",
+  "legal_input_domain": {
+    "summary": "给定树与固定隐藏顶点，距离按边数。",
+    "input_contract": "初始输入整数 $n$，随后 $n-1$ 行，每行两个整数 $u,v$，表示无向边。每次询问后读取一行非负整数距离或异常值。",
+    "bounds": "$1\\le n\\le2000$，$1\\le u,v,s\\le n$。输入构成树。",
+    "additional_guarantees_source": "cases/st-015-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "最多 n 个距离询问后准确报告隐藏点。",
+  "oracle": {
+    "name": "tree_distance",
+    "args": {
+      "n": 3,
+      "edges": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "query": 1,
+      "hidden": 3
+    },
+    "expected": 2
+  },
+  "defects": [],
+  "gold_status": "confirmed",
+  "samples": [],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-015-base.md",
+  "statement_sha256": "35c836f0eaa10badff58e6293d692e230b27cab0ee9bf5969e2a79d4b7eed1ed",
+  "has_known_defects": false,
+  "original_kind": "clean",
+  "completeness_review": "树与固定隐藏点明确，距离为边数，最坏询问n个顶点可定位；单点成立。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 10
+}

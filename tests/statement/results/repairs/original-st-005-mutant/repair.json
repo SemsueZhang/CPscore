@@ -1,0 +1,22 @@
+{
+  "case_id": "st-005-mutant",
+  "parent_run_id": "original-st-005-mutant-r1",
+  "parent_raw_sha256": "5a5a356ccce12f7ce698644a59612e748128cbbb7935055517b50d1d078b7971",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "到达与发船同刻时，它们都属于该时刻的事件。",
+      "replace": "到达某个顶点后，你可以立即乘坐在同一时刻从该顶点出发的船。",
+      "conditional": true
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic case author (Codex maintainer model) selects the first coherent listed option, before re-review, under the paired policy.",
+  "original_sha256": "b2c26e9d89d0506fd112f5f71e46a409bb179683087f0c842cf675d2a38b8b8b",
+  "statement_sha256": "dd117366b24c99be94b07d74dca1f26da02df70590e17b9cdace99369025055c",
+  "created_at": "2026-11-13T01:51:43.603626+00:00",
+  "independent_verification": "pending"
+}

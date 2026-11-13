@@ -1,0 +1,10 @@
+{
+  "case_id": "st-011-mutant",
+  "candidate_sha256": "79028bf4a581575df412eea62079fc8c64408dc5b681cb4e525539bd059e4599",
+  "checks": [
+    "zero branch defined; every tested nonzero acceptance preserved exactly"
+  ],
+  "scope": "finite witnesses; general argument and prose mapping are in proof.md",
+  "status": "passed",
+  "verification_script_sha256": "598d71f4f6ebeb21613fca1738eb8be95b83ef5dd6e3b7f527026fd7851fa76b"
+}

@@ -1,0 +1,28 @@
+{
+  "case_id": "st-034-base",
+  "parent_run_id": "improved-st-034-base-r1",
+  "parent_raw_sha256": "d294e2881fa3da6100d279e99177c41592d80f9b7a9ceb57cc7862079724dfd3",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "发送方必须一次发送恰好 $n-1$ 位二进制消息",
+      "replace": "发送方必须一次发送恰好 $\\lceil\\log_2(n!)\\rceil$ 位二进制消息",
+      "conditional": true
+    },
+    {
+      "find": "编码函数返回恰好 $n-1$ 位的二进制串",
+      "replace": "编码函数返回恰好 $\\lceil\\log_2(n!)\\rceil$ 位的二进制串",
+      "conditional": true
+    }
+  ],
+  "repair_indices": [
+    0,
+    1
+  ],
+  "author_choice": "Synthetic case author (Codex maintainer model) selects the first coherent model-proposed option before re-review under the registered policy.",
+  "original_sha256": "2f5dca00c394dc2085e0790569b03202d7d11c3876d3acaafcb3a0a30b277664",
+  "statement_sha256": "45d1c2c26753491ad19bb06075a3951d1a97a2984c1f389d66ae0ed9f5bc6d01",
+  "created_at": "2026-11-13T02:06:49.792347+00:00",
+  "independent_verification": "pending"
+}

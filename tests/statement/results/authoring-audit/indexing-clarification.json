@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "st-016-base",
+    "old_sha256": "0e4163adbbf2471bf79580a5033393c9d066f491f2b5b3dd3d69db7e46697ca9",
+    "new_sha256": "6d81810d6a06ce4acc7ac7b20b0427eb99f95b2d4cbc97a482e4388bc862de59",
+    "reason": "Before first held-out model run, explicitly fix binary-string indexing in both versions so a legitimate 0-based implementation conversion cannot be mislabeled as a defect. No outputs for these versions had been collected."
+  },
+  {
+    "case_id": "st-016-mutant",
+    "old_sha256": "6c28c977cf6aea619a2341147d057edd657626cac56f76b4f1d11f331661a579",
+    "new_sha256": "9681c68438996cc9e1bfba3a12d5f89ea667d6b655d26f2861c4aa34fec9c85b",
+    "reason": "Before first held-out model run, explicitly fix binary-string indexing in both versions so a legitimate 0-based implementation conversion cannot be mislabeled as a defect. No outputs for these versions had been collected."
+  }
+]

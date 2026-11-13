@@ -1,0 +1,88 @@
+{
+  "case_id": "st-005-mutant",
+  "family_id": "st-005",
+  "version": "mutant",
+  "problem_type": "standard",
+  "legal_input_domain": {
+    "summary": "有向多重图，时间与周期正整数。",
+    "input_contract": "第一行输入两个整数 $n,m$。随后 $m$ 行，每行输入四个整数 $u,v,p,t$。",
+    "bounds": "$2\\le n\\le10^5$，$0\\le m\\le2\\times10^5$，$1\\le u,v\\le n$，$1\\le p,t\\le10^6$。允许重边和自环。",
+    "additional_guarantees_source": "cases/st-005-mutant.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "同刻到达与发船的先后不明，最早可达时刻有两种结果。",
+  "oracle": {
+    "name": "ferry",
+    "args": {
+      "n": 3,
+      "edges": [
+        [
+          1,
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3,
+          2,
+          4
+        ]
+      ]
+    },
+    "expected": 6
+  },
+  "defects": [
+    {
+      "root_id": "time_tie",
+      "category": "operation_order",
+      "severity": "Fatal",
+      "quote": "到达与发船同刻时，它们都属于该时刻的事件。",
+      "evidence": "样例到第二点恰为2，若到达先处理可搭2时船得到6，否则等4时得到8；正文未规定同刻事件先后。",
+      "witness": {
+        "input": "3 2\n1 2 3 2\n2 3 2 4",
+        "interpretations": [
+          {
+            "rule": "到达先",
+            "output": "6"
+          },
+          {
+            "rule": "发船先",
+            "output": "8"
+          }
+        ]
+      },
+      "acceptable_repairs": [
+        {
+          "find": "到达与发船同刻时，它们都属于该时刻的事件。",
+          "replace": "如果到达某点的时刻恰好有船出发，可以立即上船。",
+          "conditional": false,
+          "changes_domain": false
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "3 2\n1 2 3 1\n2 3 2 4\n",
+      "output": "6\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "development",
+  "statement_path": "cases/st-005-mutant.md",
+  "statement_sha256": "b2c26e9d89d0506fd112f5f71e46a409bb179683087f0c842cf675d2a38b8b8b",
+  "has_known_defects": true,
+  "original_kind": "clean",
+  "completeness_review": "重边自环合法，恰逢开船立即乘船，等待及不可达明确；正时间消除负环问题。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 0,
+  "reference_relation": "每步在不早于到达时刻的最早发船时刻乘船，最短到达时间。"
+}

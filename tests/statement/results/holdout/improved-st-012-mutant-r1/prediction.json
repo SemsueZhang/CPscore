@@ -1,0 +1,20 @@
+{
+  "score": 9,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Minor",
+      "quote": "输出一行，一个有限实数 $y$，表示最短时简。",
+      "evidence": "material.md 第 11 行的“时简”应为“时间”。正文及目标公式已明确所求量，该错字可轻易恢复含义，不影响任务或判定；按评分协议中的明确错字项扣 1 分。",
+      "repairs": [
+        {
+          "find": "最短时简",
+          "replace": "最短时间",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

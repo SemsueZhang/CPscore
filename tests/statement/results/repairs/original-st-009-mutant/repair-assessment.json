@@ -1,0 +1,42 @@
+{
+  "case_id": "st-009-mutant",
+  "root_id": "literal_markup",
+  "parent_run_id": "original-st-009-mutant-r1",
+  "review_run_id": "original-st-009-mutant-r1-repair-72565cbc41",
+  "review_run_directory": "../../repair-reviews/original-st-009-mutant-r1-repair-72565cbc41",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "461776e95e4aa9b6f4cced7cada0cf928c65b14c4f23475b5658fc3ce7f7d5bd",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "6fc4db5d7590a7ecfd9d673fec678e3dfcaa640050aee7b174eb18cba26254fc",
+      "result": "Actual executed finite checks: [\"exact one local markup change; semantic token NO retained\"]"
+    },
+    {
+      "kind": "exact_reference",
+      "artifact": "reference-check.json",
+      "artifact_sha256": "c21aad4f92e5c2ee6da5add1695f02176e55549b8e66d37d7a82625df51e78f7",
+      "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+  "complete": true,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "reviewed_at": "2026-11-13T02:23:51.622899+00:00",
+  "review_raw_sha256": "f0a811bdb040bc4d2bb566d17c3d7af9b5c63f6e3d87314a548c417146c4b40e",
+  "review_prediction_sha256": "b22fa3a2aa6f3cbe0e604f35222f699a867c033a5152d472f17ae3419e7601d6",
+  "remaining_preexisting_defects": []
+}

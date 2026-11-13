@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-040-base-r1",
+  "raw_sha256": "95169ee139c76bd6f5442dca14aa5b6d88ecdd545eec65fe7ee02510bbcdb923",
+  "prediction_sha256": "5f06a4d60331ee39c6b5ecb690b2200c8dee5644b4ad47e83ddd5c5a700b385f",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; same-model limitation; not human expert",
+  "reviewed_at": "2026-11-13T01:59:34.696837+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "sample_truncated",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "按第一行T=2解析，完整输入只含一组n=3序列与单行输出，第二组输入/输出均缺；同根因正式样例错误。",
+      "novel_issue_review": null
+    }
+  ]
+}

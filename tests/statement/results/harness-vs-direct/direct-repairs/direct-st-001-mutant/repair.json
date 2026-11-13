@@ -1,0 +1,22 @@
+{
+  "case_id": "st-001-mutant",
+  "parent_run_id": "direct-st-001-mutant-r1",
+  "parent_raw_sha256": "11cc9c1aaf294c52ca359b93879d1a3072fd0d0833b4821badcd696d4ad6a629",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "管理员会在处理前私下固定 $m$ 份预约的处理顺序，选手不能改变该顺序，输入不提供这一顺序，输出编号仍采用输入编号。",
+      "replace": "管理员按这 $m$ 份预约在输入中出现的顺序依次处理，输出编号采用输入编号。",
+      "conditional": true
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic author (Codex maintainer model) selects first coherent actual option before re-review, not a human-author inference.",
+  "original_sha256": "22226e6ad6da3a42c150a87905c88fbc67dcf7ab9377d5e597f4996dd9a674d9",
+  "statement_sha256": "4a5e5166a5239ffcc650e4340f8e41c882fa8d448beb8e5993ac60f42567ef55",
+  "created_at": "2026-11-13T03:08:08.887932+00:00",
+  "independent_verification": "pending"
+}

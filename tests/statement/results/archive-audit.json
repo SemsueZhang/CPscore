@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-11-13T03:52:27.223748+00:00",
+  "status": "passed",
+  "benchmark_revision": "1.0.0",
+  "frozen_case_and_gold_pairs": 60,
+  "execution": {
+    "final": {
+      "completed": 216
+    },
+    "repair-reviews": {
+      "completed": 40
+    }
+  },
+  "unique_evaluated_sessions": 256,
+  "exact_neutral_payloads": 256,
+  "closed_repair_assessments": 40,
+  "reexecuted_repair_programs": [
+    "improved-st-001-mutant",
+    "improved-st-002-mutant",
+    "improved-st-003-mutant",
+    "improved-st-004-mutant",
+    "improved-st-005-mutant",
+    "improved-st-006-mutant",
+    "improved-st-007-mutant",
+    "improved-st-008-mutant",
+    "improved-st-009-mutant",
+    "improved-st-010-mutant",
+    "improved-st-011-mutant",
+    "improved-st-014-mutant",
+    "improved-st-015-mutant",
+    "improved-st-016-mutant",
+    "improved-st-025-base",
+    "improved-st-026-base",
+    "improved-st-029-base",
+    "improved-st-034-base",
+    "improved-st-035-base",
+    "improved-st-037-base",
+    "original-st-001-mutant",
+    "original-st-002-mutant",
+    "original-st-003-mutant",
+    "original-st-004-mutant",
+    "original-st-005-mutant",
+    "original-st-006-mutant",
+    "original-st-007-mutant",
+    "original-st-008-mutant",
+    "original-st-009-mutant",
+    "original-st-010-mutant",
+    "original-st-011-mutant",
+    "original-st-014-mutant",
+    "original-st-015-mutant",
+    "original-st-016-mutant",
+    "original-st-025-base",
+    "original-st-026-base",
+    "original-st-029-base",
+    "original-st-034-base",
+    "original-st-035-base",
+    "original-st-037-base"
+  ],
+  "main_adjudication_kinds": {
+    "automatic_empty": 104,
+    "maintainer_model": 112
+  },
+  "record_sources": {
+    "real_host": 256
+  },
+  "limits": [
+    "Hash and file isolation checks are not an OS-level access barrier.",
+    "Finite programs and maintainer-model proofs do not establish human-expert validation.",
+    "Two subjective Golds and related pending adjudications remain excluded from confirmed metrics.",
+    "Legacy development Gold hashes were bound at merge, not retroactively before calls."
+  ]
+}

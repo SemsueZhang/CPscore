@@ -1,0 +1,20 @@
+{
+  "run_id": "improved-st-014-mutant-r1",
+  "raw_sha256": "ea23d1815de7a97fa86fefb85eb0fd0eb5bd5aa4eb852742c37450e97834e40f",
+  "prediction_sha256": "5922ecb06146b8a937efcb1717e597babd08193570a2b917257a310d50f702b0",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T01:16:53.145651+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "reply_mapping",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐项核对报告给出的两个字符-比较关系双射：N=2两个不同隐藏值对合法询问1、2分别产生完全相同回复，协议未给映射，无法区分。",
+      "novel_issue_review": null
+    }
+  ]
+}

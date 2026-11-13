@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T03:08:09.123712+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-008-mutant",
+  "root_id": "construct_impossible",
+  "skill": "direct",
+  "candidate_sha256": "cf2d6304fd247e3bd37d2499385ef4abfb2434f3a0010f25c8ac160912bdfeba",
+  "domain_changed": false,
+  "scope_change": "No numeric input/model/budget scope change; actual target repair described in proof.md.",
+  "changed_clear_semantics": false,
+  "locality": true,
+  "necessary": true,
+  "reason": "Actual patch classified before independent re-review; no success outcome assigned.",
+  "author_identity": "Codex maintainer model, not human"
+}

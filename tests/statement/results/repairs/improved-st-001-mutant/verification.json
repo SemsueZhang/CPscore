@@ -1,0 +1,10 @@
+{
+  "case_id": "st-001-mutant",
+  "candidate_sha256": "e82b6c90dfca4489395fc7d4cce879103f202b02cd7c082fcf411f5bf146cfe1",
+  "checks": [
+    "prefix-demand vs sequential booking on small complete domains"
+  ],
+  "scope": "finite witnesses; general argument and prose mapping are in proof.md",
+  "status": "passed",
+  "verification_script_sha256": "930f26744f60f7c945cd4a471a74b0b0ab5bb632de57f6fe24f5836843e9f28d"
+}

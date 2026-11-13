@@ -1,0 +1,10 @@
+{
+  "case_id": "st-025-base",
+  "checked_at": "2026-11-13T02:33:48.925510+00:00",
+  "source": "deterministic_reference_check",
+  "status": "needs_review",
+  "full_repair_confirmed": false,
+  "statement_sha256": "9ea6ed37467f9759bb1e694b42fad1400b53c16657d2699d8e61dba3b3d1a957",
+  "checks": [],
+  "note": "Reference equivalence verifies the original local defect under the authored reference; it is not an independent human audit or a successful model re-review."
+}

@@ -1,0 +1,14 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "提交 `encode(n,edges)` 和 `decode(n,message,u,v)` 两个函数。分别运行于独立进程，接收方没有边集。",
+      "evidence": "题面要求提交函数且无需读写标准流，但未提供准确函数声明、edges 的数据结构及提交文件与评测端的衔接方式。不同参数类型均符合文字描述，却不能匹配同一固定接口，导致编译、链接和调用所依赖的接受规则无法由现有上下文确定。应由作者确定语言及提交方式，并补充完整接口约定。",
+      "repairs": []
+    }
+  ],
+  "optional_suggestions": []
+}

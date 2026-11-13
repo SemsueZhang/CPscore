@@ -1,0 +1,20 @@
+{
+  "run_id": "improved-st-034-base-r1",
+  "raw_sha256": "d294e2881fa3da6100d279e99177c41592d80f9b7a9ceb57cc7862079724dfd3",
+  "prediction_sha256": "e4dc9d19a1f68b95b0200ce26677ea4a7208d819096981df6c2d80f069c96dfb",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; same-model limitation; not human expert",
+  "reviewed_at": "2026-11-13T02:06:49.627343+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "message_budget",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "任意不同排列存在次序相反元素对，故消息须两两不同；n=3有6排列而仅4消息，确定性全正确不可能。",
+      "novel_issue_review": null
+    }
+  ]
+}

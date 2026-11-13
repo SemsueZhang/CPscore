@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-034-base-r2",
+  "raw_sha256": "6df302bcfc392bf7c149a44c7d994a5568577e116abb5e341a80ba844725dac1",
+  "prediction_sha256": "1be910270f483a62ec8a5d785b535fb08cf8a754d11e26855d359400b845f1dc",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert claim",
+  "reviewed_at": "2026-11-13T03:36:14.078045+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "message_budget",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "已逐次阅读报告：不同排列必有不同的某对元素相对次序，发送方不知道查询因此编码需单射；n=3的6排列、4消息合法，信息下界论证成立，未将固定查询的布尔值误认为足够一位。",
+      "novel_issue_review": null
+    }
+  ]
+}

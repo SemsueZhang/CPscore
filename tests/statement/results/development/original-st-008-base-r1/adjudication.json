@@ -1,0 +1,10 @@
+{
+  "run_id": "original-st-008-base-r1",
+  "raw_sha256": "a335b5683a7bec3fb303250726006a117ce095ef9143491003a6a72634fb9820",
+  "prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; not independent expert",
+  "reviewed_at": "2026-11-13T00:44:40.804826+00:00",
+  "complete": true,
+  "findings": []
+}

@@ -1,0 +1,20 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "$1\\le n\\le2\\times10^5$，$-10^9\\le a_i\\le10^9$。",
+      "evidence": "合法输入 n=1、a₁=0 时，不存在满足 1≤i<j≤n 的下标对，所求最小值未定义；输出格式要求输出一个整数，且全文未规定此时的输出。",
+      "repairs": [
+        {
+          "find": "$1\\le n\\le2\\times10^5$，$-10^9\\le a_i\\le10^9$。",
+          "replace": "$2\\le n\\le2\\times10^5$，$-10^9\\le a_i\\le10^9$。",
+          "conditional": true
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

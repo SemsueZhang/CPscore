@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-001-mutant-r3",
+  "raw_sha256": "37b5c03f87c12483353d66d85136ea1973300c021e70934ee52cabd4a85f0942",
+  "prediction_sha256": "ba4ab7dc82b2bafc5b8efa6e400620b1d1b7a31fbad62c24bb7f761726b1f964",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T01:57:06.407370+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "order",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐次读过本报告：管理员私下顺序未输入；容量0或1的两单合法实例产生不同失败编号。原样例的不同排列也分别输出不同编号。不是选手可任选方案。",
+      "novel_issue_review": null
+    }
+  ]
+}

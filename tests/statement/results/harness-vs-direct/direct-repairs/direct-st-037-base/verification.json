@@ -1,0 +1,10 @@
+{
+  "case_id": "st-037-base",
+  "candidate_sha256": "c6e1ea7e2f746f5ae558354065e3d0d1ed198a684aca34fb3bace3bb3f50fd7d",
+  "checks": [
+    "all small arrays: deletion enumeration vs extreme-deletion characterization"
+  ],
+  "scope": "finite witnesses; general argument and prose mapping are in proof.md",
+  "status": "passed",
+  "verification_script_sha256": "4449b39016015fd001417fc8eae45bd077b68389b1a33766b083da4d0d7548dd"
+}

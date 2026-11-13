@@ -1,0 +1,2216 @@
+{
+  "version": "cpscore-platforms-20261113-v1",
+  "status": "provisional_paired_native_labels",
+  "snapshot_sha256": "fc5384eec4396a2dcff227ece56ef2f8858cc9db4738bcae7e315e2016b65d73",
+  "method": "Seven strictly increasing cuts on a 100-point grid minimize absolute ordinal error. Ties prefer boundary-wise optimal centers, then lexicographic cuts. Each platform is fitted separately.",
+  "evaluation": "Frozen task-identity holdout, five tasks per Luogu level and platform. Stratified metadata sample, not a population accuracy estimate or a new-trick test. Does not evaluate K/T/I or content-to-level accuracy.",
+  "platforms": {
+    "codeforces": {
+      "scale": "problem.rating",
+      "domain_min": 800,
+      "cuts": [
+        1000,
+        1300,
+        1800,
+        2000,
+        2500,
+        2700,
+        3000
+      ],
+      "observed_value_range": [
+        800,
+        3500
+      ],
+      "support_by_level": [
+        12,
+        13,
+        17,
+        13,
+        17,
+        12,
+        11,
+        14
+      ],
+      "development_fit": {
+        "n": 109,
+        "mean_absolute_level_error": 0.3394495412844037,
+        "exact_count": 77,
+        "within_one_count": 104,
+        "max_absolute_level_error": 2
+      },
+      "frozen_holdout": {
+        "n": 40,
+        "mean_absolute_level_error": 0.6,
+        "exact_count": 20,
+        "within_one_count": 36,
+        "max_absolute_level_error": 2
+      },
+      "evaluation_rows": [
+        {
+          "problem_id": "1703B",
+          "value": 800,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "2113A",
+          "value": 800,
+          "level": 1,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "1291A",
+          "value": 900,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "1278A",
+          "value": 1000,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "1342B",
+          "value": 1100,
+          "level": 2,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "946B",
+          "value": 1100,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "606A",
+          "value": 1200,
+          "level": 2,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "2242C",
+          "value": 1300,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "1923C",
+          "value": 1400,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "1486B",
+          "value": 1500,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "1137A",
+          "value": 1600,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "643B",
+          "value": 1600,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "2039D",
+          "value": 1700,
+          "level": 3,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "1619D",
+          "value": 1800,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "1133F2",
+          "value": 1900,
+          "level": 4,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "479E",
+          "value": 1900,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "2171G",
+          "value": 2000,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "1775E",
+          "value": 2100,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "1407D",
+          "value": 2200,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "965E",
+          "value": 2200,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "817F",
+          "value": 2300,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "39G",
+          "value": 2400,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "2248F",
+          "value": 2500,
+          "level": 5,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "240F",
+          "value": 2600,
+          "level": 5,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "780G",
+          "value": 2700,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "1806F2",
+          "value": 2900,
+          "level": 7,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "1463F",
+          "value": 3100,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "2081F",
+          "value": 3300,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "799G",
+          "value": 3500,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "14A",
+          "value": 800,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "50A",
+          "value": 800,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "22A",
+          "value": 800,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "34A",
+          "value": 800,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "47A",
+          "value": 800,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "52A",
+          "value": 900,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "20A",
+          "value": 1700,
+          "level": 0,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "43B",
+          "value": 1100,
+          "level": 0,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "6A",
+          "value": 900,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "11A",
+          "value": 900,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "35D",
+          "value": 1700,
+          "level": 1,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "44B",
+          "value": 1500,
+          "level": 1,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "3A",
+          "value": 1000,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "34B",
+          "value": 900,
+          "level": 1,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "4B",
+          "value": 1200,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "32D",
+          "value": 1600,
+          "level": 1,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "8A",
+          "value": 1200,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "21A",
+          "value": 1900,
+          "level": 1,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "39H",
+          "value": 1300,
+          "level": 1,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "49D",
+          "value": 1800,
+          "level": 1,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "45C",
+          "value": 1900,
+          "level": 2,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "5C",
+          "value": 1900,
+          "level": 2,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "31B",
+          "value": 1500,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "4D",
+          "value": 1700,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "28B",
+          "value": 1600,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "31C",
+          "value": 1700,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "22C",
+          "value": 1700,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "48C",
+          "value": 1800,
+          "level": 2,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "34D",
+          "value": 1600,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "39J",
+          "value": 1500,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "37C",
+          "value": 1900,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "27D",
+          "value": 2200,
+          "level": 3,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "44H",
+          "value": 1700,
+          "level": 3,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "33B",
+          "value": 1800,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "34E",
+          "value": 2000,
+          "level": 3,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "15B",
+          "value": 1800,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "41E",
+          "value": 1900,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "50C",
+          "value": 2000,
+          "level": 3,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "54D",
+          "value": 2100,
+          "level": 3,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "3B",
+          "value": 1900,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "13C",
+          "value": 2200,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "36C",
+          "value": 2200,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "8E",
+          "value": 2600,
+          "level": 4,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "29E",
+          "value": 2400,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "13B",
+          "value": 2000,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "27E",
+          "value": 2000,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "39C",
+          "value": 2100,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "39A",
+          "value": 2000,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "36D",
+          "value": 2300,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "26D",
+          "value": 2400,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "325D",
+          "value": 2900,
+          "level": 5,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "311C",
+          "value": 2500,
+          "level": 5,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "200E",
+          "value": 2400,
+          "level": 5,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "115D",
+          "value": 2600,
+          "level": 5,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "321E",
+          "value": 2600,
+          "level": 5,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "331D3",
+          "value": 3000,
+          "level": 5,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "111C",
+          "value": 2100,
+          "level": 5,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "175E",
+          "value": 2600,
+          "level": 5,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "53E",
+          "value": 2500,
+          "level": 5,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "193E",
+          "value": 2900,
+          "level": 5,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "62E",
+          "value": 2700,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "74E",
+          "value": 2800,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "19D",
+          "value": 2800,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "65E",
+          "value": 2900,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "48F",
+          "value": 2800,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "107E",
+          "value": 2700,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "26E",
+          "value": 2400,
+          "level": 6,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "70E",
+          "value": 2700,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "111E",
+          "value": 2900,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "95D",
+          "value": 2500,
+          "level": 6,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "516E",
+          "value": 3100,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "235D",
+          "value": 3000,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "533A",
+          "value": 3000,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "457F",
+          "value": 3200,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "464E",
+          "value": 3000,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "494E",
+          "value": 3200,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "468D",
+          "value": 3100,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "240E",
+          "value": 2800,
+          "level": 7,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "538G",
+          "value": 3100,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "506E",
+          "value": 3000,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "10A",
+          "value": 900,
+          "level": 0,
+          "prediction": 0,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "29B",
+          "value": 1500,
+          "level": 0,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "25A",
+          "value": 1300,
+          "level": 0,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "43A",
+          "value": 1000,
+          "level": 0,
+          "prediction": 1,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "58A",
+          "value": 1000,
+          "level": 0,
+          "prediction": 1,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "46C",
+          "value": 1600,
+          "level": 1,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "46B",
+          "value": 1100,
+          "level": 1,
+          "prediction": 1,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "53C",
+          "value": 1200,
+          "level": 1,
+          "prediction": 1,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "12C",
+          "value": 1100,
+          "level": 1,
+          "prediction": 1,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "41B",
+          "value": 1400,
+          "level": 1,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "36B",
+          "value": 1600,
+          "level": 2,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "26B",
+          "value": 1400,
+          "level": 2,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "29C",
+          "value": 1700,
+          "level": 2,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "1B",
+          "value": 1600,
+          "level": 2,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "24B",
+          "value": 1500,
+          "level": 2,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "27B",
+          "value": 1300,
+          "level": 3,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "45B",
+          "value": 2200,
+          "level": 3,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "31D",
+          "value": 2000,
+          "level": 3,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "33D",
+          "value": 2000,
+          "level": 3,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "9D",
+          "value": 1900,
+          "level": 3,
+          "prediction": 3,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "17D",
+          "value": 2400,
+          "level": 4,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "33E",
+          "value": 2600,
+          "level": 4,
+          "prediction": 5,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "23D",
+          "value": 2600,
+          "level": 4,
+          "prediction": 5,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "38G",
+          "value": 2300,
+          "level": 4,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "13D",
+          "value": 2600,
+          "level": 4,
+          "prediction": 5,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "156D",
+          "value": 2500,
+          "level": 5,
+          "prediction": 5,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "238C",
+          "value": 2100,
+          "level": 5,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "258C",
+          "value": 2000,
+          "level": 5,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "251D",
+          "value": 2700,
+          "level": 5,
+          "prediction": 6,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "273D",
+          "value": 2400,
+          "level": 5,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "79D",
+          "value": 2800,
+          "level": 6,
+          "prediction": 6,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "125E",
+          "value": 2400,
+          "level": 6,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "11E",
+          "value": 2800,
+          "level": 6,
+          "prediction": 6,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "123D",
+          "value": 2300,
+          "level": 6,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "15E",
+          "value": 2600,
+          "level": 6,
+          "prediction": 5,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "269E",
+          "value": 3100,
+          "level": 7,
+          "prediction": 7,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "335F",
+          "value": 3000,
+          "level": 7,
+          "prediction": 7,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "243E",
+          "value": 3000,
+          "level": 7,
+          "prediction": 7,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "528E",
+          "value": 3100,
+          "level": 7,
+          "prediction": 7,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "154E",
+          "value": 3000,
+          "level": 7,
+          "prediction": 7,
+          "split": "holdout"
+        }
+      ]
+    },
+    "atcoder-problems": {
+      "scale": "problem-model.difficulty.display",
+      "domain_min": 0,
+      "cuts": [
+        300,
+        700,
+        1300,
+        1700,
+        2300,
+        2500,
+        2900
+      ],
+      "observed_value_range": [
+        11,
+        4383
+      ],
+      "support_by_level": [
+        17,
+        11,
+        14,
+        15,
+        14,
+        15,
+        14,
+        14
+      ],
+      "development_fit": {
+        "n": 114,
+        "mean_absolute_level_error": 0.37719298245614036,
+        "exact_count": 77,
+        "within_one_count": 108,
+        "max_absolute_level_error": 2
+      },
+      "frozen_holdout": {
+        "n": 40,
+        "mean_absolute_level_error": 0.35,
+        "exact_count": 27,
+        "within_one_count": 39,
+        "max_absolute_level_error": 2
+      },
+      "evaluation_rows": [
+        {
+          "problem_id": "abc074_a",
+          "value": 11,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc080_a",
+          "value": 19,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc155_b",
+          "value": 31,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc097_a",
+          "value": 50,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc478_b",
+          "value": 90,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc052_b",
+          "value": 156,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc239_d",
+          "value": 252,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc021_a",
+          "value": 396,
+          "level": 2,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc004_a",
+          "value": 558,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc122_c",
+          "value": 700,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc414_d",
+          "value": 841,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc371_e",
+          "value": 981,
+          "level": 3,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc080_c",
+          "value": 1130,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc405_e",
+          "value": 1259,
+          "level": 3,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc232_e",
+          "value": 1380,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc139_e",
+          "value": 1528,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc263_e",
+          "value": 1659,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc339_g",
+          "value": 1792,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "arc216_b",
+          "value": 1935,
+          "level": 6,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "arc101_b",
+          "value": 2073,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc172_f",
+          "value": 2216,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc299_f",
+          "value": 2349,
+          "level": 6,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc435_g",
+          "value": 2519,
+          "level": 4,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "arc180_d",
+          "value": 2694,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc301_h",
+          "value": 2898,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "arc199_c",
+          "value": 3111,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc402_g",
+          "value": 3381,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc035_e",
+          "value": 3720,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc045_f",
+          "value": 4383,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc050_a",
+          "value": 1973,
+          "level": 5,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc032_c",
+          "value": 2284,
+          "level": 5,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc019_c",
+          "value": 2495,
+          "level": 5,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc228_h",
+          "value": 2729,
+          "level": 5,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc219_h",
+          "value": 3297,
+          "level": 5,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc054_a",
+          "value": 103,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc053_b",
+          "value": 164,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc045_a",
+          "value": 26,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc042_b",
+          "value": 616,
+          "level": 0,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc055_b",
+          "value": 332,
+          "level": 0,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc049_b",
+          "value": 254,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc048_a",
+          "value": 54,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc050_a",
+          "value": 72,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc043_b",
+          "value": 512,
+          "level": 0,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc058_a",
+          "value": 45,
+          "level": 0,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc089_c",
+          "value": 642,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc047_b",
+          "value": 726,
+          "level": 1,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc098_b",
+          "value": 360,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc096_c",
+          "value": 407,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc050_b",
+          "value": 235,
+          "level": 1,
+          "prediction": 0,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc046_b",
+          "value": 633,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc064_d",
+          "value": 969,
+          "level": 1,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc084_d",
+          "value": 980,
+          "level": 1,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc080_d",
+          "value": 1383,
+          "level": 1,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc091_b",
+          "value": 319,
+          "level": 1,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc089_d",
+          "value": 1220,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc114_c",
+          "value": 1045,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc103_d",
+          "value": 1278,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc106_d",
+          "value": 1319,
+          "level": 2,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc054_d",
+          "value": 1655,
+          "level": 2,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc057_c",
+          "value": 904,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc075_c",
+          "value": 1067,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc085_d",
+          "value": 954,
+          "level": 2,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc057_b",
+          "value": 434,
+          "level": 2,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc103_c",
+          "value": 451,
+          "level": 2,
+          "prediction": 1,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc118_d",
+          "value": 1657,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc114_d",
+          "value": 1337,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc057_d",
+          "value": 1658,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc070_d",
+          "value": 1182,
+          "level": 3,
+          "prediction": 2,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc104_c",
+          "value": 1393,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc104_d",
+          "value": 1739,
+          "level": 3,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc073_d",
+          "value": 1345,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc075_d",
+          "value": 1470,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc051_d",
+          "value": 1566,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc117_d",
+          "value": 1423,
+          "level": 3,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc182_f",
+          "value": 2121,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc156_f",
+          "value": 2150,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc141_f",
+          "value": 2342,
+          "level": 4,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc158_f",
+          "value": 2067,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc135_e",
+          "value": 2665,
+          "level": 4,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc167_f",
+          "value": 1961,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc076_d",
+          "value": 1884,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc126_f",
+          "value": 1770,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc140_f",
+          "value": 2105,
+          "level": 4,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc174_f",
+          "value": 1495,
+          "level": 4,
+          "prediction": 3,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc305_g",
+          "value": 1989,
+          "level": 5,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc472_g",
+          "value": 2018,
+          "level": 5,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc471_g",
+          "value": 2464,
+          "level": 5,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc035_d",
+          "value": 2902,
+          "level": 5,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc040_c",
+          "value": 2740,
+          "level": 5,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "acl1_d",
+          "value": 2764,
+          "level": 5,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc037_e",
+          "value": 2667,
+          "level": 5,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc205_f",
+          "value": 2088,
+          "level": 5,
+          "prediction": 4,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc282_h",
+          "value": 2621,
+          "level": 5,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "agc023_c",
+          "value": 2568,
+          "level": 5,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc234_h",
+          "value": 2505,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc231_g",
+          "value": 2606,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc231_h",
+          "value": 2681,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc208_f",
+          "value": 2772,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc213_h",
+          "value": 2806,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc240_g",
+          "value": 2462,
+          "level": 6,
+          "prediction": 5,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc230_g",
+          "value": 2516,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc244_h",
+          "value": 2878,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc232_h",
+          "value": 2780,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc219_f",
+          "value": 2542,
+          "level": 6,
+          "prediction": 6,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc269_h",
+          "value": 3178,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc225_h",
+          "value": 3061,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc262_g",
+          "value": 3114,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc275_h",
+          "value": 3210,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc274_h",
+          "value": 3191,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc285_h",
+          "value": 3192,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc257_h",
+          "value": 3461,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc230_h",
+          "value": 3528,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc227_h",
+          "value": 3229,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc299_h",
+          "value": 2984,
+          "level": 7,
+          "prediction": 7,
+          "split": "development"
+        },
+        {
+          "problem_id": "abc042_a",
+          "value": 89,
+          "level": 0,
+          "prediction": 0,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc047_a",
+          "value": 110,
+          "level": 0,
+          "prediction": 0,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc046_a",
+          "value": 111,
+          "level": 0,
+          "prediction": 0,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc044_b",
+          "value": 270,
+          "level": 0,
+          "prediction": 0,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc058_b",
+          "value": 217,
+          "level": 0,
+          "prediction": 0,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc068_b",
+          "value": 110,
+          "level": 1,
+          "prediction": 0,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc056_b",
+          "value": 117,
+          "level": 1,
+          "prediction": 0,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc048_b",
+          "value": 861,
+          "level": 1,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc051_c",
+          "value": 968,
+          "level": 1,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc100_c",
+          "value": 327,
+          "level": 1,
+          "prediction": 1,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc096_d",
+          "value": 1226,
+          "level": 2,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc112_d",
+          "value": 1025,
+          "level": 2,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc088_d",
+          "value": 999,
+          "level": 2,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc110_c",
+          "value": 949,
+          "level": 2,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc109_d",
+          "value": 1172,
+          "level": 2,
+          "prediction": 2,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc100_d",
+          "value": 1331,
+          "level": 3,
+          "prediction": 3,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc116_d",
+          "value": 1712,
+          "level": 3,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc113_d",
+          "value": 1597,
+          "level": 3,
+          "prediction": 3,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc110_d",
+          "value": 1695,
+          "level": 3,
+          "prediction": 3,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc099_d",
+          "value": 1345,
+          "level": 3,
+          "prediction": 3,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc149_f",
+          "value": 2208,
+          "level": 4,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc165_f",
+          "value": 1843,
+          "level": 4,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc131_f",
+          "value": 1937,
+          "level": 4,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc129_f",
+          "value": 2621,
+          "level": 4,
+          "prediction": 6,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc163_e",
+          "value": 2037,
+          "level": 4,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc268_h",
+          "value": 2560,
+          "level": 5,
+          "prediction": 6,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc164_f",
+          "value": 2683,
+          "level": 5,
+          "prediction": 6,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc288_e",
+          "value": 2000,
+          "level": 5,
+          "prediction": 4,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc475_g",
+          "value": 2360,
+          "level": 5,
+          "prediction": 5,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc259_h",
+          "value": 2406,
+          "level": 5,
+          "prediction": 5,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc221_h",
+          "value": 2793,
+          "level": 6,
+          "prediction": 6,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc138_f",
+          "value": 2431,
+          "level": 6,
+          "prediction": 5,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc236_h",
+          "value": 2898,
+          "level": 6,
+          "prediction": 6,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc217_h",
+          "value": 3112,
+          "level": 6,
+          "prediction": 7,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc241_g",
+          "value": 2422,
+          "level": 6,
+          "prediction": 5,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc216_h",
+          "value": 3295,
+          "level": 7,
+          "prediction": 7,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc229_h",
+          "value": 3308,
+          "level": 7,
+          "prediction": 7,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc283_h",
+          "value": 2682,
+          "level": 7,
+          "prediction": 6,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc265_h",
+          "value": 3319,
+          "level": 7,
+          "prediction": 7,
+          "split": "holdout"
+        },
+        {
+          "problem_id": "abc279_h",
+          "value": 3279,
+          "level": 7,
+          "prediction": 7,
+          "split": "holdout"
+        }
+      ]
+    }
+  }
+}

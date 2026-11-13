@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-015-mutant-r1",
+  "raw_sha256": "6a82c4cb25fa5c19efb14fd0dfa62d88099cfee700b97bf7587c7fa9beb2a596",
+  "prediction_sha256": "829cfb2abe80c2ea8f6d57b73a77a273b5f1fd6564b98c9a2991820e75262d66",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; same-model limitation; not human expert",
+  "reviewed_at": "2026-11-13T01:59:34.684892+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "distance_transcript",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "1-2-3路径两条边，题面明定边数距离；回复1确错，应2。只报交互示例这一根因。",
+      "novel_issue_review": null
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "original_sha256": "9681c68438996cc9e1bfba3a12d5f89ea667d6b655d26f2861c4aa34fec9c85b",
+  "candidate_sha256": "6d81810d6a06ce4acc7ac7b20b0427eb99f95b2d4cbc97a482e4388bc862de59",
+  "applied_actual_advice": [
+    {
+      "find": "$b_{i_1-1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k-1}$",
+      "replace": "$b_{i_1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k}$",
+      "conditional": false
+    }
+  ],
+  "diff": [
+    "--- original",
+    "+++ candidate",
+    "@@ -1,6 +1,6 @@",
+    " # 奇偶回执",
+    " ",
+    "-隐藏二进制串为 $b_1b_2\\cdots b_n$，长度为 $n$，下标从 $1$ 开始，交互开始前固定。一次询问输出 `? k i1 ... ik` 并刷新，其中下标两两不同，均在 $[1,n]$ 内，$1\\le k\\le n$。交互器回复所选位的异或值，即 $b_{i_1-1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k-1}$。至多询问 $n$ 次。最后输出 `! b`，刷新并立即退出，没有最终回复。收到 `-1` 或文件结束时立即退出。",
+    "+隐藏二进制串为 $b_1b_2\\cdots b_n$，长度为 $n$，下标从 $1$ 开始，交互开始前固定。一次询问输出 `? k i1 ... ik` 并刷新，其中下标两两不同，均在 $[1,n]$ 内，$1\\le k\\le n$。交互器回复所选位的异或值，即 $b_{i_1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k}$。至多询问 $n$ 次。最后输出 `! b`，刷新并立即退出，没有最终回复。收到 `-1` 或文件结束时立即退出。",
+    " ",
+    " ## 输入格式",
+    " "
+  ],
+  "gold_used_to_generate_patch": false
+}

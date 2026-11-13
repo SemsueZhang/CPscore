@@ -1,0 +1,11 @@
+{
+  "run_id": "direct-st-022-base-r1",
+  "raw_sha256": "f22cdea8a97c643a5b46aac5c566ae599b9917063d4bc8ec81c25ebf10c6e1d4",
+  "prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "judge_kind": "automatic_empty",
+  "judge_identity": "Structured empty-list check only",
+  "reviewed_at": "2026-11-13T03:31:31.421566+00:00",
+  "complete": true,
+  "findings": [],
+  "overall_note": "确认没有列扣分项，不证明Gold正确；包括格式根因未报时仍计漏检。"
+}

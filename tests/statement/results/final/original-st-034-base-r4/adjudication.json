@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-034-base-r4",
+  "raw_sha256": "dbe0a570ec4dbb9e4c29c7c0bca14c407127d3000775bada91b340a52078971f",
+  "prediction_sha256": "67981f2d0d6bc35083e29b028693300b98f808432a3ad1884023790e22ea7bf6",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human claim",
+  "reviewed_at": "2026-11-13T02:14:28.230159+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "message_budget",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐项核对n=3的6排列、4消息，任意不同排列在某个有序数对上不同，报告的信息下界与全部合法n的不可行性均成立。",
+      "novel_issue_review": null
+    }
+  ]
+}

@@ -1,0 +1,743 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "author": "Codex host model",
+    "human_expert_verified": false,
+    "source": "original synthetic tasks; no internet collection",
+    "limitation": "生成者已见全部题面与Gold；留出仅约束后续调参，不是对当前生成者的认知盲测。"
+  },
+  "scope": {
+    "format": "适用现有Skill的洛谷题面规范；不检查未提供的std实测、翻译来源或投稿流程",
+    "formal_families": 40,
+    "formal_versions": 56,
+    "clean_originals": 24,
+    "defective_originals": 16,
+    "mutants": 16
+  },
+  "skills": {
+    "original": {
+      "git_ref": "db9e9f6fba2370ce04a6b4c0f60b1608f48ae2d8",
+      "path": "skills/cp-statement-review"
+    },
+    "improved": {
+      "git_ref": "5af3cda53b95ef963c81ff0cd6abd3658836d072",
+      "path": "skills/cp-statement-review"
+    }
+  },
+  "smoke": [
+    "st-001-base",
+    "st-008-base",
+    "st-011-base",
+    "st-014-base",
+    "st-017-base",
+    "st-020-base",
+    "st-025-base",
+    "st-035-base"
+  ],
+  "consistency_cases": [
+    "st-001-base",
+    "st-008-base",
+    "st-011-base",
+    "st-014-base",
+    "st-017-base",
+    "st-020-base",
+    "st-001-mutant",
+    "st-009-mutant",
+    "st-012-mutant",
+    "st-025-base",
+    "st-033-base",
+    "st-034-base"
+  ],
+  "repetitions": 5,
+  "repair_targets": [
+    {
+      "case_id": "st-001-mutant",
+      "root_id": "order"
+    },
+    {
+      "case_id": "st-002-mutant",
+      "root_id": "sample_explanation"
+    },
+    {
+      "case_id": "st-003-mutant",
+      "root_id": "distance_definition"
+    },
+    {
+      "case_id": "st-004-mutant",
+      "root_id": "unbounded"
+    },
+    {
+      "case_id": "st-005-mutant",
+      "root_id": "time_tie"
+    },
+    {
+      "case_id": "st-006-mutant",
+      "root_id": "sample_components"
+    },
+    {
+      "case_id": "st-007-mutant",
+      "root_id": "equivalence"
+    },
+    {
+      "case_id": "st-008-mutant",
+      "root_id": "construct_impossible"
+    },
+    {
+      "case_id": "st-009-mutant",
+      "root_id": "literal_markup"
+    },
+    {
+      "case_id": "st-010-mutant",
+      "root_id": "matrix_sample"
+    },
+    {
+      "case_id": "st-011-mutant",
+      "root_id": "zero_relative"
+    },
+    {
+      "case_id": "st-014-mutant",
+      "root_id": "reply_mapping"
+    },
+    {
+      "case_id": "st-015-mutant",
+      "root_id": "distance_transcript"
+    },
+    {
+      "case_id": "st-016-mutant",
+      "root_id": "index_shift"
+    },
+    {
+      "case_id": "st-025-base",
+      "root_id": "direction"
+    },
+    {
+      "case_id": "st-026-base",
+      "root_id": "singleton"
+    },
+    {
+      "case_id": "st-029-base",
+      "root_id": "sample_value"
+    },
+    {
+      "case_id": "st-037-base",
+      "root_id": "input_typo"
+    },
+    {
+      "case_id": "st-034-base",
+      "root_id": "message_budget"
+    },
+    {
+      "case_id": "st-035-base",
+      "root_id": "settlement_order"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "st-001-base",
+      "family_id": "st-001",
+      "version": "base",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-001-base.md",
+      "statement_sha256": "7781eb1c8fc9115162b8f08130d06c4c38353841986104546ddf89db8d1400b5",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-001-mutant",
+      "family_id": "st-001",
+      "version": "mutant",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-001-mutant.md",
+      "statement_sha256": "22226e6ad6da3a42c150a87905c88fbc67dcf7ab9377d5e597f4996dd9a674d9",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-002-base",
+      "family_id": "st-002",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-002-base.md",
+      "statement_sha256": "9a433aca01453b9a29ba9568fdbc161f6a80f9098fe3463fcbaeb19038205568",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-002-mutant",
+      "family_id": "st-002",
+      "version": "mutant",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-002-mutant.md",
+      "statement_sha256": "2651d5749bbaf4d5de299f6dacbb1a5fe7c942b78d5f0f7ce820c5a291048496",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-003-base",
+      "family_id": "st-003",
+      "version": "base",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-003-base.md",
+      "statement_sha256": "547ce96e372a2c937345964f10e18b3b901c3688fd81b740fd1f8ebe0c14fc06",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-003-mutant",
+      "family_id": "st-003",
+      "version": "mutant",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-003-mutant.md",
+      "statement_sha256": "8b201c6d5c558f6095a89e51671de24ec155a4a48549c60cfdb6f500103ecfd9",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-004-base",
+      "family_id": "st-004",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-004-base.md",
+      "statement_sha256": "1421bf833649be0e550608325def9044a8bed1e59e846d3b0b42fd48c0306636",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-004-mutant",
+      "family_id": "st-004",
+      "version": "mutant",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-004-mutant.md",
+      "statement_sha256": "d74813008a6f52f6e4dbc1a2e38b84c89daaea8a6f1e6a5b774224d3b292a81b",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-005-base",
+      "family_id": "st-005",
+      "version": "base",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-005-base.md",
+      "statement_sha256": "5288a98dfabe243d3a05a1678c743900fec6f3b9d6c1040e8ba85b8efb9f456d",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-005-mutant",
+      "family_id": "st-005",
+      "version": "mutant",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-005-mutant.md",
+      "statement_sha256": "b2c26e9d89d0506fd112f5f71e46a409bb179683087f0c842cf675d2a38b8b8b",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-006-base",
+      "family_id": "st-006",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-006-base.md",
+      "statement_sha256": "1c16d6ddde180f0c08ff20e32e0570430ce5b6cf0a0fba813570a889e77efb07",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-006-mutant",
+      "family_id": "st-006",
+      "version": "mutant",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-006-mutant.md",
+      "statement_sha256": "bc50ed993f5190edadff4b176c6eab85bf1847af9fe3c8d59c6829d96728e46a",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-007-base",
+      "family_id": "st-007",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-007-base.md",
+      "statement_sha256": "f07252b23f0d9b918f2919f75c397335985823216036c5744415759ac7bfb4e3",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-007-mutant",
+      "family_id": "st-007",
+      "version": "mutant",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-007-mutant.md",
+      "statement_sha256": "b839af58e3e59dff28177da8c9591483f2dcf532cc8fc466a55ddf25cb610e50",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-008-base",
+      "family_id": "st-008",
+      "version": "base",
+      "split": "development",
+      "problem_type": "construction",
+      "statement_path": "cases/st-008-base.md",
+      "statement_sha256": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-008-mutant",
+      "family_id": "st-008",
+      "version": "mutant",
+      "split": "development",
+      "problem_type": "construction",
+      "statement_path": "cases/st-008-mutant.md",
+      "statement_sha256": "de0d52a94145a4fea73c982a544a9431e9d42b0d13a643257cc8fcd8e28981de",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-009-base",
+      "family_id": "st-009",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "construction",
+      "statement_path": "cases/st-009-base.md",
+      "statement_sha256": "72565cbc4176611d6248a5007bff8ee1404e4fec136145a7079fe29f8c1dade7",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-009-mutant",
+      "family_id": "st-009",
+      "version": "mutant",
+      "split": "holdout",
+      "problem_type": "construction",
+      "statement_path": "cases/st-009-mutant.md",
+      "statement_sha256": "74c4f3cfe42ea66f26d0285ff718ac6eef977256027063773aa5655b9a3d2f78",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-010-base",
+      "family_id": "st-010",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "construction",
+      "statement_path": "cases/st-010-base.md",
+      "statement_sha256": "2f2ce7779a4de87b48ae77870d264f50291c5d06ccbccdf7a17db86ba939863e",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-010-mutant",
+      "family_id": "st-010",
+      "version": "mutant",
+      "split": "holdout",
+      "problem_type": "construction",
+      "statement_path": "cases/st-010-mutant.md",
+      "statement_sha256": "65478aac9524e829e0e71d5b4244cd41e26ccacb2be61a04b4b7c84d178eec30",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-011-base",
+      "family_id": "st-011",
+      "version": "base",
+      "split": "development",
+      "problem_type": "floating",
+      "statement_path": "cases/st-011-base.md",
+      "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-011-mutant",
+      "family_id": "st-011",
+      "version": "mutant",
+      "split": "development",
+      "problem_type": "floating",
+      "statement_path": "cases/st-011-mutant.md",
+      "statement_sha256": "7302b0abc28b091a2df879abc39af6a3d93eb174491709197e7dc13ac5cc0c20",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-012-base",
+      "family_id": "st-012",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "floating",
+      "statement_path": "cases/st-012-base.md",
+      "statement_sha256": "6e97cafec58768fb15b006ebcb2b30de1d3c1e523f8bae3114d782ca6989aeb9",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-012-mutant",
+      "family_id": "st-012",
+      "version": "mutant",
+      "split": "holdout",
+      "problem_type": "floating",
+      "statement_path": "cases/st-012-mutant.md",
+      "statement_sha256": "90ee47b75bccf4a723d570c80ceb34802aedec2b802c74caf6a6e1f1db8962d3",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-013-base",
+      "family_id": "st-013",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "floating",
+      "statement_path": "cases/st-013-base.md",
+      "statement_sha256": "088a83e4bc342ac30bd4b63518ec79ef720770756b496310685ad823eb7cb6fb",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-013-mutant",
+      "family_id": "st-013",
+      "version": "mutant",
+      "split": "holdout",
+      "problem_type": "floating",
+      "statement_path": "cases/st-013-mutant.md",
+      "statement_sha256": "785fe3ce86c2fdca0688b4234f78e07f3b080b275abc0548dc0d3ab59d40725c",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-014-base",
+      "family_id": "st-014",
+      "version": "base",
+      "split": "development",
+      "problem_type": "interactive",
+      "statement_path": "cases/st-014-base.md",
+      "statement_sha256": "64eef07822273207212eeab62bcb613f1c27ed9f7a9f5498ae8b36bf076b65ff",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-014-mutant",
+      "family_id": "st-014",
+      "version": "mutant",
+      "split": "development",
+      "problem_type": "interactive",
+      "statement_path": "cases/st-014-mutant.md",
+      "statement_sha256": "b0432543425dc93d5229b2745386e1c4b43ba06c87b433a93035fdb6e5a7eba2",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-015-base",
+      "family_id": "st-015",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "interactive",
+      "statement_path": "cases/st-015-base.md",
+      "statement_sha256": "35c836f0eaa10badff58e6293d692e230b27cab0ee9bf5969e2a79d4b7eed1ed",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-015-mutant",
+      "family_id": "st-015",
+      "version": "mutant",
+      "split": "holdout",
+      "problem_type": "interactive",
+      "statement_path": "cases/st-015-mutant.md",
+      "statement_sha256": "f69e8037c6b4e4a1afcde5a535c8cc49fea25575bc32d9e8fac902cf7bb42f08",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-016-base",
+      "family_id": "st-016",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "interactive",
+      "statement_path": "cases/st-016-base.md",
+      "statement_sha256": "6d81810d6a06ce4acc7ac7b20b0427eb99f95b2d4cbc97a482e4388bc862de59",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-016-mutant",
+      "family_id": "st-016",
+      "version": "mutant",
+      "split": "holdout",
+      "problem_type": "interactive",
+      "statement_path": "cases/st-016-mutant.md",
+      "statement_sha256": "9681c68438996cc9e1bfba3a12d5f89ea667d6b655d26f2861c4aa34fec9c85b",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-017-base",
+      "family_id": "st-017",
+      "version": "base",
+      "split": "development",
+      "problem_type": "communication",
+      "statement_path": "cases/st-017-base.md",
+      "statement_sha256": "3d3584f92d7adb230ab83ca2e5e5f011b6216d96dd72ca3b1d40cfc6ec03240f",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-018-base",
+      "family_id": "st-018",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "communication",
+      "statement_path": "cases/st-018-base.md",
+      "statement_sha256": "de037bb6a88f0f29233010d8306915f314ebce0d3c561abd742fce2d07ccbe73",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-019-base",
+      "family_id": "st-019",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "communication",
+      "statement_path": "cases/st-019-base.md",
+      "statement_sha256": "c3be5b7e82a5533a6775ee2612700cb6ba3062e301417ccd74883fa2360529f3",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-020-base",
+      "family_id": "st-020",
+      "version": "base",
+      "split": "development",
+      "problem_type": "simulation",
+      "statement_path": "cases/st-020-base.md",
+      "statement_sha256": "e0304ced4e629cc0159835c30447d1f6123ce77db3ae88c6146d2a00bb0e5bb6",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-021-base",
+      "family_id": "st-021",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "simulation",
+      "statement_path": "cases/st-021-base.md",
+      "statement_sha256": "9c24d9cd9d9b63ec5bad0c6e4a35b3ed22d2dd417cf4cf7954cb70abf98453b0",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-022-base",
+      "family_id": "st-022",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "simulation",
+      "statement_path": "cases/st-022-base.md",
+      "statement_sha256": "bb5435a31797c0b6dba7cc67d587473a18e5da7bb303dcef01088bb0610337f3",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-023-base",
+      "family_id": "st-023",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-023-base.md",
+      "statement_sha256": "8f51ae0ca37e2f9868c1e11d0c860de55399f442ea5dc5c04a75d3b38d748719",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-024-base",
+      "family_id": "st-024",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-024-base.md",
+      "statement_sha256": "7e648946e9f10d7104425113481c8d3aa7c0d2091e032e48ff3b8bc9f5af0cb1",
+      "original_kind": "clean"
+    },
+    {
+      "case_id": "st-025-base",
+      "family_id": "st-025",
+      "version": "base",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-025-base.md",
+      "statement_sha256": "8a599f85cfbc77978606308a7dc15ded13972a714eaece24f92074c990d581b0",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-026-base",
+      "family_id": "st-026",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-026-base.md",
+      "statement_sha256": "94bc954a7d7b4ecd24b170770ef6b0aaa525600ae8a711afc618819af8a9f0ec",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-027-base",
+      "family_id": "st-027",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-027-base.md",
+      "statement_sha256": "4d6a1e7ef81802d714a85c17fdfea05185f7d02f8e15ed9530904da3e241a5ab",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-028-base",
+      "family_id": "st-028",
+      "version": "base",
+      "split": "development",
+      "problem_type": "floating",
+      "statement_path": "cases/st-028-base.md",
+      "statement_sha256": "fe491e9040c6087e03b3e1fe0eee887b2436293323c9491f8af1ba750771d2f4",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-029-base",
+      "family_id": "st-029",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-029-base.md",
+      "statement_sha256": "b48e22a5cbc2be9dbf14be8772678e4e64bb02b2f01bf97fe701cd3030b42624",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-030-base",
+      "family_id": "st-030",
+      "version": "base",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-030-base.md",
+      "statement_sha256": "a42161fb0c34139b894adf87e996e9e03f61af3b79d29f9049397bb317ca4082",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-031-base",
+      "family_id": "st-031",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "construction",
+      "statement_path": "cases/st-031-base.md",
+      "statement_sha256": "029b0d8e2015cc27ad3ae4c91ab949a682f75e66e4505f7d5b03e6a5345a40e2",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-032-base",
+      "family_id": "st-032",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "floating",
+      "statement_path": "cases/st-032-base.md",
+      "statement_sha256": "5b42a085cb18fd007a046e67329856b30070099106c71d6344fce613037ded9a",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-033-base",
+      "family_id": "st-033",
+      "version": "base",
+      "split": "development",
+      "problem_type": "interactive",
+      "statement_path": "cases/st-033-base.md",
+      "statement_sha256": "c6429f6ac1f44508e482145877dd66202aa84ed192b8143448414ecbc39798b8",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-034-base",
+      "family_id": "st-034",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "communication",
+      "statement_path": "cases/st-034-base.md",
+      "statement_sha256": "2f5dca00c394dc2085e0790569b03202d7d11c3876d3acaafcb3a0a30b277664",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-035-base",
+      "family_id": "st-035",
+      "version": "base",
+      "split": "development",
+      "problem_type": "simulation",
+      "statement_path": "cases/st-035-base.md",
+      "statement_sha256": "ae3f2688807f1892352667ae008d9dfa55a3435d3f0cec82bd65d8dcbf7ab10f",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-036-base",
+      "family_id": "st-036",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-036-base.md",
+      "statement_sha256": "0346258f11605a0eae45e3bd7b154cf093dad813ff3818b921e47dcfe09d6b50",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-037-base",
+      "family_id": "st-037",
+      "version": "base",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-037-base.md",
+      "statement_sha256": "e28ab639091db9cbdf16feaa2b9997a3802da4ea909c9829668b4da08cbade4f",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-038-base",
+      "family_id": "st-038",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-038-base.md",
+      "statement_sha256": "16be235de4ce6a99bd0521bb679fa5d92d59df97da15185de8cc29673d25e983",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-039-base",
+      "family_id": "st-039",
+      "version": "base",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-039-base.md",
+      "statement_sha256": "2aef2e084285ce188408f767dd797a3109cbb3337c9cf97c622d5b5ab69b6d8d",
+      "original_kind": "defective"
+    },
+    {
+      "case_id": "st-040-base",
+      "family_id": "st-040",
+      "version": "base",
+      "split": "holdout",
+      "problem_type": "standard",
+      "statement_path": "cases/st-040-base.md",
+      "statement_sha256": "fdb26c794f4afa638ab36494de39f6e6a3a53248fb7ef21be079570ca833299d",
+      "original_kind": "defective"
+    }
+  ],
+  "equivalences": [
+    {
+      "case_id": "st-001-equivalent",
+      "family_id": "st-001",
+      "version": "equivalent",
+      "split": "development",
+      "problem_type": "standard",
+      "statement_path": "cases/st-001-equivalent.md",
+      "statement_sha256": "bc43c6becd574fb2bbf324a70f0f71a1a3fc3663815d4c8959228a2f1c62f7f9",
+      "original_kind": "clean",
+      "equivalent_to": "st-001-base"
+    },
+    {
+      "case_id": "st-008-equivalent",
+      "family_id": "st-008",
+      "version": "equivalent",
+      "split": "development",
+      "problem_type": "construction",
+      "statement_path": "cases/st-008-equivalent.md",
+      "statement_sha256": "242dbd83fc4aab2acbbdeaf94ddd92d474a3d1ec6dbadf2805585946ee5327bb",
+      "original_kind": "clean",
+      "equivalent_to": "st-008-base"
+    },
+    {
+      "case_id": "st-011-equivalent",
+      "family_id": "st-011",
+      "version": "equivalent",
+      "split": "development",
+      "problem_type": "floating",
+      "statement_path": "cases/st-011-equivalent.md",
+      "statement_sha256": "bffd538c64917ed4110af7665d1c4db3f1d21fd78ed0e0369704c8bd6f2d4386",
+      "original_kind": "clean",
+      "equivalent_to": "st-011-base"
+    },
+    {
+      "case_id": "st-020-equivalent",
+      "family_id": "st-020",
+      "version": "equivalent",
+      "split": "development",
+      "problem_type": "simulation",
+      "statement_path": "cases/st-020-equivalent.md",
+      "statement_sha256": "6d056b0cf75cda24d9056590de831e922cc0bfca7470327236c90a7a595062a9",
+      "original_kind": "clean",
+      "equivalent_to": "st-020-base"
+    }
+  ],
+  "benchmark_revision": "1.0.0"
+}

@@ -1,0 +1,20 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "```text\n2\n3\n1 2 3\n```",
+      "evidence": "首个整数声明 T=2，但样例仅提供一组完整数据，缺少第二组的 n 和序列；输出也仅有对应第一组的一行。现有第一组的和为 6，计算正确。样例组数与实际内容不一致，按同一根因扣分一次。",
+      "repairs": [
+        {
+          "find": "```text\n2\n3\n1 2 3\n```",
+          "replace": "```text\n1\n3\n1 2 3\n```",
+          "conditional": true
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

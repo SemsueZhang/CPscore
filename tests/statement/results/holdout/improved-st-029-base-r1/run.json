@@ -1,0 +1,82 @@
+{
+  "run_id": "improved-st-029-base-r1",
+  "case_id": "st-029-base",
+  "skill": "improved",
+  "repeat": 1,
+  "phase": "initial",
+  "statement_sha256": "b48e22a5cbc2be9dbf14be8772678e4e64bb02b2f01bf97fe701cd3030b42624",
+  "model": "gpt-6.1-sol",
+  "model_identity_source": "requested CLI model alias",
+  "effort": "xhigh",
+  "skill_version": {
+    "label": "improved",
+    "commit": "5af3cda53b95ef963c81ff0cd6abd3658836d072",
+    "sha256": "2193fd7c97cde1094d7bae28f71a7956c087d97c2ea5814ef27ea84961fdb5aa"
+  },
+  "started_at": "2026-11-13T02:02:50.250966+00:00",
+  "execution_status": "completed",
+  "source": "real_host",
+  "gold_sha256": "55c9290de228c8f85a1171d12bd5b67f6010cd2284d00dff2e91670b5168b4a3",
+  "batch_workers": 4,
+  "timeout_seconds": 240,
+  "source_file_sha256_at_run_start": "8aecdbcd367bc5ad84c98938c02c75f01398c09c58f6a576f0c068b9d5b7db68",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied"
+  },
+  "payload": {
+    "files": {
+      ".agents/skills/cp-statement-review/SKILL.md": "0ddfbe468f66c3daf3bb000c2eb62b28c40855c4d6932577ab5bc583c2d6aae6",
+      ".agents/skills/cp-statement-review/references/readability.md": "b9ce79bb7fcbc6f4861aef62901abcfb6f1174ea65bd7cf1358edadab9dd84c7",
+      ".agents/skills/cp-statement-review/references/scoring.md": "6e857e54b9a078601e2b10176033f1676c4791208a88474df812e8d67669ce40",
+      ".agents/skills/cp-statement-review/references/specification.md": "d7da80c02a5b8e6460b3037e284ce9e86ecca211fd25b6d03658ad973de48329",
+      "material.md": "b48e22a5cbc2be9dbf14be8772678e4e64bb02b2f01bf97fe701cd3030b42624",
+      "request.txt": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+    },
+    "prompt_sha256": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+  },
+  "host_version": "codex-cli 0.167.0-alpha.4.1",
+  "command": [
+    "codex",
+    "--no-daemon",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--color",
+    "never",
+    "--json",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "-C",
+    "/tmp/cp-statement-2c2vmm65",
+    "-o",
+    "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/holdout/improved-st-029-base-r1/report.md",
+    "-"
+  ],
+  "pid": 38490,
+  "returncode": 0,
+  "raw_sha256": "f8bc2e2cc336c0a245fd040b19b3c80f74473d20f9ef1411b2c7652b349ff012",
+  "session_id": "01a1d2a4-aeac-74d0-b848-e7ce2c0a74ab",
+  "observed_session_ids": [
+    "01a1d2a4-aeac-74d0-b848-e7ce2c0a74ab"
+  ],
+  "token_usage": {
+    "input_tokens": 73024,
+    "cached_input_tokens": 56832,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 4700,
+    "reasoning_output_tokens": 3172
+  },
+  "finished_at": "2026-11-13T02:05:14.829992+00:00"
+}

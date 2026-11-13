@@ -1,0 +1,20 @@
+{
+  "run_id": "improved-st-013-mutant-r1",
+  "raw_sha256": "43e4b9124857619aebb1198a9d7c27835a8d5c80ba5eb40e11dfe41348437248",
+  "prediction_sha256": "f2225405006cf9ea2c3f8630092802978b6d4e18d2da7cf530c44b6b6988a0d4",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; same-model limitation; not human expert",
+  "reviewed_at": "2026-11-13T02:00:46.815019+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "choice_typo",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "原句选则确为选择的局部错字，随机过程由其他文字唯一确定；Minor。",
+      "novel_issue_review": null
+    }
+  ]
+}

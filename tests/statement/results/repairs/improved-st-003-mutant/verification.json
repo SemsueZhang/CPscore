@@ -1,0 +1,10 @@
+{
+  "case_id": "st-003-mutant",
+  "candidate_sha256": "547ce96e372a2c937345964f10e18b3b901c3688fd81b740fd1f8ebe0c14fc06",
+  "checks": [
+    "exact clean-reference restoration and independent tree witnesses"
+  ],
+  "scope": "finite witnesses; general argument and prose mapping are in proof.md",
+  "status": "passed",
+  "verification_script_sha256": "3106c5b75858c0945f3aa2f0bbf49fc6beb3b36395914019dfb5521f12c5909d"
+}

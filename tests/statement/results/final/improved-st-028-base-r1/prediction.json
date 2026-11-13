@@ -1,0 +1,20 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "$1\\le n\\le10^5$，$0\\le w_i,c_i\\le10^6$。",
+      "evidence": "合法输入 n=1、w_1=0、c_1=0 使均价公式成为 0/0；c_1=1 时则成为 1/0。全文未保证总数量为正，也未定义零分母分支，无法确定满足有限实数及绝对误差要求的输出。",
+      "repairs": [
+        {
+          "find": "$1\\le n\\le10^5$，$0\\le w_i,c_i\\le10^6$。",
+          "replace": "$1\\le n\\le10^5$，$0\\le w_i,c_i\\le10^6$，并保证 $\\sum_{i=1}^{n} w_i>0$。",
+          "conditional": true
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

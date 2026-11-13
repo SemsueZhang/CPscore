@@ -1,0 +1,36 @@
+{
+  "case_id": "st-025-base",
+  "root_id": "direction",
+  "parent_run_id": "original-st-025-base-r1",
+  "review_run_id": "original-st-025-base-r1-repair-23c77bd6f0",
+  "review_run_directory": "../../repair-reviews/original-st-025-base-r1-repair-23c77bd6f0",
+  "resolved": "complete",
+  "changed_clear_semantics": true,
+  "domain_changed": true,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": false,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "e58e93d74a035344d8724cb835533f5064f11bc91a42576b42efd8a324b992f4",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "09b6357e371b72a016d49e0e9e8fdb65569199292621ab361a8450cb01292815",
+      "result": "Actual executed finite checks: [\"chosen directed interpretation and unchanged official sample\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。 独立反例或模型范围对照确认改变了缺陷之外已明确的规则；即使复审10分，也不计严格有效修复。",
+  "complete": true,
+  "scope_change": "Explicitly mixed single/double-way road model replaced by all-directed model. This exceeds merely adding missing per-road direction data; changed_clear_semantics=true.",
+  "reviewed_at": "2026-11-13T02:25:53.015705+00:00",
+  "review_raw_sha256": "25219b6435d71d38a83026a67cb43bb4a03338f7fc12dfd8284b1ededa5de241",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

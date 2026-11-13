@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T02:07:16.916898+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-025-base",
+  "root_id": "direction",
+  "skill": "improved",
+  "candidate_sha256": "9ea6ed37467f9759bb1e694b42fad1400b53c16657d2699d8e61dba3b3d1a957",
+  "domain_changed": true,
+  "scope_change": "Explicitly mixed single/double-way road model replaced by all-directed model. This exceeds merely adding missing per-road direction data; changed_clear_semantics=true.",
+  "changed_clear_semantics": true,
+  "locality": true,
+  "necessary": false,
+  "reason": "Inherent patch effects assessed against original and independent proof before re-review; no success outcome assigned.",
+  "author_identity": "Codex maintainer model, not human"
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "st-016-mutant",
+  "parent_run_id": "original-st-016-mutant-r1",
+  "parent_raw_sha256": "d570b5aacf3367d5218c565497e65480bdc328e319c8dbcbd3d91449ac56c48a",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "交互器回复所选位的异或值，即 $b_{i_1-1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k-1}$。",
+      "replace": "交互器回复所选位的异或值，即 $b_{i_1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k}$。",
+      "conditional": false
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic case author (Codex maintainer model) selects the first coherent model-proposed option before re-review under the registered policy.",
+  "original_sha256": "9681c68438996cc9e1bfba3a12d5f89ea667d6b655d26f2861c4aa34fec9c85b",
+  "statement_sha256": "6d81810d6a06ce4acc7ac7b20b0427eb99f95b2d4cbc97a482e4388bc862de59",
+  "created_at": "2026-11-13T01:58:35.698484+00:00",
+  "independent_verification": "pending"
+}

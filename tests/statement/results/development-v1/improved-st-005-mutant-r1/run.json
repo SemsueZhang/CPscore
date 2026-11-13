@@ -1,0 +1,67 @@
+{
+  "run_id": "improved-st-005-mutant-r1",
+  "case_id": "st-005-mutant",
+  "skill": "improved",
+  "repeat": 1,
+  "phase": "initial",
+  "statement_sha256": "b2c26e9d89d0506fd112f5f71e46a409bb179683087f0c842cf675d2a38b8b8b",
+  "model": "gpt-6.1-sol",
+  "model_identity_source": "requested CLI model alias",
+  "effort": "xhigh",
+  "skill_version": {
+    "label": "improved",
+    "commit": "5af3cda53b95ef963c81ff0cd6abd3658836d072",
+    "sha256": "2193fd7c97cde1094d7bae28f71a7956c087d97c2ea5814ef27ea84961fdb5aa"
+  },
+  "started_at": "2026-11-13T00:53:15.496781+00:00",
+  "execution_status": "completed",
+  "source": "real_host",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied"
+  },
+  "payload": {
+    "files": {
+      ".agents/skills/cp-statement-review/SKILL.md": "0ddfbe468f66c3daf3bb000c2eb62b28c40855c4d6932577ab5bc583c2d6aae6",
+      ".agents/skills/cp-statement-review/references/readability.md": "b9ce79bb7fcbc6f4861aef62901abcfb6f1174ea65bd7cf1358edadab9dd84c7",
+      ".agents/skills/cp-statement-review/references/scoring.md": "6e857e54b9a078601e2b10176033f1676c4791208a88474df812e8d67669ce40",
+      ".agents/skills/cp-statement-review/references/specification.md": "d7da80c02a5b8e6460b3037e284ce9e86ecca211fd25b6d03658ad973de48329",
+      "material.md": "b2c26e9d89d0506fd112f5f71e46a409bb179683087f0c842cf675d2a38b8b8b",
+      "request.txt": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+    },
+    "prompt_sha256": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+  },
+  "host_version": "codex-cli 0.167.0-alpha.4.1",
+  "command": [
+    "codex",
+    "--no-daemon",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--color",
+    "never",
+    "--json",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "-C",
+    "/tmp/cp-statement-siwuzqkf",
+    "-o",
+    "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/development/improved-st-005-mutant-r1/report.md",
+    "-"
+  ],
+  "pid": 10044,
+  "returncode": 0,
+  "raw_sha256": "55f45704ccd596930bc9346c952ad74bb5d411bf25fc53f64bbb00b06cc3543a",
+  "finished_at": "2026-11-13T00:55:24.164217+00:00"
+}

@@ -1,0 +1,82 @@
+{
+  "run_id": "original-st-016-mutant-r1",
+  "case_id": "st-016-mutant",
+  "skill": "original",
+  "repeat": 1,
+  "phase": "initial",
+  "statement_sha256": "9681c68438996cc9e1bfba3a12d5f89ea667d6b655d26f2861c4aa34fec9c85b",
+  "model": "gpt-6.1-sol",
+  "model_identity_source": "requested CLI model alias",
+  "effort": "xhigh",
+  "skill_version": {
+    "label": "original",
+    "commit": "db9e9f6fba2370ce04a6b4c0f60b1608f48ae2d8",
+    "sha256": "3ea94c8c971a84928d37246b60dbd9847f1331a58196be2334d3353eea26cc0a"
+  },
+  "started_at": "2026-11-13T01:44:36.142180+00:00",
+  "execution_status": "completed",
+  "source": "real_host",
+  "gold_sha256": "bab0511afa8a838e13f431754c6c25e5d72515e6fa71f8bba20288273449e4a8",
+  "batch_workers": 4,
+  "timeout_seconds": 240,
+  "source_file_sha256_at_run_start": "5b25cfac1c8900279d440563b7f7491bb2f297c9b59d538d7f8ce357356232ff",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied"
+  },
+  "payload": {
+    "files": {
+      ".agents/skills/cp-statement-review/SKILL.md": "92e430fbc9dbc82e5abcc136bdfbef49911825b79377931d8c5494293ac3b70d",
+      ".agents/skills/cp-statement-review/references/luogu-standard.md": "731e3a921ad1fc53284ddb9c7690cb9775c7fdec7d93cc52ee814cae97a474b7",
+      ".agents/skills/cp-statement-review/references/readability.md": "6d692ce7a359d57a16995c274a1b86158d786d168fa21866eedddc1934850267",
+      ".agents/skills/cp-statement-review/references/scoring.md": "1afb51edd2e235601b6d39a1d0ad41f2913fa5a31c4bab3f7fadd5bd4656c0de",
+      "material.md": "9681c68438996cc9e1bfba3a12d5f89ea667d6b655d26f2861c4aa34fec9c85b",
+      "request.txt": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+    },
+    "prompt_sha256": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+  },
+  "host_version": "codex-cli 0.167.0-alpha.4.1",
+  "command": [
+    "codex",
+    "--no-daemon",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--color",
+    "never",
+    "--json",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "-C",
+    "/tmp/cp-statement-sksys63m",
+    "-o",
+    "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/holdout/original-st-016-mutant-r1/report.md",
+    "-"
+  ],
+  "pid": 3088,
+  "returncode": 0,
+  "raw_sha256": "d570b5aacf3367d5218c565497e65480bdc328e319c8dbcbd3d91449ac56c48a",
+  "session_id": "01a1d293-fccc-7261-8981-48ce872f5e12",
+  "observed_session_ids": [
+    "01a1d293-fccc-7261-8981-48ce872f5e12"
+  ],
+  "token_usage": {
+    "input_tokens": 74157,
+    "cached_input_tokens": 65536,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 3145,
+    "reasoning_output_tokens": 1939
+  },
+  "finished_at": "2026-11-13T01:46:14.745910+00:00"
+}

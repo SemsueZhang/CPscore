@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-005-mutant-r1",
+  "raw_sha256": "5a5a356ccce12f7ce698644a59612e748128cbbb7935055517b50d1d078b7971",
+  "prediction_sha256": "6c7a8f92ebcfdf8805c726412c0a8bf41eea96aae752e9888d4ae5c0559b7f01",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T01:16:53.160237+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "time_tie",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "核对两条周期1、耗时1的有向边：在起点0已可出发，节点2于1到达，同刻上船输出2，否则等待到2出发输出3；正式样例的到达不在发船时刻，两解释均6。",
+      "novel_issue_review": null
+    }
+  ]
+}

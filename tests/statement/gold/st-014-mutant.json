@@ -1,0 +1,69 @@
+{
+  "case_id": "st-014-mutant",
+  "family_id": "st-014",
+  "version": "mutant",
+  "problem_type": "interactive",
+  "legal_input_domain": {
+    "summary": "N 为给定正整数，隐藏值固定；比较回复三值。",
+    "input_contract": "初始输入一行整数 $N$。其后每次询问读取一行比较结果。",
+    "bounds": "$1\\le N\\le10^9$。隐藏整数满足 $1\\le h\\le N$。",
+    "additional_guarantees_source": "cases/st-014-mutant.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "正常回复字符与三种比较关系没有映射，合法交互轨迹的含义不确定。",
+  "oracle": {
+    "name": "interactive_search",
+    "args": {
+      "max_n": 64
+    },
+    "expected": true
+  },
+  "defects": [
+    {
+      "root_id": "reply_mapping",
+      "category": "interactive_protocol",
+      "severity": "Fatal",
+      "quote": "取值范围为 `A`、`Q`、`Z`",
+      "evidence": "正常三种回复与小于、等于、大于的映射没有规定，异常值另为-2，不能借异常规则补全；N=2询问1的同一回复可对应不同隐藏值。",
+      "witness": {
+        "input": "N=2，询问? 1",
+        "interpretations": [
+          {
+            "rule": "A表示隐藏值大于询问值",
+            "output": "h=2时回复A"
+          },
+          {
+            "rule": "A表示相等",
+            "output": "h=1时回复A"
+          }
+        ]
+      },
+      "acceptable_repairs": [
+        {
+          "find": "交互器回复一个字符，取值范围为 `A`、`Q`、`Z`。该字符由隐藏值与本次询问值的大小关系决定。",
+          "replace": "回复 `-1` 表示 $h<x$，`0` 表示 $h=x$，`1` 表示 $h>x$。",
+          "conditional": false,
+          "changes_domain": false
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [],
+  "schema_version": 1,
+  "split": "development",
+  "statement_path": "cases/st-014-mutant.md",
+  "statement_sha256": "b0432543425dc93d5229b2745386e1c4b43ba06c87b433a93035fdb6e5a7eba2",
+  "has_known_defects": true,
+  "original_kind": "clean",
+  "completeness_review": "三值映射、异常值、查询上界、刷新、初始输入与终止完整，N=1允许零问。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 0,
+  "reference_relation": "交互轨迹合法、询问预算满足且最终 h 正确。"
+}

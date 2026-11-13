@@ -1,0 +1,25 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "发送方必须一次发送恰好 $n-1$ 位二进制消息，接收方判断 $u$ 在排列中是否出现在 $v$ 之前。",
+      "evidence": "发送方不知道查询，且接收方须对每个合法排列和有序数对均正确。任意两个不同排列都存在相对次序不同的元素对，因此不同排列必须编码成不同消息。n=3 时有 6 个合法排列，但恰好 n-1 位的二进制消息只有 4 种，无法实现题面要求；至少需要 ceil(log2(n!)) 位。",
+      "repairs": [
+        {
+          "find": "发送方必须一次发送恰好 $n-1$ 位二进制消息",
+          "replace": "发送方必须一次发送恰好 $\\lceil\\log_2(n!)\\rceil$ 位二进制消息",
+          "conditional": true
+        },
+        {
+          "find": "编码函数返回恰好 $n-1$ 位的二进制串",
+          "replace": "编码函数返回恰好 $\\lceil\\log_2(n!)\\rceil$ 位的二进制串",
+          "conditional": true
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

@@ -1,0 +1,23 @@
+{
+  "source_sha256": "3d3584f92d7adb230ab83ca2e5e5f011b6216d96dd72ca3b1d40cfc6ec03240f",
+  "actual_line": "$1\\le n\\le2\\times10^5$，$1\\le j\\le n$。消息只允许字符 `0`、`1`。",
+  "actual_backslash_run_lengths": [
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "claimed_quote": "$1\\\\le n\\\\le2\\\\times10^5$，$1\\\\le j\\\\le n$",
+  "claimed_backslash_run_lengths": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "claimed_quote_in_source": false,
+  "payload_matches_source": true,
+  "status": "false_positive_confirmed",
+  "judge_kind": "maintainer_model plus deterministic character counts"
+}

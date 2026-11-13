@@ -1,0 +1,9 @@
+WARNING: proceeding, even though we could not create PATH aliases: Operation not permitted (os error 1)
+error: unexpected argument '--ignore-user-config' found
+
+  tip: 'exec --ignore-user-config' exists
+
+Usage: codex [OPTIONS] [PROMPT]
+       codex [OPTIONS] <COMMAND> [ARGS]
+
+For more information, try '--help'.

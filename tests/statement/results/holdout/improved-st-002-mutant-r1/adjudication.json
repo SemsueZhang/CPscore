@@ -1,0 +1,20 @@
+{
+  "run_id": "improved-st-002-mutant-r1",
+  "raw_sha256": "c210a457a9a3058e076bd8d314d08faa3e7b719c7ccd46188d2b3ad189a3955f",
+  "prediction_sha256": "5947df94104cd5a1db1eb7062de76315e4e71f4318be230909b67c88c3bf9c9d",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; same-model limitation; not human expert",
+  "reviewed_at": "2026-11-13T01:59:22.797504+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "sample_explanation",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐项计算3+4=7与2+5=7；共有两条路径，正式输出7 2正确，解释6错误。同根因一次Fatal。",
+      "novel_issue_review": null
+    }
+  ]
+}

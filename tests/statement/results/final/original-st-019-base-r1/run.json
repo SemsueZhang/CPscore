@@ -1,0 +1,82 @@
+{
+  "run_id": "original-st-019-base-r1",
+  "case_id": "st-019-base",
+  "skill": "original",
+  "repeat": 1,
+  "phase": "initial",
+  "statement_sha256": "c3be5b7e82a5533a6775ee2612700cb6ba3062e301417ccd74883fa2360529f3",
+  "model": "gpt-6.1-sol",
+  "model_identity_source": "requested CLI model alias",
+  "effort": "xhigh",
+  "skill_version": {
+    "label": "original",
+    "commit": "db9e9f6fba2370ce04a6b4c0f60b1608f48ae2d8",
+    "sha256": "3ea94c8c971a84928d37246b60dbd9847f1331a58196be2334d3353eea26cc0a"
+  },
+  "started_at": "2026-11-13T01:45:42.690145+00:00",
+  "execution_status": "completed",
+  "source": "real_host",
+  "gold_sha256": "4f1a0f290d5454316701fb3e8d7379e3b261f86d25a92a2c222f6a06ae83afd9",
+  "batch_workers": 4,
+  "timeout_seconds": 240,
+  "source_file_sha256_at_run_start": "5b25cfac1c8900279d440563b7f7491bb2f297c9b59d538d7f8ce357356232ff",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied"
+  },
+  "payload": {
+    "files": {
+      ".agents/skills/cp-statement-review/SKILL.md": "92e430fbc9dbc82e5abcc136bdfbef49911825b79377931d8c5494293ac3b70d",
+      ".agents/skills/cp-statement-review/references/luogu-standard.md": "731e3a921ad1fc53284ddb9c7690cb9775c7fdec7d93cc52ee814cae97a474b7",
+      ".agents/skills/cp-statement-review/references/readability.md": "6d692ce7a359d57a16995c274a1b86158d786d168fa21866eedddc1934850267",
+      ".agents/skills/cp-statement-review/references/scoring.md": "1afb51edd2e235601b6d39a1d0ad41f2913fa5a31c4bab3f7fadd5bd4656c0de",
+      "material.md": "c3be5b7e82a5533a6775ee2612700cb6ba3062e301417ccd74883fa2360529f3",
+      "request.txt": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+    },
+    "prompt_sha256": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+  },
+  "host_version": "codex-cli 0.167.0-alpha.4.1",
+  "command": [
+    "codex",
+    "--no-daemon",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--color",
+    "never",
+    "--json",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "-C",
+    "/tmp/cp-statement-gzb2xus4",
+    "-o",
+    "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/holdout/original-st-019-base-r1/report.md",
+    "-"
+  ],
+  "pid": 4637,
+  "returncode": 0,
+  "raw_sha256": "8c6429312f5a048138ce22bbe2e41858dcddf2e1ca7e77d79a0458a7a226aa39",
+  "session_id": "01a1d295-00dd-7282-8442-d6962c11b12f",
+  "observed_session_ids": [
+    "01a1d295-00dd-7282-8442-d6962c11b12f"
+  ],
+  "token_usage": {
+    "input_tokens": 79406,
+    "cached_input_tokens": 69248,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 3674,
+    "reasoning_output_tokens": 2586
+  },
+  "finished_at": "2026-11-13T01:48:17.524535+00:00"
+}

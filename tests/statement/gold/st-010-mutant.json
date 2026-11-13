@@ -1,0 +1,73 @@
+{
+  "case_id": "st-010-mutant",
+  "family_id": "st-010",
+  "version": "mutant",
+  "problem_type": "construction",
+  "legal_input_domain": {
+    "summary": "行列配额各在合法范围内，但不保证可同时满足。",
+    "input_contract": "第一行输入两个整数 $n,m$。第二行输入 $n$ 个整数 $r_i$。第三行输入 $m$ 个整数 $c_j$。",
+    "bounds": "$1\\le n,m\\le60$，$0\\le r_i\\le m$，$0\\le c_j\\le n$。",
+    "additional_guarantees_source": "cases/st-010-mutant.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "二进制矩阵的行列配额关系不变，样例输出不属于合法输出集合。",
+  "oracle": {
+    "name": "matrix",
+    "args": {
+      "rows": [
+        1,
+        1
+      ],
+      "cols": [
+        1,
+        1
+      ],
+      "matrix": [
+        "10",
+        "01"
+      ]
+    },
+    "expected": true
+  },
+  "defects": [
+    {
+      "root_id": "matrix_sample",
+      "category": "sample_output",
+      "severity": "Fatal",
+      "quote": "YES\n11\n00",
+      "evidence": "样例要求每行恰有1个1，但输出两行分别有2、0个1。列和虽正确，仍非法。",
+      "witness": null,
+      "acceptable_repairs": [
+        {
+          "find": "YES\n11\n00",
+          "replace": "YES\n10\n01",
+          "conditional": false,
+          "changes_domain": false
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "2 2\n1 1\n1 1\n",
+      "output": "YES\n11\n00\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-010-mutant.md",
+  "statement_sha256": "65478aac9524e829e0e71d5b4244cd41e26ccacb2be61a04b4b7c84d178eec30",
+  "has_known_defects": true,
+  "original_kind": "clean",
+  "completeness_review": "不保证行列总和相等，NO覆盖不可能情况，多合法矩阵均接受。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 0,
+  "reference_relation": "满足二进制矩阵边际和的关系或 NO。"
+}

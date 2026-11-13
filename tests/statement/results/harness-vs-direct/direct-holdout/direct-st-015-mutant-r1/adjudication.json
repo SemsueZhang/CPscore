@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-015-mutant-r1",
+  "raw_sha256": "4337810a2906ae5cf2d77e1eb0c093a81beddebfb9b58bb148fd1eb234f4ab24",
+  "prediction_sha256": "d7f3ff13821df49eec90545ccdc7243b8408d2c89fc50ea5ec410da3ecae2ca6",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert claim",
+  "reviewed_at": "2026-11-13T03:31:31.418102+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "distance_transcript",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "已发现并算对官方交互示例：1-2-3中距离应2。判Minor与冻结CPScore将实质示例错误列Fatal不符；仍算检出，不伪造漏检。",
+      "novel_issue_review": null
+    }
+  ]
+}

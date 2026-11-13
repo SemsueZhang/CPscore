@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T03:08:08.950649+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-001-mutant",
+  "root_id": "order",
+  "skill": "direct",
+  "candidate_sha256": "4a5e5166a5239ffcc650e4340f8e41c882fa8d448beb8e5993ac60f42567ef55",
+  "domain_changed": true,
+  "scope_change": "Unavailable private processing order replaced by input order.",
+  "changed_clear_semantics": false,
+  "locality": true,
+  "necessary": true,
+  "reason": "Actual patch classified before independent re-review; no success outcome assigned.",
+  "author_identity": "Codex maintainer model, not human"
+}

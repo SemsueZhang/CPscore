@@ -1,0 +1,36 @@
+{
+  "case_id": "st-004-mutant",
+  "root_id": "unbounded",
+  "parent_run_id": "improved-st-004-mutant-r1",
+  "review_run_id": "improved-st-004-mutant-r1-repair-2f8885bb75",
+  "review_run_directory": "../../repair-reviews/improved-st-004-mutant-r1-repair-2f8885bb75",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": true,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "8040624273c0b25f571eaee69140e53d1944aeb1181c23cdbb191da6c79c9370",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "bcf569f119a607a0078751ce697181a141d9cea265f0b9a4b0cc1053864f7668",
+      "result": "Actual executed finite checks: [\"finite nonempty circular domains, including n=1 and negative values\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+  "complete": true,
+  "scope_change": "Unlimited traversal replaced by length at most n; operation set restricted. Previously finite optima (nonpositive cycle sum) are retained.",
+  "reviewed_at": "2026-11-13T02:28:27.282203+00:00",
+  "review_raw_sha256": "240cded045ebc55bff33943e4c24e5231f087ca375cd1560fa416a0da5aed7a7",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

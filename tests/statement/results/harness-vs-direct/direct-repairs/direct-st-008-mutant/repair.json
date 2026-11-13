@@ -1,0 +1,22 @@
+{
+  "case_id": "st-008-mutant",
+  "parent_run_id": "direct-st-008-mutant-r1",
+  "parent_raw_sha256": "3ff37c5e14661f3050a96488c274e33e1ff40b0aebf9058dc0c5d3d4ac2628b2",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "不论是否有解，都必须输出排列，不允许输出无解标记。",
+      "replace": "若不存在满足要求的排列，输出一行 `NO`。",
+      "conditional": false
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic author (Codex maintainer model) selects first coherent actual option before re-review, not a human-author inference.",
+  "original_sha256": "de0d52a94145a4fea73c982a544a9431e9d42b0d13a643257cc8fcd8e28981de",
+  "statement_sha256": "cf2d6304fd247e3bd37d2499385ef4abfb2434f3a0010f25c8ac160912bdfeba",
+  "created_at": "2026-11-13T03:08:09.065732+00:00",
+  "independent_verification": "pending"
+}

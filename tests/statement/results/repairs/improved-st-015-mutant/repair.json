@@ -1,0 +1,22 @@
+{
+  "case_id": "st-015-mutant",
+  "parent_run_id": "improved-st-015-mutant-r1",
+  "parent_raw_sha256": "42d0e37db9ccc8232927704b1b22bcef17c1f260de1dad193c8ca1a702b41da2",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "例如树为 $1-2-3$、隐藏点为 $3$ 时，询问 `? 1` 得到回复 `1`。",
+      "replace": "例如树为 $1-2-3$、隐藏点为 $3$ 时，询问 `? 1` 得到回复 `2`。",
+      "conditional": false
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic case author (Codex maintainer model) selects the first coherent model-proposed option before re-review under the registered policy.",
+  "original_sha256": "f69e8037c6b4e4a1afcde5a535c8cc49fea25575bc32d9e8fac902cf7bb42f08",
+  "statement_sha256": "35c836f0eaa10badff58e6293d692e230b27cab0ee9bf5969e2a79d4b7eed1ed",
+  "created_at": "2026-11-13T02:01:12.565372+00:00",
+  "independent_verification": "pending"
+}

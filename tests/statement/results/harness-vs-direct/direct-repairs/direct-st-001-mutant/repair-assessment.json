@@ -1,0 +1,36 @@
+{
+  "case_id": "st-001-mutant",
+  "root_id": "order",
+  "parent_run_id": "direct-st-001-mutant-r1",
+  "review_run_id": "direct-st-001-mutant-r1-repair-4a5e5166a5",
+  "review_run_directory": "../../direct-repair-reviews/direct-st-001-mutant-r1-repair-4a5e5166a5",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": true,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "7ce37bb99512e71709239b5ec6f260199519a6bf97add22339a6400c24d0d188",
+      "result": "Maintainer-model general argument tied to exact candidate; not human confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "d95fd0a54d05e986fbe1a30b92c8b371520c3f0d24360850b2f7a038a747917e",
+      "result": "Actual executed finite checks: [\"prefix-demand vs sequential booking on small complete domains\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex maintainer; written proof and finite checks plus fresh real host review; not human expert",
+  "reason": "已阅读实际独立新会话复审，结合绑定候选的数学论证及已执行程序，目标根因被消除，未确认新增规格错误；不从模型满分推定保留了原规则。",
+  "complete": true,
+  "scope_change": "Unavailable private processing order replaced by input order.",
+  "reviewed_at": "2026-11-13T03:40:52.591186+00:00",
+  "review_raw_sha256": "c60d040ead6c53ca8f086c12d7fa6fa35ffee257d25fc9b0d02e1fbb0be830fa",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

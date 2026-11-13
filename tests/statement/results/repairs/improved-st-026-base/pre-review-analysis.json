@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T02:07:16.918081+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-026-base",
+  "root_id": "singleton",
+  "skill": "improved",
+  "candidate_sha256": "ffa02a27de3877e96605f2649d738ff188a8db0b083abcaa17f0b211ea2b92ac",
+  "domain_changed": true,
+  "scope_change": "Input n=1 removed. Numeric input domain changes even though no answer had been defined for that input.",
+  "changed_clear_semantics": false,
+  "locality": true,
+  "necessary": true,
+  "reason": "Inherent patch effects assessed against original and independent proof before re-review; no success outcome assigned.",
+  "author_identity": "Codex maintainer model, not human"
+}

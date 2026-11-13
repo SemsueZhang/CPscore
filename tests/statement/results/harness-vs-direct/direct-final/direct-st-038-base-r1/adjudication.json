@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-038-base-r1",
+  "raw_sha256": "47237b1bd03e3e69ec5a6fa23ca80d155f6f1504a9a6db9c32d6d996ad408164",
+  "prediction_sha256": "594a9f91f82ba2f007257be34882380f1c631ec208ba1f9fae562dac547b5ee1",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert claim",
+  "reviewed_at": "2026-11-13T03:31:31.429727+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "duplicate_word",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "原句均均多一个字，可轻易恢复且不是明确格式违规，Minor。",
+      "novel_issue_review": null
+    }
+  ]
+}

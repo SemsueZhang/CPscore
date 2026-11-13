@@ -1,0 +1,22 @@
+{
+  "case_id": "st-011-mutant",
+  "parent_run_id": "direct-st-011-mutant-r1",
+  "parent_raw_sha256": "8e6081f199b858b20a0a389ba4621ade81ab37e0065936ce318763f873db6de8",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "每个坐标分别满足 $|\\widehat z-z|/|z|\\le10^{-6}$ 时接受，其中 $z$ 为对应的精确坐标。",
+      "replace": "每个坐标分别满足 $|\\widehat z-z|\\le10^{-6}\\max\\{1,|z|\\}$ 时接受，其中 $z$ 为对应的精确坐标。",
+      "conditional": true
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic author (Codex maintainer model) selects first coherent actual option before re-review, not a human-author inference.",
+  "original_sha256": "7302b0abc28b091a2df879abc39af6a3d93eb174491709197e7dc13ac5cc0c20",
+  "statement_sha256": "8afea51d9880dee95961c9ec7a7d9f71eee6bd2f377b6e577e99eb6b3c6f8fd4",
+  "created_at": "2026-11-13T03:08:09.125361+00:00",
+  "independent_verification": "pending"
+}

@@ -1,0 +1,22 @@
+{
+  "case_id": "st-035-base",
+  "parent_run_id": "improved-st-035-base-r1",
+  "parent_raw_sha256": "4b4c97e11f2efd73df22caf151ab421daf5fbb1f3435133de4f22bfb105fbad6",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "每天收到一笔收入并尝试支付一笔支出，两个事件发生在同一时刻。",
+      "replace": "每天先收到一笔收入，收入到账后再尝试支付一笔支出。",
+      "conditional": true
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic case author (Codex maintainer model) approves the first coherent listed option before re-review.",
+  "original_sha256": "ae3f2688807f1892352667ae008d9dfa55a3435d3f0cec82bd65d8dcbf7ab10f",
+  "statement_sha256": "4fc3edb63d478f6eb43dc7af5e01d9ad901ea5408a543db87d2e3b1de9404e99",
+  "created_at": "2026-11-13T01:29:46.595277+00:00",
+  "independent_verification": "pending"
+}

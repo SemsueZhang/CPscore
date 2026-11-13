@@ -1,0 +1,23 @@
+{
+  "original_sha256": "b48e22a5cbc2be9dbf14be8772678e4e64bb02b2f01bf97fe701cd3030b42624",
+  "candidate_sha256": "ce6a5e92e28368a21d9ae04b3623b8bce40413a7ddc836c077e20c4b76f37395",
+  "applied_actual_advice": [
+    {
+      "find": "```text\n9\n```",
+      "replace": "```text\n3\n```",
+      "conditional": false
+    }
+  ],
+  "diff": [
+    "--- original",
+    "+++ candidate",
+    "@@ -26,5 +26,5 @@",
+    " ## 样例输出",
+    " ",
+    " ```text",
+    "-9",
+    "+3",
+    " ```"
+  ],
+  "gold_used_to_generate_patch": false
+}

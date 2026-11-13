@@ -1,0 +1,10 @@
+{
+  "case_id": "st-009-mutant",
+  "candidate_sha256": "72565cbc4176611d6248a5007bff8ee1404e4fec136145a7079fe29f8c1dade7",
+  "scope": "finite witnesses; maintainer-model general argument in proof.md",
+  "status": "passed",
+  "checks": [
+    "exact one local markup change; semantic token NO retained"
+  ],
+  "verification_script_sha256": "2365feeb012a2da419513864cecfe514eb01942bc84e33c2f8e9b43392c437fb"
+}

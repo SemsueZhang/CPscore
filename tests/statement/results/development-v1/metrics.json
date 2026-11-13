@@ -1,0 +1,1782 @@
+{
+  "created_at": "2026-11-13T02:18:44.878826+00:00",
+  "plan_suite": "campaign",
+  "execution": {
+    "completed": 122
+  },
+  "planned_runs": 122,
+  "observed_unique_sessions": 122,
+  "runs": [
+    {
+      "run_id": "original-st-001-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-003-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-003-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-005-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-005-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-017-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-025-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-028-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-030-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-033-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-035-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-037-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-039-base-r1",
+      "status": "completed",
+      "adjudicated": false
+    },
+    {
+      "run_id": "improved-st-001-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-003-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-003-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-005-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-005-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-mutant-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-017-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-025-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-028-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-030-base-r1",
+      "status": "completed",
+      "adjudicated": false
+    },
+    {
+      "run_id": "improved-st-033-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-035-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-037-base-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-039-base-r1",
+      "status": "completed",
+      "adjudicated": false
+    },
+    {
+      "run_id": "original-st-001-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-014-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-017-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-017-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-017-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-017-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-025-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-025-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-025-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-025-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-033-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-033-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-033-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-033-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-014-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-017-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-017-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-017-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-017-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-mutant-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-mutant-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-mutant-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-mutant-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-025-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-025-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-025-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-025-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-033-base-r2",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-033-base-r3",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-033-base-r4",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-033-base-r5",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-001-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-008-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-011-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "original-st-020-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-001-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-008-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-011-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    },
+    {
+      "run_id": "improved-st-020-equivalent-r1",
+      "status": "completed",
+      "adjudicated": true
+    }
+  ],
+  "triage": [
+    {
+      "run_id": "original-st-030-base-r1",
+      "case_id": "st-030-base",
+      "complete": true,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "new_confirmed",
+          "root_id": null,
+          "extra_root_id": "alias_name_mismatch",
+          "evidence_valid": true,
+          "reason": "逐字核对首段两处“乙栏”，后文仅定义“乙册”；册与栏在这套四层登记规则中不是已声明的别名。局部术语不一致与层级组织负担需要不同修订，作为Gold未记载的独立Minor记录，未直接当作误报。",
+          "novel_issue_review": {
+            "status": "confirmed",
+            "basis": "逐字核对首段两处“乙栏”，后文仅定义“乙册”；册与栏在这套四层登记规则中不是已声明的别名。局部术语不一致与层级组织负担需要不同修订，作为Gold未记载的独立Minor记录，未直接当作误报。"
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "original-st-039-base-r1",
+      "case_id": "st-039-base",
+      "complete": false,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "pending",
+          "root_id": "background_mapping",
+          "extra_root_id": null,
+          "evidence_valid": null,
+          "reason": "与Gold中背景映射疑点对应，但显著负担及Major严重程度仍需独立读者确认，不以被测模型同意自动升级Gold。",
+          "novel_issue_review": null
+        }
+      ]
+    },
+    {
+      "run_id": "improved-st-030-base-r1",
+      "case_id": "st-030-base",
+      "complete": false,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "pending",
+          "root_id": null,
+          "extra_root_id": "initial_balance_type",
+          "evidence_valid": null,
+          "reason": "是否可从整数调拨及整数输出恢复a_i类型，以及明确格式要求是否适用到需单独写“整数”，尚待独立规范/语义复核；不能因Gold未列就判误报。",
+          "novel_issue_review": null
+        },
+        {
+          "finding_id": "f2",
+          "disposition": "new_confirmed",
+          "root_id": null,
+          "extra_root_id": "alias_name_mismatch",
+          "evidence_valid": true,
+          "reason": "逐字核对首段两处“乙栏”，后文仅定义“乙册”；册与栏在这套四层登记规则中不是已声明的别名。局部术语不一致与层级组织负担需要不同修订，作为Gold未记载的独立Minor记录，未直接当作误报。",
+          "novel_issue_review": {
+            "status": "confirmed",
+            "basis": "逐字核对首段两处“乙栏”，后文仅定义“乙册”；册与栏在这套四层登记规则中不是已声明的别名。局部术语不一致与层级组织负担需要不同修订，作为Gold未记载的独立Minor记录，未直接当作误报。"
+          }
+        }
+      ]
+    },
+    {
+      "run_id": "improved-st-039-base-r1",
+      "case_id": "st-039-base",
+      "complete": false,
+      "findings": [
+        {
+          "finding_id": "f1",
+          "disposition": "pending",
+          "root_id": "background_mapping",
+          "extra_root_id": null,
+          "evidence_valid": null,
+          "reason": "与Gold中背景映射疑点对应，但显著负担及Major严重程度仍需独立读者确认，不以被测模型同意自动升级Gold。",
+          "novel_issue_review": null
+        }
+      ]
+    }
+  ],
+  "detection": {
+    "original": {
+      "reviewed_runs": 19,
+      "excluded_unconfirmed_gold_runs": 1,
+      "counts": {
+        "tp": 11,
+        "fp": 0,
+        "gold": 11,
+        "fatal_total": 10,
+        "fatal_hit": 10,
+        "important_total": 10,
+        "important_hit": 10,
+        "severity_total": 11,
+        "severity_correct": 11,
+        "evidence_total": 11,
+        "evidence_valid": 11,
+        "novel_confirmed": 0,
+        "duplicates": 0,
+        "clean_total": 8,
+        "clean_fp": 0,
+        "score_total": 19,
+        "score_arithmetic_error": 0,
+        "deduplicated_score_error": 0
+      }
+    },
+    "improved": {
+      "reviewed_runs": 19,
+      "excluded_unconfirmed_gold_runs": 0,
+      "counts": {
+        "tp": 11,
+        "fp": 0,
+        "gold": 11,
+        "fatal_total": 10,
+        "fatal_hit": 10,
+        "important_total": 10,
+        "important_hit": 10,
+        "severity_total": 11,
+        "severity_correct": 11,
+        "evidence_total": 11,
+        "evidence_valid": 11,
+        "novel_confirmed": 0,
+        "duplicates": 0,
+        "clean_total": 8,
+        "clean_fp": 0,
+        "score_total": 19,
+        "score_arithmetic_error": 0,
+        "deduplicated_score_error": 0
+      }
+    }
+  },
+  "detection_by_split": {
+    "original": {
+      "development": {
+        "reviewed_runs": 19,
+        "excluded_unconfirmed_gold_runs": 1,
+        "counts": {
+          "tp": 11,
+          "fp": 0,
+          "gold": 11,
+          "fatal_total": 10,
+          "fatal_hit": 10,
+          "important_total": 10,
+          "important_hit": 10,
+          "severity_total": 11,
+          "severity_correct": 11,
+          "evidence_total": 11,
+          "evidence_valid": 11,
+          "novel_confirmed": 0,
+          "duplicates": 0,
+          "clean_total": 8,
+          "clean_fp": 0,
+          "score_total": 19,
+          "score_arithmetic_error": 0,
+          "deduplicated_score_error": 0
+        }
+      },
+      "holdout": {
+        "reviewed_runs": 0,
+        "excluded_unconfirmed_gold_runs": 0,
+        "counts": {}
+      }
+    },
+    "improved": {
+      "development": {
+        "reviewed_runs": 19,
+        "excluded_unconfirmed_gold_runs": 0,
+        "counts": {
+          "tp": 11,
+          "fp": 0,
+          "gold": 11,
+          "fatal_total": 10,
+          "fatal_hit": 10,
+          "important_total": 10,
+          "important_hit": 10,
+          "severity_total": 11,
+          "severity_correct": 11,
+          "evidence_total": 11,
+          "evidence_valid": 11,
+          "novel_confirmed": 0,
+          "duplicates": 0,
+          "clean_total": 8,
+          "clean_fp": 0,
+          "score_total": 19,
+          "score_arithmetic_error": 0,
+          "deduplicated_score_error": 0
+        }
+      },
+      "holdout": {
+        "reviewed_runs": 0,
+        "excluded_unconfirmed_gold_runs": 0,
+        "counts": {}
+      }
+    }
+  },
+  "consistency": [
+    {
+      "skill": "improved",
+      "case_id": "st-001-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-001-mutant",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "order": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-008-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-011-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-014-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-017-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-020-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-025-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "direction": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-033-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "query_budget": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-001-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-001-mutant",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "order": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-008-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-011-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-014-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-017-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-020-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {},
+      "scores": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "automatic_empty"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-025-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "direction": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-033-base",
+      "core_modal": {
+        "numerator": 5,
+        "denominator": 5
+      },
+      "pairwise_jaccard": 1.0,
+      "severity": {
+        "query_budget": {
+          "labels": [
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal",
+            "Fatal"
+          ],
+          "modal_count": 5,
+          "denominator": 5
+        }
+      },
+      "scores": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score_range": 0,
+      "score_stddev": 0.0,
+      "unsupported_deductions": 0,
+      "score_mismatch_runs": 0,
+      "judge_kinds": [
+        "maintainer_model"
+      ]
+    }
+  ],
+  "equivalence": [
+    {
+      "skill": "original",
+      "case_id": "st-001-equivalent",
+      "equivalent_to": "st-001-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-001-equivalent",
+      "equivalent_to": "st-001-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-008-equivalent",
+      "equivalent_to": "st-008-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-008-equivalent",
+      "equivalent_to": "st-008-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-011-equivalent",
+      "equivalent_to": "st-011-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-011-equivalent",
+      "equivalent_to": "st-011-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "original",
+      "case_id": "st-020-equivalent",
+      "equivalent_to": "st-020-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    },
+    {
+      "skill": "improved",
+      "case_id": "st-020-equivalent",
+      "equivalent_to": "st-020-base",
+      "same_core_and_severity": true,
+      "score_pair": [
+        10,
+        10
+      ]
+    }
+  ],
+  "repairs": [],
+  "repair_results_source": "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/development-v1",
+  "targets": {
+    "important_recall": 0.85,
+    "precision": 0.9,
+    "clean_fpr": 0.1,
+    "core_consistency": 0.8,
+    "effective_repair": 0.85,
+    "new_substantive_errors": 0
+  },
+  "target_status": "not_established; requires complete coverage and closed adjudications",
+  "comparison": [
+    {
+      "case_id": "st-001-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-001-equivalent",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-001-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "order": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-003-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-003-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "distance_definition": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-005-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-005-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "time_tie": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-008-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-008-equivalent",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-008-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "construct_impossible": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-011-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-011-equivalent",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-011-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "zero_relative": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-014-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-014-mutant",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "reply_mapping": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-017-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-020-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-020-equivalent",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {}
+    },
+    {
+      "case_id": "st-025-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "direction": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-028-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "zero_total": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-033-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "query_budget": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-035-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "settlement_order": [
+          "Fatal",
+          "Fatal"
+        ]
+      }
+    },
+    {
+      "case_id": "st-037-base",
+      "new_hits": [],
+      "lost_hits": [],
+      "original_fp": [],
+      "improved_fp": [],
+      "original_novel": {},
+      "improved_novel": {},
+      "severity_pairs": {
+        "input_typo": [
+          "Minor",
+          "Minor"
+        ]
+      }
+    }
+  ],
+  "consistency_aggregate": {
+    "original": {
+      "complete_groups": 9,
+      "planned_groups": 12,
+      "core_modal_consistency": {
+        "numerator": 45,
+        "denominator": 45,
+        "value": 1.0
+      },
+      "mean_pairwise_jaccard": 1.0
+    },
+    "improved": {
+      "complete_groups": 9,
+      "planned_groups": 12,
+      "core_modal_consistency": {
+        "numerator": 45,
+        "denominator": 45,
+        "value": 1.0
+      },
+      "mean_pairwise_jaccard": 1.0
+    }
+  },
+  "repair_aggregate": {
+    "original": {
+      "closed_records": 0,
+      "target_defects": 20,
+      "complete": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "partial": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "failed": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "unclosed": 20,
+      "effective_without_new_error_or_changed_task": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "changed_clear_semantics": 0,
+      "new_spec_errors": 0,
+      "local_and_necessary": 0
+    },
+    "improved": {
+      "closed_records": 0,
+      "target_defects": 20,
+      "complete": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "partial": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "failed": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "unclosed": 20,
+      "effective_without_new_error_or_changed_task": {
+        "numerator": 0,
+        "denominator": 20,
+        "value": 0.0
+      },
+      "changed_clear_semantics": 0,
+      "new_spec_errors": 0,
+      "local_and_necessary": 0
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "case_id": "st-029-base",
+  "candidate_sha256": "ce6a5e92e28368a21d9ae04b3623b8bce40413a7ddc836c077e20c4b76f37395",
+  "scope": "finite witnesses; maintainer-model general argument in proof.md",
+  "status": "passed",
+  "checks": [
+    "all sample spanning trees enumerated"
+  ],
+  "verification_script_sha256": "545a2ade7ebde7eed81f4f5847824b407ced52aa2e88f77988ef6f10d786884b"
+}

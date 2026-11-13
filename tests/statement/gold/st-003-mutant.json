@@ -1,0 +1,86 @@
+{
+  "case_id": "st-003-mutant",
+  "family_id": "st-003",
+  "version": "mutant",
+  "problem_type": "standard",
+  "legal_input_domain": {
+    "summary": "n=1 允许，边非负，树无环连通。",
+    "input_contract": "第一行输入整数 $n$。随后 $n-1$ 行，每行输入三个整数 $u,v,w$，表示一条无向边。",
+    "bounds": "$1\\le n\\le2\\times10^5$，$1\\le u,v\\le n$，$0\\le w<2^{30}$。保证输入构成树。",
+    "additional_guarantees_source": "cases/st-003-mutant.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "路径算术和与路径异或值两个明示定义冲突，不能取其中一个当作已明确的规则。",
+  "oracle": {
+    "name": "tree_xor",
+    "args": {
+      "n": 3,
+      "edges": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          5
+        ]
+      ]
+    },
+    "expected": 6
+  },
+  "defects": [
+    {
+      "root_id": "distance_definition",
+      "category": "definition",
+      "severity": "Fatal",
+      "quote": "算术和（同时仍定义为这些边权的按位异或值）",
+      "evidence": "长度2的路径边权均1，算术和为2，异或为0；两种明示定义不能同时成立。",
+      "witness": {
+        "input": "3\n1 2 1\n2 3 1",
+        "interpretations": [
+          {
+            "rule": "和",
+            "output": "2"
+          },
+          {
+            "rule": "异或距离最大值",
+            "output": "1"
+          }
+        ]
+      },
+      "acceptable_repairs": [
+        {
+          "find": "算术和（同时仍定义为这些边权的按位异或值）",
+          "replace": "按位异或值",
+          "conditional": false,
+          "changes_domain": false
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "3\n1 2 3\n2 3 5\n",
+      "output": "6\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "development",
+  "statement_path": "cases/st-003-mutant.md",
+  "statement_sha256": "8b201c6d5c558f6095a89e51671de24ec155a4a48549c60cfdb6f500103ecfd9",
+  "has_known_defects": true,
+  "original_kind": "clean",
+  "completeness_review": "无根树无需指定根；唯一简单路径消除路径选择，单点距离0已定义。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 0,
+  "reference_relation": "路径异或距离的最大值，含自身点对。"
+}

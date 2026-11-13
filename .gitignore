@@ -1,7 +1,9 @@
 .DS_Store
 __pycache__/
 *.py[cod]
-/tests/
+/tests/*
+!/tests/statement/
 /archive/
 /reports/
 /outputs/
+/contestant_profiles/

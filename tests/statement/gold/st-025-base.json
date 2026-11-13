@@ -1,0 +1,80 @@
+{
+  "case_id": "st-025-base",
+  "family_id": "st-025",
+  "version": "base",
+  "problem_type": "standard",
+  "legal_input_domain": {
+    "summary": "道路方向未给出，保证强互达，允许单双向混合。",
+    "input_contract": "第一行输入四个整数 $n,m,s,t$。随后 $m$ 行，每行输入三个整数 $u,v,w$。",
+    "bounds": "$3\\le n\\le10^5$，$n\\le m\\le2\\times10^5$，$1\\le u,v,s,t\\le n$，$1\\le w\\le10^6$，$s\\ne t$。",
+    "additional_guarantees_source": "cases/st-025-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "方向解释不同使最短距离不同。",
+  "oracle": {
+    "name": "direction_witness",
+    "args": {},
+    "expected": [
+      1,
+      2
+    ]
+  },
+  "defects": [
+    {
+      "root_id": "direction",
+      "category": "missing_constraint",
+      "severity": "Fatal",
+      "quote": "道路可能单向通行，也可能双向通行。",
+      "evidence": "三边全双向与按输入端点顺序单向的环均满足任意两城互达，查询 2 到 1 分别为 1、2。",
+      "witness": {
+        "input": "3 3 2 1\n1 2 1\n2 3 1\n3 1 1",
+        "interpretations": [
+          {
+            "rule": "全部双向",
+            "output": "1"
+          },
+          {
+            "rule": "按输入顺序单向",
+            "output": "2"
+          }
+        ]
+      },
+      "acceptable_repairs": [
+        {
+          "find": "道路可能单向通行，也可能双向通行。",
+          "replace": "所有道路均双向通行。",
+          "conditional": true,
+          "changes_domain": false
+        },
+        {
+          "find": "每行输入三个整数 $u,v,w$。",
+          "replace": "每行输入三个整数 $u,v,w$，表示只能从 $u$ 到 $v$ 的道路。",
+          "conditional": true,
+          "changes_domain": false
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "3 3 1 2\n1 2 1\n2 3 1\n3 1 1\n",
+      "output": "1\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "development",
+  "statement_path": "cases/st-025-base.md",
+  "statement_sha256": "8a599f85cfbc77978606308a7dc15ded13972a714eaece24f92074c990d581b0",
+  "has_known_defects": true,
+  "original_kind": "defective",
+  "completeness_review": "缺陷及其证明见独立根因；修订后仍须整体核验。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 0
+}

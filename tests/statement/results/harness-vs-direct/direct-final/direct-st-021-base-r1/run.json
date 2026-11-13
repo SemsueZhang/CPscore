@@ -1,0 +1,82 @@
+{
+  "run_id": "direct-st-021-base-r1",
+  "case_id": "st-021-base",
+  "skill": "direct",
+  "repeat": 1,
+  "phase": "initial",
+  "statement_sha256": "9c24d9cd9d9b63ec5bad0c6e4a35b3ed22d2dd417cf4cf7954cb70abf98453b0",
+  "review_mode": "direct",
+  "model": "gpt-6.1-sol",
+  "model_identity_source": "requested CLI model alias",
+  "effort": "xhigh",
+  "skill_version": {
+    "label": "direct",
+    "commit": null,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "started_at": "2026-11-13T03:20:43.432570+00:00",
+  "execution_status": "completed",
+  "source": "real_host",
+  "gold_sha256": "11dc7dd418dd6262d069f70fbc50c41d54fb2477a4572c05d897bf15d6a01a0a",
+  "batch_workers": 4,
+  "timeout_seconds": 240,
+  "source_file_sha256_at_run_start": "7c87ec8619486246282545efac7109efdb1a5b30babc55f9839cf9befbcd07e6",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied",
+    "cpscore_skill_loading": "disabled by exact names; none staged; prompt prohibits other Skills"
+  },
+  "payload": {
+    "files": {
+      "material.md": "9c24d9cd9d9b63ec5bad0c6e4a35b3ed22d2dd417cf4cf7954cb70abf98453b0",
+      "request.txt": "abb2271bcea2579181826f19bf478bdfb1bb6a6d289576d19be8127bcee99dbb"
+    },
+    "prompt_sha256": "abb2271bcea2579181826f19bf478bdfb1bb6a6d289576d19be8127bcee99dbb"
+  },
+  "host_version": "codex-cli 0.167.0-alpha.4.1",
+  "command": [
+    "codex",
+    "--no-daemon",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--color",
+    "never",
+    "--json",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "-c",
+    "skills.config=[{name=\"cp-contest-review\",enabled=false},{name=\"cp-data-review\",enabled=false},{name=\"cp-editorial-review\",enabled=false},{name=\"cp-novelty-review\",enabled=false},{name=\"cp-performance-predict\",enabled=false},{name=\"cp-problem-review\",enabled=false},{name=\"cp-solution-review\",enabled=false},{name=\"cp-statement-review\",enabled=false}]",
+    "-C",
+    "/tmp/cp-statement-xyj1vmiw",
+    "-o",
+    "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/harness-vs-direct/direct-holdout/direct-st-021-base-r1/report.md",
+    "-"
+  ],
+  "pid": 68388,
+  "returncode": 0,
+  "raw_sha256": "c467002fe21aa5d7cd31088bad62ddebdb4265634b627fea092b656fa6179b3c",
+  "session_id": "01a1d2eb-fd57-7f90-b80e-bd1aa7b1b4dc",
+  "observed_session_ids": [
+    "01a1d2eb-fd57-7f90-b80e-bd1aa7b1b4dc"
+  ],
+  "token_usage": {
+    "input_tokens": 47395,
+    "cached_input_tokens": 43392,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1794,
+    "reasoning_output_tokens": 1349
+  },
+  "finished_at": "2026-11-13T03:21:57.728918+00:00"
+}

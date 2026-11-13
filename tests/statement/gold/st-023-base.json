@@ -1,0 +1,42 @@
+{
+  "case_id": "st-023-base",
+  "family_id": "st-023",
+  "version": "base",
+  "problem_type": "standard",
+  "legal_input_domain": {
+    "summary": "网格有唯一不同 S,T，传送字母可仅出现一次。",
+    "input_contract": "第一行输入两个整数 $n,m$。随后 $n$ 行，每行一个长度为 $m$ 的字符串。",
+    "bounds": "$1\\le n,m\\le1000$，$nm\\ge2$。合法字符如题意，恰有一个 `S` 和一个 `T`。",
+    "additional_guarantees_source": "cases/st-023-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "四邻步行和同字母零代价跳跃的最短路。",
+  "oracle": {
+    "name": "portal",
+    "args": {
+      "grid": [
+        "Sa#T",
+        "#a.a"
+      ]
+    },
+    "expected": 2
+  },
+  "defects": [],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "2 4\nSa#T\n#a.a\n",
+      "output": "2\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-023-base.md",
+  "statement_sha256": "8f51ae0ca37e2f9868c1e11d0c860de55399f442ea5dc5c04a75d3b38d748719",
+  "has_known_defects": false,
+  "original_kind": "clean",
+  "completeness_review": "传送是可选零代价边，没有强制跳转；只出现一次的字母无额外作用；不可达约定明确。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 10
+}

@@ -1,0 +1,70 @@
+{
+  "run_id": "original-st-008-base-r3",
+  "case_id": "st-008-base",
+  "skill": "original",
+  "repeat": 3,
+  "phase": "initial",
+  "statement_sha256": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9",
+  "model": "gpt-6.1-sol",
+  "model_identity_source": "requested CLI model alias",
+  "effort": "xhigh",
+  "skill_version": {
+    "label": "original",
+    "commit": "db9e9f6fba2370ce04a6b4c0f60b1608f48ae2d8",
+    "sha256": "3ea94c8c971a84928d37246b60dbd9847f1331a58196be2334d3353eea26cc0a"
+  },
+  "started_at": "2026-11-13T01:03:46.755376+00:00",
+  "execution_status": "completed",
+  "source": "real_host",
+  "batch_workers": 4,
+  "timeout_seconds": 240,
+  "runner_sha256": "c79c56c67dca73f124919f7d6998da0b002c55a4bfa87526b148fd860859c772",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied"
+  },
+  "payload": {
+    "files": {
+      ".agents/skills/cp-statement-review/SKILL.md": "92e430fbc9dbc82e5abcc136bdfbef49911825b79377931d8c5494293ac3b70d",
+      ".agents/skills/cp-statement-review/references/luogu-standard.md": "731e3a921ad1fc53284ddb9c7690cb9775c7fdec7d93cc52ee814cae97a474b7",
+      ".agents/skills/cp-statement-review/references/readability.md": "6d692ce7a359d57a16995c274a1b86158d786d168fa21866eedddc1934850267",
+      ".agents/skills/cp-statement-review/references/scoring.md": "1afb51edd2e235601b6d39a1d0ad41f2913fa5a31c4bab3f7fadd5bd4656c0de",
+      "material.md": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9",
+      "request.txt": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+    },
+    "prompt_sha256": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+  },
+  "host_version": "codex-cli 0.167.0-alpha.4.1",
+  "command": [
+    "codex",
+    "--no-daemon",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--color",
+    "never",
+    "--json",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "-C",
+    "/tmp/cp-statement-260fn5bi",
+    "-o",
+    "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/development-v1/original-st-008-base-r3/report.md",
+    "-"
+  ],
+  "pid": 25826,
+  "returncode": 0,
+  "raw_sha256": "1545e65782905b3d184eeca49834d5619ac87b1b7b6ee21e333b16c4115f5729",
+  "finished_at": "2026-11-13T01:04:43.916486+00:00"
+}

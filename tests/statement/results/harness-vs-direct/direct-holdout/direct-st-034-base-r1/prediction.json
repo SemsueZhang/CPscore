@@ -1,0 +1,25 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "发送方必须一次发送恰好 $n-1$ 位二进制消息；对每个合法排列和有序数对均须正确。",
+      "evidence": "任意两个不同排列都存在先后关系不同的元素对，因而必须编码为不同消息。区分全部 n! 个排列至少需要 ceil(log2(n!)) 位。最小合法规模 n=3 时有 6 个排列，而规定的两位消息仅有 4 种；局部穷举确认六个排列的比较结果各不相同，因此不存在满足要求的实现。两处长度规定按同一根因扣分。",
+      "repairs": [
+        {
+          "find": "发送方必须一次发送恰好 $n-1$ 位二进制消息",
+          "replace": "发送方必须一次发送恰好 $\\lceil\\log_2(n!)\\rceil$ 位二进制消息",
+          "conditional": true
+        },
+        {
+          "find": "编码函数返回恰好 $n-1$ 位的二进制串",
+          "replace": "编码函数返回恰好 $\\lceil\\log_2(n!)\\rceil$ 位的二进制串",
+          "conditional": true
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

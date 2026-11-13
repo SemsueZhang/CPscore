@@ -1,0 +1,51 @@
+{
+  "case_id": "st-022-base",
+  "family_id": "st-022",
+  "version": "base",
+  "problem_type": "simulation",
+  "legal_input_domain": {
+    "summary": "到达可同刻，需求正整数，编号为输入顺序。",
+    "input_contract": "第一行输入整数 $n$。随后 $n$ 行，每行输入两个整数 $a_i,p_i$。",
+    "bounds": "$1\\le n\\le2000$，$0\\le a_i\\le10^6$，$1\\le p_i\\le100$。",
+    "additional_guarantees_source": "cases/st-022-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "先新到达后旧任务回队，同刻无歧义轮转。",
+  "oracle": {
+    "name": "round_robin",
+    "args": {
+      "tasks": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "expected": [
+      3,
+      2
+    ]
+  },
+  "defects": [],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "2\n0 2\n1 1\n",
+      "output": "3 2\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-022-base.md",
+  "statement_sha256": "bb5435a31797c0b6dba7cc67d587473a18e5da7bb303dcef01088bb0610337f3",
+  "has_known_defects": false,
+  "original_kind": "clean",
+  "completeness_review": "同刻新任务先于旧任务回队，需求正避免瞬间循环；允许空闲跳时。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 10
+}

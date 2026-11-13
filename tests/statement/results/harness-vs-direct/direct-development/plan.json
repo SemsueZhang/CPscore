@@ -1,0 +1,617 @@
+{
+  "schema_version": 1,
+  "benchmark_revision": "1.0.0",
+  "manifest_sha256": "d97d5163271aa8c202473f700d60392d998ec0f20c4730d9bed6582762f9dbfe",
+  "gold_sha256": {
+    "st-001-base": "1cfa1d2ff0bc9e6cfd15799e582bd2eb1d100bfd458a969f762d113f2d16f350",
+    "st-001-equivalent": "fdac2f0fb232bf8ec155b88d5e223ef34ccb3156f3560724131922cb03737630",
+    "st-001-mutant": "277200394b51bab27aba5345c88ff939f1a24026957f626f871783ee40a0d79d",
+    "st-003-base": "5783587870d5a7570ce2ff2b0098bc0c05a70a968b71a5f96e4e30f300997301",
+    "st-003-mutant": "47b96be031a14d864beaf05e54734c5d43592c6e443b9699e4776419fcc9e8d2",
+    "st-005-base": "b4ac95c67ebd73558dd6befdb495a432617bcc10edd8cb82bdc6b1e3521c0bd2",
+    "st-005-mutant": "aea000eb3b1416e7b5975708be35fdf4a9924f6be1cdd4bac21da80d521027ca",
+    "st-008-base": "e38805f1447a79f217f073628edcb9aa7282876144eab2d1fd9eba3d41d90a5f",
+    "st-008-equivalent": "7df25b4c1c30d8715f21e5bd8d0697271aa28d01287674ca7c1be1316e79744b",
+    "st-008-mutant": "d227f9ec81a7b81e2f22faf8135315b1aa2726aae92f822dcc35cf38fbd122d0",
+    "st-011-base": "4fe79c2c8dbad24e7feb95c7632e671ff8385f182ad497913a9d8a47187d0803",
+    "st-011-equivalent": "67eb63f175c400278a97aac12c08a6122f4663de6838dfba459e871153e037ba",
+    "st-011-mutant": "25b604de284d516e812cd9b0ac90546f163c1e47638447dfe124cd1faf9e4bf3",
+    "st-014-base": "2a4670197a77f5e306a49e2ce2717912009dc693c45a88bfcf1026ca912d815a",
+    "st-014-mutant": "0101e83f83eed769efaefaa2ff0fc802ba03dde8d18438361ff55b5d0a34f8ae",
+    "st-017-base": "1ef60f5b462d4f9db414516314e037050bcdced041e8911a801e6208e0a0ad07",
+    "st-020-base": "51b35fd2ed4d9f59513b6870cfb29cca620414927dce4694e9e49f64d83f4454",
+    "st-020-equivalent": "245c3a317b189cce52309edb328c3a354dd2f7e55c0cc78378712f15839aac12",
+    "st-025-base": "c122c21f9681bdd5011ae49136eb678d8c86695781beb149f891aa7e86b61afa",
+    "st-028-base": "c2c73c682e1f26100a1c2883e7fa4fa70c701a678bd5d6af0667ea9e29eb0860",
+    "st-030-base": "a1caaffcf92e068a9bef9b15883bd13b96c6cef6eab918802f3b74876778f432",
+    "st-033-base": "45d95b54b4e677763b676e0e037feb53c1c8a0caa1005655a628ad675603490f",
+    "st-035-base": "e946c89a512d022f91475fb88596c458d5ef070700689c913c2d68e8d2ea044c",
+    "st-037-base": "4014fe4f12059d0375ec7534e386fbc6e7c0938e830297c3a2a780cacfd833c5",
+    "st-039-base": "c1d26becadb306fa67066013f7f0f51c8e72274a1de6e940891536b1c765bec9"
+  },
+  "suite": "campaign",
+  "split": "development",
+  "created_at": "2026-11-13T02:52:57.322716+00:00",
+  "model": "gpt-6.1-sol",
+  "effort": "xhigh",
+  "host": "codex-exec",
+  "prompt_sha256": "abb2271bcea2579181826f19bf478bdfb1bb6a6d289576d19be8127bcee99dbb",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied",
+    "cpscore_skill_loading": "disabled by exact names; none staged; prompt prohibits other Skills"
+  },
+  "skills": {
+    "direct": {
+      "label": "direct",
+      "commit": null,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "runs": [
+    {
+      "run_id": "direct-st-001-base-r1",
+      "case_id": "st-001-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "7781eb1c8fc9115162b8f08130d06c4c38353841986104546ddf89db8d1400b5",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-001-mutant-r1",
+      "case_id": "st-001-mutant",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "22226e6ad6da3a42c150a87905c88fbc67dcf7ab9377d5e597f4996dd9a674d9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-003-base-r1",
+      "case_id": "st-003-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "547ce96e372a2c937345964f10e18b3b901c3688fd81b740fd1f8ebe0c14fc06",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-003-mutant-r1",
+      "case_id": "st-003-mutant",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "8b201c6d5c558f6095a89e51671de24ec155a4a48549c60cfdb6f500103ecfd9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-005-base-r1",
+      "case_id": "st-005-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "5288a98dfabe243d3a05a1678c743900fec6f3b9d6c1040e8ba85b8efb9f456d",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-005-mutant-r1",
+      "case_id": "st-005-mutant",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "b2c26e9d89d0506fd112f5f71e46a409bb179683087f0c842cf675d2a38b8b8b",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-008-base-r1",
+      "case_id": "st-008-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-008-mutant-r1",
+      "case_id": "st-008-mutant",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "de0d52a94145a4fea73c982a544a9431e9d42b0d13a643257cc8fcd8e28981de",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-011-base-r1",
+      "case_id": "st-011-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-011-mutant-r1",
+      "case_id": "st-011-mutant",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "7302b0abc28b091a2df879abc39af6a3d93eb174491709197e7dc13ac5cc0c20",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-014-base-r1",
+      "case_id": "st-014-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "64eef07822273207212eeab62bcb613f1c27ed9f7a9f5498ae8b36bf076b65ff",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-014-mutant-r1",
+      "case_id": "st-014-mutant",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "b0432543425dc93d5229b2745386e1c4b43ba06c87b433a93035fdb6e5a7eba2",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-017-base-r1",
+      "case_id": "st-017-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "3d3584f92d7adb230ab83ca2e5e5f011b6216d96dd72ca3b1d40cfc6ec03240f",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-020-base-r1",
+      "case_id": "st-020-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "e0304ced4e629cc0159835c30447d1f6123ce77db3ae88c6146d2a00bb0e5bb6",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-025-base-r1",
+      "case_id": "st-025-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "8a599f85cfbc77978606308a7dc15ded13972a714eaece24f92074c990d581b0",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-028-base-r1",
+      "case_id": "st-028-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "fe491e9040c6087e03b3e1fe0eee887b2436293323c9491f8af1ba750771d2f4",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-030-base-r1",
+      "case_id": "st-030-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "a42161fb0c34139b894adf87e996e9e03f61af3b79d29f9049397bb317ca4082",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-033-base-r1",
+      "case_id": "st-033-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "c6429f6ac1f44508e482145877dd66202aa84ed192b8143448414ecbc39798b8",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-035-base-r1",
+      "case_id": "st-035-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "ae3f2688807f1892352667ae008d9dfa55a3435d3f0cec82bd65d8dcbf7ab10f",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-037-base-r1",
+      "case_id": "st-037-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "e28ab639091db9cbdf16feaa2b9997a3802da4ea909c9829668b4da08cbade4f",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-039-base-r1",
+      "case_id": "st-039-base",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "2aef2e084285ce188408f767dd797a3109cbb3337c9cf97c622d5b5ab69b6d8d",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-001-base-r2",
+      "case_id": "st-001-base",
+      "skill": "direct",
+      "repeat": 2,
+      "phase": "initial",
+      "statement_sha256": "7781eb1c8fc9115162b8f08130d06c4c38353841986104546ddf89db8d1400b5",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-001-base-r3",
+      "case_id": "st-001-base",
+      "skill": "direct",
+      "repeat": 3,
+      "phase": "initial",
+      "statement_sha256": "7781eb1c8fc9115162b8f08130d06c4c38353841986104546ddf89db8d1400b5",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-001-base-r4",
+      "case_id": "st-001-base",
+      "skill": "direct",
+      "repeat": 4,
+      "phase": "initial",
+      "statement_sha256": "7781eb1c8fc9115162b8f08130d06c4c38353841986104546ddf89db8d1400b5",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-001-base-r5",
+      "case_id": "st-001-base",
+      "skill": "direct",
+      "repeat": 5,
+      "phase": "initial",
+      "statement_sha256": "7781eb1c8fc9115162b8f08130d06c4c38353841986104546ddf89db8d1400b5",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-008-base-r2",
+      "case_id": "st-008-base",
+      "skill": "direct",
+      "repeat": 2,
+      "phase": "initial",
+      "statement_sha256": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-008-base-r3",
+      "case_id": "st-008-base",
+      "skill": "direct",
+      "repeat": 3,
+      "phase": "initial",
+      "statement_sha256": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-008-base-r4",
+      "case_id": "st-008-base",
+      "skill": "direct",
+      "repeat": 4,
+      "phase": "initial",
+      "statement_sha256": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-008-base-r5",
+      "case_id": "st-008-base",
+      "skill": "direct",
+      "repeat": 5,
+      "phase": "initial",
+      "statement_sha256": "b00695efa42a4e2e75da0bf7f4ca5a8c11f185b1b58665b7ab4bbe306047f7b9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-011-base-r2",
+      "case_id": "st-011-base",
+      "skill": "direct",
+      "repeat": 2,
+      "phase": "initial",
+      "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-011-base-r3",
+      "case_id": "st-011-base",
+      "skill": "direct",
+      "repeat": 3,
+      "phase": "initial",
+      "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-011-base-r4",
+      "case_id": "st-011-base",
+      "skill": "direct",
+      "repeat": 4,
+      "phase": "initial",
+      "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-011-base-r5",
+      "case_id": "st-011-base",
+      "skill": "direct",
+      "repeat": 5,
+      "phase": "initial",
+      "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-014-base-r2",
+      "case_id": "st-014-base",
+      "skill": "direct",
+      "repeat": 2,
+      "phase": "initial",
+      "statement_sha256": "64eef07822273207212eeab62bcb613f1c27ed9f7a9f5498ae8b36bf076b65ff",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-014-base-r3",
+      "case_id": "st-014-base",
+      "skill": "direct",
+      "repeat": 3,
+      "phase": "initial",
+      "statement_sha256": "64eef07822273207212eeab62bcb613f1c27ed9f7a9f5498ae8b36bf076b65ff",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-014-base-r4",
+      "case_id": "st-014-base",
+      "skill": "direct",
+      "repeat": 4,
+      "phase": "initial",
+      "statement_sha256": "64eef07822273207212eeab62bcb613f1c27ed9f7a9f5498ae8b36bf076b65ff",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-014-base-r5",
+      "case_id": "st-014-base",
+      "skill": "direct",
+      "repeat": 5,
+      "phase": "initial",
+      "statement_sha256": "64eef07822273207212eeab62bcb613f1c27ed9f7a9f5498ae8b36bf076b65ff",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-017-base-r2",
+      "case_id": "st-017-base",
+      "skill": "direct",
+      "repeat": 2,
+      "phase": "initial",
+      "statement_sha256": "3d3584f92d7adb230ab83ca2e5e5f011b6216d96dd72ca3b1d40cfc6ec03240f",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-017-base-r3",
+      "case_id": "st-017-base",
+      "skill": "direct",
+      "repeat": 3,
+      "phase": "initial",
+      "statement_sha256": "3d3584f92d7adb230ab83ca2e5e5f011b6216d96dd72ca3b1d40cfc6ec03240f",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-017-base-r4",
+      "case_id": "st-017-base",
+      "skill": "direct",
+      "repeat": 4,
+      "phase": "initial",
+      "statement_sha256": "3d3584f92d7adb230ab83ca2e5e5f011b6216d96dd72ca3b1d40cfc6ec03240f",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-017-base-r5",
+      "case_id": "st-017-base",
+      "skill": "direct",
+      "repeat": 5,
+      "phase": "initial",
+      "statement_sha256": "3d3584f92d7adb230ab83ca2e5e5f011b6216d96dd72ca3b1d40cfc6ec03240f",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-020-base-r2",
+      "case_id": "st-020-base",
+      "skill": "direct",
+      "repeat": 2,
+      "phase": "initial",
+      "statement_sha256": "e0304ced4e629cc0159835c30447d1f6123ce77db3ae88c6146d2a00bb0e5bb6",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-020-base-r3",
+      "case_id": "st-020-base",
+      "skill": "direct",
+      "repeat": 3,
+      "phase": "initial",
+      "statement_sha256": "e0304ced4e629cc0159835c30447d1f6123ce77db3ae88c6146d2a00bb0e5bb6",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-020-base-r4",
+      "case_id": "st-020-base",
+      "skill": "direct",
+      "repeat": 4,
+      "phase": "initial",
+      "statement_sha256": "e0304ced4e629cc0159835c30447d1f6123ce77db3ae88c6146d2a00bb0e5bb6",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-020-base-r5",
+      "case_id": "st-020-base",
+      "skill": "direct",
+      "repeat": 5,
+      "phase": "initial",
+      "statement_sha256": "e0304ced4e629cc0159835c30447d1f6123ce77db3ae88c6146d2a00bb0e5bb6",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-001-mutant-r2",
+      "case_id": "st-001-mutant",
+      "skill": "direct",
+      "repeat": 2,
+      "phase": "initial",
+      "statement_sha256": "22226e6ad6da3a42c150a87905c88fbc67dcf7ab9377d5e597f4996dd9a674d9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-001-mutant-r3",
+      "case_id": "st-001-mutant",
+      "skill": "direct",
+      "repeat": 3,
+      "phase": "initial",
+      "statement_sha256": "22226e6ad6da3a42c150a87905c88fbc67dcf7ab9377d5e597f4996dd9a674d9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-001-mutant-r4",
+      "case_id": "st-001-mutant",
+      "skill": "direct",
+      "repeat": 4,
+      "phase": "initial",
+      "statement_sha256": "22226e6ad6da3a42c150a87905c88fbc67dcf7ab9377d5e597f4996dd9a674d9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-001-mutant-r5",
+      "case_id": "st-001-mutant",
+      "skill": "direct",
+      "repeat": 5,
+      "phase": "initial",
+      "statement_sha256": "22226e6ad6da3a42c150a87905c88fbc67dcf7ab9377d5e597f4996dd9a674d9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-025-base-r2",
+      "case_id": "st-025-base",
+      "skill": "direct",
+      "repeat": 2,
+      "phase": "initial",
+      "statement_sha256": "8a599f85cfbc77978606308a7dc15ded13972a714eaece24f92074c990d581b0",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-025-base-r3",
+      "case_id": "st-025-base",
+      "skill": "direct",
+      "repeat": 3,
+      "phase": "initial",
+      "statement_sha256": "8a599f85cfbc77978606308a7dc15ded13972a714eaece24f92074c990d581b0",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-025-base-r4",
+      "case_id": "st-025-base",
+      "skill": "direct",
+      "repeat": 4,
+      "phase": "initial",
+      "statement_sha256": "8a599f85cfbc77978606308a7dc15ded13972a714eaece24f92074c990d581b0",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-025-base-r5",
+      "case_id": "st-025-base",
+      "skill": "direct",
+      "repeat": 5,
+      "phase": "initial",
+      "statement_sha256": "8a599f85cfbc77978606308a7dc15ded13972a714eaece24f92074c990d581b0",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-033-base-r2",
+      "case_id": "st-033-base",
+      "skill": "direct",
+      "repeat": 2,
+      "phase": "initial",
+      "statement_sha256": "c6429f6ac1f44508e482145877dd66202aa84ed192b8143448414ecbc39798b8",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-033-base-r3",
+      "case_id": "st-033-base",
+      "skill": "direct",
+      "repeat": 3,
+      "phase": "initial",
+      "statement_sha256": "c6429f6ac1f44508e482145877dd66202aa84ed192b8143448414ecbc39798b8",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-033-base-r4",
+      "case_id": "st-033-base",
+      "skill": "direct",
+      "repeat": 4,
+      "phase": "initial",
+      "statement_sha256": "c6429f6ac1f44508e482145877dd66202aa84ed192b8143448414ecbc39798b8",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-033-base-r5",
+      "case_id": "st-033-base",
+      "skill": "direct",
+      "repeat": 5,
+      "phase": "initial",
+      "statement_sha256": "c6429f6ac1f44508e482145877dd66202aa84ed192b8143448414ecbc39798b8",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-001-equivalent-r1",
+      "case_id": "st-001-equivalent",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "bc43c6becd574fb2bbf324a70f0f71a1a3fc3663815d4c8959228a2f1c62f7f9",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-008-equivalent-r1",
+      "case_id": "st-008-equivalent",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "242dbd83fc4aab2acbbdeaf94ddd92d474a3d1ec6dbadf2805585946ee5327bb",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-011-equivalent-r1",
+      "case_id": "st-011-equivalent",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "bffd538c64917ed4110af7665d1c4db3f1d21fd78ed0e0369704c8bd6f2d4386",
+      "review_mode": "direct"
+    },
+    {
+      "run_id": "direct-st-020-equivalent-r1",
+      "case_id": "st-020-equivalent",
+      "skill": "direct",
+      "repeat": 1,
+      "phase": "initial",
+      "statement_sha256": "6d056b0cf75cda24d9056590de831e922cc0bfca7470327236c90a7a595062a9",
+      "review_mode": "direct"
+    }
+  ],
+  "review_mode": "direct",
+  "disabled_skill_names": [
+    "cp-contest-review",
+    "cp-data-review",
+    "cp-editorial-review",
+    "cp-novelty-review",
+    "cp-performance-predict",
+    "cp-problem-review",
+    "cp-solution-review",
+    "cp-statement-review"
+  ]
+}

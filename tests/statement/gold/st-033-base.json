@@ -1,0 +1,70 @@
+{
+  "case_id": "st-033-base",
+  "family_id": "st-033",
+  "version": "base",
+  "problem_type": "interactive",
+  "legal_input_domain": {
+    "summary": "n点任意固定简单无向图为隐藏对象，公开n；3≤n≤100；边查询需端点不同。",
+    "input_contract": "初始输入一行整数 $n$。每次询问后读取一行整数，正常为 $0$ 或 $1$，异常为 $-1$。输入中不提供边集。",
+    "bounds": "$3\\le n\\le100$，$1\\le u,v\\le n$，$u\\ne v$。隐藏图无自环、重边，可以为空图或完全图，并在整次交互中保持不变。",
+    "additional_guarantees_source": "cases/st-033-base.md",
+    "domain_status": "as_stated; hidden graph arbitrary including empty and complete"
+  },
+  "relation": "只能逐边查询，却要求在全部边对数减一次查询内精确确定任意图的总边数，任务不可实现。",
+  "oracle": {
+    "name": "edge_query_budget",
+    "args": {
+      "n": 3,
+      "queries": 2
+    },
+    "expected": false
+  },
+  "defects": [
+    {
+      "root_id": "query_budget",
+      "category": "interactive_protocol",
+      "severity": "Fatal",
+      "quote": "$n(n-1)/2-1$ 次",
+      "evidence": "令M=n(n−1)/2。沿任何确定性策略的全0回复轨迹，至多查询M−1个不同边对，必有一对未问。空图和仅该未问边存在的图产生完全相同轨迹，却分别要求输出0、1。图在交互前固定也不妨碍该存在性反驳。单纯计算可能图数与叶子数并不足以证明本题，因为输出只需总边数。",
+      "witness": {
+        "input": "n=3，至多2次边查询，所有回复为0",
+        "interpretations": [
+          {
+            "rule": "空图",
+            "output": "0"
+          },
+          {
+            "rule": "仅未询问的那条边存在",
+            "output": "1"
+          }
+        ]
+      },
+      "acceptable_repairs": [
+        {
+          "find": "$n(n-1)/2-1$ 次",
+          "replace": "$n(n-1)/2$ 次",
+          "conditional": true,
+          "changes_domain": false
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [],
+  "schema_version": 1,
+  "split": "development",
+  "statement_path": "cases/st-033-base.md",
+  "statement_sha256": "c6429f6ac1f44508e482145877dd66202aa84ed192b8143448414ecbc39798b8",
+  "has_known_defects": true,
+  "original_kind": "defective",
+  "completeness_review": "与隐藏整数比较任务家族不同；本题只要求输出总边数而非恢复整图。不能仅用8个图、4片叶子论证，因为总边数只有4种，须用未询问边的对抗论证。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 0,
+  "revision": 2
+}

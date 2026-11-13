@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T03:08:09.375457+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-035-base",
+  "root_id": "settlement_order",
+  "skill": "direct",
+  "candidate_sha256": "3ee97f24806abbfc34d1cd9da12dff44e0750757a6e0ebf1c96d9276548baacf",
+  "domain_changed": false,
+  "scope_change": "No numeric input/model/budget scope change; actual target repair described in proof.md.",
+  "changed_clear_semantics": false,
+  "locality": true,
+  "necessary": true,
+  "reason": "Actual patch classified before independent re-review; no success outcome assigned.",
+  "author_identity": "Codex maintainer model, not human"
+}

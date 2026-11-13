@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-025-base-r2",
+  "raw_sha256": "9917c7ec6b606e5781c33ad19326e25d85d0edf41d383614b3339281763cfe57",
+  "prediction_sha256": "01a62d086fa346e0d2337d14f56814c978ef08f798eec404ffd357131610cdd4",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T01:57:06.408306+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "direction",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐次核对有向/双向/混合解释。三城市权1环上1至3可为2或1；这些解释均强连通，样例1至2均1，故样例不能消除道路方向疑点。",
+      "novel_issue_review": null
+    }
+  ]
+}

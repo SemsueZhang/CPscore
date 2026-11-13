@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T02:07:16.923204+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-035-base",
+  "root_id": "settlement_order",
+  "skill": "improved",
+  "candidate_sha256": "4fc3edb63d478f6eb43dc7af5e01d9ad901ea5408a543db87d2e3b1de9404e99",
+  "domain_changed": false,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "changed_clear_semantics": false,
+  "locality": true,
+  "necessary": true,
+  "reason": "Inherent patch effects assessed against original and independent proof before re-review; no success outcome assigned.",
+  "author_identity": "Codex maintainer model, not human"
+}

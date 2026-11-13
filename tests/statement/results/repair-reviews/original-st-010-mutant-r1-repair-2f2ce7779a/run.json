@@ -1,0 +1,84 @@
+{
+  "run_id": "original-st-010-mutant-r1-repair-2f2ce7779a",
+  "case_id": "st-010-mutant",
+  "skill": "original",
+  "repeat": 1,
+  "phase": "repair",
+  "statement_sha256": "2f2ce7779a4de87b48ae77870d264f50291c5d06ccbccdf7a17db86ba939863e",
+  "parent_run_id": "original-st-010-mutant-r1",
+  "repair_bundle": "results/repairs/original-st-010-mutant",
+  "model": "gpt-6.1-sol",
+  "model_identity_source": "requested CLI model alias",
+  "effort": "xhigh",
+  "skill_version": {
+    "label": "original",
+    "commit": "db9e9f6fba2370ce04a6b4c0f60b1608f48ae2d8",
+    "sha256": "3ea94c8c971a84928d37246b60dbd9847f1331a58196be2334d3353eea26cc0a"
+  },
+  "started_at": "2026-11-13T02:21:36.395305+00:00",
+  "execution_status": "completed",
+  "source": "real_host",
+  "gold_sha256": "716959d1d0661c7669ede44a0c04eb3d297709598df3104e3bc88bc271eeebcd",
+  "batch_workers": 4,
+  "timeout_seconds": 240,
+  "source_file_sha256_at_run_start": "a369aad51c7df7e650e7baba753041229ac2390ba1ca3ddc2df7a0552937a62b",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied"
+  },
+  "payload": {
+    "files": {
+      ".agents/skills/cp-statement-review/SKILL.md": "92e430fbc9dbc82e5abcc136bdfbef49911825b79377931d8c5494293ac3b70d",
+      ".agents/skills/cp-statement-review/references/luogu-standard.md": "731e3a921ad1fc53284ddb9c7690cb9775c7fdec7d93cc52ee814cae97a474b7",
+      ".agents/skills/cp-statement-review/references/readability.md": "6d692ce7a359d57a16995c274a1b86158d786d168fa21866eedddc1934850267",
+      ".agents/skills/cp-statement-review/references/scoring.md": "1afb51edd2e235601b6d39a1d0ad41f2913fa5a31c4bab3f7fadd5bd4656c0de",
+      "material.md": "2f2ce7779a4de87b48ae77870d264f50291c5d06ccbccdf7a17db86ba939863e",
+      "request.txt": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+    },
+    "prompt_sha256": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df"
+  },
+  "host_version": "codex-cli 0.167.0-alpha.4.1",
+  "command": [
+    "codex",
+    "--no-daemon",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--color",
+    "never",
+    "--json",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "-C",
+    "/tmp/cp-statement-86joz5vk",
+    "-o",
+    "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/repair-reviews/original-st-010-mutant-r1-repair-2f2ce7779a/report.md",
+    "-"
+  ],
+  "pid": 73898,
+  "returncode": 0,
+  "raw_sha256": "2a9f9df500644e1daf51d8b83908e41160c48d6ae88fd82ebe99adbe4be41d37",
+  "session_id": "01a1d2b5-dd76-7491-931a-3ce14a451425",
+  "observed_session_ids": [
+    "01a1d2b5-dd76-7491-931a-3ce14a451425"
+  ],
+  "token_usage": {
+    "input_tokens": 56670,
+    "cached_input_tokens": 47232,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1718,
+    "reasoning_output_tokens": 900
+  },
+  "finished_at": "2026-11-13T02:22:46.949932+00:00"
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "case_id": "st-001-mutant",
+    "reason": "排除任意顺序可由选手选择而形成合法多解任务的解释。此修改源于Gold语义审计，不源于模型漏检；旧结果不覆盖或伪装成新版结果。",
+    "old_statement_sha256": "d2f8cfeebd8904fe5695a108d3d6042a807f82150fca3f9131dcae6af1b03e04",
+    "new_statement_sha256": "22226e6ad6da3a42c150a87905c88fbc67dcf7ab9377d5e597f4996dd9a674d9",
+    "policy": "Retain pilot outputs; only exact matching hashes may enter final metrics; no Skill changes."
+  },
+  {
+    "case_id": "st-033-base",
+    "reason": "家族独立性审计：将另一道隐藏整数搜索改为隐藏图边数查询，避免与st-014仅改预算/回复数的近亲任务。旧开发试跑保留，不混入修订后的正式指标。",
+    "old_statement_sha256": "ea11e3f59c59202e2dfcec029183ff470b3d120e698b6d689f11675dc244b762",
+    "new_statement_sha256": "c6429f6ac1f44508e482145877dd66202aa84ed192b8143448414ecbc39798b8",
+    "policy": "Retain pilot outputs; only exact matching hashes may enter final metrics; no Skill changes."
+  }
+]

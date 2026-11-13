@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-11-13T02:40:25.863797+00:00",
+  "status": "passed",
+  "data_versions_checked": 60,
+  "offline_evaluation_unit_tests": 29,
+  "existing_retrieval_unit_tests": 7,
+  "skill_copy_and_format_check": "8 Skills; 4 hosts, global/project copy/update/uninstall, bundled links",
+  "formal_archive_sessions": 256,
+  "retired_pilot_sessions": 4,
+  "frozen_git_skill_snapshots_independently_verified": true,
+  "repair_witness_programs_reexecuted": 40,
+  "documentation_local_links": 6,
+  "python_minimum_version_check": "Python 3.9 grammar only; executed locally on installed Python, not a Python 3.9 runtime",
+  "ci": "Offline unit tests and native archive audit configured for existing Linux/macOS/Windows workflow; remote CI not executed in this task",
+  "scoring_protocol": "Existing deductions 10/2/1, negative scores, root deduplication and no deductions for pending questions retained",
+  "gold_needs_review": [
+    "st-030-base",
+    "st-039-base"
+  ],
+  "pending_main_adjudications": [
+    "original-st-039-base-r1",
+    "improved-st-030-base-r1",
+    "improved-st-039-base-r1"
+  ],
+  "scope": "tests/statement, .gitignore and existing CI only; no Skill edits by this evaluation task",
+  "limits": "Maintainer-model semantic adjudication and authored proofs; no human-expert validation or claim that newest worktree Skill was tested."
+}

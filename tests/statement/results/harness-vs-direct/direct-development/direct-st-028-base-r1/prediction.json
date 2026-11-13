@@ -1,0 +1,20 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "$1\\le n\\le10^5$，$0\\le w_i,c_i\\le10^6$。",
+      "evidence": "合法输入 n=1、w_1=0、c_1=0 使整体单位均价成为 0/0；c_1=1 时同样出现除以零。题面没有排除总数量为零的输入，也没有定义此时的输出，因而无法确定正确答案及绝对误差接受规则。",
+      "repairs": [
+        {
+          "find": "$1\\le n\\le10^5$，$0\\le w_i,c_i\\le10^6$。",
+          "replace": "$1\\le n\\le10^5$，$0\\le w_i,c_i\\le10^6$。保证 $\\sum_{i=1}^{n}w_i>0$。",
+          "conditional": true
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

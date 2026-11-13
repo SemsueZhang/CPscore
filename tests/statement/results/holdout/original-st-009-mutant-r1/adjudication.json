@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-009-mutant-r1",
+  "raw_sha256": "3d661ddb9caf03e4fb1148626b920478ee56277f6305415f8da18f57f21cd21f",
+  "prediction_sha256": "7d13737cf4bc7e411f73c7265537e8f9d57f90dae0a6a82c25be3b8813373e64",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; same-model limitation; not human expert",
+  "reviewed_at": "2026-11-13T01:59:22.814760+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "literal_markup",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "全文输出节有字面NO未用行内代码，虽描述节已正确标记，不能抵消该处。冻结Skill明确固定输出须行内代码，该适用格式违规为Major。",
+      "novel_issue_review": null
+    }
+  ]
+}

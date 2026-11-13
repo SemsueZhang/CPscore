@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-033-base-r4",
+  "raw_sha256": "a366d350670e853c4c3f2ed53f059a5678c3445c6ed5e51cb6f786b2a92c295e",
+  "prediction_sha256": "c473b5456d99ea98482d6fad922ccfc3fc466b878f417b43a25c7f7767f0983a",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human claim",
+  "reviewed_at": "2026-11-13T03:15:41.839556+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "query_budget",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐次核对空图全零轨迹至少一条未问边；仅含该边的固定图与空图查询/回复相同，正确边数0和1不同。n=3预算2的具体实例以及一般N−1论证均成立，未使用错误状态计数证明。",
+      "novel_issue_review": null
+    }
+  ]
+}

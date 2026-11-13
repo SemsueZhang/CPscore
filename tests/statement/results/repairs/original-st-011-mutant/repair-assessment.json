@@ -1,0 +1,42 @@
+{
+  "case_id": "st-011-mutant",
+  "root_id": "zero_relative",
+  "parent_run_id": "original-st-011-mutant-r1",
+  "review_run_id": "original-st-011-mutant-r1-repair-e6bf8bd222",
+  "review_run_directory": "../../repair-reviews/original-st-011-mutant-r1-repair-e6bf8bd222",
+  "resolved": "complete",
+  "changed_clear_semantics": true,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": false,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "9fdc62d555b13e09d36d1a31b45d96d3d5ec38c85bc6a1bc661474ce853b7ed9",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "9094a056490d7c3904a766a8cc5627ba4bb460f3e11b5f7a2f87aeb439cd936c",
+      "result": "Actual executed finite checks: [\"zero denominator removed; legal nonzero witness proves acceptance relation broadened\"]"
+    },
+    {
+      "kind": "exact_reference",
+      "artifact": "reference-check.json",
+      "artifact_sha256": "187aa1b34e16ea7fcd5662b632036232bad7a8574b2b9b063eb3c55bd753bc38",
+      "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。 独立反例或模型范围对照确认改变了缺陷之外已明确的规则；即使复审10分，也不计严格有效修复。",
+  "complete": true,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "reviewed_at": "2026-11-13T02:23:51.628707+00:00",
+  "review_raw_sha256": "7c6a9e21e347b892af45677b8ebb2f55323f6b64835614de7e8c36d9ecb40584",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

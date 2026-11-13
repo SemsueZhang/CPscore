@@ -1,0 +1,82 @@
+{
+  "run_id": "direct-st-009-mutant-r5",
+  "case_id": "st-009-mutant",
+  "skill": "direct",
+  "repeat": 5,
+  "phase": "initial",
+  "statement_sha256": "74c4f3cfe42ea66f26d0285ff718ac6eef977256027063773aa5655b9a3d2f78",
+  "review_mode": "direct",
+  "model": "gpt-6.1-sol",
+  "model_identity_source": "requested CLI model alias",
+  "effort": "xhigh",
+  "skill_version": {
+    "label": "direct",
+    "commit": null,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "started_at": "2026-11-13T03:25:03.583728+00:00",
+  "execution_status": "completed",
+  "source": "real_host",
+  "gold_sha256": "a3ffff9bc1c290bfdfacf755cdf53e2c3447188ede2c4fa0fe776c0cbb2fefe8",
+  "batch_workers": 4,
+  "timeout_seconds": 240,
+  "source_file_sha256_at_run_start": "7c87ec8619486246282545efac7109efdb1a5b30babc55f9839cf9befbcd07e6",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied",
+    "cpscore_skill_loading": "disabled by exact names; none staged; prompt prohibits other Skills"
+  },
+  "payload": {
+    "files": {
+      "material.md": "74c4f3cfe42ea66f26d0285ff718ac6eef977256027063773aa5655b9a3d2f78",
+      "request.txt": "abb2271bcea2579181826f19bf478bdfb1bb6a6d289576d19be8127bcee99dbb"
+    },
+    "prompt_sha256": "abb2271bcea2579181826f19bf478bdfb1bb6a6d289576d19be8127bcee99dbb"
+  },
+  "host_version": "codex-cli 0.167.0-alpha.4.1",
+  "command": [
+    "codex",
+    "--no-daemon",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--color",
+    "never",
+    "--json",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "-c",
+    "skills.config=[{name=\"cp-contest-review\",enabled=false},{name=\"cp-data-review\",enabled=false},{name=\"cp-editorial-review\",enabled=false},{name=\"cp-novelty-review\",enabled=false},{name=\"cp-performance-predict\",enabled=false},{name=\"cp-problem-review\",enabled=false},{name=\"cp-solution-review\",enabled=false},{name=\"cp-statement-review\",enabled=false}]",
+    "-C",
+    "/tmp/cp-statement-hdjaip4t",
+    "-o",
+    "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/harness-vs-direct/direct-holdout/direct-st-009-mutant-r5/report.md",
+    "-"
+  ],
+  "pid": 80431,
+  "returncode": 0,
+  "raw_sha256": "d4b0fc5a874a79b7af368e040f0bddc47954cd07e284a3bd50e1691934e40a2e",
+  "session_id": "01a1d2ef-f53b-7cc3-9a08-b8aee589f044",
+  "observed_session_ids": [
+    "01a1d2ef-f53b-7cc3-9a08-b8aee589f044"
+  ],
+  "token_usage": {
+    "input_tokens": 90025,
+    "cached_input_tokens": 79744,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2922,
+    "reasoning_output_tokens": 1892
+  },
+  "finished_at": "2026-11-13T03:26:43.526053+00:00"
+}

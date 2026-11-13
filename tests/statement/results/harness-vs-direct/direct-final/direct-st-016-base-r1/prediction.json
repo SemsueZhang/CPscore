@@ -1,0 +1,8 @@
+{
+  "score": 10,
+  "complete": true,
+  "findings": [],
+  "optional_suggestions": [
+    "可明确最终输出 `! b` 中的 `b` 为长度为 n、不含空格的二进制字符串；现有上下文已能确定含义，不扣分。"
+  ]
+}

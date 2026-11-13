@@ -1,0 +1,67 @@
+{
+  "case_id": "st-024-base",
+  "family_id": "st-024",
+  "version": "base",
+  "problem_type": "standard",
+  "legal_input_domain": {
+    "summary": "合法多重集合增删，秩次询问一律合法。",
+    "input_contract": "第一行输入整数 $q$。随后 $q$ 行，每行给出一个操作，格式如上。",
+    "bounds": "$1\\le q\\le2\\times10^5$，$-10^9\\le x\\le10^9$，询问中的 $k$ 满足题目保证。",
+    "additional_guarantees_source": "cases/st-024-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "每个查询返回按重数计第 k 小。",
+  "oracle": {
+    "name": "multiset",
+    "args": {
+      "ops": [
+        [
+          "+",
+          4
+        ],
+        [
+          "+",
+          1
+        ],
+        [
+          "+",
+          4
+        ],
+        [
+          "?",
+          2
+        ],
+        [
+          "-",
+          4
+        ],
+        [
+          "?",
+          2
+        ]
+      ]
+    },
+    "expected": [
+      4,
+      4
+    ]
+  },
+  "defects": [],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "6\n+ 4\n+ 1\n+ 4\n? 2\n- 4\n? 2\n",
+      "output": "4\n4\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-024-base.md",
+  "statement_sha256": "7e648946e9f10d7104425113481c8d3aa7c0d2091e032e48ff3b8bc9f5af0cb1",
+  "has_known_defects": false,
+  "original_kind": "clean",
+  "completeness_review": "删除和秩次有合法性保证，重复元素按重数，负数和无查询明确。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 10
+}

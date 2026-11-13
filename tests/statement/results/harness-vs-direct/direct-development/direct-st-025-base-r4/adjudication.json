@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-025-base-r4",
+  "raw_sha256": "1d921a1276e109b47ea068d01d0a27db1da5257c2e66c8ff0986fedabba1bca7",
+  "prediction_sha256": "0a9be3f601bc048cbb038df284337d0afc9bb6cd979c13e9c0631bdd57c2f14f",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human claim",
+  "reviewed_at": "2026-11-13T03:15:41.837319+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "direction",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐次核对三城权1环：r4查询2至1时全单向距离2、全双向1；r5查询1至3时全单向2、仅第三边双向1。均强连通，正式样例1至2仍1，证据合法有效。",
+      "novel_issue_review": null
+    }
+  ]
+}

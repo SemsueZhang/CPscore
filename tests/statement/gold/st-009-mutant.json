@@ -1,0 +1,77 @@
+{
+  "case_id": "st-009-mutant",
+  "family_id": "st-009",
+  "version": "mutant",
+  "problem_type": "construction",
+  "legal_input_domain": {
+    "summary": "n≥2，度数可为零，无总和保证。",
+    "input_contract": "第一行输入整数 $n$。第二行输入 $n$ 个整数 $d_i$。",
+    "bounds": "$2\\le n\\le2\\times10^5$，$0\\le d_i<n$。",
+    "additional_guarantees_source": "cases/st-009-mutant.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "树的接受关系不变，固定输出字符串的展示违反适用规范。",
+  "oracle": {
+    "name": "degree_tree",
+    "args": {
+      "n": 3,
+      "degrees": [
+        1,
+        2,
+        1
+      ],
+      "edges": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "expected": true
+  },
+  "defects": [
+    {
+      "root_id": "literal_markup",
+      "category": "format",
+      "severity": "Major",
+      "quote": "无解输出一行 NO。",
+      "evidence": "适用洛谷输出格式条款要求固定输出字符串使用行内代码；此处NO没有行内代码。仅此一处规范根因，不将重复后果累计。",
+      "witness": null,
+      "acceptable_repairs": [
+        {
+          "find": "无解输出一行 NO。",
+          "replace": "无解输出一行 `NO`。",
+          "conditional": false,
+          "changes_domain": false
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "3\n1 2 1\n",
+      "output": "YES\n1 2\n2 3\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-009-mutant.md",
+  "statement_sha256": "74c4f3cfe42ea66f26d0285ff718ac6eef977256027063773aa5655b9a3d2f78",
+  "has_known_defects": true,
+  "original_kind": "clean",
+  "completeness_review": "度数可零但无解标记齐全；n≥2避免单点特殊度数约定。树与边的顺序无关。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 8,
+  "reference_relation": "满足度数的任意树或准确宣告无解。"
+}

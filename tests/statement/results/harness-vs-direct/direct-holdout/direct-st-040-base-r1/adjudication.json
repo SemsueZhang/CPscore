@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-040-base-r1",
+  "raw_sha256": "a9068494833272932ac29dfb1b00fee75f8299f9652e46fd996dd5d651d563f2",
+  "prediction_sha256": "eb75f915b9ae0289832554026519cc7859886f8fc03a861d96e8d1c78bb866b2",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert claim",
+  "reviewed_at": "2026-11-13T03:31:31.430206+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "sample_truncated",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "T=2只有一组完整n及序列和一行输出，正式样例缺第二组；不是求和算错。同根因一次。",
+      "novel_issue_review": null
+    }
+  ]
+}

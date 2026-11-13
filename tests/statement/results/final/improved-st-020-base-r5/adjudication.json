@@ -1,0 +1,11 @@
+{
+  "run_id": "improved-st-020-base-r5",
+  "raw_sha256": "39e585cba9e50c86261873691b76c935274e5f3914c043b2ad9b888f0a339a58",
+  "prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "judge_kind": "automatic_empty",
+  "judge_identity": "Structured-output empty-list check; no semantic-match claim",
+  "reviewed_at": "2026-11-13T01:37:58.970475+00:00",
+  "complete": true,
+  "findings": [],
+  "overall_note": "实际完整报告未列已确认扣分项；若Gold存在已确认根因，统计为漏检，不排除该运行。"
+}

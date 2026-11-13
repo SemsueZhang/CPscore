@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-014-mutant-r1",
+  "raw_sha256": "9913da97ded2b7b82d068b687407cce5180f70c7848392d0381b098a04cd77e9",
+  "prediction_sha256": "eee4413c3e58a0f39c717725ac21be333572b03925c941934de054baff4a688e",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T03:05:11.407631+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "reply_mapping",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "核对两套字符双射：h=1时eq=A、less=Q、greater=Z；h=2时greater=A、eq=Q、less=Z。询问1与2均回复A,Q而正确隐藏值不同。",
+      "novel_issue_review": null
+    }
+  ]
+}

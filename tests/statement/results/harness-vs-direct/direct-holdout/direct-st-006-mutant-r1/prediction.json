@@ -1,0 +1,20 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "## 样例输出\n\n```text\n3\n3\n3\n```",
+      "evidence": "第二次查询前仅存在无向边 (1,2)，连通块为 {1,2} 和 {3}，答案应为 2。逐步推演及独立模拟均得到正确输出为 3、2、3，原样例第二行错误。",
+      "repairs": [
+        {
+          "find": "## 样例输出\n\n```text\n3\n3\n3\n```",
+          "replace": "## 样例输出\n\n```text\n3\n2\n3\n```",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

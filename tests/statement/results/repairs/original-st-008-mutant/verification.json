@@ -1,0 +1,10 @@
+{
+  "case_id": "st-008-mutant",
+  "candidate_sha256": "bff09bdc3f1154999bc3b424e512643974bbda33817da2c63f5bf5c6cd9727dc",
+  "checks": [
+    "all permutations up to n=6; no-solution and sample acceptance"
+  ],
+  "scope": "finite witnesses; general argument and prose mapping are in proof.md",
+  "status": "passed",
+  "verification_script_sha256": "33e1bf19f436d3448f6a48bc6f33f68e522c343b0ea82bf57e30374da1a07eed"
+}

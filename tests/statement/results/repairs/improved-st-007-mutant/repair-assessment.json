@@ -1,0 +1,36 @@
+{
+  "case_id": "st-007-mutant",
+  "root_id": "equivalence",
+  "parent_run_id": "improved-st-007-mutant-r1",
+  "review_run_id": "improved-st-007-mutant-r1-repair-222bf145ff",
+  "review_run_directory": "../../repair-reviews/improved-st-007-mutant-r1-repair-222bf145ff",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "a1b824133949dd20bf7e534687a412d0426c072c7cf85526648ea6ef4574feb6",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "ef65a4ef9096873596a7ebad54c7fff01461942cf674597af608b6a26f2a86af",
+      "result": "Actual executed finite checks: [\"index-subsequence count: enumeration vs independent DP\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+  "complete": true,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "reviewed_at": "2026-11-13T02:30:55.003724+00:00",
+  "review_raw_sha256": "5559a801d401532cd7c779fdb41edf459e21c4b8302886a5b061c0f5af306d95",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

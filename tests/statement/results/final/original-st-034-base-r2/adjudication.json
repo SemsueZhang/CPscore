@@ -1,0 +1,20 @@
+{
+  "run_id": "original-st-034-base-r2",
+  "raw_sha256": "65fff4a31179d6c8df64d6621f29616325b3d5a605b3823c3f1b82d800a4203f",
+  "prediction_sha256": "a7d28ed3fec5d75b2bb41424b94f369b8626b42037788d333724e8e06a6e3573",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human claim",
+  "reviewed_at": "2026-11-13T02:12:56.964261+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "message_budget",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐次检查不同排列的相对次序签名不同，消息需区分全部排列。n=3合法，6排列对4消息；报告的信息下界针对全部查询且发送方未知查询，论证成立。",
+      "novel_issue_review": null
+    }
+  ]
+}

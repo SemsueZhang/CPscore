@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T03:33:41.238388+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-034-base",
+  "root_id": "message_budget",
+  "skill": "direct",
+  "candidate_sha256": "45d1c2c26753491ad19bb06075a3951d1a97a2984c1f389d66ae0ed9f5bc6d01",
+  "domain_changed": true,
+  "scope_change": "Message budget increased to ceil(log2(n!)).",
+  "changed_clear_semantics": false,
+  "locality": true,
+  "necessary": true,
+  "reason": "Actual patch effects classified before fresh re-review, not from its score.",
+  "author_identity": "Codex maintainer model, not human"
+}

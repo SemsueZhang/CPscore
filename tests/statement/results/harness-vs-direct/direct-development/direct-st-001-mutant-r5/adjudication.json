@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-001-mutant-r5",
+  "raw_sha256": "a0126dffa51eeef516513a528981f5b420b29601ab795c31861137ea27eeddae",
+  "prediction_sha256": "4c7dbbb02951b87afdbe5364ade168a46e234a944b724c56208844aaff6c1122",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert claim",
+  "reviewed_at": "2026-11-13T03:14:03.234964+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "order",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐次阅读并核对相同正式样例：处理顺序1,2,3输出2，2,1,3输出1，2,3,1输出3；私下固定顺序未输入且不是选手自由选择，多种处理轨迹均合法。",
+      "novel_issue_review": null
+    }
+  ]
+}

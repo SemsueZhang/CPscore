@@ -1,0 +1,84 @@
+{
+  "run_id": "direct-st-005-mutant-r1-repair-9e01af592b",
+  "case_id": "st-005-mutant",
+  "skill": "direct",
+  "repeat": 1,
+  "phase": "repair",
+  "statement_sha256": "9e01af592ba25875fd024598e364d65c6ce6fa4e056b41ef14ed5fe6772bca12",
+  "review_mode": "direct",
+  "parent_run_id": "direct-st-005-mutant-r1",
+  "repair_bundle": "results/harness-vs-direct/direct-repairs/direct-st-005-mutant",
+  "model": "gpt-6.1-sol",
+  "model_identity_source": "requested CLI model alias",
+  "effort": "xhigh",
+  "skill_version": {
+    "label": "direct",
+    "commit": null,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "started_at": "2026-11-13T03:34:45.340046+00:00",
+  "execution_status": "completed",
+  "source": "real_host",
+  "gold_sha256": "aea000eb3b1416e7b5975708be35fdf4a9924f6be1cdd4bac21da80d521027ca",
+  "batch_workers": 4,
+  "timeout_seconds": 240,
+  "source_file_sha256_at_run_start": "7c87ec8619486246282545efac7109efdb1a5b30babc55f9839cf9befbcd07e6",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied",
+    "cpscore_skill_loading": "disabled by exact names; none staged; prompt prohibits other Skills"
+  },
+  "payload": {
+    "files": {
+      "material.md": "9e01af592ba25875fd024598e364d65c6ce6fa4e056b41ef14ed5fe6772bca12",
+      "request.txt": "abb2271bcea2579181826f19bf478bdfb1bb6a6d289576d19be8127bcee99dbb"
+    },
+    "prompt_sha256": "abb2271bcea2579181826f19bf478bdfb1bb6a6d289576d19be8127bcee99dbb"
+  },
+  "host_version": "codex-cli 0.167.0-alpha.4.1",
+  "command": [
+    "codex",
+    "--no-daemon",
+    "-a",
+    "never",
+    "exec",
+    "--ignore-user-config",
+    "--skip-git-repo-check",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--color",
+    "never",
+    "--json",
+    "--model",
+    "gpt-6.1-sol",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "-c",
+    "skills.config=[{name=\"cp-contest-review\",enabled=false},{name=\"cp-data-review\",enabled=false},{name=\"cp-editorial-review\",enabled=false},{name=\"cp-novelty-review\",enabled=false},{name=\"cp-performance-predict\",enabled=false},{name=\"cp-problem-review\",enabled=false},{name=\"cp-solution-review\",enabled=false},{name=\"cp-statement-review\",enabled=false}]",
+    "-C",
+    "/tmp/cp-statement-nxae1l92",
+    "-o",
+    "/Users/zhangchenrui/Workspace/project/CPscore/tests/statement/results/harness-vs-direct/direct-repair-reviews/direct-st-005-mutant-r1-repair-9e01af592b/report.md",
+    "-"
+  ],
+  "pid": 92995,
+  "returncode": 0,
+  "raw_sha256": "fdcade350aac241b02eb5473d37ba2c61dbc5d95eb11c62b904ee716cb96d710",
+  "session_id": "01a1d2f8-d5fd-7800-a4b5-66c17383dd17",
+  "observed_session_ids": [
+    "01a1d2f8-d5fd-7800-a4b5-66c17383dd17"
+  ],
+  "token_usage": {
+    "input_tokens": 31623,
+    "cached_input_tokens": 24576,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1144,
+    "reasoning_output_tokens": 783
+  },
+  "finished_at": "2026-11-13T03:35:29.961250+00:00"
+}

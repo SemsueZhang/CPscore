@@ -1,0 +1,15 @@
+{
+  "registered_at": "2026-11-13T02:07:16.897542+00:00",
+  "before_candidate_model_rereview": true,
+  "case_id": "st-037-base",
+  "root_id": "input_typo",
+  "skill": "original",
+  "candidate_sha256": "c6e1ea7e2f746f5ae558354065e3d0d1ed198a684aca34fb3bace3bb3f50fd7d",
+  "domain_changed": false,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "changed_clear_semantics": false,
+  "locality": true,
+  "necessary": true,
+  "reason": "Inherent patch effects assessed against original and independent proof before re-review; no success outcome assigned.",
+  "author_identity": "Codex maintainer model, not human"
+}

@@ -1,0 +1,39 @@
+{
+  "registered_at": "2026-11-13T02:52:57.658479+00:00",
+  "question": "Marginal effect of CPScore statement-review Skill compared with direct review by the same Codex-hosted model",
+  "harness": {
+    "skill": "improved",
+    "commit": "5af3cda53b95ef963c81ff0cd6abd3658836d072",
+    "main_source": "../final",
+    "repair_source": "../repairs",
+    "planned_reused_main_runs": 108,
+    "planned_reused_repair_runs": 20
+  },
+  "control": {
+    "label": "direct",
+    "prompt_sha256": "abb2271bcea2579181826f19bf478bdfb1bb6a6d289576d19be8127bcee99dbb",
+    "context": "Only neutral material.md and request.txt; no Skill files staged. Same output contract and case-neutral grading definitions; no review workflow or method references.",
+    "disabled_skill_names": [
+      "cp-contest-review",
+      "cp-data-review",
+      "cp-editorial-review",
+      "cp-novelty-review",
+      "cp-performance-predict",
+      "cp-problem-review",
+      "cp-solution-review",
+      "cp-statement-review"
+    ]
+  },
+  "model": "gpt-6.1-sol",
+  "effort": "xhigh",
+  "tool_and_host_controls": "Same Codex read-only shell, no approvals, ephemeral sessions and ignored user config. Direct additionally disables CPScore names for this invocation; other host defaults unchanged.",
+  "data_freeze_sha256": "df92aa0add3e74bad771c80827757d7fac51d220df65d5248c94a83bdec79948",
+  "primary_detection": "Known semantic/sample/language roots excluding category=format; report all-known metrics and format-only metrics separately.",
+  "consistency": "Same 12 cases, 5 independent reviews each; core roots and severity, not scores alone.",
+  "repair": "Same 20 target roots; first coherent actual advice, additive edits together; conditional decisions by synthetic author. Missing advice is unavailable and never replaced from Gold. Fixed denominator 20.",
+  "selection_policy_source_sha256": "7eaa05c27ec585476e8294a5e6fb32138d36c0456e101ef275ccf3eff1b17aa2",
+  "independent_check": "Maintainer-model semantic adjudication plus existing mathematical witnesses and actual program executions; no human-expert claim.",
+  "timing_and_cost": "Provider-reported input/cached/output tokens and observed elapsed time only, not billed price. Historical harness versus later direct timing is descriptive; requested model alias is not independently pinned backend weights.",
+  "scope": "CPScore statement-review increment within the same Codex host, not a raw API model without any host harness, and not all eight Skills.",
+  "no_tuning": "No changes to frozen cases, Gold, CPScore Skill or existing harness outputs. Smoke is technical validation only; any protocol change must retire affected runs explicitly."
+}

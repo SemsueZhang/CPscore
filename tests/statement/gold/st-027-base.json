@@ -1,0 +1,83 @@
+{
+  "case_id": "st-027-base",
+  "family_id": "st-027",
+  "version": "base",
+  "problem_type": "standard",
+  "legal_input_domain": {
+    "summary": "声称树却给 n 条不同无向边，n≥2。",
+    "input_contract": "第一行输入整数 $n$。随后恰好 $n$ 行，每行输入两个整数 $u,v$，表示一条边。所有边两两不同，均无自环。",
+    "bounds": "$2\\le n\\le10^5$，$1\\le u,v\\le n$。",
+    "additional_guarantees_source": "cases/st-027-base.md",
+    "domain_status": "empty_by_contradiction"
+  },
+  "relation": "合法输入要求互相矛盾。",
+  "oracle": {
+    "name": "tree_edge_count",
+    "args": {
+      "n": 3,
+      "edges": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    "expected": false
+  },
+  "defects": [
+    {
+      "root_id": "edge_count",
+      "category": "contradictory_constraint",
+      "severity": "Fatal",
+      "quote": "随后恰好 $n$ 行",
+      "evidence": "树必有 n−1 条边，而输入强制 n 条不同边；不存在同时满足条件的输入，样例三角形也不是树。",
+      "witness": {
+        "input": "3\n1 2\n2 3\n1 3",
+        "interpretations": [
+          {
+            "rule": "树的边数定理",
+            "output": "应有2条边，样例有3条"
+          }
+        ]
+      },
+      "acceptable_repairs": [
+        {
+          "find": "随后恰好 $n$ 行",
+          "replace": "随后恰好 $n-1$ 行",
+          "conditional": true,
+          "changes_domain": true
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "3\n1 2\n2 3\n1 3\n",
+      "output": "2\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-027-base.md",
+  "statement_sha256": "4d6a1e7ef81802d714a85c17fdfea05185f7d02f8e15ed9530904da3e241a5ab",
+  "has_known_defects": true,
+  "original_kind": "defective",
+  "completeness_review": "缺陷及其证明见独立根因；修订后仍须整体核验。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 0
+}

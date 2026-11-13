@@ -1,0 +1,35 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "任意两点间的距离定义为它们之间唯一简单路径上所有边权的算术和（同时仍定义为这些边权的按位异或值），点到自身的距离为 $0$。",
+      "evidence": "合法输入为三点链、两条边权均为 1 时，算术和口径的最大距离为 2，异或口径为 1，两个定义无法同时成立。正式样例在两种口径下分别得到 8 和 6；标题、输出格式及样例支持异或，但未撤销正文的算术和定义。以下 repairs 第 1 项为推荐方案 A，第 2 至第 4 项共同组成方案 B，两方案互斥，须作者选择。",
+      "repairs": [
+        {
+          "find": "算术和（同时仍定义为这些边权的按位异或值）",
+          "replace": "按位异或值",
+          "conditional": true
+        },
+        {
+          "find": "算术和（同时仍定义为这些边权的按位异或值）",
+          "replace": "算术和",
+          "conditional": true
+        },
+        {
+          "find": "输出一行，一个整数，表示最大异或距离。",
+          "replace": "输出一行，一个整数，表示最大距离。",
+          "conditional": true
+        },
+        {
+          "find": "```text\n6\n```",
+          "replace": "```text\n8\n```",
+          "conditional": true
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

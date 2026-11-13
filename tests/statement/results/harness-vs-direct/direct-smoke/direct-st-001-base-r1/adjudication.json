@@ -1,0 +1,11 @@
+{
+  "run_id": "direct-st-001-base-r1",
+  "raw_sha256": "bc034668184a2ff212ca3388ca5e0fb0ec868f3842b581edcd05e62d5fb6d6cf",
+  "prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "judge_kind": "automatic_empty",
+  "judge_identity": "Structured empty-list check only",
+  "reviewed_at": "2026-11-13T02:59:25.637956+00:00",
+  "complete": true,
+  "findings": [],
+  "overall_note": "只确认无扣分发现，不证明Gold正确；若有已确认Gold根因仍统计漏检。"
+}

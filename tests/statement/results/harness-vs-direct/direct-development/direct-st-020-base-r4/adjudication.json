@@ -1,0 +1,11 @@
+{
+  "run_id": "direct-st-020-base-r4",
+  "raw_sha256": "a03c5aa6a6e5a8bcddcf6d1a42af169d05052e57baf77c5df309b4488733f528",
+  "prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "judge_kind": "automatic_empty",
+  "judge_identity": "Structured empty-list check only",
+  "reviewed_at": "2026-11-13T03:10:11.857459+00:00",
+  "complete": true,
+  "findings": [],
+  "overall_note": "空报告只表示未列扣分项，Gold有确认缺陷时仍计漏检。"
+}

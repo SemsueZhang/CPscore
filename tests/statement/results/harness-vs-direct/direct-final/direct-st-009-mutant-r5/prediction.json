@@ -1,0 +1,20 @@
+{
+  "score": 9,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Minor",
+      "quote": "$2\\\\le n\\\\le2\\\\times10^5$，$0\\\\le d_i<n$。",
+      "evidence": "原文件中的 \\\\le、\\\\times 均含两个反斜杠，不能作为预期的 LaTeX 不等号、乘号命令。数值范围可轻易恢复，属于局部符号错误；各处为同一根因。",
+      "repairs": [
+        {
+          "find": "$2\\\\le n\\\\le2\\\\times10^5$，$0\\\\le d_i<n$。",
+          "replace": "$2\\le n\\le2\\times10^5$，$0\\le d_i<n$。",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

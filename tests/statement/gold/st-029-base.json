@@ -1,0 +1,86 @@
+{
+  "case_id": "st-029-base",
+  "family_id": "st-029",
+  "version": "base",
+  "problem_type": "standard",
+  "legal_input_domain": {
+    "summary": "连通简单无向正权图。",
+    "input_contract": "第一行输入两个整数 $n,m$。随后 $m$ 行，每行输入三个整数 $u,v,w$。",
+    "bounds": "$2\\le n\\le10^5$，$n-1\\le m\\le2\\times10^5$，$1\\le u,v\\le n$，$1\\le w\\le10^6$。保证图连通。",
+    "additional_guarantees_source": "cases/st-029-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "最小生成树权值。",
+  "oracle": {
+    "name": "mst",
+    "args": {
+      "n": 3,
+      "edges": [
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          8
+        ]
+      ]
+    },
+    "expected": 3
+  },
+  "defects": [
+    {
+      "root_id": "sample_value",
+      "category": "sample_output",
+      "severity": "Fatal",
+      "quote": "9\n```",
+      "evidence": "样例取前两条边即可连通，总权为 3；任何生成树至少两条边，最小两边权为 1、2。",
+      "witness": {
+        "input": "3 3\n1 2 1\n2 3 2\n1 3 8",
+        "interpretations": [
+          {
+            "rule": "最小生成树",
+            "output": "3"
+          }
+        ]
+      },
+      "acceptable_repairs": [
+        {
+          "find": "9\n```",
+          "replace": "3\n```",
+          "conditional": false,
+          "changes_domain": false
+        }
+      ],
+      "status": "confirmed",
+      "verification": {
+        "method": "reasoned",
+        "scope": "由原文及证据中的一般论证核验，未声称人类确认"
+      }
+    }
+  ],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "3 3\n1 2 1\n2 3 2\n1 3 8\n",
+      "output": "9\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "holdout",
+  "statement_path": "cases/st-029-base.md",
+  "statement_sha256": "b48e22a5cbc2be9dbf14be8772678e4e64bb02b2f01bf97fe701cd3030b42624",
+  "has_known_defects": true,
+  "original_kind": "defective",
+  "completeness_review": "缺陷及其证明见独立根因；修订后仍须整体核验。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 0
+}

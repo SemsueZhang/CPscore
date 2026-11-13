@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-005-mutant-r1",
+  "raw_sha256": "04ea11d4562af9a12876fb1d4b2858533728e02f8af725b898750838a0fe0bf1",
+  "prediction_sha256": "68da56c9764f0e379b73ed768b38b3d436869f17691c1d08a77eca8936aefbd9",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T03:05:11.405332+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "time_tie",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "核验两边(1,2,p=2,t=2)、(2,3,p=2,t=1)，起点0搭船到2；同刻换乘答案3，等待下一班答案5。正式样例两解释均6。",
+      "novel_issue_review": null
+    }
+  ]
+}

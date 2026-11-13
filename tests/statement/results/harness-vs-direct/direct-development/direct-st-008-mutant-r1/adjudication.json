@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-008-mutant-r1",
+  "raw_sha256": "3ff37c5e14661f3050a96488c274e33e1ff40b0aebf9058dc0c5d3d4ac2628b2",
+  "prediction_sha256": "7d73bcf8486ce872c975d9a3b3134ad061d51ebc8bbc407f504a0f63e33ae473",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human-expert or independent-model claim",
+  "reviewed_at": "2026-11-13T03:05:11.406609+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "construct_impossible",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "n=1,k=1合法且无解，唯一排列逆序数0；正文NO与输出禁止无解标记直接矛盾，不将多解当成需唯一输出。",
+      "novel_issue_review": null
+    }
+  ]
+}

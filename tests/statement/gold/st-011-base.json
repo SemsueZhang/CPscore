@@ -1,0 +1,53 @@
+{
+  "case_id": "st-011-base",
+  "family_id": "st-011",
+  "version": "base",
+  "problem_type": "floating",
+  "legal_input_domain": {
+    "summary": "整数坐标，权重非负且总和正。",
+    "input_contract": "第一行输入整数 $n$。随后 $n$ 行，每行输入三个整数 $x_i,y_i,w_i$。",
+    "bounds": "$1\\le n\\le2\\times10^5$，$-10^6\\le x_i,y_i\\le10^6$，$0\\le w_i\\le10^6$，$\\sum_iw_i>0$。",
+    "additional_guarantees_source": "cases/st-011-base.md",
+    "domain_status": "as_stated; task-specific guarantees also apply"
+  },
+  "relation": "各坐标为有限实数，采用 max(1,abs) 混合误差。",
+  "oracle": {
+    "name": "centroid",
+    "args": {
+      "points": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          4,
+          2,
+          3
+        ]
+      ]
+    },
+    "expected": [
+      3,
+      1.5
+    ]
+  },
+  "defects": [],
+  "gold_status": "confirmed",
+  "samples": [
+    {
+      "input": "2\n0 0 1\n4 2 3\n",
+      "output": "3.000000 1.500000\n"
+    }
+  ],
+  "schema_version": 1,
+  "split": "development",
+  "statement_path": "cases/st-011-base.md",
+  "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe",
+  "has_known_defects": false,
+  "original_kind": "clean",
+  "completeness_review": "总权重正排除除零；坐标为零时max误差定义有效，输入全为整数。",
+  "gold_author": "maintainer_model",
+  "human_verified": false,
+  "expected_score": 10
+}

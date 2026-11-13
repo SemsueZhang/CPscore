@@ -1,0 +1,42 @@
+{
+  "case_id": "st-002-mutant",
+  "root_id": "sample_explanation",
+  "parent_run_id": "original-st-002-mutant-r1",
+  "review_run_id": "original-st-002-mutant-r1-repair-9a433aca01",
+  "review_run_directory": "../../repair-reviews/original-st-002-mutant-r1-repair-9a433aca01",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "56c94e2b99324b93f2fea3219f779feff28cdbc76a6215a631abc602eccd2ee2",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "bdd3cd9193f8a7ce040a2d3884306e8af31d224a5306ed316e8b615dd2ecf11a",
+      "result": "Actual executed finite checks: [\"all sample source-target paths independently enumerated\"]"
+    },
+    {
+      "kind": "exact_reference",
+      "artifact": "reference-check.json",
+      "artifact_sha256": "23b810c353d71efc09cd35b76e1dd7d229d0036c0475ff399b0411d611970c62",
+      "result": "Exact clean reference confirms local restoration only; semantic preservation is separately assessed."
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+  "complete": true,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "reviewed_at": "2026-11-13T02:21:22.556925+00:00",
+  "review_raw_sha256": "e68475bf5a36a2b8ec23d9897d584f9157dcf1c4181244e6256d88fb40e427b7",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

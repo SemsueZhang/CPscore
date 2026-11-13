@@ -1,0 +1,458 @@
+{
+  "schema_version": 1,
+  "benchmark_revision": "1.0.0",
+  "manifest_sha256": "d97d5163271aa8c202473f700d60392d998ec0f20c4730d9bed6582762f9dbfe",
+  "gold_sha256": {
+    "st-001-mutant": "277200394b51bab27aba5345c88ff939f1a24026957f626f871783ee40a0d79d",
+    "st-002-mutant": "5a930ff582667f30b8c1c3e7cb0c128237c1b6d17b18734bab7c92fd6e7e49c5",
+    "st-003-mutant": "47b96be031a14d864beaf05e54734c5d43592c6e443b9699e4776419fcc9e8d2",
+    "st-004-mutant": "6e14e659416a2edd9226d2603a21ca0a195768a505c4589d0b7c1e24e7e316fd",
+    "st-005-mutant": "aea000eb3b1416e7b5975708be35fdf4a9924f6be1cdd4bac21da80d521027ca",
+    "st-006-mutant": "fda1cda2f0f297e72639a1b73ba45035c8ffbc385712df9fc8576693b88888c2",
+    "st-007-mutant": "fa82aeaba8250e9bca2850eee2666f06f2f9f397a85755f146c06ffb3ac9c5e8",
+    "st-008-mutant": "d227f9ec81a7b81e2f22faf8135315b1aa2726aae92f822dcc35cf38fbd122d0",
+    "st-009-mutant": "a3ffff9bc1c290bfdfacf755cdf53e2c3447188ede2c4fa0fe776c0cbb2fefe8",
+    "st-010-mutant": "716959d1d0661c7669ede44a0c04eb3d297709598df3104e3bc88bc271eeebcd",
+    "st-011-mutant": "25b604de284d516e812cd9b0ac90546f163c1e47638447dfe124cd1faf9e4bf3",
+    "st-014-mutant": "0101e83f83eed769efaefaa2ff0fc802ba03dde8d18438361ff55b5d0a34f8ae",
+    "st-015-mutant": "f4efc75c069482992c8e518dc7c69548ad4506129433f3a6226c2f70396363c0",
+    "st-016-mutant": "bab0511afa8a838e13f431754c6c25e5d72515e6fa71f8bba20288273449e4a8",
+    "st-025-base": "c122c21f9681bdd5011ae49136eb678d8c86695781beb149f891aa7e86b61afa",
+    "st-026-base": "9e6ab071ad105a4d8b270475a19692a30d02f5fc9c2d26ccca89b1a6814a3918",
+    "st-029-base": "55c9290de228c8f85a1171d12bd5b67f6010cd2284d00dff2e91670b5168b4a3",
+    "st-034-base": "abecd607c9abd476de3178edb34205d7e71b41a597d05f92d675820370b42c1c",
+    "st-035-base": "e946c89a512d022f91475fb88596c458d5ef070700689c913c2d68e8d2ea044c",
+    "st-037-base": "4014fe4f12059d0375ec7534e386fbc6e7c0938e830297c3a2a780cacfd833c5"
+  },
+  "suite": "repair-recheck",
+  "split": "all",
+  "created_at": "2026-11-13T02:07:16.923400+00:00",
+  "model": "gpt-6.1-sol",
+  "effort": "xhigh",
+  "host": "codex-exec",
+  "prompt_sha256": "33f7105b76737012c48c1fbc2e5cd513030316952d5acd298cd376127fc129df",
+  "host_settings": {
+    "sandbox": "read-only",
+    "approval": "never",
+    "ephemeral": true,
+    "ignore_user_config": true,
+    "network": "no web search; model backend only",
+    "tools": "host read-only shell; no MCP or additional skills intentionally supplied"
+  },
+  "skills": {
+    "original": {
+      "label": "original",
+      "commit": "db9e9f6fba2370ce04a6b4c0f60b1608f48ae2d8",
+      "sha256": "3ea94c8c971a84928d37246b60dbd9847f1331a58196be2334d3353eea26cc0a"
+    },
+    "improved": {
+      "label": "improved",
+      "commit": "5af3cda53b95ef963c81ff0cd6abd3658836d072",
+      "sha256": "2193fd7c97cde1094d7bae28f71a7956c087d97c2ea5814ef27ea84961fdb5aa"
+    }
+  },
+  "runs": [
+    {
+      "run_id": "original-st-001-mutant-r1-repair-e82b6c90df",
+      "case_id": "st-001-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "e82b6c90dfca4489395fc7d4cce879103f202b02cd7c082fcf411f5bf146cfe1",
+      "parent_run_id": "original-st-001-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-001-mutant"
+    },
+    {
+      "run_id": "original-st-002-mutant-r1-repair-9a433aca01",
+      "case_id": "st-002-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "9a433aca01453b9a29ba9568fdbc161f6a80f9098fe3463fcbaeb19038205568",
+      "parent_run_id": "original-st-002-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-002-mutant"
+    },
+    {
+      "run_id": "original-st-003-mutant-r1-repair-547ce96e37",
+      "case_id": "st-003-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "547ce96e372a2c937345964f10e18b3b901c3688fd81b740fd1f8ebe0c14fc06",
+      "parent_run_id": "original-st-003-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-003-mutant"
+    },
+    {
+      "run_id": "original-st-004-mutant-r1-repair-2f8885bb75",
+      "case_id": "st-004-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "2f8885bb75b40df042066d30ec975faf6c3c0997cad3fec91e39e18e865fc065",
+      "parent_run_id": "original-st-004-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-004-mutant"
+    },
+    {
+      "run_id": "original-st-005-mutant-r1-repair-dd117366b2",
+      "case_id": "st-005-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "dd117366b24c99be94b07d74dca1f26da02df70590e17b9cdace99369025055c",
+      "parent_run_id": "original-st-005-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-005-mutant"
+    },
+    {
+      "run_id": "original-st-006-mutant-r1-repair-1c16d6ddde",
+      "case_id": "st-006-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "1c16d6ddde180f0c08ff20e32e0570430ce5b6cf0a0fba813570a889e77efb07",
+      "parent_run_id": "original-st-006-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-006-mutant"
+    },
+    {
+      "run_id": "original-st-007-mutant-r1-repair-25dbd1effc",
+      "case_id": "st-007-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "25dbd1effc98df33b1fa3ffb0df5f9b17c10956dec5773653a36b03923eddf68",
+      "parent_run_id": "original-st-007-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-007-mutant"
+    },
+    {
+      "run_id": "original-st-008-mutant-r1-repair-bff09bdc3f",
+      "case_id": "st-008-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "bff09bdc3f1154999bc3b424e512643974bbda33817da2c63f5bf5c6cd9727dc",
+      "parent_run_id": "original-st-008-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-008-mutant"
+    },
+    {
+      "run_id": "original-st-009-mutant-r1-repair-72565cbc41",
+      "case_id": "st-009-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "72565cbc4176611d6248a5007bff8ee1404e4fec136145a7079fe29f8c1dade7",
+      "parent_run_id": "original-st-009-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-009-mutant"
+    },
+    {
+      "run_id": "original-st-010-mutant-r1-repair-2f2ce7779a",
+      "case_id": "st-010-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "2f2ce7779a4de87b48ae77870d264f50291c5d06ccbccdf7a17db86ba939863e",
+      "parent_run_id": "original-st-010-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-010-mutant"
+    },
+    {
+      "run_id": "original-st-011-mutant-r1-repair-e6bf8bd222",
+      "case_id": "st-011-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "e6bf8bd2223ef7bd5ea8637d03d1def838e96a393b0f1724edab7e9c33f49bbe",
+      "parent_run_id": "original-st-011-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-011-mutant"
+    },
+    {
+      "run_id": "original-st-014-mutant-r1-repair-f8c3973354",
+      "case_id": "st-014-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "f8c3973354e3dc45db521c1aed09a0a23f25cbaa1dd883af58e2abb4ecb17238",
+      "parent_run_id": "original-st-014-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-014-mutant"
+    },
+    {
+      "run_id": "original-st-015-mutant-r1-repair-35c836f0ea",
+      "case_id": "st-015-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "35c836f0eaa10badff58e6293d692e230b27cab0ee9bf5969e2a79d4b7eed1ed",
+      "parent_run_id": "original-st-015-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-015-mutant"
+    },
+    {
+      "run_id": "original-st-016-mutant-r1-repair-6d81810d6a",
+      "case_id": "st-016-mutant",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "6d81810d6a06ce4acc7ac7b20b0427eb99f95b2d4cbc97a482e4388bc862de59",
+      "parent_run_id": "original-st-016-mutant-r1",
+      "repair_bundle": "results/repairs/original-st-016-mutant"
+    },
+    {
+      "run_id": "original-st-025-base-r1-repair-23c77bd6f0",
+      "case_id": "st-025-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "23c77bd6f037a8647316af8dc331c6da2e5ee82fd94446399ea12918b8e0e219",
+      "parent_run_id": "original-st-025-base-r1",
+      "repair_bundle": "results/repairs/original-st-025-base"
+    },
+    {
+      "run_id": "original-st-026-base-r1-repair-ffa02a27de",
+      "case_id": "st-026-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "ffa02a27de3877e96605f2649d738ff188a8db0b083abcaa17f0b211ea2b92ac",
+      "parent_run_id": "original-st-026-base-r1",
+      "repair_bundle": "results/repairs/original-st-026-base"
+    },
+    {
+      "run_id": "original-st-029-base-r1-repair-ce6a5e92e2",
+      "case_id": "st-029-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "ce6a5e92e28368a21d9ae04b3623b8bce40413a7ddc836c077e20c4b76f37395",
+      "parent_run_id": "original-st-029-base-r1",
+      "repair_bundle": "results/repairs/original-st-029-base"
+    },
+    {
+      "run_id": "original-st-037-base-r1-repair-c6e1ea7e2f",
+      "case_id": "st-037-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "c6e1ea7e2f746f5ae558354065e3d0d1ed198a684aca34fb3bace3bb3f50fd7d",
+      "parent_run_id": "original-st-037-base-r1",
+      "repair_bundle": "results/repairs/original-st-037-base"
+    },
+    {
+      "run_id": "original-st-034-base-r1-repair-45d1c2c267",
+      "case_id": "st-034-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "45d1c2c26753491ad19bb06075a3951d1a97a2984c1f389d66ae0ed9f5bc6d01",
+      "parent_run_id": "original-st-034-base-r1",
+      "repair_bundle": "results/repairs/original-st-034-base"
+    },
+    {
+      "run_id": "original-st-035-base-r1-repair-d40123f140",
+      "case_id": "st-035-base",
+      "skill": "original",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "d40123f14026c57f6b80d75cecb92071077641657d77f8ab86934ea40f140866",
+      "parent_run_id": "original-st-035-base-r1",
+      "repair_bundle": "results/repairs/original-st-035-base"
+    },
+    {
+      "run_id": "improved-st-001-mutant-r1-repair-e82b6c90df",
+      "case_id": "st-001-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "e82b6c90dfca4489395fc7d4cce879103f202b02cd7c082fcf411f5bf146cfe1",
+      "parent_run_id": "improved-st-001-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-001-mutant"
+    },
+    {
+      "run_id": "improved-st-002-mutant-r1-repair-9a433aca01",
+      "case_id": "st-002-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "9a433aca01453b9a29ba9568fdbc161f6a80f9098fe3463fcbaeb19038205568",
+      "parent_run_id": "improved-st-002-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-002-mutant"
+    },
+    {
+      "run_id": "improved-st-003-mutant-r1-repair-547ce96e37",
+      "case_id": "st-003-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "547ce96e372a2c937345964f10e18b3b901c3688fd81b740fd1f8ebe0c14fc06",
+      "parent_run_id": "improved-st-003-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-003-mutant"
+    },
+    {
+      "run_id": "improved-st-004-mutant-r1-repair-2f8885bb75",
+      "case_id": "st-004-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "2f8885bb75b40df042066d30ec975faf6c3c0997cad3fec91e39e18e865fc065",
+      "parent_run_id": "improved-st-004-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-004-mutant"
+    },
+    {
+      "run_id": "improved-st-005-mutant-r1-repair-b0c2fbcf57",
+      "case_id": "st-005-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "b0c2fbcf57eb12d955c2f093c3b15b4c443a939eefa9c79aa937b8ee58b8c65b",
+      "parent_run_id": "improved-st-005-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-005-mutant"
+    },
+    {
+      "run_id": "improved-st-006-mutant-r1-repair-1c16d6ddde",
+      "case_id": "st-006-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "1c16d6ddde180f0c08ff20e32e0570430ce5b6cf0a0fba813570a889e77efb07",
+      "parent_run_id": "improved-st-006-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-006-mutant"
+    },
+    {
+      "run_id": "improved-st-007-mutant-r1-repair-222bf145ff",
+      "case_id": "st-007-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "222bf145ffd5ad50fa446e0a1484989e3eea81c8798fe7ff46f5ca85dee1ca03",
+      "parent_run_id": "improved-st-007-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-007-mutant"
+    },
+    {
+      "run_id": "improved-st-008-mutant-r1-repair-27971ce088",
+      "case_id": "st-008-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "27971ce088bb5a5f4b6631411da719aa59bd917b27016bd0479ddbf70420ce8f",
+      "parent_run_id": "improved-st-008-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-008-mutant"
+    },
+    {
+      "run_id": "improved-st-009-mutant-r1-repair-72565cbc41",
+      "case_id": "st-009-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "72565cbc4176611d6248a5007bff8ee1404e4fec136145a7079fe29f8c1dade7",
+      "parent_run_id": "improved-st-009-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-009-mutant"
+    },
+    {
+      "run_id": "improved-st-010-mutant-r1-repair-2f2ce7779a",
+      "case_id": "st-010-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "2f2ce7779a4de87b48ae77870d264f50291c5d06ccbccdf7a17db86ba939863e",
+      "parent_run_id": "improved-st-010-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-010-mutant"
+    },
+    {
+      "run_id": "improved-st-011-mutant-r1-repair-79028bf4a5",
+      "case_id": "st-011-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "79028bf4a581575df412eea62079fc8c64408dc5b681cb4e525539bd059e4599",
+      "parent_run_id": "improved-st-011-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-011-mutant"
+    },
+    {
+      "run_id": "improved-st-014-mutant-r1-repair-403f483db3",
+      "case_id": "st-014-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "403f483db3dbdc862362897ee779240e7d75ad533ad794a3aaa58b20e30b5d9d",
+      "parent_run_id": "improved-st-014-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-014-mutant"
+    },
+    {
+      "run_id": "improved-st-015-mutant-r1-repair-35c836f0ea",
+      "case_id": "st-015-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "35c836f0eaa10badff58e6293d692e230b27cab0ee9bf5969e2a79d4b7eed1ed",
+      "parent_run_id": "improved-st-015-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-015-mutant"
+    },
+    {
+      "run_id": "improved-st-016-mutant-r1-repair-6d81810d6a",
+      "case_id": "st-016-mutant",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "6d81810d6a06ce4acc7ac7b20b0427eb99f95b2d4cbc97a482e4388bc862de59",
+      "parent_run_id": "improved-st-016-mutant-r1",
+      "repair_bundle": "results/repairs/improved-st-016-mutant"
+    },
+    {
+      "run_id": "improved-st-025-base-r1-repair-9ea6ed3746",
+      "case_id": "st-025-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "9ea6ed37467f9759bb1e694b42fad1400b53c16657d2699d8e61dba3b3d1a957",
+      "parent_run_id": "improved-st-025-base-r1",
+      "repair_bundle": "results/repairs/improved-st-025-base"
+    },
+    {
+      "run_id": "improved-st-026-base-r1-repair-ffa02a27de",
+      "case_id": "st-026-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "ffa02a27de3877e96605f2649d738ff188a8db0b083abcaa17f0b211ea2b92ac",
+      "parent_run_id": "improved-st-026-base-r1",
+      "repair_bundle": "results/repairs/improved-st-026-base"
+    },
+    {
+      "run_id": "improved-st-029-base-r1-repair-ce6a5e92e2",
+      "case_id": "st-029-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "ce6a5e92e28368a21d9ae04b3623b8bce40413a7ddc836c077e20c4b76f37395",
+      "parent_run_id": "improved-st-029-base-r1",
+      "repair_bundle": "results/repairs/improved-st-029-base"
+    },
+    {
+      "run_id": "improved-st-037-base-r1-repair-c6e1ea7e2f",
+      "case_id": "st-037-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "c6e1ea7e2f746f5ae558354065e3d0d1ed198a684aca34fb3bace3bb3f50fd7d",
+      "parent_run_id": "improved-st-037-base-r1",
+      "repair_bundle": "results/repairs/improved-st-037-base"
+    },
+    {
+      "run_id": "improved-st-034-base-r1-repair-45d1c2c267",
+      "case_id": "st-034-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "45d1c2c26753491ad19bb06075a3951d1a97a2984c1f389d66ae0ed9f5bc6d01",
+      "parent_run_id": "improved-st-034-base-r1",
+      "repair_bundle": "results/repairs/improved-st-034-base"
+    },
+    {
+      "run_id": "improved-st-035-base-r1-repair-4fc3edb63d",
+      "case_id": "st-035-base",
+      "skill": "improved",
+      "repeat": 1,
+      "phase": "repair",
+      "statement_sha256": "4fc3edb63d478f6eb43dc7af5e01d9ad901ea5408a543db87d2e3b1de9404e99",
+      "parent_run_id": "improved-st-035-base-r1",
+      "repair_bundle": "results/repairs/improved-st-035-base"
+    }
+  ],
+  "selection_policy_sha256": "7eaa05c27ec585476e8294a5e6fb32138d36c0456e101ef275ccf3eff1b17aa2",
+  "assessment_policy_sha256": "9afdb2dcb9deef97edb117f75770e918042329dc9e929f8ed8d8f9ad1ff546d6"
+}

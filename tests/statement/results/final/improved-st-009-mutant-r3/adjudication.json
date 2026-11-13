@@ -1,0 +1,20 @@
+{
+  "run_id": "improved-st-009-mutant-r3",
+  "raw_sha256": "2b7628c53ea8097aa44417d4b81ab20ebf48b26223fe60ea49294d00d31c9f2e",
+  "prediction_sha256": "c28b7878f7f5f58adb9016f970d9ebb313e9270c4505ec63e6d77e0076180e27",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human claim",
+  "reviewed_at": "2026-11-13T02:14:52.237400+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "literal_markup",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "已逐次核对固定输出NO未用行内代码的原文与适用规范，报告均判Major一次；可选顶点编号补充未进入扣分项。",
+      "novel_issue_review": null
+    }
+  ]
+}

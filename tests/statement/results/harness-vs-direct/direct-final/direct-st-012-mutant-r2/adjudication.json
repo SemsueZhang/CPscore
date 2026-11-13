@@ -1,0 +1,20 @@
+{
+  "run_id": "direct-st-012-mutant-r2",
+  "raw_sha256": "16bb3deb0d3374751aef56ceca90986be296c707b57788dfc2d846456705e9b1",
+  "prediction_sha256": "1fdd434b67d5efb962dde5f8e67c66a2a54b8fcdfd2a403116f0a1d47760ba4a",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human claim",
+  "reviewed_at": "2026-11-13T03:31:31.532164+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "time_typo",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "逐次核对时简确为时间局部错字，正文与精确目标定义保持完整，Minor合理，未把样例或数学关系判错。",
+      "novel_issue_review": null
+    }
+  ]
+}

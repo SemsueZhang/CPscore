@@ -1,0 +1,20 @@
+{
+  "score": 0,
+  "complete": true,
+  "findings": [
+    {
+      "id": "f1",
+      "severity": "Fatal",
+      "quote": "两条最长路径分别为 $1\\to2\\to4$ 和 $1\\to3\\to4$，长度均为 $6$。",
+      "evidence": "样例中仅有这两条从 1 到 4 的路径，权值和分别为 3+4=7、2+5=7，正式输出 7 2 正确。解释中的长度 6 与输入及输出矛盾；Skill 评分协议将正式样例解释的实质错误定为 Fatal，扣 10 分。",
+      "repairs": [
+        {
+          "find": "长度均为 $6$。",
+          "replace": "长度均为 $7$。",
+          "conditional": false
+        }
+      ]
+    }
+  ],
+  "optional_suggestions": []
+}

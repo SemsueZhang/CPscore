@@ -1,0 +1,23 @@
+{
+  "original_sha256": "7302b0abc28b091a2df879abc39af6a3d93eb174491709197e7dc13ac5cc0c20",
+  "candidate_sha256": "79028bf4a581575df412eea62079fc8c64408dc5b681cb4e525539bd059e4599",
+  "applied_actual_advice": {
+    "find": "每个坐标分别满足 $|\\widehat z-z|/|z|\\le10^{-6}$ 时接受，其中 $z$ 为对应的精确坐标。",
+    "replace": "其中 $z$ 为对应的精确坐标，$\\widehat z$ 为对应的输出坐标。当 $z\\ne0$ 时，须满足 $|\\widehat z-z|/|z|\\le10^{-6}$；当 $z=0$ 时，须满足 $\\widehat z=0$。两个坐标均满足各自条件时接受。",
+    "conditional": true
+  },
+  "diff": [
+    "--- original",
+    "+++ candidate",
+    "@@ -8,7 +8,7 @@",
+    " ",
+    " ## 输出格式",
+    " ",
+    "-输出一行，两个有限实数 $\\widehat X,\\widehat Y$。每个坐标分别满足 $|\\widehat z-z|/|z|\\le10^{-6}$ 时接受，其中 $z$ 为对应的精确坐标。",
+    "+输出一行，两个有限实数 $\\widehat X,\\widehat Y$。其中 $z$ 为对应的精确坐标，$\\widehat z$ 为对应的输出坐标。当 $z\\ne0$ 时，须满足 $|\\widehat z-z|/|z|\\le10^{-6}$；当 $z=0$ 时，须满足 $\\widehat z=0$。两个坐标均满足各自条件时接受。",
+    " ",
+    " ## 数据范围",
+    " "
+  ],
+  "gold_used_to_generate_patch": false
+}

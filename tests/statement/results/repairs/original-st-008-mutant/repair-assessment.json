@@ -1,0 +1,36 @@
+{
+  "case_id": "st-008-mutant",
+  "root_id": "construct_impossible",
+  "parent_run_id": "original-st-008-mutant-r1",
+  "review_run_id": "original-st-008-mutant-r1-repair-bff09bdc3f",
+  "review_run_directory": "../../repair-reviews/original-st-008-mutant-r1-repair-bff09bdc3f",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "2785e726ac8f98f6bbf93e2c39461f9153fa0612e8126a5299b610a928f164fa",
+      "result": "Maintainer-model general argument tied to exact candidate; not human or independent-model confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "2af38c0519d852415f6d5b565070b1ed49a5a5b0e2cc891bd2aae7949fc64a7b",
+      "result": "Actual executed finite checks: [\"all permutations up to n=6; no-solution and sample acceptance\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; proof plus finite independent calculation plus fresh real host session; not human expert",
+  "reason": "已阅读实际新会话复审；依据绑定候选的独立数学论证及已执行程序，原目标根因已消除，未确认新增规格错误。局部修改的范围变化及非缺陷语义变化按复审前登记保留，不从复审满分推定保持原任务。",
+  "complete": true,
+  "scope_change": "No numeric/model/protocol scope change identified in the patch.",
+  "reviewed_at": "2026-11-13T02:23:18.681248+00:00",
+  "review_raw_sha256": "52b911aea7cc3ea8b3f674980b60e8a473b92b179365048fb400d358e3b5120f",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

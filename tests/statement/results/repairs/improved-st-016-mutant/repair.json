@@ -1,0 +1,22 @@
+{
+  "case_id": "st-016-mutant",
+  "parent_run_id": "improved-st-016-mutant-r1",
+  "parent_raw_sha256": "abed30ea66f638c3bb93752a95652caa652d1d07f390191a8d1977e7a32783ba",
+  "finding_id": "f1",
+  "source": "actual_model_suggestion",
+  "edits": [
+    {
+      "find": "$b_{i_1-1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k-1}$",
+      "replace": "$b_{i_1}\\mathbin{\\operatorname{xor}}\\cdots\\mathbin{\\operatorname{xor}}b_{i_k}$",
+      "conditional": false
+    }
+  ],
+  "repair_indices": [
+    0
+  ],
+  "author_choice": "Synthetic case author (Codex maintainer model) selects the first coherent model-proposed option before re-review under the registered policy.",
+  "original_sha256": "9681c68438996cc9e1bfba3a12d5f89ea667d6b655d26f2861c4aa34fec9c85b",
+  "statement_sha256": "6d81810d6a06ce4acc7ac7b20b0427eb99f95b2d4cbc97a482e4388bc862de59",
+  "created_at": "2026-11-13T02:01:12.618860+00:00",
+  "independent_verification": "pending"
+}

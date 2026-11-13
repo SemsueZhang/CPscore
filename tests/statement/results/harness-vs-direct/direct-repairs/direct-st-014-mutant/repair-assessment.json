@@ -1,0 +1,36 @@
+{
+  "case_id": "st-014-mutant",
+  "root_id": "reply_mapping",
+  "parent_run_id": "direct-st-014-mutant-r1",
+  "review_run_id": "direct-st-014-mutant-r1-repair-6be6723b8f",
+  "review_run_directory": "../../direct-repair-reviews/direct-st-014-mutant-r1-repair-6be6723b8f",
+  "resolved": "complete",
+  "changed_clear_semantics": false,
+  "domain_changed": false,
+  "new_spec_errors": [],
+  "locality": true,
+  "necessary": true,
+  "verification": [
+    {
+      "kind": "mathematical_proof",
+      "artifact": "proof.md",
+      "artifact_sha256": "b1ebcb850c298851f6354bc44e8dc26688783b0ceb1f34f95ff9d73fbecca559",
+      "result": "Maintainer-model general argument tied to exact candidate; not human confirmation."
+    },
+    {
+      "kind": "enumeration",
+      "artifact": "verification.json",
+      "artifact_sha256": "f0dc346bde752ce8ad3f2496bfc431f69a2dd1dd332e7cadc92744b8daaf1bbe",
+      "result": "Actual executed finite checks: [\"actual letter mapping supports all hidden values for N<=64\"]"
+    }
+  ],
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex maintainer; written proof and finite checks plus fresh real host review; not human expert",
+  "reason": "已阅读实际独立新会话复审，结合绑定候选的数学论证及已执行程序，目标根因被消除，未确认新增规格错误；不从模型满分推定保留了原规则。",
+  "complete": true,
+  "scope_change": "No numeric input/model/budget scope change; actual target repair described in proof.md.",
+  "reviewed_at": "2026-11-13T03:40:52.619755+00:00",
+  "review_raw_sha256": "ab986a345da44f09b1b6b31de2b8c02534cec7ce7e72800e385c1bbdfd1eba3e",
+  "review_prediction_sha256": "528e0a928e6a27704aaf6eb8ae296ab47f500a8c20680261527d64261781a84e",
+  "remaining_preexisting_defects": []
+}

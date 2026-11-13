@@ -1,0 +1,25 @@
+{
+  "original_sha256": "74c4f3cfe42ea66f26d0285ff718ac6eef977256027063773aa5655b9a3d2f78",
+  "candidate_sha256": "72565cbc4176611d6248a5007bff8ee1404e4fec136145a7079fe29f8c1dade7",
+  "applied_actual_advice": [
+    {
+      "find": "无解输出一行 NO。",
+      "replace": "无解输出一行 `NO`。",
+      "conditional": false
+    }
+  ],
+  "diff": [
+    "--- original",
+    "+++ candidate",
+    "@@ -8,7 +8,7 @@",
+    " ",
+    " ## 输出格式",
+    " ",
+    "-无解输出一行 NO。有解时第一行输出 `YES`，随后 $n-1$ 行，每行两个整数表示一条边。判定器检查树及全部度数，不限制边的输出顺序。",
+    "+无解输出一行 `NO`。有解时第一行输出 `YES`，随后 $n-1$ 行，每行两个整数表示一条边。判定器检查树及全部度数，不限制边的输出顺序。",
+    " ",
+    " ## 数据范围",
+    " "
+  ],
+  "gold_used_to_generate_patch": false
+}

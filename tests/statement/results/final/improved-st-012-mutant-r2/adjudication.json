@@ -1,0 +1,20 @@
+{
+  "run_id": "improved-st-012-mutant-r2",
+  "raw_sha256": "3fbbaf342b5f0e030b2dcd2d86f25e4a89fb589e17c86efc744a5c63bf09a80d",
+  "prediction_sha256": "b4b388977bf8d93f702b9f97ec63aa3e10c3c761497f949a8957d52da9b69343",
+  "judge_kind": "maintainer_model",
+  "judge_identity": "Codex benchmark maintainer; no human claim",
+  "reviewed_at": "2026-11-13T02:14:52.238639+00:00",
+  "complete": true,
+  "findings": [
+    {
+      "finding_id": "f1",
+      "disposition": "matched",
+      "root_id": "time_typo",
+      "extra_root_id": null,
+      "evidence_valid": true,
+      "reason": "已检查本报告，最短时简为局部错字，完整正文和公式足以恢复含义，报告的Minor合理，未编造语义分歧。",
+      "novel_issue_review": null
+    }
+  ]
+}
