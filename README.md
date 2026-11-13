@@ -50,6 +50,8 @@ Codex、Claude Code、OpenCode、DeepSeek Harness 的安装位置与调用方式
 
 题解审核在[论证与表达核验](skills/cp-editorial-review/references/verification.md)中直接规定正文完整性、证明、复杂度、Markdown、数学记号、代码、图片和来源要求。[评分协议](skills/cp-editorial-review/references/scoring.md)列出格式与内容问题的扣分规则。明确格式违规至少为 Major −2，严重的可为 Fatal −10，证明缺漏与算法错误分别判断，建议项及合理例外不直接扣分。
 
+数据审核按[数据评分协议](skills/cp-data-review/references/scoring.md)先确认候选错误与原集实际漏检，再以额外成绩、正式计分权重及对区分度、判定可靠性的影响为主，结合错误机制定级。具有评审意义的满分漏检是 Fatal 的强信号，理论上很错误的算法仅获有限额外收益时不直接判 Fatal。正常部分分不扣分，外加反例不并入原集成绩。
+
 题目总评的[材料分项协议](skills/cp-problem-review/references/materials.md)也直接规定题面、题解和排版要求，独立安装即可审核。这些要求已纳入 CPScore 自身协议，制定时参考洛谷题目及题解规范。
 
 std 审核兼顾实现与题解对应。具体分级见各技能的 `references/`。读取、检索和执行使用宿主已有能力，实测结论须有真实结果，有限测试不替代证明。
@@ -86,7 +88,7 @@ CPscore/
 | std 审核示例 | [CSP-S 2026 迁徙](examples/solution-review.md) | 人工变体含 Fatal、Major、Minor 各一项，评分−3/10，附题解与实际反例。 |
 | 比赛评价实例 | [ICPC 2026 西安区域赛](examples/contest-review-xian-2026.md) | 整套合格，中段区分度有风险，附[解法推导](examples/contest-review-xian-2026-solutions.md)与[核验方法](examples/contest-review-xian-2026/README.md)。这是已暴露赛后结果的材料回放。 |
 | 新颖度与质量评审实例 | [CSP-S 2026 全卷](examples/novelty-review-csps2026.md) | 四题评级 A / B / F / C+，附先例比较、整套设计与检索范围。 |
-| 数据审核实例 | [CSP-S 2026 地铁](examples/data-review-subway.md) | 原集25点实测，评分−10/10，含8项独立缺陷及复现方法。 |
+| 数据审核实例 | [CSP-S 2026 地铁](examples/data-review-subway.md) | 原集25点实测，按漏检影响复评为−20/10（2 Fatal、4 Major、2 Minor），保留8项独立缺陷的实测与复现方法。 |
 
 ## 许可证
 
