@@ -35,7 +35,7 @@ for cpscore_dir in skills/*/; do
       }
     }' "$cpscore_doc" | while IFS= read -r cpscore_link; do
       case "$cpscore_link" in
-        *://*|\#*|mailto:*) continue;;
+        ''|*://*|\#*|mailto:*) continue;;
       esac
       cpscore_target=${cpscore_link%%#*}
       case "$cpscore_target" in
