@@ -1,6 +1,8 @@
 # 安装、调用、更新与卸载
 
-CPScore 遵循[Agent Skills 规范](https://agentskills.io/specification)。各技能独立使用，不强制依赖其他技能或额外运行时。安装时复制整个技能目录，包括 `SKILL.md`、引用文件与随包脚本。新颖度审核会自动探测 Python 3.8 及以上的可用环境，符合时使用标准库辅助脚本，否则使用宿主工具，无需安装 Python 或第三方包。
+CPScore 遵循[Agent Skills 规范](https://agentskills.io/specification)。各技能独立使用，不强制依赖其他技能或额外运行时。安装时复制整个技能目录，包括 `SKILL.md`、引用文件与随包脚本。题目质量评分 `cp-quality-review` 以人类题解为依据，随包检索脚本会探测 Python 3.8+，不可用时使用宿主工具，无需安装额外依赖。
+
+质量评分调用示例：`$cp-quality-review 依据 statement.md 和人类题解 editorial.md，检索先例并评价考点原创性与算法设计质量。`
 
 难度评定技能 `cp-difficulty-rate` 也可独立安装。它随包提供三维规范、洛谷八档总难度、CF/AT 换算表与数据快照；可选数字工具仅用 Python 3.8+ 标准库，没有 Python 时按表评定即可。调用示例：`$cp-difficulty-rate 评定 statement.md，结合 editorial.md 和 std.cpp。`
 
@@ -58,7 +60,14 @@ rm -r "$cpscore_dest/$cpscore_skill"
 cp -R "skills/$cpscore_skill" "$cpscore_dest/"
 ```
 
-仅卸载时执行第一行。批量操作逐个处理已安装的技能，不删除整个宿主技能目录。旧版 `.cpscore` 已不再使用，确认无自有材料后可移除，旧报告与实测证据按需保留。
+旧版 `cp-novelty-review` 已由 `cp-quality-review` 替代。备份旧技能的自定义修改后，迁移安装：
+
+```sh
+rm -r "$cpscore_dest/cp-novelty-review"
+cp -R skills/cp-quality-review "$cpscore_dest/"
+```
+
+卸载所选技能时，执行更新代码块中的 `rm -r "$cpscore_dest/$cpscore_skill"`。批量操作逐个处理已安装的技能，不删除整个宿主技能目录。旧版 `.cpscore` 已不再使用，确认无自有材料后可移除，旧报告与实测证据按需保留。
 
 ## Windows PowerShell
 
@@ -90,7 +99,14 @@ Remove-Item -Recurse -Path (Join-Path $cpscoreDest $cpscoreSkill)
 Copy-Item -Recurse -Path "skills/$cpscoreSkill" -Destination $cpscoreDest
 ```
 
-仅卸载时执行第一行。宿主可用性以其支持的环境为准，WSL 中运行的宿主使用 WSL 内的安装目录。
+从旧新颖度技能迁移时，备份自定义修改后执行：
+
+```powershell
+Remove-Item -Recurse -Path (Join-Path $cpscoreDest 'cp-novelty-review')
+Copy-Item -Recurse -Path 'skills/cp-quality-review' -Destination $cpscoreDest
+```
+
+卸载所选技能时，执行更新代码块中的 `Remove-Item` 命令。宿主可用性以其支持的环境为准，WSL 中运行的宿主使用 WSL 内的安装目录。
 
 ## 确认安装
 

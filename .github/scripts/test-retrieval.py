@@ -14,7 +14,7 @@ from unittest.mock import patch
 from urllib.error import URLError
 
 sys.dont_write_bytecode = True
-SCRIPT = Path(__file__).resolve().parents[2] / "skills/cp-novelty-review/retrieve.py"
+SCRIPT = Path(__file__).resolve().parents[2] / "skills/cp-quality-review/retrieve.py"
 SPEC = importlib.util.spec_from_file_location("retrieval", SCRIPT)
 HELPER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(HELPER)
