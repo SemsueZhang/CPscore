@@ -33,7 +33,7 @@ S 是独立分类，不是更高的 A+。A+ 与 B+ 共用优秀设计标准：�
 
 保留随包的 Python 3.8+ 标准库辅助脚本，用于候选索引、原文缓存和分段读取；不可用时回退到宿主工具。详见[检索说明](../skills/cp-quality-review/references/retrieval.md)。
 
-[CSP-S 2026 全卷评审](../examples/novelty-review-csps2026.md)是旧版 `cp-novelty-review` 的历史报告，保留原评级，未按本次八档协议复评。现有离线检查覆盖技能封装、复制安装和检索脚本行为，尚无新版质量评级的准确率评测。
+[CSP-S 2026 全卷评审](../examples/novelty-review-csps2026.md)是旧版 `cp-novelty-review` 的历史报告，保留原评级，未按本次八档协议复评。本地离线检查覆盖技能封装、复制安装和检索脚本行为，尚无新版质量评级的准确率评测。
 
 ## 执行规则
 

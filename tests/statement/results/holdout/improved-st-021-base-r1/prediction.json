@@ -1,8 +1,0 @@
-{
-  "score": 10,
-  "complete": true,
-  "findings": [],
-  "optional_suggestions": [
-    "可在输入格式中补明：第 $i$ 行对应初始编号为 $i$ 的机器人，$x_i$ 表示初始位置，`L`、`R` 分别表示向左、向右移动。此项为可选澄清，不扣分。"
-  ]
-}

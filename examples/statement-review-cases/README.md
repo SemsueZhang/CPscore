@@ -27,7 +27,7 @@ case-01～11 为本轮新增的自足合成材料。每份均明确采用自有�
 
 ## 验证范围
 
-本轮本地执行通过 `sh .github/scripts/check-skills.sh`、`python3 .github/scripts/test-retrieval.py` 和现有本地 `sh tests/check.sh`。前者覆盖四宿主模拟复制、独立安装、更新、卸载与入口/Reference 检查；检索辅助脚本的 7 项离线检查通过。逐文核对本仓库 Markdown 本地链接、Reference 可达性及 `git diff --check`。
+本轮本地完成四宿主模拟复制、独立安装、更新、卸载与入口/Reference 检查，检索辅助脚本的 7 项离线检查通过。另核对本仓库 Markdown 本地链接、Reference 可达性及 `git diff --check`。测试脚本和运行记录仅保存在本地。
 
 `skill-creator` 的 `quick_validate.py` 在当前 Python 下因缺少 PyYAML 未运行成功，未安装依赖；Skill 前置字段和名称由仓库自带检查核验。复制模拟不证明真实宿主已加载技能。
 

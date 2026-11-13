@@ -1,8 +1,0 @@
-{
-  "score": 10,
-  "complete": true,
-  "findings": [],
-  "optional_suggestions": [
-    "输入格式可补明 n 为顶点数、顶点编号为 1 至 n，并明确 u、v 为边的两个端点，w 为边权；此项为不扣分的表达完善建议。"
-  ]
-}

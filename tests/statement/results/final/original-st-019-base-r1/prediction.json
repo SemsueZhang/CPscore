@@ -1,9 +1,0 @@
-{
-  "score": 10,
-  "complete": true,
-  "findings": [],
-  "optional_suggestions": [
-    "首次出现 m 时可补充“其中 $m$ 为图的边数”，减少常规记号的理解成本。",
-    "若用于具体平台的函数评测，可补充语言函数签名及 edges 的端点对容器类型。"
-  ]
-}

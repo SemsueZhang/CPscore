@@ -1,8 +1,0 @@
-{
-  "score": 10,
-  "complete": true,
-  "findings": [],
-  "optional_suggestions": [
-    "可补充 s = aaa、t = aa、答案为 3 的样例，直观展示重复字符按位置区分方案的规则；不扣分。"
-  ]
-}

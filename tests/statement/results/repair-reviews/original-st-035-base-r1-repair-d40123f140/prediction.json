@@ -1,8 +1,0 @@
-{
-  "score": 10,
-  "complete": true,
-  "findings": [],
-  "optional_suggestions": [
-    "可增加一个包含支付失败、次日继续处理的样例，帮助展示“失败不扣钱”的规则。"
-  ]
-}

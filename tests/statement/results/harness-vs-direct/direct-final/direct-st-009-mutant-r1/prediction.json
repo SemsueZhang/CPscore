@@ -1,8 +1,0 @@
-{
-  "score": 10,
-  "complete": true,
-  "findings": [],
-  "optional_suggestions": [
-    "可补充“顶点编号为 1 到 n，第 i 个输入整数表示顶点 i 的要求度数”，使编号约定更明确；此项不扣分。"
-  ]
-}

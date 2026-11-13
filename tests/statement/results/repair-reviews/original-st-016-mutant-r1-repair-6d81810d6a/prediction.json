@@ -1,8 +1,0 @@
-{
-  "score": 10,
-  "complete": true,
-  "findings": [],
-  "optional_suggestions": [
-    "可补充一个小型交互示例，展示询问、回复和最终输出，方便首次接触交互题的选手理解协议；不扣分。"
-  ]
-}

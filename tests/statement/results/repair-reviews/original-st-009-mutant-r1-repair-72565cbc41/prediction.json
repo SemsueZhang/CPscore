@@ -1,8 +1,0 @@
-{
-  "score": 10,
-  "complete": true,
-  "findings": [],
-  "optional_suggestions": [
-    "可明确顶点编号为 1 至 n，d_i 对应顶点 i，并说明每条边输出的两个整数为端点编号；这是对常规索引约定的显式化，不计扣分。"
-  ]
-}
