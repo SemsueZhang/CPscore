@@ -6,9 +6,9 @@ CPScore 为算法竞赛出题、验题和组卷提供 8 个独立技能，覆盖
 
 | Skill | 用途 | 结果 |
 | --- | --- | --- |
-| [cp-statement-review](skills/cp-statement-review/SKILL.md) | 规格、边界、样例、洛谷规范与易读性 | 10分制评分及修改建议 |
+| [cp-statement-review](skills/cp-statement-review/SKILL.md) | 规格、边界、样例、格式与易读性 | 10分制评分及修改建议 |
 | [cp-solution-review](skills/cp-solution-review/SKILL.md) | std 正确性、复杂度、表达及与给定题解的对应 | 10分制评分及修改建议 |
-| [cp-editorial-review](skills/cp-editorial-review/SKILL.md) | 关键思想、证明、复杂度、讲解与洛谷题解规范 | 10分制评分及修改建议 |
+| [cp-editorial-review](skills/cp-editorial-review/SKILL.md) | 关键思想、证明、复杂度、讲解与格式 | 10分制评分及修改建议 |
 | [cp-data-review](skills/cp-data-review/SKILL.md) | 数据合法性、错解漏网、子任务得分 | 10分制评分及补点建议 |
 | [cp-novelty-review](skills/cp-novelty-review/SKILL.md) | 相似题、论文、独立考点和推导质量 | A/B/C/C+/D/F |
 | [cp-problem-review](skills/cp-problem-review/SKILL.md) | 单题材料、解法空间与整体设计 | 推荐 / 合格 / 不合格 |
@@ -42,11 +42,11 @@ Codex、Claude Code、OpenCode、DeepSeek Harness 的安装位置与调用方式
 - **比赛总评**：默认依据赛前材料预测区分度、做题体验与整体质量，按逐题占比及整体否决条件判定。仅明确要求复盘时使用本场实际成绩，详见[比赛总评协议](skills/cp-contest-review/references/assessment.md)。
 - **表现预测**：给出路线、时间和得分区间，不作质量评级或实测成绩。
 
-题面审核先独立重建规格，再主动核验疑点，最后交叉核对材料并提出最小修订。方法分别维护在[规格核验](skills/cp-statement-review/references/specification.md)与[阅读和修订](skills/cp-statement-review/references/readability.md)，完整规范条款和示例已写入[本地题面规范](skills/cp-statement-review/references/luogu-standard.md)；分级、去重及未完成状态统一见[评分协议](skills/cp-statement-review/references/scoring.md)。
+题面审核先独立重建规格，再主动核验疑点，最后交叉核对材料并提出最小修订。[规格核验](skills/cp-statement-review/references/specification.md)直接规定任务定义、输入输出、范围、部分分、多语言及时空裕量要求，[阅读和修订](skills/cp-statement-review/references/readability.md)直接规定标点、间距、公式及展示要求。分级、去重及未完成状态统一见[评分协议](skills/cp-statement-review/references/scoring.md)。
 
-题解审核按[本地题解规范](skills/cp-editorial-review/references/luogu-standard.md)完整收录的条款和示例，核验正确性、讲解、Markdown、公式、代码及引用，按投稿场景核对图片托管和 GenAI 等来源要求。明确格式违规至少为 Major −2，严重的可为 Fatal −10，详见[评分协议](skills/cp-editorial-review/references/scoring.md)。证明缺漏与算法错误分别判断，建议项及合理例外不直接扣分。
+题解审核在[论证与表达核验](skills/cp-editorial-review/references/verification.md)中直接规定正文完整性、证明、复杂度、Markdown、数学记号、代码、图片和来源要求。[评分协议](skills/cp-editorial-review/references/scoring.md)列出格式与内容问题的扣分规则。明确格式违规至少为 Major −2，严重的可为 Fatal −10，证明缺漏与算法错误分别判断，建议项及合理例外不直接扣分。
 
-题目总评也附带完整的[本地材料规范](skills/cp-problem-review/references/material-standards.md)，三个技能均可直接使用随包正文审核，无需打开洛谷网页。外链只作出处、许可或补充图示。
+题目总评的[材料分项协议](skills/cp-problem-review/references/materials.md)也直接规定题面、题解和排版要求，独立安装即可审核。这些要求已纳入 CPScore 自身协议，制定时参考洛谷题目及题解规范。
 
 std 审核兼顾实现与题解对应。具体分级见各技能的 `references/`。读取、检索和执行使用宿主已有能力，实测结论须有真实结果，有限测试不替代证明。
 
@@ -71,7 +71,7 @@ CPscore/
 
 | 项目 | 链接 | 摘要 |
 | --- | --- | --- |
-| 题解审核 | [货币系统](examples/editorial-review.md) | 数学证明缺漏的编写示例，演示评分8/10，未演示新版洛谷规范全项核验。 |
+| 题解审核 | [货币系统](examples/editorial-review.md) | 数学证明缺漏的编写示例，演示评分8/10，未演示新版协议全项核验。 |
 | 题解审核实例 | [CCPC 2026 长春 L：故事](examples/editorial-review-story.md) | 缺少达到最少剩余 1 时保留端点的判定，旧版数学审核评分8/10，未按新版规范复审。 |
 | std 审核示例 | [CSP-S 2026 迁徙](examples/solution-review.md) | 人工变体含 Fatal、Major、Minor 各一项，评分−3/10，附题解与实际反例。 |
 | 比赛评价实例 | [ICPC 2026 西安区域赛](examples/contest-review-xian-2026.md) | 整套合格，中段区分度有风险，附[解法推导](examples/contest-review-xian-2026-solutions.md)与[核验方法](examples/contest-review-xian-2026/README.md)。这是已暴露赛后结果的材料回放。 |
@@ -80,4 +80,4 @@ CPscore/
 
 ## 许可证
 
-本项目原创内容采用 [MIT License](LICENSE)。本地规范文件中引用的洛谷原文归洛谷及其贡献者所有，按原文注明的 CC BY-NC-ND 4.0 许可使用，不改授 MIT 许可。
+本项目采用 [MIT License](LICENSE)。
