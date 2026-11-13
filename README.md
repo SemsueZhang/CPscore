@@ -40,6 +40,17 @@ $cp-editorial-review 审核 editorial.md，结合 statement.md。
 
 Codex、Claude Code、OpenCode、DeepSeek Harness 的安装位置与调用方式，以及批量安装、Windows、更新和卸载，见[安装说明](install.md)。已有同名技能时先保存自定义修改，再按更新步骤替换。
 
+## 示例
+
+| 方向 | 示例 | 内容 |
+| --- | --- | --- |
+| 题面审核 | [方法小案例](examples/statement-review-cases/README.md) | 通过合成题面展示规则歧义、样例核验、阅读障碍与局部修订。 |
+| 题解审核 | [《货币系统》](examples/editorial-review.md)、[长春 L《故事》](examples/editorial-review-story.md) | 关键证明缺漏、补证与修改建议，保留原版审核评分。 |
+| 标程审核 | [CSP-S 2026《迁徙》](examples/solution-review.md) | 人工变体中的正确性与说明缺陷，附实际反例。 |
+| 数据审核 | [CSP-S 2026《地铁》](examples/data-review-subway.md) | 原集漏检、错解额外得分、分级与补点建议，附复现代码。 |
+| 比赛总评 | [ICPC 2026 西安区域赛](examples/contest-review-xian-2026.md) | 已暴露赛后结果的材料回放，分析解题路线、梯度与做题体验。 |
+| 历史新颖度审核 | [CSP-S 2026 全卷](examples/novelty-review-csps2026.md) | 旧协议下的先例与设计比较，尚未按现行八档质量标准复评。 |
+
 ## 文档与项目结构
 
 每个技能的用途、材料要求、结果解读、案例和已有验证见 [Skill 使用说明](docs/README.md)。详细判据由各技能自带的 `references/` 维护，安装时复制完整技能目录即可。
