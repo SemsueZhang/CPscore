@@ -32,7 +32,7 @@ $cp-difficulty-luogu 根据 statement.md、editorial.md 和 std.cpp 预测洛谷
 }
 ```
 
-支持 1～3 条解法，`interface` 可为 `library`。材料本身必须先核对，不能混入其他题的解法。仓库合成接口样例为 `tests/difficulty/fixtures/item.json`，不属于准确率评测。
+支持 1～3 条解法，`interface` 可为 `library`。材料本身必须先核对，不能混入其他题的解法。维护者本地的合成接口样例为 `tests/difficulty/fixtures/item.json`，不随仓库提交，也不属于准确率评测。
 
 在 CPScore 根目录运行，下列模型 ID 需替换为实际可用的前沿模型：
 
@@ -134,6 +134,8 @@ python3 "$cpscore_tools/benchmark.py" compare \
 旧 87 题只能诊断。准备时将 inputs 指向 `$cpscore_bench/data/inputs.jsonl`，split 使用 `data/difficulty/luogubench87-development.json`，其余步骤相同。输出始终标记 `development_diagnostic`。不能将已查看答案并改过 Skill 的题重新命名为独立集。按家族隔离、盲化与人工材料复核的限制见[数据说明](../data/difficulty/README.md)。
 
 ## 基础验证与未完成项
+
+以下测试命令供保有本地 `tests/` 的维护者使用。测试目录及对应工作流不随仓库提交，普通使用者无需取得这些文件即可运行 Skill 和 CLI。
 
 ```sh
 python3 -m unittest discover -s tests/difficulty -p 'test_*.py' -v

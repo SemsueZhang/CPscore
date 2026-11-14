@@ -11,7 +11,7 @@ CPScore 为算法竞赛出题、验题和组卷提供 8 个独立技能，覆盖
 | Skill 与使用说明 | 用途 | 交付 |
 | --- | --- | --- |
 | [cp-statement-review](docs/cp-statement-review.md) | 检查题面规则、样例、格式与阅读障碍 | 评分、依据与局部修订 |
-| [cp-editorial-review](docs/cp-editorial-review.md) | 检查算法、证明、复杂度与讲解 | 评分、补证与修改建议 |
+| [cp-editorial-review](docs/cp-editorial-review.md) | 检查声明、全题覆盖、复杂度与讲解 | 评分、缺口定位与修改方向 |
 | [cp-solution-review](docs/cp-solution-review.md) | 对照题解审核 std 的正确性与实现表达 | 评分、反例与修正建议 |
 | [cp-data-review](docs/cp-data-review.md) | 核验数据、判定与错解的实际漏网收益 | 评分与补点建议 |
 | [cp-quality-review](docs/cp-quality-review.md) | 依据人类题解，评价考点原创性与算法设计质量 | A+ / A / B+ / B / C / D / F / S 及用途建议 |
@@ -62,12 +62,11 @@ CPscore/
 ├── skills/                # 8 个当前技能及 1 个保留的历史难度技能
 ├── docs/                  # 每个技能的使用说明与结果分析
 ├── data/difficulty/       # 专家反馈、开发隔离登记及历史结果
-├── tests/difficulty/      # 标准库离线基础测试
 ├── examples/              # 审核案例、解法与核验代码
 └── install.md             # 多宿主安装、更新与卸载
 ```
 
-难度模块的基础测试、数据协议和历史结果摘要随仓库保存，其他本地实验材料按各自记录管理。历史题目正文和完整模型轨迹仍在原 LuoguBench 工程中。
+数据协议和历史结果摘要随仓库保存。`test/`、`tests/` 及依赖它们的测试工作流仅在本地保留，不随仓库提交。历史题目正文和完整模型轨迹仍在原 LuoguBench 工程中。
 
 ## 许可证
 
