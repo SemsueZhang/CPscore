@@ -1,0 +1,90 @@
+{
+  "skill_version": "cpscore-difficulty-luogu-v2.0.0",
+  "expert_rules": 0,
+  "dataset_id": "luogubench-87-v1",
+  "scope": "development_diagnostic",
+  "model": "gpt-6.1-sol",
+  "generation": {
+    "reasoning_effort": "high"
+  },
+  "items_per_arm": 87,
+  "planned_rating_calls": 174,
+  "workers_per_arm": 2,
+  "protocol_id": "cpscore-luogu-paired-isolated-v2",
+  "paired_prompt_audit": "87/87 same materials and task, only frozen Skill block differs",
+  "baseline_manifest_sha256": "bb279a48fabf9cf1fbde21ee42ec4b8fddf89c1e52740f70ba221b46dbe11d25",
+  "skill_manifest_sha256": "d86f93fa7c8789812d52c67d52cce34dfa60e7cf630491c8db99cb4de7e09f68",
+  "skill_sha256": "50e88ca39b700e51ba0b11d4a7aade5fdd5d5f0e6e93225445f4bacb76862fed",
+  "cli_version": "codex-cli 0.167.0-alpha.4.1",
+  "labels_loaded_for_this_run": true,
+  "auxiliary_probes": {
+    "sandbox_launch_failed_before_model_call": 1,
+    "successful_synthetic_model_call": 1,
+    "excluded_from_scores": true
+  },
+  "status": "complete",
+  "scored_at_utc": "2026-11-14T05:11:18.218560+00:00",
+  "label_file_sha256": "9bb71647a553a95602dabf3773507e226d0993847a8f379e063e56e14358bf53",
+  "call_audit": {
+    "baseline": {
+      "rating_requests": 87,
+      "valid_predictions": 87,
+      "usage": {
+        "input_tokens": 1847361,
+        "cached_input_tokens": 914688,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 28593,
+        "reasoning_output_tokens": 17670
+      }
+    },
+    "skill": {
+      "rating_requests": 87,
+      "valid_predictions": 87,
+      "usage": {
+        "input_tokens": 1975400,
+        "cached_input_tokens": 1010176,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 31085,
+        "reasoning_output_tokens": 19931
+      }
+    }
+  },
+  "unique_rating_conversations": 174,
+  "usage_reported_by_cli": {
+    "input_tokens": 3822761,
+    "cached_input_tokens": 1924864,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 59678,
+    "reasoning_output_tokens": 37601
+  },
+  "paired_results": {
+    "both_correct": 61,
+    "baseline_only_correct": 7,
+    "skill_only_correct": 4,
+    "neither_correct": 15,
+    "skill_smaller_error": 4,
+    "baseline_smaller_error": 7,
+    "equal_absolute_error": 76,
+    "different_predictions": 11
+  },
+  "snapshot_audited_at_utc": "2026-11-14T04:33:25.033484+00:00",
+  "prepared_last_write_utc": "2026-11-14T04:32:45.216994+00:00",
+  "all_requests_prepared_before_first_rating": true,
+  "final_arithmetic_audit": {
+    "baseline": {
+      "n": 87,
+      "exact": 68,
+      "absolute_error_sum": 20,
+      "within_one": 86,
+      "signed_error_sum": -4
+    },
+    "skill": {
+      "n": 87,
+      "exact": 65,
+      "absolute_error_sum": 23,
+      "within_one": 86,
+      "signed_error_sum": -9
+    }
+  },
+  "reporter_sha256": "b1ea32db75117a0c2646551d7e8761bbac326d0e85c094fd38ab7213f88cdfb9"
+}

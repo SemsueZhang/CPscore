@@ -1,0 +1,15 @@
+{
+  "id": "synthetic_sum",
+  "statement_md": "给定两个整数 a,b，均在 0 到 100 之间，输出 a+b。输入一行包含 a,b，输出它们的和。",
+  "solutions": [
+    {
+      "method_id": "method_1",
+      "editorial_md": "读入 a,b，输出 a+b。这正是所求且不会溢出 int。时间和额外空间均为 O(1)。",
+      "std": {
+        "language": "cpp17",
+        "interface": "stdin_stdout",
+        "code": "#include <iostream>\nint main(){int a,b;std::cin>>a>>b;std::cout<<a+b<<'\\n';}\n"
+      }
+    }
+  ]
+}

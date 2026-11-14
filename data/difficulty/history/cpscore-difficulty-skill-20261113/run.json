@@ -1,0 +1,187 @@
+{
+  "status": "complete",
+  "date": "2026-11-13",
+  "timezone": "Asia/Shanghai",
+  "requested_model": "gpt-6-luna",
+  "reasoning_effort": "medium",
+  "backend": "Codex collaboration subagents",
+  "protocol": "three fresh non-inherited contexts, 29 items per agent, exact baseline assignments/order, single pass, original benchmark rubric plus frozen CPScore difficulty skill",
+  "fork_turns": "none",
+  "shards": 3,
+  "items": 87,
+  "repeats_per_item": 1,
+  "input_file_sha256": "b7ce8064e79d3f0d33975596d5511619411649ae3af6a36e47bed2b1cdaaa25a",
+  "labels_sha256": "9bb71647a553a95602dabf3773507e226d0993847a8f379e063e56e14358bf53",
+  "rubric_sha256": "27aee87838b9271b245c77cc17576404f59cc107e3791684c8628080341111c5",
+  "baseline_run": "results/gpt-6-luna/run.json",
+  "baseline_predictions_sha256": "90d54d9174405df36d2c6f1d78942708891bc6296fcc455e753e0bc84b2408a2",
+  "skill_source": "/Users/zhangchenrui/Workspace/project/CPscore/skills/cp-difficulty-rate",
+  "skill_files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "b2d73e9626038e08f7e8d26912595f2f8ce09e151a96f28ff630cb841a99a6da"
+    },
+    {
+      "path": "references/platform-anchors.json",
+      "sha256": "fc5384eec4396a2dcff227ece56ef2f8858cc9db4738bcae7e315e2016b65d73"
+    },
+    {
+      "path": "references/platform-calibration.json",
+      "sha256": "e1b6d8157b52eab3d695b5e86881d1e146d5037c551fd0eb06f6cb41b4b435c3"
+    },
+    {
+      "path": "references/platforms.md",
+      "sha256": "8b4d9d12c35bc79596b7a9975627da37c2c04de9b4a0ce583521b1ce19d8731f"
+    },
+    {
+      "path": "references/rubric.md",
+      "sha256": "c1e498bd9c2251d4e10748c0ad56494d17127e2423dac9c8feaa010dd2b18297"
+    },
+    {
+      "path": "scripts/__pycache__/calibrate_platforms.cpython-314.pyc",
+      "sha256": "938e0704ce4e8987ad2671dfa22619c8904d2e73998f4e975ba46ebb9e0f4f2a"
+    },
+    {
+      "path": "scripts/__pycache__/platforms.cpython-314.pyc",
+      "sha256": "4d921f750122b84e883f3beb863b51309746d278fd0f3e00f6d3ee574c0d09ca"
+    },
+    {
+      "path": "scripts/calibrate_platforms.py",
+      "sha256": "1e0154e2c859be29d96a98bcde6aac8c62ec8eeba4bfc3a8953d874cbaf55124"
+    },
+    {
+      "path": "scripts/platforms.py",
+      "sha256": "0cd2585be4cca220c9383b399b9746bcfa5c09e83aa7a3bc9831b06efa1e51c7"
+    }
+  ],
+  "blind_directory": "/tmp/luogubench-cpscore-skill-20261113",
+  "baseline_prompt_reused": true,
+  "allowed_added_read_files": [
+    "skill/cp-difficulty-rate/SKILL.md",
+    "skill/cp-difficulty-rate/references/rubric.md",
+    "skill/cp-difficulty-rate/references/platforms.md"
+  ],
+  "added_instruction": "使用cp-difficulty-rate skill评定。先完整读取冻结技能入口及其rubric.md、platforms.md。skill总档为0..7，写入Benchmark的level时加1，label与Benchmark八档名称一致。",
+  "primary_metric": "spearman_rho",
+  "paired_bootstrap_repetitions": 5000,
+  "bootstrap_seed": 20261113,
+  "prespecified_analysis_subsets": [
+    "all_87",
+    "exclude_7_direct_skill_anchors",
+    "exclude_all_8_skill_named_problems"
+  ],
+  "retries": "no semantic retries, formatting-only repair must be recorded",
+  "billing_and_tokens": "not exposed by collaboration tool; unknown, not zero",
+  "rationale_quality_scored": false,
+  "known_limitations": [
+    "one run per condition with shard shared-context effects",
+    "skill contains 7 benchmark anchors and one other benchmark problem identity",
+    "public problems may be memorized",
+    "historical baseline, not concurrently randomized",
+    "agent-curated solutions and ordinal labels are not independent human reasoning validation",
+    "manual largest-error spot check found one reason about a different item; retained unchanged and reported with post-hoc exclusion sensitivity"
+  ],
+  "agents": [
+    {
+      "shard": 1,
+      "model": "gpt-6-luna",
+      "reasoning_effort": "medium",
+      "fork_turns": "none",
+      "task_file": "results/cpscore-difficulty-skill-20261113/agent_tasks/shard_1.txt",
+      "task_file_sha256": "f6b95bb531fdccf6eacd835531334075d7e31019a5c859569eb978505d03ce68",
+      "output": "results/cpscore-difficulty-skill-20261113/shards/shard_1.jsonl",
+      "status": "complete",
+      "task_name": "/root/cpscore_luna_skill_1",
+      "predictions": 29,
+      "dispatch_message": "你负责本次 Benchmark 的有 skill 评测分片。请完整读取 /Users/zhangchenrui/Workspace/work/ai/LuoguBench/results/cpscore-difficulty-skill-20261113/agent_tasks/shard_1.txt 并执行其中任务。该文件是本次评测指令。只按其中允许范围读取材料并写你的预测文件，不做其他工作。",
+      "reported_image_inspections": 0,
+      "skill_entry_and_two_references_fully_read_agent_report": true
+    },
+    {
+      "shard": 2,
+      "model": "gpt-6-luna",
+      "reasoning_effort": "medium",
+      "fork_turns": "none",
+      "task_file": "results/cpscore-difficulty-skill-20261113/agent_tasks/shard_2.txt",
+      "task_file_sha256": "a5f052fdbcde4e4d19b75b049c1edd12c6b49f51a4024ccd56c4088df065ed60",
+      "output": "results/cpscore-difficulty-skill-20261113/shards/shard_2.jsonl",
+      "status": "complete",
+      "task_name": "/root/cpscore_luna_skill_2",
+      "predictions": 29,
+      "dispatch_message": "你负责本次 Benchmark 的有 skill 评测分片。请完整读取 /Users/zhangchenrui/Workspace/work/ai/LuoguBench/results/cpscore-difficulty-skill-20261113/agent_tasks/shard_2.txt 并执行其中任务。该文件是本次评测指令。只按其中允许范围读取材料并写你的预测文件，不做其他工作。",
+      "reported_image_inspections": 0,
+      "skill_entry_and_two_references_fully_read_agent_report": true
+    },
+    {
+      "shard": 3,
+      "model": "gpt-6-luna",
+      "reasoning_effort": "medium",
+      "fork_turns": "none",
+      "task_file": "results/cpscore-difficulty-skill-20261113/agent_tasks/shard_3.txt",
+      "task_file_sha256": "ff71a371ca4514751c2d820e8c6667bbe0d6f172ee86a953a310dab1a7aedf01",
+      "output": "results/cpscore-difficulty-skill-20261113/shards/shard_3.jsonl",
+      "status": "complete",
+      "task_name": "/root/cpscore_luna_skill_3",
+      "predictions": 29,
+      "dispatch_message": "你负责本次 Benchmark 的有 skill 评测分片。请完整读取 /Users/zhangchenrui/Workspace/work/ai/LuoguBench/results/cpscore-difficulty-skill-20261113/agent_tasks/shard_3.txt 并执行其中任务。该文件是本次评测指令。只按其中允许范围读取材料并写你的预测文件，不做其他工作。",
+      "reported_image_inspections": 0,
+      "skill_entry_and_two_references_fully_read_agent_report": true
+    }
+  ],
+  "rubric_export_file_sha256": "e283176a3bd1bb892d5754edff89b55b1b0bb98022f233468f22e20f972ea66f",
+  "rubric_hash_convention": "baseline hashes rubric without export-added trailing newline; both underlying text and exported files match baseline",
+  "started_at_utc": "2026-11-13T09:08:52.063846+00:00",
+  "start_time_note": "recorded immediately after dispatch of the three evaluation agents",
+  "evaluation_completed_at_utc": "2026-11-13T09:14:57.708349+00:00",
+  "format_repairs": 6,
+  "input_path_repairs": 1,
+  "label_based_semantic_retries": 0,
+  "actual_image_use": "all three agents reported no image-viewer calls; identical to baseline; images were available",
+  "protocol_incidents": [
+    {
+      "shard": 1,
+      "type": "input_path_typo",
+      "reported_missing_id": "Bd7a4ff285c6",
+      "actual_id": "Bd7a4ff285c6b",
+      "resolution": "agent read correct existing material and replaced its placeholder before any scoring; other28 predictions unchanged by agent report",
+      "ground_truth_feedback_provided": false
+    },
+    {
+      "shard": 2,
+      "type": "literal_newlines_in_jsonl",
+      "resolution": "agent repaired serialization only, then verified29 valid JSONL records and exact ID order",
+      "ground_truth_feedback_provided": false
+    },
+    {
+      "shard": 2,
+      "type": "five_level_label_mismatches",
+      "ids": [
+        "B90f954950cdb",
+        "B703db0170e3d",
+        "B63b353de7af4",
+        "Bb82e7e200288",
+        "B0398f81cca21"
+      ],
+      "original_level": 6,
+      "original_label": "省选/NOI-",
+      "agent_confirmed_intended_benchmark_level": 6,
+      "corrected_label": "提高+/省选-",
+      "numeric_level_or_reason_changes": false,
+      "ground_truth_feedback_provided": false
+    }
+  ],
+  "format_repair_breakdown": {
+    "jsonl_newline_serialization_incidents": 1,
+    "label_strings_corrected": 5,
+    "numeric_levels_changed_by_schema_repair": 0
+  },
+  "completed_at_utc": "2026-11-13T09:17:26.379441+00:00",
+  "predictions_sha256": "7e0f81808b1e32e3a61fdbf37ef2db8601914618770f7f40fd3324fdf0b0fcac",
+  "valid_predictions": 87,
+  "coverage": 1.0,
+  "analysis_script": "tools/compare_skill_run.py",
+  "analysis_script_sha256": "309f4d6506a52b342c099c6184ff9cf27c195c920d6e7bb42e6ccad512dc3cca",
+  "observed_evaluation_seconds": 365.644503,
+  "additional_skill_text_characters_per_context": 7407,
+  "intervention_boundary": "same original rubric and task body except necessary path updates, frozen skill read instruction, skill file allow-list and 0..7 to1..8 output conversion; file-reading dispatch wrapper also preserved"
+}

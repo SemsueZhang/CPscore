@@ -1,0 +1,15 @@
+{
+  "original_evaluation": "/Users/zhangchenrui/Workspace/project/CPscore/outputs/difficulty-luogu-v2-20261114-gpt61sol-high",
+  "original_skill_sha256": "50e88ca39b700e51ba0b11d4a7aade5fdd5d5f0e6e93225445f4bacb76862fed",
+  "repeat_plan": "/Users/zhangchenrui/Workspace/project/CPscore/outputs/difficulty-why-20261114/plan.json",
+  "official_docs": [
+    {
+      "url": "https://developers.openai.com/api/docs/guides/reasoning-best-practices",
+      "use": "General prompting guidance only, not causal evidence for this experiment"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+      "use": "Repeat variability and evaluation design, not causal evidence for this experiment"
+    }
+  ]
+}

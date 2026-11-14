@@ -1,0 +1,170 @@
+{
+  "n": 87,
+  "spearman_rho": 0.9290527499604068,
+  "kendall_tau_b": 0.8545364604997007,
+  "pearson_r": 0.9271249835104884,
+  "quadratic_weighted_kappa": 0.8223370071173308,
+  "accuracy": 0.367816091954023,
+  "within_one_level": 0.7471264367816092,
+  "mae": 0.9195402298850575,
+  "rmse": 1.2502873232999676,
+  "mean_signed_error": -0.7586206896551724,
+  "macro_recall": 0.4323953823953824,
+  "confusion_matrix": [
+    [
+      6,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      7,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      3,
+      4,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      10,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      6,
+      4,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      3,
+      6,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      4,
+      6,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      3,
+      11,
+      6,
+      0
+    ]
+  ],
+  "by_level": {
+    "1": {
+      "n": 7,
+      "accuracy": 0.8571428571428571,
+      "mae": 0.14285714285714285,
+      "mean_signed_error": 0.14285714285714285
+    },
+    "2": {
+      "n": 9,
+      "accuracy": 0.7777777777777778,
+      "mae": 0.3333333333333333,
+      "mean_signed_error": 0.1111111111111111
+    },
+    "3": {
+      "n": 9,
+      "accuracy": 0.3333333333333333,
+      "mae": 0.6666666666666666,
+      "mean_signed_error": 0.2222222222222222
+    },
+    "4": {
+      "n": 11,
+      "accuracy": 0.9090909090909091,
+      "mae": 0.09090909090909091,
+      "mean_signed_error": -0.09090909090909091
+    },
+    "5": {
+      "n": 10,
+      "accuracy": 0.4,
+      "mae": 0.6,
+      "mean_signed_error": -0.6
+    },
+    "6": {
+      "n": 11,
+      "accuracy": 0.18181818181818182,
+      "mae": 1.0909090909090908,
+      "mean_signed_error": -1.0909090909090908
+    },
+    "7": {
+      "n": 10,
+      "accuracy": 0.0,
+      "mae": 1.4,
+      "mean_signed_error": -1.4
+    },
+    "8": {
+      "n": 20,
+      "accuracy": 0.0,
+      "mae": 1.85,
+      "mean_signed_error": -1.85
+    }
+  },
+  "total_expected": 87,
+  "coverage": 1.0,
+  "invalid": [],
+  "missing": [],
+  "primary_metric": "spearman_rho",
+  "reason_quality_scored": false,
+  "prediction_file_sha256": "fc7afc0faa22da191cb5e9dc3cfed782774866e655a3b70db97d780ab59ea07b",
+  "label_file_sha256": "9bb71647a553a95602dabf3773507e226d0993847a8f379e063e56e14358bf53",
+  "spearman_bootstrap": {
+    "repetitions": 2000,
+    "seed": 20261113,
+    "valid_repetitions": 2000,
+    "percentile_95": [
+      0.8921823146028708,
+      0.9533925691362481
+    ],
+    "interpretation": "paired item bootstrap of this curated set; not a population/generalization guarantee"
+  },
+  "descriptive_constant_references": {
+    "majority_level": 8,
+    "majority_accuracy": 0.22988505747126436,
+    "median_level": 5,
+    "median_mae": 2.0114942528735633,
+    "constant_spearman": null
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "purpose": "local_post_hoc_clause_ablation_not_a_benchmark_or_release",
+  "ready": true,
+  "new_valid_ratings": 16,
+  "unique_conversations": 16,
+  "target_id": "Ba7014f48f7b8",
+  "control_id": "B8722af2ce5d7",
+  "levels_by_case_condition_repetition": {
+    "Ba7014f48f7b8": {
+      "full": {
+        "1": 5,
+        "2": 6
+      },
+      "baseline": {
+        "1": 6,
+        "2": 6
+      },
+      "analysis_only": {
+        "1": 5,
+        "2": 5
+      },
+      "no_route_advice": {
+        "1": 6,
+        "2": 6
+      }
+    },
+    "B8722af2ce5d7": {
+      "full": {
+        "1": 6,
+        "2": 6
+      },
+      "baseline": {
+        "1": 6,
+        "2": 6
+      },
+      "analysis_only": {
+        "1": 6,
+        "2": 6
+      },
+      "no_route_advice": {
+        "1": 6,
+        "2": 6
+      }
+    }
+  },
+  "limits": [
+    "one target and one control; cannot establish population effect",
+    "no_route removes one bundle of route-selection instructions, not all possible effects",
+    "analysis_only changes packaging, length and structure together; not a length-matched placebo",
+    "selection is based on observed stability, so all claims are local and exploratory"
+  ],
+  "official_skill_modified": false,
+  "release_selection_performed": false
+}

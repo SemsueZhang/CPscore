@@ -1,0 +1,21 @@
+{
+  "prepared_sha256": "bb279a48fabf9cf1fbde21ee42ec4b8fddf89c1e52740f70ba221b46dbe11d25",
+  "protocol_id": "cpscore-luogu-paired-isolated-v2",
+  "scope": "development_diagnostic",
+  "mode": "baseline",
+  "model": "gpt-6.1-sol",
+  "generation": {
+    "reasoning_effort": "high"
+  },
+  "adapter_sha256": "8b2b620cfa81934998f9bb6ca189452079fdc8e4de0364d5bf9aa90dec37cfca",
+  "status": "complete",
+  "expected_items": 87,
+  "execution": "fresh_process_per_item",
+  "workers": 2,
+  "started_at": "2026-11-14T04:32:59.550788+00:00",
+  "semantic_retries": 0,
+  "is_demo": false,
+  "valid_predictions": 87,
+  "failed_ids": [],
+  "predictions_sha256": "17e3ce4e683b4592d6920d78c3d06ce0648d05ae5f0742636933327b93feafc6"
+}

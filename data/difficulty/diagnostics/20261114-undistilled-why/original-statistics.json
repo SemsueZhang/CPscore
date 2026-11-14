@@ -1,0 +1,33 @@
+{
+  "n": 87,
+  "same_level": 76,
+  "different_level": 11,
+  "skill_lower": 8,
+  "skill_higher": 3,
+  "max_between_arm_level_difference": 1,
+  "skill_only_correct": 4,
+  "baseline_only_correct": 7,
+  "accuracy_delta": -0.034482758620689655,
+  "paired_exact_mcnemar_two_sided_p": 0.548828125,
+  "item_bootstrap_accuracy_delta_percentile95": [
+    -0.11494252873563218,
+    0.034482758620689655
+  ],
+  "bootstrap_seed": 20261114,
+  "bootstrap_repetitions": 30000,
+  "statistics_limit": "Descriptive analysis of curated public development items. Item independence/family independence and population sampling are not established. p does not prove equality; bootstrap is not a generation-repeat interval.",
+  "baseline_usage": {
+    "input_mean": 21234.03448275862,
+    "input_max": 38071,
+    "reasoning_tokens": 17670,
+    "output_tokens": 28593,
+    "invalid_predictions": 0
+  },
+  "skill_usage": {
+    "input_mean": 22705.74712643678,
+    "input_max": 39312,
+    "reasoning_tokens": 19931,
+    "output_tokens": 31085,
+    "invalid_predictions": 0
+  }
+}

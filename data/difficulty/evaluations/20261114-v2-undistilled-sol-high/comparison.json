@@ -1,0 +1,32 @@
+{
+  "scope": "development_diagnostic",
+  "independent": false,
+  "skill_version": "cpscore-difficulty-luogu-v2.0.0",
+  "metrics": {
+    "accuracy": {
+      "baseline": 0.7816091954022989,
+      "skill": 0.7471264367816092,
+      "delta": -0.034482758620689724
+    },
+    "mae": {
+      "baseline": 0.22988505747126436,
+      "skill": 0.26436781609195403,
+      "delta": 0.03448275862068967
+    },
+    "within_one_level": {
+      "baseline": 0.9885057471264368,
+      "skill": 0.9885057471264368,
+      "delta": 0.0
+    },
+    "spearman_rho": {
+      "baseline": 0.9752921642724747,
+      "skill": 0.9725747581292399,
+      "delta": -0.0027174061432347907
+    },
+    "mean_signed_error": {
+      "baseline": -0.04597701149425287,
+      "skill": -0.10344827586206896,
+      "delta": -0.05747126436781609
+    }
+  }
+}

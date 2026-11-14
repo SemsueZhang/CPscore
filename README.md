@@ -15,7 +15,7 @@ CPScore 为算法竞赛出题、验题和组卷提供 8 个独立技能，覆盖
 | [cp-solution-review](docs/cp-solution-review.md) | 对照题解审核 std 的正确性与实现表达 | 评分、反例与修正建议 |
 | [cp-data-review](docs/cp-data-review.md) | 核验数据、判定与错解的实际漏网收益 | 评分与补点建议 |
 | [cp-quality-review](docs/cp-quality-review.md) | 依据人类题解，评价考点原创性与算法设计质量 | A+ / A / B+ / B / C / D / F / S 及用途建议 |
-| [cp-difficulty-rate](docs/cp-difficulty-rate.md) | 评定知识、思维、实现与整题难度 | 三维、总档及平台参照 |
+| [cp-difficulty-luogu](docs/cp-difficulty-luogu.md) | 根据完整解法预测洛谷八档难度 | 原生 1～8 档及主要依据 |
 | [cp-contest-review](docs/cp-contest-review.md) | 分析整套区分度、做题体验与质量 | 推荐 / 合格 / 不合格 |
 | [cp-performance-predict](docs/cp-performance-predict.md) | 按选手背景预测解题过程 | 路线、时间与得分区间 |
 
@@ -55,15 +55,19 @@ Codex、Claude Code、OpenCode、DeepSeek Harness 的安装位置与调用方式
 
 每个技能的用途、材料要求、结果解读、案例和已有验证见 [Skill 使用说明](docs/README.md)。详细判据由各技能自带的 `references/` 维护，安装时复制完整技能目录即可。
 
+难度模块当前为 `cpscore-difficulty-luogu-v2.0.0`：一个前沿 LLM、简洁 Skill、人工确认的专家经验和独立评测。原 `cp-difficulty-rate` 保留为历史版本及 CF/AT 数字工具，不参与新评分流程。专家资料与历史评测见 [Difficulty 数据说明](data/difficulty/README.md)。[未蒸馏版 87 题开发诊断](data/difficulty/evaluations/20261114-v2-undistilled-sol-high/Report.md)中，GPT-6.1 Sol high 的纯 LLM / Skill 命中为 68/87 / 65/87，本轮未观察到 Skill 增益，不作为独立测试成绩。
+
 ```text
 CPscore/
-├── skills/                # 8 个可独立安装的技能
+├── skills/                # 8 个当前技能及 1 个保留的历史难度技能
 ├── docs/                  # 每个技能的使用说明与结果分析
+├── data/difficulty/       # 专家反馈、开发隔离登记及历史结果
+├── tests/difficulty/      # 标准库离线基础测试
 ├── examples/              # 审核案例、解法与核验代码
 └── install.md             # 多宿主安装、更新与卸载
 ```
 
-测试脚本、数据、运行记录与测试工作流仅保存在本地，不随仓库发布。
+难度模块的基础测试、数据协议和历史结果摘要随仓库保存，其他本地实验材料按各自记录管理。历史题目正文和完整模型轨迹仍在原 LuoguBench 工程中。
 
 ## 许可证
 

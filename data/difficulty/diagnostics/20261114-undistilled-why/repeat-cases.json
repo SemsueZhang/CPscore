@@ -1,0 +1,459 @@
+[
+  {
+    "id": "B58304d76a810",
+    "problem_id": "P6776",
+    "truth": 8,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      8,
+      8,
+      8
+    ],
+    "skill_levels": [
+      7,
+      8,
+      8
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": false,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 2,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      8
+    ]
+  },
+  {
+    "id": "B7d306b32f799",
+    "problem_id": "P2678",
+    "truth": 3,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      4,
+      4,
+      4
+    ],
+    "skill_levels": [
+      3,
+      3,
+      4
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": false,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 1,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      4
+    ]
+  },
+  {
+    "id": "Bf0244837d624",
+    "problem_id": "P11361",
+    "truth": 5,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      5,
+      6,
+      5
+    ],
+    "skill_levels": [
+      6,
+      5,
+      5
+    ],
+    "baseline_invariant": false,
+    "skill_invariant": false,
+    "baseline_new_differs_from_original": 1,
+    "skill_new_differs_from_original": 2,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      5,
+      6
+    ]
+  },
+  {
+    "id": "Bb5c44a548ec0",
+    "problem_id": "P5022",
+    "truth": 5,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      4,
+      4,
+      4
+    ],
+    "skill_levels": [
+      5,
+      4,
+      4
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": false,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 2,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      4
+    ]
+  },
+  {
+    "id": "Bb82e7e200288",
+    "problem_id": "P7914",
+    "truth": 6,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      5,
+      6,
+      6
+    ],
+    "skill_levels": [
+      6,
+      5,
+      6
+    ],
+    "baseline_invariant": false,
+    "skill_invariant": false,
+    "baseline_new_differs_from_original": 2,
+    "skill_new_differs_from_original": 1,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      5,
+      6
+    ]
+  },
+  {
+    "id": "Bee97de5c0c45",
+    "problem_id": "P1067",
+    "truth": 2,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      2,
+      2,
+      2
+    ],
+    "skill_levels": [
+      1,
+      2,
+      2
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": false,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 2,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      2
+    ]
+  },
+  {
+    "id": "Bea15e14067af",
+    "problem_id": "P8331",
+    "truth": 8,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      8,
+      7,
+      7
+    ],
+    "skill_levels": [
+      7,
+      7,
+      7
+    ],
+    "baseline_invariant": false,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 2,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      7
+    ]
+  },
+  {
+    "id": "Baf53965fced9",
+    "problem_id": "P5664",
+    "truth": 6,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      6,
+      5,
+      5
+    ],
+    "skill_levels": [
+      5,
+      5,
+      5
+    ],
+    "baseline_invariant": false,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 2,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      5
+    ]
+  },
+  {
+    "id": "Bf560b5b9a25d",
+    "problem_id": "P13019",
+    "truth": 4,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      4,
+      4,
+      3
+    ],
+    "skill_levels": [
+      3,
+      3,
+      3
+    ],
+    "baseline_invariant": false,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 1,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      3
+    ]
+  },
+  {
+    "id": "Ba7014f48f7b8",
+    "problem_id": "P7114",
+    "truth": 6,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      6,
+      6,
+      6
+    ],
+    "skill_levels": [
+      5,
+      5,
+      5
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": true,
+    "overlapping_levels": []
+  },
+  {
+    "id": "B6f0ef04d51c6",
+    "problem_id": "P5658",
+    "truth": 4,
+    "subset": "original_disagreement",
+    "baseline_levels": [
+      5,
+      5,
+      4
+    ],
+    "skill_levels": [
+      4,
+      4,
+      5
+    ],
+    "baseline_invariant": false,
+    "skill_invariant": false,
+    "baseline_new_differs_from_original": 1,
+    "skill_new_differs_from_original": 1,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      4,
+      5
+    ]
+  },
+  {
+    "id": "B74bfb48ad4dc",
+    "problem_id": "P1909",
+    "truth": 1,
+    "subset": "stable_control",
+    "baseline_levels": [
+      1,
+      1,
+      1
+    ],
+    "skill_levels": [
+      1,
+      1,
+      1
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      1
+    ]
+  },
+  {
+    "id": "Bd8d18ad7225d",
+    "problem_id": "P1217",
+    "truth": 2,
+    "subset": "stable_control",
+    "baseline_levels": [
+      2,
+      2,
+      2
+    ],
+    "skill_levels": [
+      2,
+      2,
+      2
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      2
+    ]
+  },
+  {
+    "id": "B3a42890e0a21",
+    "problem_id": "P14361",
+    "truth": 3,
+    "subset": "stable_control",
+    "baseline_levels": [
+      3,
+      3,
+      3
+    ],
+    "skill_levels": [
+      3,
+      3,
+      3
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      3
+    ]
+  },
+  {
+    "id": "B51629bb0c0d7",
+    "problem_id": "P7913",
+    "truth": 4,
+    "subset": "stable_control",
+    "baseline_levels": [
+      4,
+      5,
+      4
+    ],
+    "skill_levels": [
+      4,
+      4,
+      4
+    ],
+    "baseline_invariant": false,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 1,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      4
+    ]
+  },
+  {
+    "id": "B946b762414d6",
+    "problem_id": "P11233",
+    "truth": 5,
+    "subset": "stable_control",
+    "baseline_levels": [
+      5,
+      5,
+      5
+    ],
+    "skill_levels": [
+      5,
+      5,
+      5
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      5
+    ]
+  },
+  {
+    "id": "B8722af2ce5d7",
+    "problem_id": "P2680",
+    "truth": 5,
+    "subset": "stable_control",
+    "baseline_levels": [
+      6,
+      6,
+      6
+    ],
+    "skill_levels": [
+      6,
+      6,
+      6
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      6
+    ]
+  },
+  {
+    "id": "Bada6fd9c206f",
+    "problem_id": "P5659",
+    "truth": 8,
+    "subset": "stable_control",
+    "baseline_levels": [
+      7,
+      7,
+      7
+    ],
+    "skill_levels": [
+      7,
+      7,
+      7
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      7
+    ]
+  },
+  {
+    "id": "Bad3ca3a59c32",
+    "problem_id": "P8500",
+    "truth": 8,
+    "subset": "stable_control",
+    "baseline_levels": [
+      8,
+      8,
+      8
+    ],
+    "skill_levels": [
+      8,
+      8,
+      8
+    ],
+    "baseline_invariant": true,
+    "skill_invariant": true,
+    "baseline_new_differs_from_original": 0,
+    "skill_new_differs_from_original": 0,
+    "strict_arm_separation": false,
+    "overlapping_levels": [
+      8
+    ]
+  }
+]

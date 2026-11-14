@@ -1,0 +1,50 @@
+{
+  "purpose": "post_hoc_development_diagnosis_not_independent_test",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "skill_changed": false,
+  "expert_rules": 0,
+  "hypotheses": [
+    "H1: original 3-item accuracy gap may be comparable to same-prompt repeat variability",
+    "H2: most differences concern adjacent-level calibration, not algorithm understanding",
+    "H3: procedural advice without validated platform boundaries may change evidence weighting without adding calibration knowledge"
+  ],
+  "selection": {
+    "disagreements": [
+      "B58304d76a810",
+      "B7d306b32f799",
+      "Bf0244837d624",
+      "Bb5c44a548ec0",
+      "Bb82e7e200288",
+      "Bee97de5c0c45",
+      "Bea15e14067af",
+      "Baf53965fced9",
+      "Bf560b5b9a25d",
+      "Ba7014f48f7b8",
+      "B6f0ef04d51c6"
+    ],
+    "stable_controls": [
+      "B74bfb48ad4dc",
+      "Bd8d18ad7225d",
+      "B3a42890e0a21",
+      "B51629bb0c0d7",
+      "B946b762414d6",
+      "B8722af2ce5d7",
+      "Bada6fd9c206f",
+      "Bad3ca3a59c32"
+    ],
+    "control_rule": "one stable item per original predicted level, minimum SHA256 of diagnostic-controls-20261114:<id>, without consulting true labels"
+  },
+  "repetitions": 2,
+  "new_calls": 76,
+  "original_calls_reused_for_analysis_only": 38,
+  "workers_per_run": 1,
+  "score_after_all_runs_complete": true,
+  "limitations": [
+    "11 items selected on original arm disagreement; original differences are inflated by selection",
+    "19 items are not a representative accuracy benchmark",
+    "Public problem recognition and pretraining exposure are not excluded",
+    "Repeated free-form reasons are observations, not faithful access to internal reasoning"
+  ],
+  "next_step_rule": "After all 76 calls, measure per-item repeat stability and direction before deciding whether a clause ablation is warranted. Do not choose prompts by benchmark accuracy or update the official Skill."
+}

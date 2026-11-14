@@ -2,9 +2,11 @@
 
 CPScore 遵循[Agent Skills 规范](https://agentskills.io/specification)。各技能独立使用，不强制依赖其他技能或额外运行时。安装时复制整个技能目录，包括 `SKILL.md`、引用文件与随包脚本。题目质量评分 `cp-quality-review` 以人类题解为依据，随包检索脚本会探测 Python 3.8+，不可用时使用宿主工具，无需安装额外依赖。
 
+题面与题解的格式脚本及协议同源，已分别打包在各自目录中，无需另装共享包。维护时只修改 `shared/review-format/`，运行 `python3 scripts/sync_review_format.py` 同步随包文件，提交前用 `--check` 验证一致性。
+
 质量评分调用示例：`$cp-quality-review 依据 statement.md 和人类题解 editorial.md，检索先例并评价考点原创性与算法设计质量。`
 
-难度评定技能 `cp-difficulty-rate` 也可独立安装。它随包提供三维规范、洛谷八档总难度、CF/AT 换算表与数据快照；可选数字工具仅用 Python 3.8+ 标准库，没有 Python 时按表评定即可。调用示例：`$cp-difficulty-rate 评定 statement.md，结合 editorial.md 和 std.cpp。`
+洛谷难度技能 `cp-difficulty-luogu` 可独立安装，根据题面与完整正确解法直接预测洛谷原生 1～8 档。调用示例：`$cp-difficulty-luogu 评定 statement.md，结合 editorial.md 和 std.cpp。` 可选 CLI 仅用 Python 3.8+ 标准库。原 `cp-difficulty-rate` 保留为历史版本及 CF/AT 数字工具，不参与新评分流程。只需新难度技能时复制 `skills/cp-difficulty-luogu/`，无需同时安装原版。
 
 先下载仓库 ZIP，或执行 `git clone https://github.com/SemsueZhang/CPscore.git`，再进入 CPScore 目录。
 

@@ -1,0 +1,82 @@
+{
+  "purpose": "immutable historical development diagnostics; never an independent v2 test",
+  "source_root": "/Users/zhangchenrui/Workspace/work/ai/LuoguBench",
+  "legacy_skill_files": {
+    "skills/cp-difficulty-rate/SKILL.md": "b2d73e9626038e08f7e8d26912595f2f8ce09e151a96f28ff630cb841a99a6da",
+    "skills/cp-difficulty-rate/references/platform-anchors.json": "fc5384eec4396a2dcff227ece56ef2f8858cc9db4738bcae7e315e2016b65d73",
+    "skills/cp-difficulty-rate/references/platform-calibration.json": "e1b6d8157b52eab3d695b5e86881d1e146d5037c551fd0eb06f6cb41b4b435c3",
+    "skills/cp-difficulty-rate/references/platforms.md": "8b4d9d12c35bc79596b7a9975627da37c2c04de9b4a0ce583521b1ce19d8731f",
+    "skills/cp-difficulty-rate/references/rubric.md": "c1e498bd9c2251d4e10748c0ad56494d17127e2423dac9c8feaa010dd2b18297",
+    "skills/cp-difficulty-rate/scripts/platforms.py": "0cd2585be4cca220c9383b399b9746bcfa5c09e83aa7a3bc9831b06efa1e51c7",
+    "skills/cp-difficulty-rate/scripts/calibrate_platforms.py": "1e0154e2c859be29d96a98bcde6aac8c62ec8eeba4bfc3a8953d874cbaf55124"
+  },
+  "source_data_files": {
+    "data/inputs.jsonl": "b7ce8064e79d3f0d33975596d5511619411649ae3af6a36e47bed2b1cdaaa25a",
+    "data/labels.jsonl": "9bb71647a553a95602dabf3773507e226d0993847a8f379e063e56e14358bf53",
+    "data/provenance.jsonl": "26c237ceb292ed5854e46e6377501f5ce05d92ced3ec448b9e4e55fbe4722da0",
+    "benchmark_spec.json": "df292b8d49425dfc0d07ba072c212a6c72c1946bc89fd569a8e4bb9e50d04aa9",
+    "luogubench/prompt.py": "366867c8c971c51a4f30a981861e6fcd069c7f003fbaf0dae8fbbaf9c7c96490",
+    "luogubench/runner.py": "e34f757876d755d23c81808e5116b4e9cd7ebfd073a2550459aa2b49948f733e",
+    "luogubench/score.py": "1eb29bc6bed1721e6ff887842c279caa3d1990d369729587a83fe6f2bb04e4b0",
+    "tools/run_direct_skill_retest.py": "a761b69b167bc429041ec44de5c26d3a872814c3871a797a839b328374d088f6",
+    "tools/run_isolated_skill_retest.py": "7141631338b257148b0de3802f3a534a183cf9a1330e2e835db1d14c92b48d2a"
+  },
+  "runs": [
+    {
+      "name": "gpt-6-luna",
+      "original_directory": "/Users/zhangchenrui/Workspace/work/ai/LuoguBench/results/gpt-6-luna",
+      "files": {
+        "report.txt": "e96f1825fa1556f9565a476c8c1484786640b758e0ce59c45c51b335c45e9e4e",
+        "run.json": "de325a5c91098b3ec1a87e87ffb8b0f8802ab502376b734982f9e91c524fed5d",
+        "metrics.json": "7b1986e6eed103487bc7c009240366775b73ca7be3bcfff5930378448954e1a4",
+        "predictions.jsonl": "90d54d9174405df36d2c6f1d78942708891bc6296fcc455e753e0bc84b2408a2"
+      },
+      "role": "development_diagnostic"
+    },
+    {
+      "name": "cpscore-difficulty-skill-20261113",
+      "original_directory": "/Users/zhangchenrui/Workspace/work/ai/LuoguBench/results/cpscore-difficulty-skill-20261113",
+      "files": {
+        "report.txt": "81b6ececa1644b99099c9b02228e975d73b54598ffed1340f835f14f3a77461b",
+        "run.json": "e376ccf54f8ba5131c8b69b44a46d1ca6229326aa5e61bcaeafb5fb0dc7e6e22",
+        "metrics.json": "f6e91edaeec7a37f09aac6d14695c91c53435695f066101bb602049e50748a15",
+        "predictions.jsonl": "7e0f81808b1e32e3a61fdbf37ef2db8601914618770f7f40fd3324fdf0b0fcac",
+        "material_alignment_audit.json": "4bf9e2d0ca10137433ab6da57261c3270491cc4db4e0a67a9cc8bd20c51c2bfb",
+        "input_path_incident.json": "f928e9426e7550baf40fa620654ba07785fc4e88589b04d37943b1e3f980982c",
+        "schema_inconsistency_before_repair.json": "d541eb198cfbe88c65c06cce9791db1a20ad72bc9e529ba95063af98ddd44ca5",
+        "raw_predictions_before_schema_repair.jsonl": "3be7d2d4234ed092734df6370a037817528b1ee274ebdafa426783c7ff79a207"
+      },
+      "role": "development_diagnostic"
+    },
+    {
+      "name": "cpscore-isolated-direct-20261113",
+      "original_directory": "/Users/zhangchenrui/Workspace/work/ai/LuoguBench/results/cpscore-isolated-direct-20261113",
+      "files": {
+        "report.txt": "01ff08acb3342e75389bb7a35ac017582561e383bc55e0cf5dd96ab8a8dc3035",
+        "run.json": "a5fc227340205b7d46409a4663bd73ee5c0aa6f4ccada1d5df9020de852d9c32",
+        "metrics.json": "890d79852cf7788c25f1206ed936abdc9aa48442b92869c25bbf0bc4f0d856f2",
+        "predictions.jsonl": "fc7afc0faa22da191cb5e9dc3cfed782774866e655a3b70db97d780ab59ea07b",
+        "skill.txt": "e8209bbce0d2d358b6aa73013f01beea3ab9866b3c369d90d38234194bc63f2b",
+        "manifest.json": "62ba1224aaeb2261991807e65dc08ed8804ac72c633bab750420956308962a66",
+        "material_case_audit.json": "622a45d18ca0588de6c1ceed2f5be86e2b3b3570aa0cb9a4e83b78ab771401a6"
+      },
+      "role": "development_diagnostic"
+    },
+    {
+      "name": "cpscore-isolated-retest-20261113",
+      "original_directory": "/Users/zhangchenrui/Workspace/work/ai/LuoguBench/results/cpscore-isolated-retest-20261113",
+      "files": {
+        "report.txt": "69c7ddb1d67d0e0d5b60c71baf09042c590194e316c51cc9da14b8f9b14dc949",
+        "run.json": "315b6ecfcf6d10b9f1cac500a7edadc21ff9799f338fd988f996cfc9f22c1eda",
+        "metrics.json": "9ca70665326eae5cca5e038529b3207316491ee8924771438f332a4108f4cd8e",
+        "predictions.jsonl": "82a4ab73807f761c6daf95cdb4806b6eb5a4d77c8cb8675769eea02b9e181893",
+        "skill.txt": "e8209bbce0d2d358b6aa73013f01beea3ab9866b3c369d90d38234194bc63f2b",
+        "manifest.json": "8d9e770144fbd0aa8a3a631005d829375851c42c028b40656b10cccf0d005bcb"
+      },
+      "role": "development_diagnostic"
+    }
+  ],
+  "local_historical_documents": {
+    "legacy-assessment-summary.md": "60b262a769302b64a225a304445bcd255ee6f8f6942da87498a96fc3b5cede81"
+  }
+}

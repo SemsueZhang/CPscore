@@ -2,6 +2,8 @@
 
 `cp-statement-review` 检查读者能否只凭题面确定任务，以及规则、样例、语言和排版是否妨碍理解。报告给出问题位置、依据、分级和可直接采用的局部修订。
 
+内容审核与格式审核分别完成并给结论，再合并评分，全程由机器核验。内容包含规格、全部文字样例和演示过程、强制人类思维检查、冗余及全文首尾的题外内容；不能用格式候选清单表示内容已审。存在难以理解或无法沿阅读顺序重建的说明推导时直接 Fatal −10，即使任务最终可确定、审核者能补出或可以局部修订。题面无须公开求解算法，正常难度和先修知识不构成此项错误。
+
 ## 材料与调用
 
 提供完整题面、约束、正式样例与相关附件。涉及多语言一致性时提供各版本，涉及资源裕量时提供参考程序和目标环境。题解或 std 可用于交叉核对，但不代替独立阅读题面。
@@ -14,11 +16,35 @@ $cp-statement-review 审核 statement.md，结合附件核对样例，给出评�
 
 采用[材料评分](README.md#材料评分)。审核先重建任务规格，再核验语义疑点、正式样例和阅读障碍，最后按独立根因汇总。
 
-- **Fatal −10**：影响任务或接受关系的必要规则缺失、矛盾、歧义或正式样例实质错误等，具体范围见评分协议。
-- **Major −2**：规则虽可确定，但存在显著理解负担、重要内容或适用规范问题。明确格式违规至少按此级别判断。
+- **Fatal −10**：影响任务或接受关系的必要规则缺失、矛盾、歧义、正式样例实质错误或难以理解的推导等，以及同类至少 3 处已确认格式错误，具体范围见评分协议。
+- **Major −2**：规则可确定且未触发上述 Fatal，但存在显著阅读负担、重要内容或适用规范问题。同类 1～2 处已确认格式错误按此级别判断，未确认范围单独标注证据性质。
 - **Minor −1**：已确认的局部文字、符号、指代或阅读问题，且不构成更高等级。
 
 报告区分扣分项、可选建议、未决疑点与未核验范围，并列出真实 token 开销。宿主没有提供用量时注明不可得，不估算。
+
+逐步核对样例的初始状态、操作合法性、状态更新、中间值及结果，最终输出正确也不能掩盖文字过程错误。阅读全文首尾、背景、附注、图片和代码注释中的闲聊、求赞、求通过、自我介绍、广告与无关叙事。必要补证完整写出并标为审核者补证，不能用建议“补证明”代替实际核验，也不能给原题暗加规则。
+
+全部适用必查项确认合规才给合规；仍无法确认的范围按核验缺口 Major 处理并判不合规，不设人工审批。内容和格式分开说明完成情况，已确认缺陷与无法确认项分别标注。
+
+## 共用格式检查
+
+题面与题解使用同源的 Python 脚本和[格式协议](../skills/cp-statement-review/references/format.md)，包括空格、句末标点、Markdown、数学记号及适用的输入输出、范围和子任务展示要求。单独安装题面技能即可运行，不依赖题解技能。
+
+已有 Python 3.8+ 和命令执行能力时，在仓库根目录运行：
+
+```sh
+python3 skills/cp-statement-review/scripts/format_lint.py --check
+python3 skills/cp-statement-review/scripts/format_lint.py statement.md
+python3 skills/cp-statement-review/scripts/format_lint.py --decisions /tmp/review.json statement.md
+```
+
+仅用标准库，不联网、不调用模型、不修改原文。脚本返回发现位置、复核候选和 `format_assessment`。审核 LLM 实际核验 Warning、未验证范围及静态遗漏，按[来源绑定接口](../skills/cp-statement-review/references/format.md#llm-格式复核接口)提交裁定，再由脚本合并去重。`DOC001` 是展示约定的补充发现接口，不能声称脚本已自动验证计分设置或所有范围写法。
+
+候选为空仍需由 LLM 检查静态规则未覆盖的原文。允许新增及重新归类格式发现，原警告被排除但另有问题时须通过 `additional_findings` 提交正确类别与证据，不能只撤掉警告。内容问题另列，最后统一按根因去重。
+
+按单篇、同类别、独立位置计数：1～2 处 Confirmed 为 Major −2，至少 3 处为 Fatal −10，每类只扣一次。正文与公式边界缺空格合并，缺空格与多空格分开，跨文件不合并。未确认的 Warning 不充当确定次数；经核验仍无法确认的格式范围每类计一次 Major，同类已有确定错误时不重复扣分。
+
+无 Python 或扫描失败时不安装环境，由 LLM 按相同规则补查已有材料。工具故障本身不扣分，剩余必查范围如实列为核验缺口。只有截图不能证明源码合规，脚本执行成功也不代表目标页面实际渲染或题意、样例已经通过。
 
 ## 案例与已有评测
 
@@ -37,8 +63,10 @@ $cp-statement-review 审核 statement.md，结合附件核对样例，给出评�
 
 这些结果来自合成题面，Gold 与语义裁定未经人类专家确认，生成者与被测模型未建立独立性。被测 CPScore 为冻结提交 `5af3cda`，不代表最新工作区版本或其他技能的效果。
 
+上述历史评测未覆盖本次强制人类思维 Fatal、逐步过程核验及内容／格式分开报告的新要求，不改写旧 Gold 或旧分数来模拟新版本结果。
+
 ## 执行规则
 
-[技能入口](../skills/cp-statement-review/SKILL.md) · [规格核验](../skills/cp-statement-review/references/specification.md) · [阅读与修订](../skills/cp-statement-review/references/readability.md) · [评分协议](../skills/cp-statement-review/references/scoring.md)
+[技能入口](../skills/cp-statement-review/SKILL.md) · [规格核验](../skills/cp-statement-review/references/specification.md) · [阅读与修订](../skills/cp-statement-review/references/readability.md) · [共用格式协议](../skills/cp-statement-review/references/format.md) · [评分协议](../skills/cp-statement-review/references/scoring.md)
 
 [返回说明目录](README.md)

@@ -1,0 +1,104 @@
+CPScore 难度skill：逐题独立、材料理解复核后的重测
+
+GPT 6 luna medium。全87题均已尝试，只重测有skill组。
+每题的材料理解、独立语义复核、评级分别使用新Codex CLI临时进程，完整提示从stdin传入。
+独立语义复核同样使用GPT 6 luna medium。无标签反馈、无按评级得分重试。
+文本协议，不调用图片、网页、文件或其他模型工具。当前结果与旧3×29共享上下文协议分开保存。
+
+最终可交付评级：62/87，覆盖率71.3%。
+材料记录首轮原文验证通过：39/87。
+首轮独立语义复核通过：48/75个已进入该阶段的项目。
+原文/材料记录修正轮次：98，语义修正轮次：33。
+
+本轮未获得完整87题有效评级。以下指标仅针对通过材料关口的题目，不是完整Benchmark成绩。
+拒绝评级的题没有填入占位等级，也没有静默删除后冒充完整结果。
+
+按真实档位的交付覆盖：
+入门: 6/7
+普及-: 6/9
+普及: 7/9
+普及+/提高-: 8/11
+提高: 8/10
+提高+/省选-: 7/11
+省选/NOI-: 7/10
+NOI/NOI+/CTS: 13/20
+暂缓原因分类：{"unresolved_material_issues": 9, "source_quote_validation": 13, "transport_or_other": 1, "semantic_review": 2}
+
+all87：62/87有效
+指标 / 旧无skill / 旧有skill / 本轮有skill（完全相同的有效题子集）
+spearman_rho: 0.9361 / 0.9137 / 0.9383
+accuracy: 51.6% / 37.1% / 35.5%
+within_one_level: 93.5% / 88.7% / 75.8%
+mae: 0.5484 / 0.7742 / 0.9194
+mean_signed_error: -0.0645 / -0.3871 / -0.7903
+可交付且标签命中数/全部预期题数：25.3%。该值是交付命中产出比例，不是把拒答当作某一档位。
+
+exclude7_direct_skill_anchors：57/80有效
+指标 / 旧无skill / 旧有skill / 本轮有skill（完全相同的有效题子集）
+spearman_rho: 0.9398 / 0.9100 / 0.9412
+accuracy: 52.6% / 38.6% / 31.6%
+within_one_level: 94.7% / 87.7% / 75.4%
+mae: 0.5263 / 0.7719 / 0.9649
+mean_signed_error: -0.0702 / -0.3860 / -0.8246
+可交付且标签命中数/全部预期题数：22.5%。该值是交付命中产出比例，不是把拒答当作某一档位。
+
+exclude8_skill_named_items：56/79有效
+指标 / 旧无skill / 旧有skill / 本轮有skill（完全相同的有效题子集）
+spearman_rho: 0.9390 / 0.9088 / 0.9403
+accuracy: 51.8% / 39.3% / 32.1%
+within_one_level: 94.6% / 87.5% / 76.8%
+mae: 0.5357 / 0.7679 / 0.9464
+mean_signed_error: -0.0714 / -0.3750 / -0.8036
+可交付且标签命中数/全部预期题数：22.8%。该值是交付命中产出比例，不是把拒答当作某一档位。
+
+exclude7_anchors_and3_material_debug_items：55/77有效
+指标 / 旧无skill / 旧有skill / 本轮有skill（完全相同的有效题子集）
+spearman_rho: 0.9438 / 0.9551 / 0.9393
+accuracy: 54.5% / 40.0% / 30.9%
+within_one_level: 96.4% / 90.9% / 74.5%
+mae: 0.4909 / 0.6909 / 0.9818
+mean_signed_error: -0.0909 / -0.5091 / -0.8364
+可交付且标签命中数/全部预期题数：22.1%。该值是交付命中产出比例，不是把拒答当作某一档位。
+
+此前材料出错及调试案例：
+P7114: 标签6，旧有skill5，本轮未评级；ValueError: Review still invalid after recorded source feedback: Route quote is absent from its own editorial/program or too short
+P5658: 标签4，旧有skill7，本轮4；关键在于沿根到当前点维护未匹配左括号：右括号匹配到节点 k 后，以当前点结尾的合法子串数为 dp[父亲(k)]+1，再沿父子关系累加并异或。需要发现并证明这一递推，同时在 DFS 分支回溯时正确恢复栈；单次遍历即可线性完成，实现负担不高。相比普及档，路径状态与括号匹配需联合建模；但整解只有一条核心观察，无高级结构或长推导，未达到提高档。
+P1067: 标签2，旧有skill5，本轮1；核心是按次数递减遍历系数，并按符号、系数绝对值和次数分别处理输出；只需基础循环、条件判断与整数输入输出，时间复杂度为 O(n)，实现状态很少。题目定义多项式次数为 n，保证最高次项系数非零，因此参考程序用 i!=n 判断是否输出连接符成立。整体属于基础语法和格式化的直接运用；没有排序、枚举策略或建模推导，未达到普及−档。
+
+未交付评级的项目与原因：
+P10221: ValueError: Independent semantic check still requires revision: method_2 的题解把 g_{S,i} 定义成“i 个段”的计数，配套程序的 g[S][a] 却是 g_S(x) 在 x=a 的点值，最终通过插值取回系数；理解记录对此解释正确。但记录的 h 点值转移写成减去 f[T]·h[S\T](x)·x，忽略了程序按跨块无边条件筛选的容斥范围；具体程序的 h 转移只在 cnt[i]-cnt[j]-cnt[i^j]==0 时执行，且按 j 为含最低位的子集枚举，而记录笼统称“对每个评价点 x 减去……”，没有说明该筛选条件。更实质的是 method_2 的最终概率因子被记录为“乘上随机过程的概率因子”，未指出程序所用因子是 K!/(n!(n+1)^{\overline K})；不过这是省略细节而非矛盾。其余任务定义、空段及插入位置解释、输入保证、两条路线核心算法和满分范围描述均与题面及配套程序相符。
+P5659: ValueError: Independent semantic check still requires revision: 理解记录称程序会初始化所有结点的并查集和边状态，但 std 在读取本组 `n = gi()` 之前执行 `for (i = 1; i <= n; ++i) t[i].clear()`，这里的 `n` 是上一组大小（首组则为全局初值 0）。因此首组及新组结点编号超出上一组大小的结点没有按算法要求初始化；全局零初始化也不等价于 `fa[i]=i`、`bg[i]=ed[i]=1`。记录据此认定配套程序实现了所述路线，未指出这一实质问题。
+P6776: ValueError: Review still invalid after recorded source feedback: Unresolved material issues: do not rate this item yet
+P4337: ValueError: Review still invalid after recorded source feedback: Unresolved material issues: do not rate this item yet
+P8331: ValueError: Review still invalid after recorded source feedback: Definition quote is absent from the current statement or too short
+P8332: ValueError: Review still invalid after recorded source feedback: Definition quote is absent from the current statement or too short
+P8498: ValueError: Review still invalid after recorded source feedback: Unresolved material issues: do not rate this item yet
+P14363: ValueError: Review still invalid after recorded source feedback: Definition quote is absent from the current statement or too short
+P7114: ValueError: Review still invalid after recorded source feedback: Route quote is absent from its own editorial/program or too short
+P7914: ValueError: Review still invalid after recorded source feedback: Definition quote is absent from the current statement or too short
+P7961: ValueError: Review still invalid after recorded source feedback: Unresolved material issues: do not rate this item yet
+P11361: ValueError: Review still invalid after recorded source feedback: Unresolved material issues: do not rate this item yet
+P2680: ValueError: Codex transport exit 1
+P10726: ValueError: Review still invalid after recorded source feedback: Unresolved material issues: do not rate this item yet
+P8818: ValueError: Review still invalid after recorded source feedback: Definition quote is absent from the current statement or too short
+P9751: ValueError: Review still invalid after recorded source feedback: Definition quote is absent from the current statement or too short
+P1028: ValueError: Review still invalid after recorded source feedback: Unresolved material issues: do not rate this item yet
+P1217: ValueError: Review still invalid after recorded source feedback: Unresolved material issues: do not rate this item yet
+P1563: ValueError: Review still invalid after recorded source feedback: Route quote is absent from its own editorial/program or too short
+P10220: ValueError: Review still invalid after recorded source feedback: Definition quote is absent from the current statement or too short
+P6624: ValueError: Review still invalid after recorded source feedback: Route quote is absent from its own editorial/program or too short
+P7737: ValueError: Review still invalid after recorded source feedback: Definition quote is absent from the current statement or too short
+P1307: ValueError: Review still invalid after recorded source feedback: Unresolved material issues: do not rate this item yet
+P14361: ValueError: Review still invalid after recorded source feedback: Route quote is absent from its own editorial/program or too short
+P8816: ValueError: Review still invalid after recorded source feedback: Route quote is absent from its own editorial/program or too short
+
+成本与解释边界：
+模型调用共378次（另有1次成功的传输探针，未计入正式预测）。CLI报告用量：{"input_tokens": 8307493, "cached_input_tokens": 3867008, "cache_write_input_tokens": 0, "output_tokens": 338877, "reasoning_output_tokens": 72775}
+阶段调用数：{"review": 218, "semantic": 98, "rating": 62}。其中1次调用没有返回用量字段，不能把这些调用的成本当作0。
+隔离检查：记录到378个互不重复的会话ID。已核对完成调用的原始提示和响应哈希，模型工具调用类型为[]。
+输入token包含CLI系统提示、重复材料与各阶段开销。实际账单费用不可从这些记录确认。旧协作工具未提供同口径token，无法计算可靠的成本倍率。
+协议、上下文隔离、材料检查、反馈轮次、模型调用量与CLI传输均发生变化，历史比较不能识别skill单独带来的因果效果。
+独立复核员也可能误读或过度否决。需要查看原始记录判断其意见是否成立，不能将needs_revision当成程序有错的证明。
+七道锚题已出现在skill中。另报告排除锚题，以及同时排除三道材料调试题的子集。
+公开题可能被模型记忆。一次运行、配对题目重采样和有效子集指标均不能证明新题泛化或普遍增益。
+完整逐题状态、原始请求与响应、验证错误、独立复核、评级和CLI用量保存在本目录。

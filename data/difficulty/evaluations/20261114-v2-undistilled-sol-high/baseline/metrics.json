@@ -1,0 +1,170 @@
+{
+  "n": 87,
+  "spearman_rho": 0.9752921642724747,
+  "kendall_tau_b": 0.9380660793209655,
+  "pearson_r": 0.9765784868024795,
+  "quadratic_weighted_kappa": 0.976280764369098,
+  "accuracy": 0.7816091954022989,
+  "within_one_level": 0.9885057471264368,
+  "mae": 0.22988505747126436,
+  "rmse": 0.5028653529707439,
+  "mean_signed_error": -0.04597701149425287,
+  "macro_recall": 0.7783459595959596,
+  "confusion_matrix": [
+    [
+      7,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      3,
+      2,
+      4,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      8,
+      3,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      2,
+      7,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      2,
+      8,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      10,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      17
+    ]
+  ],
+  "by_level": {
+    "1": {
+      "n": 7,
+      "accuracy": 1.0,
+      "mae": 0,
+      "mean_signed_error": 0
+    },
+    "2": {
+      "n": 9,
+      "accuracy": 1.0,
+      "mae": 0,
+      "mean_signed_error": 0
+    },
+    "3": {
+      "n": 9,
+      "accuracy": 0.2222222222222222,
+      "mae": 0.7777777777777778,
+      "mean_signed_error": 0.1111111111111111
+    },
+    "4": {
+      "n": 11,
+      "accuracy": 0.7272727272727273,
+      "mae": 0.2727272727272727,
+      "mean_signed_error": 0.2727272727272727
+    },
+    "5": {
+      "n": 10,
+      "accuracy": 0.7,
+      "mae": 0.3,
+      "mean_signed_error": -0.1
+    },
+    "6": {
+      "n": 11,
+      "accuracy": 0.7272727272727273,
+      "mae": 0.36363636363636365,
+      "mean_signed_error": -0.36363636363636365
+    },
+    "7": {
+      "n": 10,
+      "accuracy": 1.0,
+      "mae": 0,
+      "mean_signed_error": 0
+    },
+    "8": {
+      "n": 20,
+      "accuracy": 0.85,
+      "mae": 0.15,
+      "mean_signed_error": -0.15
+    }
+  },
+  "total_expected": 87,
+  "coverage": 1.0,
+  "invalid": [],
+  "missing": [],
+  "primary_metric": "spearman_rho",
+  "reason_quality_scored": false,
+  "prediction_file_sha256": "17e3ce4e683b4592d6920d78c3d06ce0648d05ae5f0742636933327b93feafc6",
+  "label_file_sha256": "9bb71647a553a95602dabf3773507e226d0993847a8f379e063e56e14358bf53",
+  "descriptive_constant_references": {
+    "majority_level": 8,
+    "majority_accuracy": 0.22988505747126436,
+    "median_level": 5,
+    "median_mae": 2.0114942528735633,
+    "constant_spearman": null
+  },
+  "scope": "development_diagnostic",
+  "protocol_id": "cpscore-luogu-paired-isolated-v2",
+  "skill_version": null,
+  "model": "gpt-6.1-sol",
+  "generation": {
+    "reasoning_effort": "high"
+  },
+  "mode": "baseline",
+  "independent": false,
+  "comparison_identity": "228c92fbc88cfe8c01b20feef543267f694bde088aa51cbce2cdf4e6af141b27"
+}
