@@ -1,8 +1,0 @@
-{
-  "shard": 1,
-  "type": "input_path_typo",
-  "reported_missing_id": "Bd7a4ff285c6",
-  "actual_id": "Bd7a4ff285c6b",
-  "resolution": "agent read correct existing material and replaced its placeholder before any scoring; other28 predictions unchanged by agent report",
-  "ground_truth_feedback_provided": false
-}

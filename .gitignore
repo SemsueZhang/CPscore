@@ -3,12 +3,3 @@ __pycache__/
 *.py[cod]
 /test/
 /tests/
-/.github/scripts/check-skills.sh
-/.github/scripts/test-*.py
-/.github/workflows/tests.yml
-/.github/workflows/difficulty.yml
-/.github/workflows/review-format.yml
-/archive/
-/reports/
-/outputs/
-/contestant_profiles/

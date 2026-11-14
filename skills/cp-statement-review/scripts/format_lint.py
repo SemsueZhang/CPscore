@@ -6,8 +6,6 @@ resolve uncertain ranges; this script owns deduplication and format-only scoring
 It neither calls models nor edits sources or computes the complete material score.
 """
 
-# Canonical source: shared/review-format/format_lint.py
-# Refresh skill bundles with: python3 scripts/sync_review_format.py
 
 import argparse
 import bisect
@@ -22,7 +20,7 @@ from pathlib import Path
 
 
 VERSION = 2
-LINTER_VERSION = "2.3"
+LINTER_VERSION = "2.3.1"
 RENDER_MODEL = "commonmark-softbreak-whitespace"
 CJK = r"\u3007\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0003ffff"
 HAN = "[" + CJK + "]"
@@ -866,7 +864,7 @@ class Scanner:
                     elif self.math_candidate(content):
                         context = self.source[max(0, i - 16):i]
                         if not re.search(r"输入|输出|字符串|代码|语句|命令|执行|调用|键入", context):
-                            kind = "Confirmed" if re.search(r"新位置\s*=|数学|复杂度|表达式|公式", context) else "Warning"
+                            kind = "Confirmed" if re.search(r"数学|复杂度|表达式|公式", context) else "Warning"
                             self.add("MATH003", i, stop, "数学表达式使用 LaTeX，真实程序片段保留代码样式", kind)
                             self.complexity(content, i + len(run))
                     elif re.fullmatch(r"(?:BFS|DFS|DP|LIS|STL|Dynamic Programming)", content):
@@ -1573,7 +1571,6 @@ class Scanner:
             r"|(?:所以|因此|从而).+"
             r"|(?:若|如果).*(?:则|直接|返回|否则|那么).+"
             r"|(?:定义|记|设).*(?:为|表示).+"
-            r"|^因.{1,12}原因(?:讲解|介绍).+"
             r"|^(?:BFS|DFS|DP|LIS|ST).*(?:是|为|需要|可以|得到|表示|使用).+"
             r"|^给定.+(?:要求|计算|输出|求出).+"
             r"|^(?:希望|请|建议).{3,}(?:通过|注意|使用|采用|计算|输出|返回|检查|阅读|理解)", text))

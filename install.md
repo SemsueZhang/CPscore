@@ -2,13 +2,7 @@
 
 CPScore 遵循[Agent Skills 规范](https://agentskills.io/specification)。各技能独立使用，不强制依赖其他技能或额外运行时。安装时复制整个技能目录，包括 `SKILL.md`、引用文件与随包脚本。题目质量评分 `cp-quality-review` 以人类题解为依据，随包检索脚本会探测 Python 3.8+，不可用时使用宿主工具，无需安装额外依赖。
 
-题面与题解的格式脚本及协议同源，已分别打包在各自目录中，无需另装共享包。维护时只修改 `shared/review-format/`，运行 `python3 scripts/sync_review_format.py` 同步随包文件，提交前用 `--check` 验证一致性。
-
-质量评分调用示例：`$cp-quality-review 依据 statement.md 和人类题解 editorial.md，检索先例并评价考点原创性与算法设计质量。`
-
-洛谷难度技能 `cp-difficulty-luogu` 可独立安装，根据题面与完整正确解法直接预测洛谷原生 1～8 档。调用示例：`$cp-difficulty-luogu 评定 statement.md，结合 editorial.md 和 std.cpp。` 可选 CLI 仅用 Python 3.8+ 标准库。原 `cp-difficulty-rate` 保留为历史版本及 CF/AT 数字工具，不参与新评分流程。只需新难度技能时复制 `skills/cp-difficulty-luogu/`，无需同时安装原版。
-
-先下载仓库 ZIP，或执行 `git clone https://github.com/SemsueZhang/CPscore.git`，再进入 CPScore 目录。
+先下载仓库 ZIP，或执行 `git clone https://github.com/SemsueZhang/CPscore.git`，再进入 CPscore 目录。
 
 ## 选择安装位置
 
@@ -62,18 +56,11 @@ rm -r "$cpscore_dest/$cpscore_skill"
 cp -R "skills/$cpscore_skill" "$cpscore_dest/"
 ```
 
-旧版 `cp-novelty-review` 已由 `cp-quality-review` 替代。备份旧技能的自定义修改后，迁移安装：
-
-```sh
-rm -r "$cpscore_dest/cp-novelty-review"
-cp -R skills/cp-quality-review "$cpscore_dest/"
-```
-
-卸载所选技能时，执行更新代码块中的 `rm -r "$cpscore_dest/$cpscore_skill"`。批量操作逐个处理已安装的技能，不删除整个宿主技能目录。旧版 `.cpscore` 已不再使用，确认无自有材料后可移除，旧报告与实测证据按需保留。
+卸载所选技能时，执行更新代码块中的 `rm -r "$cpscore_dest/$cpscore_skill"`。批量更新或卸载时逐个处理所选技能，不删除整个宿主技能目录。
 
 ## Windows PowerShell
 
-在 CPScore 目录执行，无需 Git Bash：
+在 CPscore 目录执行，无需 Git Bash：
 
 ```powershell
 $cpscoreDest = Join-Path $HOME '.agents/skills'
@@ -99,13 +86,6 @@ Get-ChildItem -Directory 'skills' | Where-Object {
 ```powershell
 Remove-Item -Recurse -Path (Join-Path $cpscoreDest $cpscoreSkill)
 Copy-Item -Recurse -Path "skills/$cpscoreSkill" -Destination $cpscoreDest
-```
-
-从旧新颖度技能迁移时，备份自定义修改后执行：
-
-```powershell
-Remove-Item -Recurse -Path (Join-Path $cpscoreDest 'cp-novelty-review')
-Copy-Item -Recurse -Path 'skills/cp-quality-review' -Destination $cpscoreDest
 ```
 
 卸载所选技能时，执行更新代码块中的 `Remove-Item` 命令。宿主可用性以其支持的环境为准，WSL 中运行的宿主使用 WSL 内的安装目录。

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Retrieval helper bundled beside SKILL.md. Standard library only; run --check first."""
+"""Optional retrieval helper bundled with this skill. Standard library only; run --check first."""
 
 import sys
 
