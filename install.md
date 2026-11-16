@@ -90,6 +90,21 @@ Copy-Item -Recurse -Path "skills/$cpscoreSkill" -Destination $cpscoreDest
 
 卸载所选技能时，执行更新代码块中的 `Remove-Item` 命令。宿主可用性以其支持的环境为准，WSL 中运行的宿主使用 WSL 内的安装目录。
 
+## 共享算法知识目录（可选）
+
+八个 Skill 可引用同一份 Algorithm Catalog。保留仓库中的 `resources/algorithm-catalog/`，无需复制到每个 Skill。由 CPscore 源码根目录设置共享路径，再在能继承此环境的宿主会话中调用：
+
+```sh
+export CPSCORE_CATALOG="$(pwd)/resources/algorithm-catalog"
+python3 "$CPSCORE_CATALOG/catalog.py" search "树状数组"
+python3 "$CPSCORE_CATALOG/catalog.py" tag 42
+python3 "$CPSCORE_CATALOG/catalog.py" levels
+```
+
+PowerShell 使用 `$env:CPSCORE_CATALOG = (Resolve-Path 'resources/algorithm-catalog').Path`。也可以直接向宿主提供公共目录的实际路径。所有 Skill 读取同一文件，目录更新后无需同步技能副本；移动源码目录后须更新共享路径。
+
+Python 不可用时可直接检索目录中的 `catalog.json`。未配置目录时，原有文字审核仍可运行。画像预测中的算法 ID 校验需要这份公共目录，`cp-performance-predict` 的脚本在依赖缺失时明确失败，不生成目录副本；宿主人工分析须标明未验证 ID。查询、字段和更新规则见[算法目录说明](docs/algorithm-catalog.md)。
+
 ## 确认安装
 
 新建或重启宿主会话，提供一份题面或题解并按上表调用，例如 Codex 中输入 `$cp-editorial-review 审核 editorial.md，结合 statement.md。`。确认实际加载的路径，预期在对话收到报告，无需预建文件或执行 CPScore 命令。

@@ -13,7 +13,7 @@ CPScore 是一套供强推理 LLM 调用的算法竞赛审题 Skills，覆盖题
 | [cp-quality-review](docs/cp-quality-review.md) | 依据人类题解检索先例，评价考点原创性与设计质量。 |
 | [cp-difficulty-luogu](docs/cp-difficulty-luogu.md) | 根据题面和完整正确解法，预测洛谷原生 1～8 档难度。 |
 | [cp-contest-review](docs/cp-contest-review.md) | 赛前分析整套题的区分度、做题体验与组合质量。 |
-| [cp-performance-predict](docs/cp-performance-predict.md) | 依据选手背景与赛制，预测解题路线、耗时和得分。 |
+| [cp-performance-predict](docs/cp-performance-predict.md) | 通过多维画像比较完整解法路线，提炼能力瓶颈与表现差异。 |
 
 ## 安装与调用
 
@@ -34,7 +34,9 @@ $cp-editorial-review 结合 statement.md 审核 editorial.md，给出评分、�
 
 默认在对话中交付 Markdown 报告，要求保存时才写文件。各 Skill 使用宿主已有工具；随包 Python 脚本仅作可选辅助，要求 Python 3.8+ 标准库，无需额外依赖。没有 Python 时仍可由宿主 LLM 按 Reference 完成可核验的审核，并说明未完成范围。
 
-[安装、更新与卸载](install.md)说明 Codex、Claude Code、OpenCode 和 DeepSeek Harness 的安装位置与调用方式。[使用文档](docs/README.md)说明各项材料、输出和边界；[示例](examples/README.md)演示语义判断与标程评分。
+[安装、更新与卸载](install.md)说明 Codex、Claude Code、OpenCode 和 DeepSeek Harness 的安装位置与调用方式。[使用文档](docs/README.md)说明各项材料、输出和边界。[标程审核示例](examples/solution-review.md)演示缺陷定位与评分。
+
+八个 Skill 可按需使用同一份 [Algorithm Catalog](docs/algorithm-catalog.md)，以 OI Wiki 为主要来源，统一算法名称、别名、知识 ID、洛谷标签映射及知识门槛参考，独立保存有限题目标签样本。通过 `CPSCORE_CATALOG` 指向公共目录，独立安装的 Skill 也无需各自保存数据副本。
 
 ## 仓库结构
 
@@ -44,8 +46,9 @@ CPscore/
 ├── LICENSE
 ├── install.md
 ├── skills/       # 八个独立 Skill，含 references/ 和必要的 scripts/
+├── resources/    # 一份共享算法目录与可选查询工具
 ├── docs/         # 用户说明
 └── examples/     # 少量自包含示例
 ```
 
-本仓库仅发行正式 Skills，不包含 Benchmark、实验数据或研发测试工程。
+本仓库发行正式 Skills 与少量可复现示例，不包含 Benchmark 或真实选手数据。

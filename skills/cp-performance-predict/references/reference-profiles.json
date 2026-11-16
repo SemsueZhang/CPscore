@@ -1,0 +1,1989 @@
+[
+  {
+    "schema_version": 2,
+    "id": "p01",
+    "label": "直接模拟起步",
+    "profile_type": "reference",
+    "scope": "练习过短循环，尚需建立抽象与常见方法。",
+    "self_assessment": {
+      "abilities": {
+        "D": 1,
+        "P": 1,
+        "I": 1,
+        "B": 1
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 1,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 2
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 2
+          }
+        ]
+      },
+      "strengths": [
+        "能逐句翻译操作"
+      ],
+      "limitations": [
+        "复杂状态和非直接性质均缺少练习"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p02",
+    "label": "基础观察在前，实现尚浅",
+    "profile_type": "reference",
+    "scope": "可观察简单规律，代码练习量仍小。",
+    "self_assessment": {
+      "abilities": {
+        "D": 2,
+        "P": 2,
+        "I": 1,
+        "B": 1
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 2,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 2
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 1
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 1
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 2
+          }
+        ]
+      },
+      "strengths": [
+        "会从小例子找单个性质"
+      ],
+      "limitations": [
+        "想到思路后仍可能写不出可靠程序"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p03",
+    "label": "基础程序练习充分",
+    "profile_type": "reference",
+    "scope": "直接程序与标准操作熟悉，建模证明训练较少。",
+    "self_assessment": {
+      "abilities": {
+        "D": 1,
+        "P": 1,
+        "I": 2,
+        "B": 2
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 2,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 2
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 2
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          }
+        ]
+      },
+      "strengths": [
+        "能实现熟悉的循环与边界"
+      ],
+      "limitations": [
+        "独立建模及一般性论证较弱"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p04",
+    "label": "搜索与简单状态探索",
+    "profile_type": "reference",
+    "scope": "愿意尝试状态探索，复杂证明和多模块程序尚不稳定。",
+    "self_assessment": {
+      "abilities": {
+        "D": 3,
+        "P": 2,
+        "I": 2,
+        "B": 2
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 3,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "搜索"
+            ],
+            "mastery": 3,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "动态规划"
+            ],
+            "mastery": 3,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          }
+        ]
+      },
+      "strengths": [
+        "能主动设计状态并试探转化"
+      ],
+      "limitations": [
+        "复杂度和充分性论证容易停滞"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p05",
+    "label": "常见知识与实现较熟",
+    "profile_type": "reference",
+    "scope": "标准知识练习较广，非直接发现与证明练习相对少。",
+    "self_assessment": {
+      "abilities": {
+        "D": 2,
+        "P": 2,
+        "I": 4,
+        "B": 4
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "数据结构"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "图论"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.graph.lca.binary-lifting",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.gcd.euclidean",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp",
+            "mastery": 3
+          }
+        ]
+      },
+      "strengths": [
+        "熟悉方法可高效实现并对拍"
+      ],
+      "limitations": [
+        "不因会模板就能发现陌生等价转化"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p06",
+    "label": "常见模型较均衡",
+    "profile_type": "reference",
+    "scope": "常见状态与组合模块比较均衡，进阶领域尚未系统掌握。",
+    "self_assessment": {
+      "abilities": {
+        "D": 3,
+        "P": 3,
+        "I": 3,
+        "B": 3
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 3,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "搜索"
+            ],
+            "mastery": 3,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "动态规划"
+            ],
+            "mastery": 3,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          }
+        ]
+      },
+      "strengths": [
+        "可串起标准模型、证明与实现"
+      ],
+      "limitations": [
+        "不预设熟悉进阶数据结构和代数工具"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p07",
+    "label": "数据结构方向积累",
+    "profile_type": "reference",
+    "scope": "区间维护练习多，图论进阶与数学方向资料有限。",
+    "self_assessment": {
+      "abilities": {
+        "D": 3,
+        "P": 3,
+        "I": 4,
+        "B": 4
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "数据结构"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu.weighted",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.bfs.zero-one",
+            "mastery": 1
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          }
+        ]
+      },
+      "strengths": [
+        "熟悉区间不变量、懒标记和对拍"
+      ],
+      "limitations": [
+        "非直接图模型仍可能卡住"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p08",
+    "label": "图论方向积累",
+    "profile_type": "reference",
+    "scope": "图模型与路径算法练习多，区间维护工具薄弱。",
+    "self_assessment": {
+      "abilities": {
+        "D": 3,
+        "P": 3,
+        "I": 4,
+        "B": 4
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "图论"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "搜索"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 1
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 1
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 0
+          },
+          {
+            "algorithm_id": "oiwiki.graph.bfs.zero-one",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.flow.max-flow.dinic",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.flow.min-cost.ssp",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.lca.binary-lifting",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.bellman-ford",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.floyd",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          }
+        ]
+      },
+      "strengths": [
+        "能组合路径、流与树上工具"
+      ],
+      "limitations": [
+        "复杂区间结构需要补知识或重新推导"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p09",
+    "label": "推导与证明在前",
+    "profile_type": "reference",
+    "scope": "非直接性质与等价性推导练习充分，程序工程积累有限。",
+    "self_assessment": {
+      "abilities": {
+        "D": 4,
+        "P": 4,
+        "I": 2,
+        "B": 2
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "数学"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 2
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 2
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 2
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 2
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 1
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 0
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 0
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 2
+          }
+        ]
+      },
+      "strengths": [
+        "发现、证明低实现负担的路线"
+      ],
+      "limitations": [
+        "复杂结构实现与排错受限"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p10",
+    "label": "实现稳健，检查不系统",
+    "profile_type": "reference",
+    "scope": "能实现常见组合，但缺少系统对拍与反例习惯。",
+    "self_assessment": {
+      "abilities": {
+        "D": 3,
+        "P": 3,
+        "I": 4,
+        "B": 2
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "数据结构"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "图论"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.graph.lca.binary-lifting",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.gcd.euclidean",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp",
+            "mastery": 3
+          }
+        ]
+      },
+      "strengths": [
+        "算法已清楚时能完成复杂程序"
+      ],
+      "limitations": [
+        "交互边界和性能缺陷难及时定位"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p11",
+    "label": "检验习惯充分，实现速度有限",
+    "profile_type": "reference",
+    "scope": "阅读与验证方法较熟，复杂程序的独立构建速度有限。",
+    "self_assessment": {
+      "abilities": {
+        "D": 3,
+        "P": 3,
+        "I": 2,
+        "B": 4
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "数据结构"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "图论"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.graph.lca.binary-lifting",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.gcd.euclidean",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp",
+            "mastery": 3
+          }
+        ]
+      },
+      "strengths": [
+        "善于用小暴力、边界与最小反例定位错误"
+      ],
+      "limitations": [
+        "发现错误后重构和复杂实现仍耗时"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p12",
+    "label": "数学与计数积累",
+    "profile_type": "reference",
+    "scope": "擅长代数与计数推导，结构工程强度中等。",
+    "self_assessment": {
+      "abilities": {
+        "D": 4,
+        "P": 4,
+        "I": 3,
+        "B": 3
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "数学"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "动态规划"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 2
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 1
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 0
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.math.combinatorics.combination",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.combinatorics.inclusion-exclusion-principle",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.linear-algebra.basis.xor",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.linear-algebra.matrix",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.crt",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.gcd.euclidean",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.inverse",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.mobius",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.poly.ntt",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          }
+        ]
+      },
+      "strengths": [
+        "可从方程、不变量和计数关系寻找路线"
+      ],
+      "limitations": [
+        "复杂状态维护未必能迅速实现"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p13",
+    "label": "字符串与离线方向积累",
+    "profile_type": "reference",
+    "scope": "字符串与离线结构训练充分，数学知识覆盖未作全知假设。",
+    "self_assessment": {
+      "abilities": {
+        "D": 3,
+        "P": 4,
+        "I": 4,
+        "B": 4
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "字符串"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "数据结构"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu.weighted",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.misc.offline",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp.prefix-function",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.sa",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.sa.lcp",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.sam",
+            "mastery": 4
+          }
+        ]
+      },
+      "strengths": [
+        "能证明并实现字符串与离线组合"
+      ],
+      "limitations": [
+        "跨领域的新模型发现仍有负担"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p14",
+    "label": "推广探索快，证明易漏条件",
+    "profile_type": "reference",
+    "scope": "探索非直接模型经验多，充分性与隐含条件审查相对较弱。",
+    "self_assessment": {
+      "abilities": {
+        "D": 5,
+        "P": 3,
+        "I": 4,
+        "B": 4
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "图论"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "字符串"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.construction",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.graph.bfs.zero-one",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.flow.max-flow.dinic",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.flow.min-cost.ssp",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.lca.binary-lifting",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.bellman-ford",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.floyd",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.combinatorics.combination",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.gcd.euclidean",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp.prefix-function",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.sa",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.sa.lcp",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.sam",
+            "mastery": 4
+          }
+        ]
+      },
+      "strengths": [
+        "愿意连接多个观察并尝试替代模型"
+      ],
+      "limitations": [
+        "找到候选式子不等于证明双向等价"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p15",
+    "label": "多领域成熟且重证明",
+    "profile_type": "reference",
+    "scope": "多领域知识成熟，证明与检验充分，非直接发现仍非无条件成功。",
+    "self_assessment": {
+      "abilities": {
+        "D": 4,
+        "P": 5,
+        "I": 4,
+        "B": 5
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "数学"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "图论"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "数据结构"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "字符串"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu.weighted",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.bfs.zero-one",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.flow.max-flow.dinic",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.flow.min-cost.ssp",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.lca.binary-lifting",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.bellman-ford",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.floyd",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.combinatorics.combination",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.combinatorics.inclusion-exclusion-principle",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.linear-algebra.basis.xor",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.linear-algebra.matrix",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.crt",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.gcd.euclidean",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.inverse",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.mobius",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.math.poly.ntt",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 3
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp.prefix-function",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.sa",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.sa.lcp",
+            "mastery": 4
+          },
+          {
+            "algorithm_id": "oiwiki.string.sam",
+            "mastery": 4
+          }
+        ]
+      },
+      "strengths": [
+        "复杂等价、边界及系统排错"
+      ],
+      "limitations": [
+        "深层发现与实现常数仍可能成为瓶颈"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  },
+  {
+    "schema_version": 2,
+    "id": "p16",
+    "label": "多领域顶端参考",
+    "profile_type": "reference",
+    "scope": "多层发现、严格论证与复杂实现均有充分训练的假设端点。",
+    "self_assessment": {
+      "abilities": {
+        "D": 5,
+        "P": 5,
+        "I": 5,
+        "B": 5
+      },
+      "knowledge": {
+        "categories": [
+          {
+            "category": [
+              "算法基础"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "数学"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "图论"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "数据结构"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "字符串"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          },
+          {
+            "category": [
+              "动态规划"
+            ],
+            "mastery": 4,
+            "note": "领域背景概述，具体算法以显式记录为准"
+          }
+        ],
+        "algorithms": [
+          {
+            "algorithm_id": "oiwiki.basic.binary",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.basic.construction",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.basic.enumerate",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.basic.greedy",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.basic.prefix-sum",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.basic.simulate",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.basic.sort-intro",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.dp.basic",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.dp.knapsack.basic.zero-one",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.dp.opt.quadrangle.divide-conquer",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.dp.opt.slope",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.ds.binary-heap",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.ds.dsu.weighted",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.ds.fenwick",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.ds.seg.lazy",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.graph.bfs.zero-one",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.graph.flow.max-flow.dinic",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.graph.flow.min-cost.ssp",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.graph.lca.binary-lifting",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.bellman-ford",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.dijkstra",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.graph.shortest-path.floyd",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.math.combinatorics.combination",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.math.combinatorics.inclusion-exclusion-principle",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.math.linear-algebra.basis.xor",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.math.linear-algebra.matrix",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.crt",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.gcd.euclidean",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.inverse",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.math.number-theory.mobius",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.math.poly.ntt",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.search.bfs",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.search.dfs",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.string.kmp.prefix-function",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.string.sa",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.string.sa.lcp",
+            "mastery": 5
+          },
+          {
+            "algorithm_id": "oiwiki.string.sam",
+            "mastery": 5
+          }
+        ]
+      },
+      "strengths": [
+        "能比较完整替代路线并构造独立检验"
+      ],
+      "limitations": [
+        "未列知识仍未知，时限与新颖模型仍能改变表现"
+      ]
+    },
+    "evidence": [],
+    "assumptions": [
+      "人为设计的参考锚点，非真实选手测量或统计结果",
+      "不由知识熟练程度推断本题独立发现，不将未知当作不会"
+    ]
+  }
+]

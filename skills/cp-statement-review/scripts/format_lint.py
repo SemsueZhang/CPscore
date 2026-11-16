@@ -20,7 +20,7 @@ from pathlib import Path
 
 
 VERSION = 2
-LINTER_VERSION = "2.3.1"
+LINTER_VERSION = "2.3.2"
 RENDER_MODEL = "commonmark-softbreak-whitespace"
 CJK = r"\u3007\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0003ffff"
 HAN = "[" + CJK + "]"
@@ -40,7 +40,6 @@ CATEGORIES = {
     "code_fence": "代码定界",
     "container": "扩展容器与折叠块",
     "code_usage": "代码样式用途",
-    "long_code": "长代码折叠",
     "link": "链接语法",
     "image_link": "图片附加跳转",
     "image_host": "图片托管",
@@ -81,7 +80,6 @@ RULES = {
     "MD008": ("link", "使用相应 Markdown 链接语法"),
     "MD009": ("image_link", "图片不额外包裹无关跳转链接"),
     "MD010": ("image_host", "配图托管应符合适用发布平台的要求"),
-    "MD011": ("long_code", "过长代码应折叠，长度线索不等于已证实违规"),
     "MD012": ("emphasis", "强调样式不能代替可读的正文"),
     "MD013": ("container", "扩展容器的语法与开闭范围需要验证"),
     "MD014": ("emphasis", "候选强调标记应按 Markdown 定界规则显示"),
@@ -608,9 +606,6 @@ class Scanner:
                     closing_indent = len(line) - len(line.lstrip(" ")) if ">" not in line[:prefix] else len(body) - len(body.lstrip(" "))
                     if closing_indent <= fence[4]:
                         self.code_spans.append((fence[2], end, fence[3], offset, fence[5]))
-                        if row - fence[6] - 1 > 80 and not fence[5]:
-                            self.add("MD011", fence[2], fence[2] + fence[1],
-                                "代码超过 80 行只是长度线索；使用折叠块，本版不把长度本身当作已证实违规", "Warning")
                         fence = None
                 offset = end
                 continue
@@ -678,7 +673,7 @@ class Scanner:
                 start = offset + prefix + fence_match.start(1)
                 # Plain fences close with at most 3 spaces; list fences may be nested.
                 closing_limit = prefix + fence_match.start(1) + 3
-                fence = (fence_match[1][0], len(fence_match[1]), start, end, closing_limit, bool(fold), row)
+                fence = (fence_match[1][0], len(fence_match[1]), start, end, closing_limit, bool(fold))
                 self.mask(offset, end)
                 self.kinds[row] = "code"
                 offset = end

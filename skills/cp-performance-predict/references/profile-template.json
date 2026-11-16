@@ -1,0 +1,21 @@
+{
+  "schema_version": 2,
+  "profile_type": "individual",
+  "self_assessment": {
+    "abilities": {
+      "D": "unknown",
+      "P": "unknown",
+      "I": "unknown",
+      "B": "unknown"
+    },
+    "notes": {},
+    "knowledge": {
+      "categories": [],
+      "algorithms": []
+    },
+    "strengths": [],
+    "limitations": []
+  },
+  "evidence": [],
+  "assumptions": []
+}

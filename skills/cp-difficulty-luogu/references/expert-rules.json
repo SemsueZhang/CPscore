@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "skill_version": "cpscore-difficulty-luogu-v2.3.0",
+  "rules": [
+    {
+      "id": "reasoning-beyond-insight",
+      "experience": "思维负担须区分关键发现与持续推导。只关注眼前一亮的发现，会低估依赖多步推导的题目；LLM 自身处理长推导链的负担很小，不能据此低估人类选手独立完成推导的困难。评分须单列推导维度，检查从关键发现到完整算法之间的负担。",
+      "algorithm_ids": [],
+      "category_scopes": [],
+      "sources": [
+        {
+          "case_id": "luogu-P17694",
+          "feedback_id": "2026-11-16-user-four-dimensions"
+        }
+      ],
+      "applies_when": [
+        "评价人类选手从题面独立完成整条正确满分路线的难度",
+        "关键发现之后仍需建立中间结论、完成连续转化及正确性或复杂度论证"
+      ],
+      "limitations": [
+        "按完整路线的实际推导负担判断，不将篇幅或机械步骤数直接换算为档位",
+        "不由单题标签推出算法类别的固定难度，仍须比较已核实的完整替代路线"
+      ],
+      "counterexamples": [],
+      "confirmation": {
+        "status": "confirmed",
+        "reviewer": "user",
+        "reviewed_on": "2026-11-16"
+      }
+    }
+  ]
+}

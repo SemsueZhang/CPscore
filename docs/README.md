@@ -11,9 +11,11 @@
 | 考点原创性与设计质量 | [cp-quality-review](cp-quality-review.md) |
 | 洛谷八档难度 | [cp-difficulty-luogu](cp-difficulty-luogu.md) |
 | 整套赛题组合与体验 | [cp-contest-review](cp-contest-review.md) |
-| 指定选手的路线、耗时与得分 | [cp-performance-predict](cp-performance-predict.md) |
+| 多维选手画像、路线与表现差异 | [cp-performance-predict](cp-performance-predict.md) |
 
 材料分、质量等级、题目难度和选手水平回答不同问题，不能直接互换。具体标准以各 Skill 自带 Reference 为准；实测、静态核验、预测和未完成范围分别说明。
+
+需要统一算法知识名称、别名与 ID 时，八个 Skill 按需查询同一份[共享算法知识目录](algorithm-catalog.md)，无需整份加载。共享目录还统一洛谷标签、算法知识参考区间和有限标签样本，区分参考索引与网站ID，不提供题解或选手能力测量，不能由标签直接推出整题难度。
 
 题面与题解分别随包提供相同的格式协议和 Linter，均可独立运行。没有 Python 时，宿主 LLM 仍按同一协议核验可取得的材料，不把工具故障当成稿件错误。
 
