@@ -9,13 +9,60 @@ description: 依据原稿审核算法竞赛题解的数学、算法、实现与�
 
 ## 审核流程
 
-1. 按[覆盖协议](references/coverage.md)建立带原文位置的章节、重要声明、推导、做法、代码和样例对象，确定各对象的适用检查项。保留首尾、附注、引用、图片和代码块的审核范围。
-2. 分别完成下列任务，各自产生对象级结果与依据。宿主支持时可按需委派专项，其余顺序执行；正向从条件核对结论，逆向从结论和实现反查前提、边界及反例。按实际执行记录路线与委派范围。
-   - **内容** 按[内容核验](references/verification.md)审核数学、论证、输入覆盖、复杂度、数值、实现、样例及来源合规。静态顺读每份代码，逐步手算样例。
-   - **阅读** 按[教学与表达](references/pedagogy.md)和[文风问题](references/writing-issues.md)检查讲解职责、信息主次及实际阅读负担，逐类记录依据。
-   - **格式（启用时）** 按[格式协议](references/format.md)逐类检查全文；有 Python 时运行随包 Linter 并按[接口](references/format-tool.md)裁定每项候选、补充静态遗漏。
-3. 执行[覆盖检查与补查](references/coverage.md#覆盖检查与补查)，补齐缺失任务、对象、检查项和未处理候选，核实依据不足的通过结论。已有拒绝理由仍完成其他适用项。
-4. 合并所有候选并据原文核实，按[评分协议](references/scoring.md)去重计分。撤销或改级记录依据；重审说明结论变化。
+1. 按下述对象协议建立原文对象，确定各对象的适用检查项，保留首尾、附注、引用、图片和代码块的范围。
+2. 分别完成各任务并产生对象级结果与依据。宿主支持时可按需委派专项，其余顺序执行。正向从条件核对结论，逆向从结论和实现反查前提、边界及反例。按实际执行记录路线、执行者和委派范围。
+   - **内容** 每次读取[内容与专业审核](references/content.md)，审核数学、论证、输入覆盖、复杂度、数值、实现、样例及来源合规，静态顺读每份代码并逐步手算样例。
+   - **阅读** 每次读取内容 Reference 中的阅读路径及[文风与表达](references/writing.md)，按适用类别核查信息主次、详略与实际阅读负担。
+   - **格式（启用时）** 读取[格式审核](references/format.md)，逐类核查全文。有 Python 时运行 Linter、按随附接口裁定候选并补充静态遗漏，不可用时按同一协议处理。
+3. 按下述覆盖检查补齐空项及依据不足的结论。已有拒绝理由仍完成其他适用项。
+4. 合并所有候选，据原文核实后读取[评价量规](references/rubric.md)去重计分，给出合规与完成状态。撤销或改级保留原文证据，重复发现合并位置与影响。重审说明新增、撤销与改级依据，独立评测隔离历史结论。
+
+## 审核对象与记录
+
+开始详细审核前，固定待审原文和版本，按章节或主要段落列对象，再单列重要声明、关键推导、算法、每份代码、样例及必要附件。对象使用稳定 ID 和原文位置，保持各部分可追踪。按重要内容拆分，避免逐句建表。
+
+默认启用 `content`、`reading`，用户明确要求格式审核时增加 `format`。每个任务分别产生结果，委派时传递相同对象及适用检查项，记录实际执行者与范围。顺序完成同样保留分任务结果。
+
+每条结果记录对象、检查项、结论与具体依据，状态为已核验、发现问题、未确定或不适用。通过依据应含实际核对的关系或边界；依据不足时定向回查。候选问题单独保留位置和核实结论，最终按根因合并。
+
+## 覆盖检查与补查
+
+1. 对照原文检查对象清单是否涵盖每个章节、重要段落、声明、代码、样例和附件，对照核验 Reference 检查适用维度是否齐全。
+2. 检查各已启用任务是否有结果，每个对象的检查项是否有结论与依据，候选问题是否已核实，格式结果是否均已处理。
+3. 只补查遗漏、未确定和依据不足的对象／检查项。保留已发现候选，撤销或改级以原文证据为据。
+4. 合并已确认问题后评分。剩余未核验范围如实报告，审核标为未完成；执行遗漏转为补查任务。
+
+有 Python 时使用随包 `scripts/check_coverage.py` 检查下述记录。无 Python 时按相同字段人工核对。记录齐全仅证明执行覆盖，重要对象是否识别完整、依据是否成立和判断是否正确仍由 LLM 核验。
+
+## 记录接口
+
+内部记录可暂存 `/tmp/review.json`。有 Python 时采用以下 JSON 接口，覆盖工具和格式工具使用各自记录文件。
+
+```json
+{
+  "version": 1,
+  "format_requested": false,
+  "sources": [{"id": "s1", "path": "/tmp/original.md", "sha256": "原文件字节的SHA256"}],
+  "objects": [{
+    "id": "p1", "source": "s1", "start": 0, "end": 23,
+    "excerpt": "该对象起始处的原文短摘录",
+    "checks": ["content.rules", "reading.main_point", "reading.patterns"]
+  }],
+  "results": [
+    {"object": "p1", "check": "content.rules", "status": "checked", "basis": "实际核对的规则、条件与结论", "findings": []},
+    {"object": "p1", "check": "reading.main_point", "status": "checked", "basis": "本段的任务与核心规则及其依赖", "findings": []},
+    {"object": "p1", "check": "reading.patterns", "status": "issue", "basis": "重复保证语遮蔽规则，位置见p1", "findings": ["f1"]}
+  ],
+  "findings": [{"id": "f1", "objects": ["p1"], "status": "confirmed", "basis": "具体原句及阅读影响"}]
+}
+```
+
+- `sources` 列全部待审稿件及已取得的待审附件，题解审核的参考题面可作为外部依据。相对路径基于记录文件目录。保存原始文本快照，按 UTF-8 解码后计算零起点左闭右开的 `start/end`，保留原始换行。`excerpt` 是范围起始处的非空精确短摘录。图示等非文本材料在文字锚点下记录实际检查结果与未取得范围。
+- `checks` 在判断前确定，检查项用 `content.`、`reading.` 或 `format.` 前缀，同前缀属于同一任务，后缀标明具体维度。各任务的对象范围应覆盖原文全部非空白内容。章节对象负责全段覆盖，重要声明可另建重叠的细对象。新增发现涉及漏列声明时先补对象。
+- `results` 按对象与检查项一一对应，`status` 取 `checked/issue/uncertain/not_applicable`，`basis` 非空。不适用须给适用性理由。`issue` 关联已确认发现，`findings` 是候选问题 ID 列表。
+- 顶层 `findings` 的 `status` 取 `confirmed/rejected/uncertain`，每项须有原文对象、核实依据且被相应结果引用。确认后的级别、类别、影响和修改建议按报告及评价量规给出。
+
+工具检查引用、字段、源文件摘要、范围及摘录、缺失结果、任务全文范围、未确定状态和未核实候选。输出 `records_complete/incomplete/invalid`，退出码分别为 0/1/2。`records_complete` 表示所列记录齐全，内容结论仍需原文依据支持。未取得材料及未识别的重要声明由主审在第一步补查。
 
 ## 报告
 
@@ -27,10 +74,11 @@ description: 依据原稿审核算法竞赛题解的数学、算法、实现与�
 
 ## 随包工具
 
-在 Skill 目录运行，Python 3.8+ 标准库。覆盖记录接口见[覆盖协议](references/coverage.md)，格式命令仅用于已启用的任务。
+在 Skill 目录运行，Python 3.8+ 标准库。覆盖工具读取上述记录，格式命令用于已启用的任务，接口见[格式审核](references/format.md#来源绑定与合并)。
 
 ```sh
 python3 scripts/check_coverage.py /tmp/review.json
+python3 scripts/check_coverage.py /tmp/review.json --format-scan /tmp/format-scan.json
 python3 scripts/format_lint.py /path/to/editorial.md
 python3 scripts/format_lint.py --decisions /tmp/format-decisions.json /path/to/editorial.md
 ```

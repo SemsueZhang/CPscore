@@ -10,4 +10,4 @@ $cp-data-review 结合 statement.md、editorial.md 和 std.cpp，审核原测试
 
 漏检结论同时需要证实候选错误，以及其在原集上实际获得不应取得的成绩。正确慢解和正常部分分不算漏洞。外加反例只用于证错与补点，不并入原集成绩；修订后另行实测。无执行条件时说明未实测范围，不编造通过率或数据完备性。
 
-[技能入口](../skills/cp-data-review/SKILL.md) · [核验方法](../skills/cp-data-review/references/verification.md) · [评分协议](../skills/cp-data-review/references/scoring.md) · [返回目录](README.md)
+[技能入口](../skills/cp-data-review/SKILL.md) · [核验方法](../skills/cp-data-review/references/verification.md) · [评分协议](../skills/cp-data-review/references/rubric.md) · [返回目录](README.md)
