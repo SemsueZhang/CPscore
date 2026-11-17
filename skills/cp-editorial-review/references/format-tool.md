@@ -1,5 +1,7 @@
 # 格式工具与合并接口
 
+格式任务已启用且可运行 Python 时使用。覆盖记录与候选缺项检查见[覆盖协议](coverage.md)。
+
 使用 `scripts/format_lint.py` 时读取。规范及计数见[格式协议](format.md)，类别与规则 ID 用 `--rules` 查询；`coverage` 不能作为补充发现类别。`--check` 只查环境，两者都不是稿件已通过。
 
 ## 扫描与显示边界
@@ -8,10 +10,11 @@
 
 - 段内软换行按 `commonmark-softbreak-whitespace` 模型处理。可证在中文标点旁生成多余空格时，`TXT006` 为 Confirmed，证据记模型和两侧字符；其他意图不明断行留 Warning。模型推导不是页面渲染实测。
 - 连续至少三条仅有编号动作句、无章节正文的标题可确认为步骤式标题；单个长标题等含糊情形留 Warning。明确更新／初始化赋值与定义、条件等式分开；定义／分类句中算法概念误用代码样式可确认，真实字符串与程序片段隔离。
+- 代码围栏中的内容会被扫描器遮蔽，静态结果不判断其语义用途。LLM 须逐块对照内容与上下文核查是否滥用，确认后按[格式协议](format.md)以 `document_layout` 补充；外部评分表含该项时，依据同一裁定单独计分。
 - 宏、复杂参数、未知多字母串用途、含糊标题／强调／列表、代码字符串、词内空格及科学计数法阈值由 LLM 核验。图片、复杂 HTML 和部分容器进入 `skipped`；未知 HTML 子文字不视为已确认可见排版。
 - 命令对照 [KaTeX 支持表](https://katex.org/docs/support_table.html)及[语法示例](https://katex.org/docs/supported.html)（2026-11-14），不代表洛谷当前配置实测；名称支持不证明任意参数合法。
 
-输出 `schema_version=2`、`linter_version`、`render_model`。`findings/skipped` 为原扫描，`review_candidates` 为候选，`effective_findings/effective_skipped` 为裁定结果；`format_assessment` 对后者计分，单篇 `files` 保留 `static_format_assessment`。`groups` 列类别、次数、位置、等级、扣分和证据性质。状态为 `pass/non_compliant/not_assessed`；退出码 0 只表示执行成功，2 为环境、输入或裁定错误，部分失败仍保留成功扫描。
+输出 `schema_version=2`、`linter_version`、`render_model`。`findings/skipped` 为原扫描，`review_candidates` 为候选，`effective_findings/effective_skipped` 为裁定结果；`format_assessment` 对后者给出格式定级，未核验项在最终评分中的处理见[格式协议](format.md#格式计数与定级)，单篇 `files` 保留 `static_format_assessment`。`groups` 列类别、次数、位置、等级、扣分和证据性质。状态为 `pass/non_compliant/not_assessed`；退出码 0 只表示执行成功，2 为环境、输入或裁定错误，部分失败仍保留成功扫描。
 
 ## 来源绑定与合并
 

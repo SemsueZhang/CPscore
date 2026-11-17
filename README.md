@@ -6,8 +6,8 @@ CPScore 是一套供强推理 LLM 调用的算法竞赛审题 Skills，覆盖题
 
 | Skill | 功能 |
 | --- | --- |
-| [cp-statement-review](docs/cp-statement-review.md) | 核验任务规格、样例、阅读体验与格式，给出材料评分。 |
-| [cp-editorial-review](docs/cp-editorial-review.md) | 核验声明、推导、全题覆盖、教学表达与格式，静态对照代码。 |
+| [cp-statement-review](docs/cp-statement-review.md) | 核验任务规格、样例与阅读体验，按需审核格式并评分。 |
+| [cp-editorial-review](docs/cp-editorial-review.md) | 核验声明、推导、全题覆盖与教学表达，静态对照代码，按需审核格式。 |
 | [cp-solution-review](docs/cp-solution-review.md) | 对照题解审核 std 的正确性、资源开销与实现表达。 |
 | [cp-data-review](docs/cp-data-review.md) | 证实错解并核实原集漏检，评价实际计分影响。 |
 | [cp-quality-review](docs/cp-quality-review.md) | 依据人类题解检索先例，评价考点原创性与设计质量。 |
