@@ -51,9 +51,14 @@ def text_gap(source, ranges):
 
 def check_record(record, base, scans):
     require(isinstance(record, dict), "记录必须是 JSON 对象")
-    require(type(record.get("version")) is int and record["version"] == 1, "version 必须为 1")
+    version = record.get("version")
+    require(type(version) is int and version in (1, 2), "version 必须为 1 或 2")
     require(type(record.get("format_requested")) is bool, "format_requested 必须显式填写布尔值")
-    enabled = {"content", "reading"}
+    if version == 2:
+        require(type(record.get("reading_requested")) is bool, "reading_requested 必须显式填写布尔值")
+    enabled = {"content"}
+    if version == 1 or record["reading_requested"]:
+        enabled.add("reading")
     if record["format_requested"]:
         enabled.add("format")
     sources = index_rows(record.get("sources"), "sources")
