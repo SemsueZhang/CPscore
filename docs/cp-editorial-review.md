@@ -23,7 +23,7 @@ python3 skills/cp-editorial-review/scripts/check_coverage.py /tmp/review.json
 
 ## 按需文风审核与评分
 
-启用文风审核时，按[文风与阅读问题](../skills/cp-editorial-review/references/writing.md)检查防御性表达、同义反复、循环说明、信息倒置、叙事拖延、空泛过渡、模块堆叠、无意义转述、助手残留、详略不当及主线不突出。对可疑章节执行主旨提取、删除测试和局部改写比较，指出应保留的核心、遮蔽重点的内容及具体调整方法。篇幅本身不作扣分依据。
+启用文风审核时，按[文风与阅读问题](../skills/cp-editorial-review/references/writing.md)检查防御性表达、同义反复、循环说明、信息倒置、叙事拖延、空泛过渡、模块堆叠、无意义转述、助手残留、详略不当及主线不突出。先逐节或按主要段落提取核心与新增信息，对可删并、重组的部分执行删除测试和局部改写比较，指出应保留的核心、遮蔽重点的内容及具体调整方法。篇幅本身不作扣分依据。
 
 局部阅读障碍 Minor −1，显著负担 Major −2，关键规则或方法须重新发现重要联系或重组核心内容才能理解时 Fatal −10。同根因扣一次，级别按[评分协议](../skills/cp-editorial-review/references/rubric.md)确认。平台的 AI 辅助创作资格与披露义务仅按适用规定及直接证据核验。
 
