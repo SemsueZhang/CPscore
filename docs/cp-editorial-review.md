@@ -1,6 +1,6 @@
 # 题解审核
 
-提供完整题解、约束、样例和必要附件，注明目标读者与投稿规范。题解审核还需原题面。
+提供原题面、完整题解、约束、样例和必要附件，可注明目标读者。CPScore 只按[本技能的审核标准](../skills/cp-editorial-review/SKILL.md#审核标准与范围)给出结论和评分。
 
 ```text
 $cp-editorial-review 审核 editorial.md，给出评分、依据和修改建议。
@@ -25,7 +25,7 @@ python3 skills/cp-editorial-review/scripts/check_coverage.py /tmp/review.json
 
 启用文风审核时，按[文风与阅读问题](../skills/cp-editorial-review/references/writing.md)检查防御性表达、同义反复、循环说明、信息倒置、叙事拖延、空泛过渡、模块堆叠、无意义转述、助手残留、详略不当及主线不突出。先逐节或按主要段落提取核心与新增信息，对可删并、重组的部分执行删除测试和局部改写比较，指出应保留的核心、遮蔽重点的内容及具体调整方法。篇幅本身不作扣分依据。
 
-局部阅读障碍 Minor −1，显著负担 Major −2，关键规则或方法须重新发现重要联系或重组核心内容才能理解时 Fatal −10。同根因扣一次，级别按[评分协议](../skills/cp-editorial-review/references/rubric.md)确认。平台的 AI 辅助创作资格与披露义务仅按适用规定及直接证据核验。
+局部阅读障碍 Minor −1，显著负担 Major −2，关键规则或方法须重新发现重要联系或重组核心内容才能理解时 Fatal −10。同根因扣一次，级别按[评分协议](../skills/cp-editorial-review/references/rubric.md)确认。
 
 每项缺陷给类别、位置、短摘录、实际影响、级别／扣分和具体改法。正常清楚的文章可无缺陷，剩余未核验范围使审核标为未完成，暂计已确认问题的分数。只审核时保留原稿，重审说明结论变化。
 
